@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "com.projecturanus.uranustech.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "MixinItemGroup",
+    "MixinItemModels"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

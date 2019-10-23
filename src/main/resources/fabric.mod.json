@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "id": "uranustech",
+  "name": "UranusTech",
+  "description": "Develop unreached mysteries of technological world.",
+  "version": "${version}",
+  "license": "GPL-3.0",
+  "contact": {
+    "homepage": "https://www.projecturanus.com/uranustech",
+    "sources": "https://github.com/ProjectUranus/UranusTech"
+  },
+  "depends": {
+    "fabric": "*",
+    "fabric-language-kotlin": ">=1.3.30"
+  },
+  "environment": "*",
+  "suggests": {
+    "roughlyenoughitems": "*"
+  },
+  "entrypoints": {
+    "main": [
+      {
+        "adapter": "kotlin",
+        "value": "com.projecturanus.uranustech.UranusTech"
+      }
+    ],
+    "client": [
+      {
+        "adapter": "kotlin",
+        "value": "com.projecturanus.uranustech.client.UranusTechClient"
+      }
+    ]
+  },
+  "mixins": [
+    {
+      "config": "uranustech.common.json",
+      "environment": "*"
+    },
+    {
+      "config": "uranustech.client.json",
+      "environment": "client"
+    }
+  ]
+}

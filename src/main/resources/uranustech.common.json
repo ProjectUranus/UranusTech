@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "package": "com.projecturanus.uranustech.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "MixinPacketByteBuf",
+    "MixinDefaultBiomeFeatures",
+    "MixinModResourcePackUtil",
+    "MixinCustomPayloadS2CPacket",
+    "MixinTagContainer"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

@@ -4,6 +4,8 @@ import com.google.common.jimfs.Configuration
 import com.google.common.jimfs.Jimfs
 import com.google.common.jimfs.PathType
 import com.google.gson.Gson
+import com.google.gson.JsonSyntaxException
+import com.google.gson.stream.MalformedJsonException
 import com.projecturanus.uranustech.MODID
 import com.projecturanus.uranustech.api.material.Constants.TOOL_INFO
 import com.projecturanus.uranustech.api.material.Material
@@ -27,6 +29,7 @@ import com.projecturanus.uranustech.common.item.UTToolItem
 import com.projecturanus.uranustech.common.material.JsonMaterial
 import com.projecturanus.uranustech.common.resource.CUSTOM_RESOURCE_PACKS
 import com.projecturanus.uranustech.common.resource.FileSystemResourcePack
+import com.projecturanus.uranustech.common.resource.forEach
 import com.projecturanus.uranustech.common.util.asBlockTag
 import com.projecturanus.uranustech.common.util.asItemTag
 import com.projecturanus.uranustech.common.util.getBlock
@@ -54,6 +57,7 @@ import net.minecraft.world.gen.decorator.NopeDecoratorConfig
 import net.minecraft.world.gen.decorator.RangeDecoratorConfig
 import net.minecraft.world.gen.feature.Feature
 import net.minecraft.world.gen.feature.OreFeatureConfig
+import org.apache.commons.compress.archivers.zip.ZipArchiveInputStream
 import java.nio.file.FileSystems
 import java.nio.file.Files
 import java.util.*
@@ -73,6 +77,7 @@ val rockMap = EnumMap<Rocks, MaterialBlock>(Rocks::class.java)
 val oreItemStackMap = ConcurrentHashMap<OreBlock, MutableMap<out Rock, () -> ItemStack>>()
 val blockItemMap = ConcurrentHashMap<MaterialBlock, MaterialBlockItem>()
 
+@ExperimentalStdlibApi
 fun registerBuiltin() = runBlocking {
     groupMap.add(Identifier(MODID, "base"), FabricItemGroupBuilder.create(Identifier(MODID, "base")).icon { ItemStack(materialRegistry.get(Identifier(MODID, "steel"))?.getItem(Forms.INGOT)) }.build())
     groupMap.add(Identifier(MODID, "tool"), FabricItemGroupBuilder.create(Identifier(MODID, "tool")).icon { ItemStack(toolMaterialMap.values.random().values.random()) }.build())
@@ -81,14 +86,16 @@ fun registerBuiltin() = runBlocking {
     val gson = Gson()
     logger.info("Load materials took " + measureTimeMillis {
         async {
-            FileSystems.newFileSystem(javaClass.getResource("/data/uranustech/materials/materials.zip").toURI(), emptyMap<String, Any>()).rootDirectories.forEach { root ->
-                // in a full implementation, you'd have to
-                // handle directories
-                Files.walk(root).forEach { path ->
-                    launch {
-                        val material = gson.fromJson(Files.newBufferedReader(path), JsonMaterial::class.java)
+            val zipInputStream = ZipArchiveInputStream(javaClass.getResourceAsStream("/data/uranustech/materials/materials.zip"))
+            zipInputStream.forEach { content, entry ->
+                launch {
+                    try {
+                        val material = gson.fromJson(String(content), JsonMaterial::class.java)
                         material.name = material.name.toLowerCase()
                         materialRegistry.add(Identifier(MODID, material.name), material)
+                    } catch (e: JsonSyntaxException) {
+                        logger.error("Malformed json in " + entry.name, e)
+                        logger.error(String(content))
                     }
                 }
             }

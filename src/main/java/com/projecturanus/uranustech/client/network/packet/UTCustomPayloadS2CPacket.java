@@ -16,25 +16,25 @@ public class UTCustomPayloadS2CPacket extends CustomPayloadS2CPacket {
     public UTCustomPayloadS2CPacket() {
     }
 
-    public UTCustomPayloadS2CPacket(Identifier identifier_1, PacketByteBuf packetByteBuf_1) {
-        this.channel = identifier_1;
-        this.data = packetByteBuf_1;
+    public UTCustomPayloadS2CPacket(Identifier identifier, PacketByteBuf byteBuf) {
+        this.channel = identifier;
+        this.data = byteBuf;
     }
 
-    public void read(PacketByteBuf packetByteBuf_1) throws IOException {
-        this.channel = packetByteBuf_1.readIdentifier();
-        int int_1 = packetByteBuf_1.readableBytes();
+    public void read(PacketByteBuf byteBuf) throws IOException {
+        this.channel = byteBuf.readIdentifier();
+        int int_1 = byteBuf.readableBytes();
         if (int_1 >= 0)
-            this.data = new PacketByteBuf(packetByteBuf_1.readBytes(int_1));
+            this.data = new PacketByteBuf(byteBuf.readBytes(int_1));
     }
 
-    public void write(PacketByteBuf packetByteBuf_1) throws IOException {
-        packetByteBuf_1.writeIdentifier(this.channel);
-        packetByteBuf_1.writeBytes(this.data.copy());
+    public void write(PacketByteBuf byteBuf) throws IOException {
+        byteBuf.writeIdentifier(this.channel);
+        byteBuf.writeBytes(this.data.copy());
     }
 
-    public void method_11457(ClientPlayPacketListener clientPlayPacketListener_1) {
-        clientPlayPacketListener_1.onCustomPayload(this);
+    public void method_11457(ClientPlayPacketListener listener) {
+        listener.onCustomPayload(this);
     }
 
     @Environment(EnvType.CLIENT)

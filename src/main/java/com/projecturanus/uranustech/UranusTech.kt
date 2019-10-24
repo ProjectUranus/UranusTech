@@ -16,6 +16,7 @@ const val MODID = "uranustech"
 val logger = LogManager.getFormatterLogger("UranusTech")
 
 object UranusTech: ModInitializer {
+    @ExperimentalStdlibApi
     override fun onInitialize() {
         logger.info("[UranusTech] Initializing...")
         Registry.REGISTRIES.add(Identifier(MODID, "material"), materialRegistry)

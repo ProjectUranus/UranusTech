@@ -1,12 +1,14 @@
 package com.projecturanus.uranustech.common.resource
 
 import org.apache.commons.compress.archivers.zip.ZipArchiveInputStream
-import java.nio.ByteBuffer
+import org.apache.commons.compress.utils.IOUtils
 import java.util.zip.ZipEntry
 
-fun ZipArchiveInputStream.forEach(action: suspend (ByteBuffer) -> Unit) {
-    var entry: ZipEntry
-    while (nextZipEntry.also { entry = it } != null) {
-        entry.size
+suspend fun ZipArchiveInputStream.forEach(action: suspend (ByteArray, ZipEntry) -> Unit) {
+    var entry: ZipEntry? = null
+    while (nextZipEntry?.also { entry = it } != null) {
+        if (entry != null)
+            action(IOUtils.toByteArray(this), entry!!)
     }
+    close()
 }

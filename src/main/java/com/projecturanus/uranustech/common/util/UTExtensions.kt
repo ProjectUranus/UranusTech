@@ -13,7 +13,6 @@ import com.projecturanus.uranustech.common.blockMaterialMap
 import com.projecturanus.uranustech.common.formMaterialMap
 import com.projecturanus.uranustech.common.material.MaterialContainer
 import net.minecraft.block.Block
-import net.minecraft.inventory.CraftingInventory
 import net.minecraft.inventory.Inventory
 import net.minecraft.item.Item
 import net.minecraft.item.ItemStack
@@ -23,9 +22,23 @@ import net.minecraft.tag.ItemTags
 import net.minecraft.tag.Tag
 import net.minecraft.text.TranslatableText
 import net.minecraft.util.Identifier
+import net.minecraft.util.math.BlockPos
+import net.minecraft.util.math.Vec3i
 import java.awt.Color
 
 typealias Temperature = Double
+
+operator fun BlockPos.plus(other: Vec3i) = add(other)
+operator fun BlockPos.minus(other: Vec3i) = subtract(other)
+
+operator fun BlockPos.Mutable.plus(other: Vec3i) = add(other)
+operator fun BlockPos.Mutable.minus(other: Vec3i) = subtract(other)
+operator fun BlockPos.Mutable.plusAssign(other: Vec3i) {
+    set(x + other.x, y + other.y, z + other.z)
+}
+operator fun BlockPos.Mutable.minusAssign(other: Vec3i) {
+    set(x - other.x, y - other.y, z - other.z)
+}
 
 val Temperature.celsius
     get() = "${this + Constants.CELSIUS} ℃"

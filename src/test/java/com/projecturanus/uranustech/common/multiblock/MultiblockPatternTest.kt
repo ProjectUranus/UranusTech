@@ -1,5 +1,7 @@
 package com.projecturanus.uranustech.common.multiblock
 
-import org.junit.Assert.*
+import net.minecraft.block.Blocks
 
-class MultiblockPatternTest
+fun main() {
+
+}

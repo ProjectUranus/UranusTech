@@ -2,9 +2,13 @@ package com.projecturanus.uranustech.api.material.info;
 
 import com.projecturanus.uranustech.api.material.Constants;
 import com.projecturanus.uranustech.api.material.Material;
+import com.projecturanus.uranustech.api.material.form.Forms;
+import com.projecturanus.uranustech.common.UTBuiltinsKt;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.util.Identifier;
+
+import java.util.Optional;
 
 public class ToolInfo implements MaterialInfo, ToolMaterial {
     /**
@@ -47,7 +51,7 @@ public class ToolInfo implements MaterialInfo, ToolMaterial {
 
     @Override
     public float getAttackDamage() {
-        return 0;
+        return toolQuality;
     }
 
     @Override
@@ -62,6 +66,6 @@ public class ToolInfo implements MaterialInfo, ToolMaterial {
 
     @Override
     public Ingredient getRepairIngredient() {
-        return Ingredient.EMPTY;
+        return Optional.ofNullable(UTBuiltinsKt.getFormMaterialMap().get(handleMaterial)).map(formMap -> formMap.get(Forms.INGOT)).map(Ingredient::ofItems).orElse(Ingredient.EMPTY);
     }
 }

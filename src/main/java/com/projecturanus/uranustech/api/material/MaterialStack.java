@@ -7,7 +7,7 @@ import java.util.Objects;
 
 import static com.projecturanus.uranustech.api.material.Constants.U;
 
-public class MaterialStack {
+public class MaterialStack implements Cloneable {
     private Material material;
     private Form form;
     private double amount;
@@ -82,6 +82,11 @@ public class MaterialStack {
 
     public void setTemperature(double temperature) {
         this.temperature = temperature;
+    }
+
+    @Override
+    public MaterialStack clone() {
+        return new MaterialStack(material, form, amount, temperature);
     }
 
     @Override

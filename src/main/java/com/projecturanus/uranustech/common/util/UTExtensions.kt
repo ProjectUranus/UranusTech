@@ -13,6 +13,7 @@ import com.projecturanus.uranustech.common.blockMaterialMap
 import com.projecturanus.uranustech.common.formMaterialMap
 import com.projecturanus.uranustech.common.material.MaterialContainer
 import net.minecraft.block.Block
+import net.minecraft.inventory.CraftingInventory
 import net.minecraft.inventory.Inventory
 import net.minecraft.item.Item
 import net.minecraft.item.ItemStack
@@ -23,6 +24,7 @@ import net.minecraft.tag.Tag
 import net.minecraft.text.TranslatableText
 import net.minecraft.util.Identifier
 import net.minecraft.util.math.BlockPos
+import net.minecraft.util.math.Position
 import net.minecraft.util.math.Vec3i
 import java.awt.Color
 
@@ -49,8 +51,30 @@ val Temperature.fahrenheit
 val Temperature.kelvin
     get() = "${this} K"
 
+val Position.first get() = x
+val Position.second get() = y
+val Position.third get() = z
+
+val Vec3i.first get() = x
+val Vec3i.second get() = y
+val Vec3i.third get() = z
+
 operator fun Inventory.get(index: Int): ItemStack = getInvStack(index)
 operator fun Inventory.set(index: Int, stack: ItemStack) = setInvStack(index, stack)
+
+operator fun CraftingInventory.get(x: Int, y: Int): ItemStack = getInvStack(x + y * width)
+operator fun CraftingInventory.set(x: Int, y: Int, stack: ItemStack) = setInvStack(x + y * width, stack)
+
+val CraftingInventory.offset: Pair<Int, Int>
+    get() {
+        for (x in 0 until width)
+            for (y in 0 until height)
+                if (!this[x, y].isEmpty)
+                    return x to y
+        return 0 to 0
+}
+
+fun CraftingInventory.getOffsetStack(x: Int, y: Int) = get(x + offset.first, y + offset.second)
 
 fun Inventory.asIterable(): Iterable<ItemStack> = Iterable { iterator() }
 
@@ -100,6 +124,12 @@ val ItemStack.matStack: MaterialStack? get() {
         Items.STICK -> MaterialStack(WOOD, U2.toDouble())
         else -> null
     }
+}
+
+fun ItemStack.hasMaterialData() = matStack != null
+
+fun MaterialStack.createItemStack(): ItemStack {
+    return material.getItem(form)?.let(::ItemStack) ?: ItemStack.EMPTY
 }
 
 fun Collection<Item>.asItemTag(identifier: Identifier, register: Boolean = true): Tag<Item> {

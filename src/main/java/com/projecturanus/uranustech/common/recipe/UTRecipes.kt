@@ -10,14 +10,13 @@ import com.projecturanus.uranustech.api.tool.Tool
 import com.projecturanus.uranustech.api.tool.Tools
 import com.projecturanus.uranustech.common.item.FormItem
 import com.projecturanus.uranustech.common.item.UTToolItem
+import com.projecturanus.uranustech.common.material.TOOL_FORMS
 import com.projecturanus.uranustech.common.toolMaterialMap
-import com.projecturanus.uranustech.common.util.asIterable
-import com.projecturanus.uranustech.common.util.get
-import com.projecturanus.uranustech.common.util.iterator
-import com.projecturanus.uranustech.common.util.matStack
+import com.projecturanus.uranustech.common.util.*
 import net.minecraft.inventory.CraftingInventory
 import net.minecraft.item.ItemStack
 import net.minecraft.item.ToolItem
+import net.minecraft.recipe.Ingredient
 import net.minecraft.recipe.RecipeSerializer
 import net.minecraft.recipe.SpecialCraftingRecipe
 import net.minecraft.recipe.SpecialRecipeSerializer
@@ -40,12 +39,12 @@ class ToolRecipe(identifier: Identifier): SpecialCraftingRecipe(identifier) {
             if (stack.item is FormItem) {
                 // Find head material
                 val matStack = (stack.item as FormItem).stack
-                if (matStack.form != Forms.STICK) {
+                if (matStack.form in TOOL_FORMS) {
                     toolInfo = (stack.item as FormItem).stack.material.getInfo(Constants.TOOL_INFO)
                     toolMaterial = matStack.material
                     tool = Tools.valueOf(matStack.form.name.removePrefix("tool_head_").toUpperCase())
                 }
-                else
+                else if (matStack.form == Forms.STICK)
                     handleMaterial = matStack.material
             } else if (stack != ItemStack.EMPTY) {
                 handleMaterial = stack.matStack?.material
@@ -78,36 +77,81 @@ class ToolRecipe(identifier: Identifier): SpecialCraftingRecipe(identifier) {
         }
         return false
     }
-
-    override fun getRemainingStacks(inventory_1: CraftingInventory?): DefaultedList<ItemStack> {
-        return super.getRemainingStacks(inventory_1)
-    }
 }
 
 class FormsRecipe(identifier: Identifier): SpecialCraftingRecipe(identifier) {
     override fun craft(inv: CraftingInventory): ItemStack {
-        if (inv[0].item is UTToolItem) {
-            val tool = inv[0].item as UTToolItem
+        if (inv.getOffsetStack(0, 0).item is UTToolItem) {
+            val tool = inv.getOffsetStack(0, 0).item as UTToolItem
             when (tool.tool) {
                 Tools.FILE -> {
+                    // Screw
+                    if (inv.getOffsetStack(1, 0).hasMaterialData() && inv.getOffsetStack(0, 1).hasMaterialData()) {
+                        val matStack1 = inv.getOffsetStack(1, 0).matStack!!
+                        val matStack2 = inv.getOffsetStack(0, 1).matStack!!
+                        if (matStack1 == matStack2 && matStack1.form == Forms.BOLT) {
+                            return matStack1.clone().apply { form = Forms.SCREW }.createItemStack()
+                        }
+                    }
 
+                    // Stick
+                    if (!inv.getOffsetStack(1, 1).hasMaterialData()) return ItemStack.EMPTY
+                    val matStack = inv.getOffsetStack(1, 1).matStack!!
+                    when (matStack.form) {
+                        Forms.INGOT -> return matStack.clone().apply { form = Forms.STICK }.createItemStack()
+                    }
+                }
+                Tools.HAMMER -> {
+                    // Double Ingot
+                    if (inv.getOffsetStack(0, 1).hasMaterialData() && inv.getOffsetStack(0, 2).hasMaterialData()) {
+                        val matStack1 = inv.getOffsetStack(0, 1).matStack!!
+                        val matStack2 = inv.getOffsetStack(0, 2).matStack!!
+                        if (matStack1 == matStack2 && matStack1.form == Forms.INGOT) {
+                            return matStack1.clone().apply { form = Forms.INGOT_DOUBLE }.createItemStack()
+                        }
+                    }
+
+                    // Plate
+                    if (inv.getOffsetStack(0, 1).hasMaterialData()) {
+                        val matStack = inv.getOffsetStack(0, 1).matStack!!
+                        if (matStack.form == Forms.INGOT_DOUBLE) {
+                            return matStack.clone().apply { form = Forms.PLATE }.createItemStack()
+                        }
+                    }
+
+                    // Gem Plate
+                    if (inv.getOffsetStack(0, 1).hasMaterialData() && inv.getOffsetStack(0, 2).hasMaterialData()) {
+                        val matStack1 = inv.getOffsetStack(0, 1).matStack!!
+                        val matStack2 = inv.getOffsetStack(0, 2).matStack!!
+                        if (matStack1 == matStack2 && matStack1.form == Forms.GEM) {
+                            return matStack1.clone().apply { form = Forms.PLATE_GEM }.createItemStack()
+                        }
+                    }
                 }
             }
         }
         return ItemStack.EMPTY
     }
 
-    override fun getRemainingStacks(inventory: CraftingInventory): DefaultedList<ItemStack> {
-        val remaining = super.getRemainingStacks(inventory)
-        return remaining
+    override fun getRemainingStacks(inv: CraftingInventory): DefaultedList<ItemStack> {
+        val list = DefaultedList.ofSize(inv.invSize, ItemStack.EMPTY)
+        if (inv.getOffsetStack(0, 0).item is UTToolItem) {
+            val tool = inv.getOffsetStack(0, 0).item as UTToolItem
+            return list.also { it[inv.offset.first + inv.offset.second * inv.height] = inv.getOffsetStack(0, 0).copy().apply { damage++ } }
+        }
+        return list
     }
 
-    override fun fits(x: Int, y: Int) = x * y > 4
+    override fun fits(x: Int, y: Int) = (x == 2 && y == 2) || (x == 9 && y == 9)
 
     override fun getSerializer() = formsSerializer
 
     override fun matches(inv: CraftingInventory, world: World) =
         inv.asIterable().any { it.item is FormItem } && inv.asIterable().any { it.item is ToolItem }
+
+    override fun getPreviewInputs(): DefaultedList<Ingredient> {
+        return super.getPreviewInputs()
+    }
 }
 
 fun registerToolRecipes() {

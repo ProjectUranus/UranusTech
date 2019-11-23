@@ -15,7 +15,7 @@ public class SimpleMaterial implements Material {
     private boolean hidden = false;
     private Identifier identifier;
     private Map<Compound, Integer> composition = new Object2IntRBTreeMap<>();
-    private Set<Form> validForms = new HashSet<>();
+    private List<Form> validForms = new ArrayList<>();
     private int color;
     private SimpleRegistry<MaterialInfo> infos = new SimpleRegistry<>();
 
@@ -80,7 +80,7 @@ public class SimpleMaterial implements Material {
     }
 
     @Override
-    public Set<Form> getValidForms() {
+    public List<Form> getValidForms() {
         return validForms;
     }
 

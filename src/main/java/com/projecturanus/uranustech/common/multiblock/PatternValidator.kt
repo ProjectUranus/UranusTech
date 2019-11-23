@@ -3,104 +3,20 @@ package com.projecturanus.uranustech.common.multiblock
 import com.projecturanus.uranustech.common.util.plus
 import com.projecturanus.uranustech.logger
 import net.minecraft.util.math.BlockPos
-import net.minecraft.util.math.Vec3i
+import net.minecraft.util.math.Direction
 import net.minecraft.world.BlockView
 
 fun validateMultiblock(pattern: MultiblockPattern, basePos: BlockPos, world: BlockView): Boolean {
     try {
         if (!pattern.allowRotate) {
-            // Validation starts from axis
-            for (index in pattern.axisIndex) {
-                val y = index.key
-                val (x, z) = index.value
-                // Validates axis block
-                if (!pattern[y][z][x].validator(world.getBlockState(basePos + Vec3i(x, y, z))))
+            for (y in pattern.axisIndex.keys) {
+                var (x, z) = pattern.axisIndex[y]!!
+
+                var ingredient = pattern[y][z][x]
+                // Validate axis block
+                if (!ingredient.validator(world.getBlockState(BlockPos(x, y, z))))
                     return false
-                var xOffset = 0 // Offset for validating ranged ingredient
-                // Left axis
-                for (i in x - 1 downTo 0) {
-                    val ingredient = pattern[y][z][i]
-                    // Ranged ingredient
-                    if (ingredient is RangedMultiblockIngredient) {
-                        var passed = 0 // Valid blocks
-                        for (j in 0..ingredient.max) {
-                            if (!ingredient.indexedValidator(world.getBlockState(basePos + Vec3i(xOffset + x - j, y, z)), j))
-                                break
-                            passed++
-                        }
-                        if (passed < ingredient.min)
-                            return false
-                        xOffset = -passed
-                    } else { // Normal block
-                        if (!ingredient.validator(world.getBlockState(basePos + Vec3i(xOffset + x, y, z))))
-                            return false
-                    }
-                }
-                // Right axis
-                for (i in x + 1 until pattern[y][z].size) {
-                    val ingredient = pattern[y][z][i]
-                    // Ranged ingredient
-                    if (ingredient is RangedMultiblockIngredient) {
-                        var passed = 0 // Valid blocks
-                        for (j in 0..ingredient.max) {
-                            if (!ingredient.indexedValidator(world.getBlockState(basePos + Vec3i(xOffset + x + j, y, z)), j))
-                                break
-                            passed++
-                        }
-                        if (passed < ingredient.min)
-                            return false
-                        xOffset = passed
-                    } else { // Normal block
-                        if (!ingredient.validator(world.getBlockState(basePos + Vec3i(xOffset + x, y, z))))
-                            return false
-                    }
-                }
-                // Move from Z axis
-                for (movedZ in pattern[y].indices) {
-                    if (movedZ == z) continue
-                    // Validates axis block
-                    if (!pattern[y][movedZ][x].validator(world.getBlockState(basePos + Vec3i(x, y, movedZ))))
-                        return false
-                    var xOffset = 0 // Offset for validating ranged ingredient
-                    // Left axis
-                    for (i in x - 1 downTo 0) {
-                        val ingredient = pattern[y][movedZ][i]
-                        // Ranged ingredient
-                        if (ingredient is RangedMultiblockIngredient) {
-                            var passed = 0 // Valid blocks
-                            for (j in 0..ingredient.max) {
-                                if (!ingredient.indexedValidator(world.getBlockState(basePos + Vec3i(xOffset + x - j, y, movedZ)), j))
-                                    break
-                                passed++
-                            }
-                            if (passed < ingredient.min)
-                                return false
-                            xOffset = -passed
-                        } else { // Normal block
-                            if (!ingredient.validator(world.getBlockState(basePos + Vec3i(xOffset + x, y, movedZ))))
-                                return false
-                        }
-                    }
-                    // Right axis
-                    for (i in x + 1 until pattern[y][movedZ].size) {
-                        val ingredient = pattern[y][movedZ][i]
-                        // Ranged ingredient
-                        if (ingredient is RangedMultiblockIngredient) {
-                            var passed = 0 // Valid blocks
-                            for (j in 0..ingredient.max) {
-                                if (!ingredient.indexedValidator(world.getBlockState(basePos + Vec3i(xOffset + x + j, y, movedZ)), j))
-                                    break
-                                passed++
-                            }
-                            if (passed < ingredient.min)
-                                return false
-                            xOffset = passed
-                        } else { // Normal block
-                            if (!ingredient.validator(world.getBlockState(basePos + Vec3i(xOffset + x, y, movedZ))))
-                                return false
-                        }
-                    }
-                }
+
             }
             return true
         }
@@ -112,4 +28,35 @@ fun validateMultiblock(pattern: MultiblockPattern, basePos: BlockPos, world: Blo
         logger.error("", e)
     }
     return false
+}
+
+fun generateRangedIngredient(ingredient: RangedMultiblockIngredient) =
+        (ingredient.min..ingredient.max)
+                .map { i -> MultiblockIngredient({ state -> ingredient.indexedValidator(state, i)}, ingredient.knownStates, ingredient.axis, ingredient.base) }
+
+fun getBasePattern(pattern: MultiblockPattern): List<MultiblockPattern> {
+    val patterns = arrayListOf<MultiblockPattern>()
+    for (i in pattern.patterns.indices) {
+        for (j in pattern.patterns[i].indices) {
+            for (k in pattern.patterns[i][j].indices) {
+                if (pattern[i][j][k] is RangedMultiblockIngredient) {
+                }
+            }
+        }
+    }
+    return patterns
+}
+
+fun validateRangedIngredient(ingredient: RangedMultiblockIngredient, direction: Direction, basePos: BlockPos, world: BlockView): Int {
+    if (ingredient.indexedValidator(world.getBlockState(basePos), 0)) {
+        var valid = 0
+        var pos: BlockPos
+        for (i in 0 until ingredient.max) {
+            pos = basePos + direction.vector
+            if (ingredient.indexedValidator(world.getBlockState(pos), i))
+                valid++
+        }
+        return valid
+    }
+    return 0;
 }

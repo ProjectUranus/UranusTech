@@ -1,7 +1,0 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "uranustech:item/plate",
-    "layer1": "uranustech:item/plate_overlay"
-  }
-}

@@ -3,9 +3,11 @@ package com.projecturanus.uranustech.client
 import com.projecturanus.uranustech.api.material.Constants
 import com.projecturanus.uranustech.api.material.form.Forms
 import com.projecturanus.uranustech.api.material.info.ToolInfo
+import com.projecturanus.uranustech.client.gui.container.MaterialShowcaseScreen
 import com.projecturanus.uranustech.client.model.initModels
 import com.projecturanus.uranustech.common.block.OreBlock
 import com.projecturanus.uranustech.common.blockMaterialMap
+import com.projecturanus.uranustech.common.container.MATERIAL_SHOWCASE
 import com.projecturanus.uranustech.common.formMaterialMap
 import com.projecturanus.uranustech.common.item.FormItem
 import com.projecturanus.uranustech.common.item.UTToolItem
@@ -13,6 +15,7 @@ import com.projecturanus.uranustech.common.material.JsonMaterial
 import com.projecturanus.uranustech.common.toolMaterialMap
 import net.fabricmc.api.ClientModInitializer
 import net.fabricmc.fabric.api.client.render.ColorProviderRegistry
+import net.fabricmc.fabric.api.client.screen.ScreenProviderRegistry
 import net.minecraft.client.color.block.BlockColorProvider
 import net.minecraft.client.color.item.ItemColorProvider
 import org.apache.logging.log4j.LogManager
@@ -24,6 +27,11 @@ object UranusTechClient : ClientModInitializer {
 //        RendererAccess.INSTANCE.registerRenderer(UTRenderer)
         registerColors()
         initModels()
+        registerScreens()
+    }
+
+    fun registerScreens() {
+        ScreenProviderRegistry.INSTANCE.registerFactory(MATERIAL_SHOWCASE, ::MaterialShowcaseScreen)
     }
 
     fun registerColors() {

@@ -44,7 +44,7 @@ abstract class MaterialFluid(override val stack: MaterialStack) : BaseFluid(), M
     }
 
     @Environment(EnvType.CLIENT)
-    public override fun randomDisplayTick(world_1: World?, blockPos_1: BlockPos?, fluidState_1: FluidState, random_1: Random?) {
+    public override fun randomDisplayTick(world_1: World, blockPos_1: BlockPos, fluidState_1: FluidState, random_1: Random?) {
         if (!fluidState_1.isStill && !(fluidState_1.get(BaseFluid.FALLING) as Boolean)) {
             if (random_1!!.nextInt(64) == 0) {
                 world_1!!.playSound(blockPos_1!!.x.toDouble() + 0.5, blockPos_1.y.toDouble() + 0.5, blockPos_1.z.toDouble() + 0.5, SoundEvents.BLOCK_WATER_AMBIENT, SoundCategory.BLOCKS, random_1.nextFloat() * 0.25f + 0.75f, random_1.nextFloat() + 0.5f, false)

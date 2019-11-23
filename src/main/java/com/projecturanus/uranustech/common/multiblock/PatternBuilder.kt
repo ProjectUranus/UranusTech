@@ -73,7 +73,7 @@ class PatternBuilder {
     }
 }
 
-class MultiblockPattern(val patterns: List<List<List<MultiblockIngredient>>>, var allowRotate: Boolean) {
+class MultiblockPattern(val patterns: List<List<List<MultiblockIngredient>>>, var allowRotate: Boolean): Cloneable {
     var relativeBasePos: BlockPos = BlockPos.ORIGIN
     val axisIndex = mutableMapOf<Int, Pair<Int, Int>>()
 
@@ -89,6 +89,8 @@ class MultiblockPattern(val patterns: List<List<List<MultiblockIngredient>>>, va
             }
         }
     }
+
+    override fun clone() = MultiblockPattern(patterns, allowRotate)
 
     operator fun get(y: Int) = patterns[y]
 

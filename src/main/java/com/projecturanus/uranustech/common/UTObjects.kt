@@ -6,9 +6,8 @@ import net.minecraft.item.ItemGroup
 import net.minecraft.util.Identifier
 import net.minecraft.util.registry.DefaultedRegistry
 import net.minecraft.util.registry.MutableRegistry
-import net.minecraft.util.registry.SimpleRegistry
 
-val materialRegistry = SimpleRegistry<Material>()
+val materialRegistry = DefaultedRegistry<Material>("uranustech:unknown")
 val groupBase get() = groupMap[Identifier(MODID, "base")]
 val groupTool get() = groupMap[Identifier(MODID, "tool")]
 val groupOre get() = groupMap[Identifier(MODID, "ore")]

@@ -5,8 +5,8 @@ import com.google.common.jimfs.Jimfs
 import com.google.common.jimfs.PathType
 import com.google.gson.Gson
 import com.google.gson.JsonSyntaxException
-import com.google.gson.stream.MalformedJsonException
 import com.projecturanus.uranustech.MODID
+import com.projecturanus.uranustech.api.material.Constants
 import com.projecturanus.uranustech.api.material.Constants.TOOL_INFO
 import com.projecturanus.uranustech.api.material.Material
 import com.projecturanus.uranustech.api.material.MaterialStack
@@ -14,7 +14,7 @@ import com.projecturanus.uranustech.api.material.WILDCARD_MATERIALS
 import com.projecturanus.uranustech.api.material.form.Form
 import com.projecturanus.uranustech.api.material.form.Forms
 import com.projecturanus.uranustech.api.material.generate.GenerateTypes
-import com.projecturanus.uranustech.api.material.info.ToolInfo
+import com.projecturanus.uranustech.api.material.info.*
 import com.projecturanus.uranustech.api.tool.Tool
 import com.projecturanus.uranustech.api.tool.Tools
 import com.projecturanus.uranustech.api.worldgen.Rock
@@ -22,11 +22,16 @@ import com.projecturanus.uranustech.api.worldgen.Rocks
 import com.projecturanus.uranustech.common.block.MaterialBlock
 import com.projecturanus.uranustech.common.block.OreBlock
 import com.projecturanus.uranustech.common.command.MaterialCommand
+import com.projecturanus.uranustech.common.container.MATERIAL_SHOWCASE
+import com.projecturanus.uranustech.common.container.MaterialShowcaseContainer
 import com.projecturanus.uranustech.common.item.FormItem
 import com.projecturanus.uranustech.common.item.MaterialBlockItem
 import com.projecturanus.uranustech.common.item.OreBlockItem
 import com.projecturanus.uranustech.common.item.UTToolItem
 import com.projecturanus.uranustech.common.material.JsonMaterial
+import com.projecturanus.uranustech.common.material.MaterialAPIImpl
+import com.projecturanus.uranustech.common.material.TagProcessor
+import com.projecturanus.uranustech.common.material.setupDelegate
 import com.projecturanus.uranustech.common.resource.CUSTOM_RESOURCE_PACKS
 import com.projecturanus.uranustech.common.resource.FileSystemResourcePack
 import com.projecturanus.uranustech.common.resource.forEach
@@ -40,6 +45,7 @@ import com.projecturanus.uranustech.common.worldgen.SimpleOreGenFeature
 import com.projecturanus.uranustech.logger
 import kotlinx.coroutines.*
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder
+import net.fabricmc.fabric.api.container.ContainerProviderRegistry
 import net.fabricmc.fabric.api.registry.CommandRegistry
 import net.fabricmc.loader.api.FabricLoader
 import net.minecraft.block.Block
@@ -58,10 +64,9 @@ import net.minecraft.world.gen.decorator.RangeDecoratorConfig
 import net.minecraft.world.gen.feature.Feature
 import net.minecraft.world.gen.feature.OreFeatureConfig
 import org.apache.commons.compress.archivers.zip.ZipArchiveInputStream
-import java.nio.file.FileSystems
-import java.nio.file.Files
 import java.util.*
 import java.util.concurrent.ConcurrentHashMap
+import java.util.concurrent.ThreadLocalRandom
 import java.util.concurrent.atomic.AtomicInteger
 import kotlin.system.measureTimeMillis
 
@@ -77,9 +82,8 @@ val rockMap = EnumMap<Rocks, MaterialBlock>(Rocks::class.java)
 val oreItemStackMap = ConcurrentHashMap<OreBlock, MutableMap<out Rock, () -> ItemStack>>()
 val blockItemMap = ConcurrentHashMap<MaterialBlock, MaterialBlockItem>()
 
-@ExperimentalStdlibApi
 fun registerBuiltin() = runBlocking {
-    groupMap.add(Identifier(MODID, "base"), FabricItemGroupBuilder.create(Identifier(MODID, "base")).icon { ItemStack(materialRegistry.get(Identifier(MODID, "steel"))?.getItem(Forms.INGOT)) }.build())
+    groupMap.add(Identifier(MODID, "base"), FabricItemGroupBuilder.create(Identifier(MODID, "base")).icon { materialRegistry.get(Identifier(MODID, "steel"))?.getItem(Forms.INGOT) }.build())
     groupMap.add(Identifier(MODID, "tool"), FabricItemGroupBuilder.create(Identifier(MODID, "tool")).icon { ItemStack(toolMaterialMap.values.random().values.random()) }.build())
     groupMap.add(Identifier(MODID, "ore"), FabricItemGroupBuilder.create(Identifier(MODID, "ore")).icon { oreItemStackMap.values.random()[Rocks.STONE]?.invoke() }.build())
     groupMap.add(Identifier(MODID, "construction_block"), FabricItemGroupBuilder.create(Identifier(MODID, "construction_block")).icon { ItemStack(blockItemMap.values.random()) }.build())
@@ -90,9 +94,18 @@ fun registerBuiltin() = runBlocking {
             zipInputStream.forEach { content, entry ->
                 launch {
                     try {
-                        val material = gson.fromJson(String(content), JsonMaterial::class.java)
-                        material.name = material.name.toLowerCase()
-                        materialRegistry.add(Identifier(MODID, material.name), material)
+                        val material = gson.fromJson(String(content), JsonMaterial::class.java).apply {
+                            name = name.toLowerCase()
+                            infos = mapOf(
+                                    Constants.ATOM_INFO to AtomInfo().also { it.electrons = electrons; it.neutrons = neutrons; it.protons = protons },
+                                    Constants.MATTER_INFO to MatterInfo().also { it.gramPerCubicCentimeter = gramPerCubicCentimeter },
+                                    Constants.ORE_INFO to OreInfo().also { it.oreMultiplier = oreMultiplier; it.oreProgressingMultiplier = oreProgressingMultiplier },
+                                    Constants.STATE_INFO to StateInfo().also { it.boilingPoint = boilingPoint; it.meltingPoint = meltingPoint; it.plasmaPoint = plasmaPoint },
+                                    TOOL_INFO to ToolInfo().also { it.toolDurability = toolDurability; it.toolQuality = toolQuality; it.toolSpeed = toolSpeed; it.toolTypes = toolTypes; it.handleMaterial = materialRegistry[Identifier(MODID, handleMaterial)] }
+                            )
+                            validFormsCache = TagProcessor(tags).getForms().toList()
+                        }
+                        materialRegistry.add(material.identifier, material)
                     } catch (e: JsonSyntaxException) {
                         logger.error("Malformed json in " + entry.name, e)
                         logger.error(String(content))
@@ -104,6 +117,7 @@ fun registerBuiltin() = runBlocking {
         WILDCARD_MATERIALS.forEach { material ->
             materialRegistry.add(material.identifier, material)
         }
+        setupDelegate()
     } + "ms")
     logger.info("Registered ${materialRegistry.ids.size} materials")
     logger.info("Generating blocks...")
@@ -113,7 +127,8 @@ fun registerBuiltin() = runBlocking {
                 launch {
                     val formBlocks = material.validForms
                             .filter { form -> form.generateType == GenerateTypes.BLOCK && form != Forms.ORE }
-                            .map { form -> form to MaterialBlock(MaterialStack(material, form))
+                            .map { form ->
+                                form to MaterialBlock(MaterialStack(material, form))
                             }.toMap().toMutableMap()
 
                     // Specific settings for ores
@@ -169,7 +184,7 @@ fun registerBuiltin() = runBlocking {
             materialRegistry.forEach { material ->
                 launch {
                     itemTagMap[material] = mutableMapOf(*material.validForms.map {
-                        it to Tag.Builder.create<Item>().add(material.getItem(it)).build(Identifier(material.identifier.namespace, "${material.identifier.path}_${it.name}"))
+                        it to Tag.Builder.create<Item>().add(material.getItem(it).item).build(Identifier(material.identifier.namespace, "${material.identifier.path}_${it.name}"))
                     }.toTypedArray())
                 }
             }
@@ -179,7 +194,7 @@ fun registerBuiltin() = runBlocking {
                     material.subMaterials().forEach { subMaterial ->
                         subMaterial.validForms.forEach { form ->
                             itemFormMap[form] = itemFormMap.getOrDefault(form, mutableListOf())
-                            subMaterial.getItem(form)?.let { itemFormMap[form]?.add(it) }
+                            subMaterial.getItem(form)?.let { if (it.item is FormItem) itemFormMap[form]?.add(it.item as FormItem) }
                         }
                     }
                     itemTagMap[material] = itemFormMap.mapValues { it.value.asItemTag(Identifier(material.identifier.namespace, "${material.identifier.path}_${it.key.name}")) }.toMutableMap()
@@ -190,7 +205,7 @@ fun registerBuiltin() = runBlocking {
                     material.subMaterials().forEach { subMaterial ->
                         subMaterial.validForms.forEach { form ->
                             blockFormMap[form] = blockFormMap.getOrDefault(form, mutableListOf())
-                            subMaterial.getBlock(form)?.let { blockFormMap[form]?.add(it) }
+                            subMaterial.getBlock(form)?.block?.let { if (it is MaterialBlock) blockFormMap[form]?.add(it) }
                         }
                     }
                     blockTagMap[material] = blockFormMap.mapValues { it.value.asBlockTag(Identifier(material.identifier.namespace, "${material.identifier.path}_${it.key.name}")) }.toMutableMap()
@@ -221,10 +236,23 @@ fun registerBuiltin() = runBlocking {
 
     logger.info("Registered ${registeredItems.get()} items")
     logger.info("Registered ${registeredBlocks.get()} blocks")
+    registerContainers()
+
+    logger.info("Mapping material registry...")
+    materialRegistry.forEachIndexed { index, material ->
+        val mapped = MaterialAPIImpl.mappers.mapNotNull { it(material) }.lastOrNull()
+        if (mapped != null)
+            materialRegistry.set(index, mapped.identifier, mapped)
+    }
+    logger.info("[UranusTech] Builtin registration done")
 }
 
-fun <E> Collection<E>.random(random: Random = Random()): E =
-    this.toList()[random.nextInt(this.size)]
+fun <E> List<E>.random(random: Random = ThreadLocalRandom.current()): E =
+    this[random.nextInt(this.size)]
+
+fun registerContainers() {
+    ContainerProviderRegistry.INSTANCE.registerFactory(MATERIAL_SHOWCASE) { syncId, id, player, packet -> MaterialShowcaseContainer(packet.readIdentifier(), player.inventory, syncId) }
+}
 
 fun registerResources() {
     val fileSystem = Jimfs.newFileSystem("UranusTech", Configuration.builder(PathType.unix()).setWorkingDirectory("/").setRoots("/").build())

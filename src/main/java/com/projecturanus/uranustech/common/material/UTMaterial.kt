@@ -2,7 +2,6 @@ package com.projecturanus.uranustech.common.material
 
 import com.google.gson.annotations.SerializedName
 import com.projecturanus.uranustech.MODID
-import com.projecturanus.uranustech.api.material.Constants.*
 import com.projecturanus.uranustech.api.material.Material
 import com.projecturanus.uranustech.api.material.MaterialStack
 import com.projecturanus.uranustech.api.material.SimpleMaterial
@@ -11,8 +10,7 @@ import com.projecturanus.uranustech.api.material.compound.Compound
 import com.projecturanus.uranustech.api.material.element.Element
 import com.projecturanus.uranustech.api.material.form.Form
 import com.projecturanus.uranustech.api.material.form.Forms.*
-import com.projecturanus.uranustech.api.material.info.*
-import com.projecturanus.uranustech.common.materialRegistry
+import com.projecturanus.uranustech.api.material.info.MaterialInfo
 import net.minecraft.tag.Tag
 import net.minecraft.util.Identifier
 
@@ -56,6 +54,8 @@ open class JsonMaterial(var name: String, val tags: List<String>,
                         val oreProgressingMultiplier: Int, val toolDurability: Long, val toolSpeed: Float, val toolTypes: Int, val toolQuality: Int,
                         val meltingPoint: Int, val boilingPoint: Int, val plasmaPoint: Int, val neutrons: Int = 0, val protons: Int = 0, val electrons: Int = 0,
                         val components: MaterialComponent?): Material {
+    lateinit var validFormsCache: List<Form>
+
     override fun getDescription() = descriptionInternal?.toList() ?: emptyList()
 
     override fun isHidden() = hidden
@@ -70,13 +70,7 @@ open class JsonMaterial(var name: String, val tags: List<String>,
 
     override fun addInfo(info: MaterialInfo?) {}
 
-    val infos get() = mapOf(
-            ATOM_INFO to AtomInfo().also { it.electrons = electrons; it.neutrons = neutrons; it.protons = protons },
-            MATTER_INFO to MatterInfo().also { it.gramPerCubicCentimeter = gramPerCubicCentimeter },
-            ORE_INFO to OreInfo().also { it.oreMultiplier = oreMultiplier; it.oreProgressingMultiplier = oreProgressingMultiplier },
-            STATE_INFO to StateInfo().also { it.boilingPoint = boilingPoint; it.meltingPoint = meltingPoint; it.plasmaPoint = plasmaPoint },
-            TOOL_INFO to ToolInfo().also { it.toolDurability = toolDurability; it.toolQuality = toolQuality; it.toolSpeed = toolSpeed; it.toolTypes = toolTypes; it.handleMaterial = materialRegistry[Identifier(MODID, handleMaterial)] }
-    )
+    lateinit var infos: Map<Identifier, MaterialInfo>
 
     override fun getInfos() = infos.values
 
@@ -84,7 +78,7 @@ open class JsonMaterial(var name: String, val tags: List<String>,
 
     override fun getChemicalCompound() = tooltipChemical
 
-    override fun getValidForms(): Set<Form> = TagProcessor(tags).getForms()
+    override fun getValidForms() = validFormsCache
 
     override fun getIdentifier() = Identifier(MODID, name)
     override fun toString(): String {

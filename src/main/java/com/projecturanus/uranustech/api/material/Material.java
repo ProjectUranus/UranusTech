@@ -8,16 +8,13 @@ import com.projecturanus.uranustech.api.registry.RegistryEntry;
 import com.projecturanus.uranustech.api.render.Colorable;
 import net.minecraft.util.Identifier;
 
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public interface Material extends RegistryEntry, Colorable {
     Map<Compound, Integer> getComposition();
     Set<Element> getElements();
     String getChemicalCompound();
-    Collection<Form> getValidForms();
+    List<Form> getValidForms();
     Collection<MaterialInfo> getInfos();
     void addInfo(MaterialInfo info);
     default boolean isHidden() {

@@ -9,7 +9,7 @@ import com.projecturanus.uranustech.common.material.MaterialContainer;
 import java.util.function.Function;
 
 public enum GenerateTypes implements GenerateType {
-    BLOCK(MaterialBlock::new), ITEM(FormItem::new), FLUID(MaterialFluid.Still::new);
+    BLOCK(MaterialBlock::new), ITEM(FormItem::new), FLUID(MaterialFluid.Still::new), OTHER(stack -> null);
 
     private Function<MaterialStack, MaterialContainer> function;
 

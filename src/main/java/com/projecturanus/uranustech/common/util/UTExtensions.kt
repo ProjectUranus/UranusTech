@@ -3,21 +3,19 @@ package com.projecturanus.uranustech.common.util
 import com.projecturanus.uranustech.MODID
 import com.projecturanus.uranustech.api.material.Constants
 import com.projecturanus.uranustech.api.material.Constants.U
-import com.projecturanus.uranustech.api.material.Constants.U2
 import com.projecturanus.uranustech.api.material.Material
+import com.projecturanus.uranustech.api.material.MaterialAPI
 import com.projecturanus.uranustech.api.material.MaterialStack
-import com.projecturanus.uranustech.api.material.WOOD
 import com.projecturanus.uranustech.api.material.form.Form
 import com.projecturanus.uranustech.api.material.info.StateInfo
-import com.projecturanus.uranustech.common.blockMaterialMap
-import com.projecturanus.uranustech.common.formMaterialMap
 import com.projecturanus.uranustech.common.material.MaterialContainer
+import com.projecturanus.uranustech.common.material.vanillaItemMaterialMapper
 import net.minecraft.block.Block
+import net.minecraft.block.BlockState
 import net.minecraft.inventory.CraftingInventory
 import net.minecraft.inventory.Inventory
 import net.minecraft.item.Item
 import net.minecraft.item.ItemStack
-import net.minecraft.item.Items
 import net.minecraft.tag.BlockTags
 import net.minecraft.tag.ItemTags
 import net.minecraft.tag.Tag
@@ -96,8 +94,8 @@ fun Inventory.iterator(): MutableIterator<ItemStack> {
     }
 }
 
-fun Material.getItem(form: Form) = formMaterialMap[this]?.get(form)
-fun Material.getBlock(form: Form) = blockMaterialMap[this]?.get(form)
+fun Material.getItem(form: Form): ItemStack = MaterialAPI.INSTANCE.getMaterialItem(MaterialStack(this, form))
+fun Material.getBlock(form: Form): BlockState? = MaterialAPI.INSTANCE.getMaterialBlock(MaterialStack(this, form))
 
 val Material.localizedName
     get() = TranslatableText("material.${this.identifier.namespace}.${this.identifier.path}")
@@ -121,16 +119,13 @@ val MaterialStack.localizedName get(): TranslatableText {
 val ItemStack.matStack: MaterialStack? get() {
     return when (item) {
         is MaterialContainer -> (item as MaterialContainer).stack
-        Items.STICK -> MaterialStack(WOOD, U2.toDouble())
-        else -> null
+        else -> vanillaItemMaterialMapper(this)
     }
 }
 
 fun ItemStack.hasMaterialData() = matStack != null
 
-fun MaterialStack.createItemStack(): ItemStack {
-    return material.getItem(form)?.let(::ItemStack) ?: ItemStack.EMPTY
-}
+fun MaterialStack.createItemStack(): ItemStack = MaterialAPI.INSTANCE.getMaterialItem(this)
 
 fun Collection<Item>.asItemTag(identifier: Identifier, register: Boolean = true): Tag<Item> {
     val tag = Tag.Builder.create<Item>().add(*this.toTypedArray()).build(identifier)

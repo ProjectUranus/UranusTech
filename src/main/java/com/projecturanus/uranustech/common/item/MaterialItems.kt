@@ -24,7 +24,7 @@ import net.minecraft.world.World
 import java.util.*
 
 class FormItem(override val stack: MaterialStack): Item(Settings()
-        .group(if (stack.material.isHidden) null else groupMap.getOrCreate(Identifier(MODID, stack.form.name)) { FabricItemGroupBuilder.create(Identifier(MODID, "form." + stack.form.name)).icon { ItemStack(materialRegistry.getRandom(Random())?.getItem(stack.form)) }.build() })
+        .group(if (stack.material.isHidden) null else groupMap.getOrCreate(Identifier(MODID, stack.form.name)) { FabricItemGroupBuilder.create(Identifier(MODID, "form." + stack.form.name)).icon { materialRegistry.getRandom(Random())?.getItem(stack.form) }.build() })
 ), Colorable by stack.material, MaterialContainer {
 
     override fun getName(itemStack: ItemStack?): TranslatableText {

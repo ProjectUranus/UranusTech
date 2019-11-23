@@ -15,7 +15,6 @@ import com.projecturanus.uranustech.common.toolMaterialMap
 import com.projecturanus.uranustech.common.util.*
 import net.minecraft.inventory.CraftingInventory
 import net.minecraft.item.ItemStack
-import net.minecraft.item.ToolItem
 import net.minecraft.recipe.Ingredient
 import net.minecraft.recipe.RecipeSerializer
 import net.minecraft.recipe.SpecialCraftingRecipe
@@ -51,7 +50,7 @@ class ToolRecipe(identifier: Identifier): SpecialCraftingRecipe(identifier) {
             }
         }
         if (toolInfo?.handleMaterial == handleMaterial || (toolInfo?.handleMaterial is WildcardMaterial && (toolInfo?.handleMaterial as WildcardMaterial).isSubtype(handleMaterial)) && toolMaterial != null && tool != null) {
-            return toolMaterialMap[toolMaterial!!]?.get(tool!!)?.let(::ItemStack) ?: ItemStack.EMPTY
+            return toolMaterialMap[toolMaterial]?.get(tool)?.let(::ItemStack) ?: ItemStack.EMPTY
         }
         return ItemStack.EMPTY
     }
@@ -61,6 +60,7 @@ class ToolRecipe(identifier: Identifier): SpecialCraftingRecipe(identifier) {
     override fun getSerializer() = toolSerializer
 
     override fun matches(inventory: CraftingInventory, world: World): Boolean {
+        /*
         var toolInfo: ToolInfo? = null
         if (inventory.asIterable().toList().count { !it.isEmpty } != 2)
             return false
@@ -76,6 +76,8 @@ class ToolRecipe(identifier: Identifier): SpecialCraftingRecipe(identifier) {
             }
         }
         return false
+        */
+        return craft(inventory) != ItemStack.EMPTY
     }
 }
 
@@ -102,30 +104,28 @@ class FormsRecipe(identifier: Identifier): SpecialCraftingRecipe(identifier) {
                     }
                 }
                 Tools.HAMMER -> {
-                    // Double Ingot
                     if (inv.getOffsetStack(0, 1).hasMaterialData() && inv.getOffsetStack(0, 2).hasMaterialData()) {
                         val matStack1 = inv.getOffsetStack(0, 1).matStack!!
                         val matStack2 = inv.getOffsetStack(0, 2).matStack!!
-                        if (matStack1 == matStack2 && matStack1.form == Forms.INGOT) {
-                            return matStack1.clone().apply { form = Forms.INGOT_DOUBLE }.createItemStack()
+                        if (matStack1 == matStack2) {
+                            return matStack1.clone().apply { form = when (matStack1.form) {
+                                Forms.INGOT -> Forms.INGOT_DOUBLE
+                                Forms.GEM -> Forms.PLATE_GEM
+                                Forms.INGOT_DOUBLE -> Forms.INGOT_QUADRUPLE
+                                Forms.PLATE -> Forms.PLATE_DOUBLE
+                                else -> null
+                            } }.createItemStack()
                         }
                     }
 
                     // Plate
                     if (inv.getOffsetStack(0, 1).hasMaterialData()) {
                         val matStack = inv.getOffsetStack(0, 1).matStack!!
-                        if (matStack.form == Forms.INGOT_DOUBLE) {
-                            return matStack.clone().apply { form = Forms.PLATE }.createItemStack()
-                        }
-                    }
-
-                    // Gem Plate
-                    if (inv.getOffsetStack(0, 1).hasMaterialData() && inv.getOffsetStack(0, 2).hasMaterialData()) {
-                        val matStack1 = inv.getOffsetStack(0, 1).matStack!!
-                        val matStack2 = inv.getOffsetStack(0, 2).matStack!!
-                        if (matStack1 == matStack2 && matStack1.form == Forms.GEM) {
-                            return matStack1.clone().apply { form = Forms.PLATE_GEM }.createItemStack()
-                        }
+                        return matStack.clone().apply { form = when (matStack.form) {
+                            Forms.INGOT_DOUBLE -> Forms.PLATE
+                            Forms.INGOT_QUADRUPLE -> Forms.PLATE_DOUBLE
+                            else -> null
+                        } }.createItemStack()
                     }
                 }
             }
@@ -147,7 +147,7 @@ class FormsRecipe(identifier: Identifier): SpecialCraftingRecipe(identifier) {
     override fun getSerializer() = formsSerializer
 
     override fun matches(inv: CraftingInventory, world: World) =
-        inv.asIterable().any { it.item is FormItem } && inv.asIterable().any { it.item is ToolItem }
+        craft(inv) != ItemStack.EMPTY
 
     override fun getPreviewInputs(): DefaultedList<Ingredient> {
         return super.getPreviewInputs()

@@ -15,10 +15,8 @@ import com.projecturanus.uranustech.common.material.JsonMaterial
 import com.projecturanus.uranustech.common.material.STONE_FORMS
 import com.projecturanus.uranustech.common.materialRegistry
 import com.projecturanus.uranustech.common.oreItemMap
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
-import kotlinx.coroutines.withContext
 import net.fabricmc.fabric.api.client.model.ModelLoadingRegistry
 import net.fabricmc.fabric.api.client.model.ModelProviderContext
 import net.fabricmc.fabric.api.client.model.ModelResourceProvider
@@ -49,7 +47,7 @@ fun initModels() = runBlocking {
     }
 
     clientLogger.info("Caching model iconsets...")
-    withContext(Dispatchers.Default) {
+    launch {
         // Cache form models
         launch {
             clientLogger.info("Generate form models took " + measureTimeMillis {
@@ -196,14 +194,14 @@ fun initModels() = runBlocking {
                         }
                     } + "ms")
         }
-    }
-    withContext(Dispatchers.Default) {
+    }.join()
+    launch {
         builderMap.forEach { (id, modelBuilder) ->
             launch {
                 modelCache[id] = modelBuilder.build()
             }
         }
-    }
+    }.join()
     clientLogger.info("Cached ${modelCache.size} models")
 }
 
@@ -237,7 +235,7 @@ private fun loadCustomModel(resourceId: Identifier, context: ModelProviderContex
             if (material is JsonMaterial) {
                 val toolInfo = material[Constants.TOOL_INFO, ToolInfo::class.java]
                 return if (tool.hasHandleMaterial())
-                    modelCache[Identifier(MODID, "${material.textureSet.toLowerCase()}/${toolInfo.handleMaterial?.textureSet?.toLowerCase()}/${tool.getName()}")]
+                    modelCache[Identifier(MODID, "${material.textureSet.toLowerCase()}/${toolInfo.handleMaterial?.textureSet?.toLowerCase() ?: "none"}/${tool.getName()}")]
                 else modelCache[Identifier(MODID, "${material.textureSet.toLowerCase()}/${tool.getName()}")]
             }
         }

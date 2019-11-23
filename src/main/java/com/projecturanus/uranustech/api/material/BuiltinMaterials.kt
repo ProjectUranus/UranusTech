@@ -1741,3 +1741,4 @@ val ZEOLITE get() = materialRegistry[Identifier(MODID, "zeolite")]!!
 val ZINC get() = materialRegistry[Identifier(MODID, "zinc")]!!
 val ZIRCON get() = materialRegistry[Identifier(MODID, "zircon")]!!
 val ZIRCONIUM get() = materialRegistry[Identifier(MODID, "zirconium")]!!
+

@@ -1,4 +1,7 @@
 package com.projecturanus.uranustech.api.tool;
 
-public interface ToolHead {
+import com.projecturanus.uranustech.api.material.form.Form;
+
+public interface ToolHead extends Form {
+    Tool getTool();
 }

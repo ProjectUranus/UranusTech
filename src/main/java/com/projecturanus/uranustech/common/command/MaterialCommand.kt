@@ -31,8 +31,7 @@ object MaterialCommand {
             }))
             .then(CommandManager.literal("info").then(CommandManager.argument("material", MaterialArgumentType).executes {
                 val material = it.getArgument("material", Material::class.java)
-                if (it.source.entity !is PlayerEntity)
-                    it.source.sendFeedback(LiteralText(material.toString()), true)
+                it.source.sendFeedback(LiteralText(material.toString()), true)
                 arrayOf(material.localizedName.setStyle(Style().setColor(Formatting.AQUA)),
                         LiteralText(material.chemicalCompound).setStyle(Style().setColor(Formatting.GOLD)),
                         *material.description.map(::LiteralText).toTypedArray(),
@@ -40,7 +39,8 @@ object MaterialCommand {
                         LiteralText("Valid forms: ${material.validForms}").setStyle(Style().setColor(Formatting.RED)),
                         LiteralText("Color: ${material.color}").setStyle(Style().setColor(Formatting.AQUA))
                 ).forEach { text -> it.source.sendFeedback(text, false) }
-                it.source.player.giveItemStack(ItemStack(Items.WRITTEN_BOOK))
+                if (it.source.entity is PlayerEntity)
+                    it.source.player.giveItemStack(ItemStack(Items.WRITTEN_BOOK))
                 0
             }))
         )

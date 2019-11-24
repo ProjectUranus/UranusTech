@@ -4,8 +4,10 @@ import com.projecturanus.uranustech.MODID
 import com.projecturanus.uranustech.api.material.Constants.TOOL_INFO
 import com.projecturanus.uranustech.api.material.MaterialStack
 import com.projecturanus.uranustech.api.material.info.ToolInfo
+import com.projecturanus.uranustech.api.render.Colorable
 import com.projecturanus.uranustech.api.tool.Tool
 import com.projecturanus.uranustech.common.material.JsonMaterial
+import com.projecturanus.uranustech.common.material.MaterialContainer
 import com.projecturanus.uranustech.common.materialRegistry
 import com.projecturanus.uranustech.common.util.localizedName
 import net.minecraft.client.item.TooltipContext
@@ -19,7 +21,7 @@ import net.minecraft.util.Formatting
 import net.minecraft.util.Identifier
 import net.minecraft.world.World
 
-open class UTToolItem(val stack: MaterialStack, val handleStack: MaterialStack? = null, settings: Settings) : ToolItem(stack.material.getInfo<ToolInfo?>(TOOL_INFO), settings) {
+open class UTToolItem(override val stack: MaterialStack, val handleStack: MaterialStack? = null, settings: Settings) : ToolItem(stack.material.getInfo<ToolInfo?>(TOOL_INFO), settings), MaterialContainer, Colorable by stack.material {
     val toolInfo = stack.material.getInfo<ToolInfo>(TOOL_INFO)
     val tool = stack.form as? Tool
 
@@ -34,11 +36,11 @@ open class UTToolItem(val stack: MaterialStack, val handleStack: MaterialStack? 
             list.add(LiteralText(stack.material.chemicalCompound).setStyle(Style().setColor(Formatting.GOLD)))
         if (tooltipContext.isAdvanced) {
             list.add(TranslatableText("item.$MODID.material.lore.2", stack.material.localizedName))
-            list.add(stack.localizedName)
+            list.add(stack.displayName)
             if (stack.material is JsonMaterial && (stack.material as JsonMaterial).components != null) {
                 val jsonMaterial = stack.material as JsonMaterial
                 jsonMaterial.components!!.dividedStacks.map {
-                    MaterialStack(materialRegistry[Identifier(MODID, it.material)], stack.form, it.amount.toDouble()).localizedName
+                    MaterialStack(materialRegistry[Identifier(MODID, it.material)], stack.form, it.amount.toDouble()).displayName
                 }.forEach { list.add(it) }
             }
         } else {

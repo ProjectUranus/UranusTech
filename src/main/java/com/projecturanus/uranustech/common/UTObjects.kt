@@ -2,11 +2,13 @@ package com.projecturanus.uranustech.common
 
 import com.projecturanus.uranustech.MODID
 import com.projecturanus.uranustech.api.material.Material
+import com.projecturanus.uranustech.api.material.form.Form
 import net.minecraft.item.ItemGroup
 import net.minecraft.util.Identifier
 import net.minecraft.util.registry.DefaultedRegistry
 import net.minecraft.util.registry.MutableRegistry
 
+val formRegistry = DefaultedRegistry<Form>("uranustech:other")
 val materialRegistry = DefaultedRegistry<Material>("uranustech:unknown")
 val groupBase get() = groupMap[Identifier(MODID, "base")]
 val groupTool get() = groupMap[Identifier(MODID, "tool")]

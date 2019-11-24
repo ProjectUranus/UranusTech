@@ -32,7 +32,7 @@ class ToolRecipe(identifier: Identifier): SpecialCraftingRecipe(identifier) {
         var handleMaterial: Material? = null
         var toolMaterial: Material? = null
         var tool: Tool? = null
-        if (inventory.asIterable().toList().count { !it.isEmpty } != 2)
+        if (inventory.iterator().asSequence().toList().count { !it.isEmpty } != 2)
             return ItemStack.EMPTY
         inventory.iterator().forEach { stack ->
             if (stack.item is FormItem) {
@@ -77,6 +77,7 @@ class ToolRecipe(identifier: Identifier): SpecialCraftingRecipe(identifier) {
         }
         return false
         */
+        if (inventory.asIterable().any { it.matStack?.form is Tool }) return false
         return craft(inventory) != ItemStack.EMPTY
     }
 }

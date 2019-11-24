@@ -8,7 +8,10 @@ import com.projecturanus.uranustech.api.material.generate.GenerateTypes;
 public enum Tools implements Tool {
     HAMMER(6, true, Forms.STICK), FILE(2, true), SWORD(2, true),
     SAW(6, true), SCREWDRIVER(2, true),
-    CHISEL(2, true), WRENCH(6);
+    CHISEL(2, true), WRENCH(6),
+    ARROW, AXE(3, true), AXE_DOUBLE(6, true), BUZZ_SAW, CHAINSAW, CONSTRUCTION_PICKAXE,
+    DRILL, HOE(2, true), PICKAXE(3, true), PLOW,
+    SENSE, SHOVEL(1, true), SPADE, UNIVERSAL_SPADE;
 
     private double amountMultiplier;
     private boolean hasHandleMaterial = false;
@@ -50,7 +53,7 @@ public enum Tools implements Tool {
 
     @Override
     public GenerateType getGenerateType() {
-        return GenerateTypes.ITEM;
+        return GenerateTypes.TOOL;
     }
 
     @Override

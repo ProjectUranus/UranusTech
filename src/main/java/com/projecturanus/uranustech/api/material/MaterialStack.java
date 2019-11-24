@@ -2,16 +2,24 @@ package com.projecturanus.uranustech.api.material;
 
 import com.projecturanus.uranustech.api.material.form.Form;
 import com.projecturanus.uranustech.api.material.info.MatterInfo;
+import com.projecturanus.uranustech.api.material.info.StateInfo;
+import com.projecturanus.uranustech.common.util.UTExtensionsKt;
+import net.minecraft.item.ItemStack;
+import net.minecraft.text.Text;
+import net.minecraft.text.TranslatableText;
+import net.minecraft.util.Nameable;
 
 import java.util.Objects;
 
+import static com.projecturanus.uranustech.api.material.Constants.STATE_INFO;
 import static com.projecturanus.uranustech.api.material.Constants.U;
 
-public class MaterialStack implements Cloneable {
+public class MaterialStack implements Cloneable, Nameable {
     private Material material;
     private Form form;
     private double amount;
     private double temperature;
+    private Text customName;
 
     public MaterialStack(Material material, double amount) {
         this(material, null, amount);
@@ -37,6 +45,28 @@ public class MaterialStack implements Cloneable {
                 this.amount /= -form.getAmountMultiplier();
     }
 
+    @Override
+    public Text getName() {
+        Material material = getMaterial();
+        StateInfo stateInfo = material.getInfo(STATE_INFO) == null ? new StateInfo() : material.getInfo(STATE_INFO);
+        TranslatableText defaultText = new TranslatableText("material.uranustech.stack",
+                UTExtensionsKt.getLocalizedName(material),
+                String.format("%.3f", amount / U),
+                stateInfo.meltingPoint,
+                stateInfo.boilingPoint,
+                getWeight() < 0 ? "?.???" : String.format("%.3f", getWeight()));
+        return hasCustomName() ? getCustomName() : defaultText;
+    }
+
+    @Override
+    public Text getCustomName() {
+        return customName;
+    }
+
+    public void setCustomName(Text customName) {
+        this.customName = customName;
+    }
+
     public double getWeight() {
         // Extended Math:
         // 9 Material-Units = 1 Cubic Meter.
@@ -50,6 +80,10 @@ public class MaterialStack implements Cloneable {
         if (getMaterial() != null && getMaterial().<MatterInfo>getInfo(Constants.MATTER_INFO) != null)
             return (getMaterial().<MatterInfo>getInfo(Constants.MATTER_INFO).gramPerCubicCentimeter * 111.111111 * amount) / U;
         return -1;
+    }
+
+    public ItemStack createItemStack() {
+        return MaterialAPI.INSTANCE.getMaterialItem(this);
     }
 
     public Material getMaterial() {

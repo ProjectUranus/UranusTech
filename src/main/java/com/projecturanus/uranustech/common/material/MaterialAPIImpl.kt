@@ -8,6 +8,7 @@ import com.projecturanus.uranustech.common.formMaterialMap
 import com.projecturanus.uranustech.logger
 import net.minecraft.block.BlockState
 import net.minecraft.item.ItemStack
+import net.minecraft.util.registry.MutableRegistry
 import java.util.function.Function
 
 object MaterialAPIImpl : MaterialAPI {
@@ -30,6 +31,9 @@ object MaterialAPIImpl : MaterialAPI {
     }
 
     override fun getMaterialBlock(materialStack: MaterialStack): BlockState? = blockMapper(materialStack)
+
+    override fun getFormRegistry() = com.projecturanus.uranustech.common.formRegistry
+    override fun getMaterialRegistry(): MutableRegistry<Material> = com.projecturanus.uranustech.common.materialRegistry
 
     override fun getMaterialItem(materialStack: MaterialStack): ItemStack = itemMapper(materialStack)
 

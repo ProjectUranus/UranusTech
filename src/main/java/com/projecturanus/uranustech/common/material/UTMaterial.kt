@@ -11,6 +11,8 @@ import com.projecturanus.uranustech.api.material.element.Element
 import com.projecturanus.uranustech.api.material.form.Form
 import com.projecturanus.uranustech.api.material.form.Forms.*
 import com.projecturanus.uranustech.api.material.info.MaterialInfo
+import com.projecturanus.uranustech.api.tool.ToolHeads.*
+import com.projecturanus.uranustech.common.formRegistry
 import net.minecraft.tag.Tag
 import net.minecraft.util.Identifier
 
@@ -117,8 +119,8 @@ class TagProcessor(val tags: List<String>) {
         val set = hashSetOf<Form>()
         tags.forEach {
             if (it.startsWith("ITEMGENERATOR."))
-                if (values().any { form -> form.name == it.removeSuffix("S") })
-                    set += valueOf(it.removeSuffix("S"))
+                if (formRegistry.asSequence().any { form -> form.name == it.removePrefix("ITEMGENERATOR.").removeSuffix("S").toLowerCase() })
+                    set += formRegistry[Identifier(MODID, it.removePrefix("ITEMGENERATOR.").removeSuffix("S").toLowerCase())]
                 else
                     when (it.removePrefix("ITEMGENERATOR.")) {
                         "INGOTS" -> set.addAll(INGOT_FORMS)

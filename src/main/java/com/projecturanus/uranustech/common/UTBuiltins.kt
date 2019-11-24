@@ -16,6 +16,7 @@ import com.projecturanus.uranustech.api.material.form.Forms
 import com.projecturanus.uranustech.api.material.generate.GenerateTypes
 import com.projecturanus.uranustech.api.material.info.*
 import com.projecturanus.uranustech.api.tool.Tool
+import com.projecturanus.uranustech.api.tool.ToolHeads
 import com.projecturanus.uranustech.api.tool.Tools
 import com.projecturanus.uranustech.api.worldgen.Rock
 import com.projecturanus.uranustech.api.worldgen.Rocks
@@ -84,9 +85,14 @@ val blockItemMap = ConcurrentHashMap<MaterialBlock, MaterialBlockItem>()
 
 fun registerBuiltin() = runBlocking {
     groupMap.add(Identifier(MODID, "base"), FabricItemGroupBuilder.create(Identifier(MODID, "base")).icon { materialRegistry.get(Identifier(MODID, "steel"))?.getItem(Forms.INGOT) }.build())
-    groupMap.add(Identifier(MODID, "tool"), FabricItemGroupBuilder.create(Identifier(MODID, "tool")).icon { ItemStack(toolMaterialMap.values.random().values.random()) }.build())
-    groupMap.add(Identifier(MODID, "ore"), FabricItemGroupBuilder.create(Identifier(MODID, "ore")).icon { oreItemStackMap.values.random()[Rocks.STONE]?.invoke() }.build())
-    groupMap.add(Identifier(MODID, "construction_block"), FabricItemGroupBuilder.create(Identifier(MODID, "construction_block")).icon { ItemStack(blockItemMap.values.random()) }.build())
+    groupMap.add(Identifier(MODID, "tool"), FabricItemGroupBuilder.create(Identifier(MODID, "tool")).icon { ItemStack(toolMaterialMap.values.toList().random().values.toList().random()) }.build())
+    groupMap.add(Identifier(MODID, "ore"), FabricItemGroupBuilder.create(Identifier(MODID, "ore")).icon { oreItemStackMap.values.toList().random()[Rocks.STONE]?.invoke() }.build())
+    groupMap.add(Identifier(MODID, "construction_block"), FabricItemGroupBuilder.create(Identifier(MODID, "construction_block")).icon { ItemStack(blockItemMap.values.toList().random()) }.build())
+
+    Forms.values().union(Tools.values().map { it as Form }).union(ToolHeads.values().map { it as Form }).forEach {
+        formRegistry.add(Identifier(MODID, it.name), it)
+    }
+
     val gson = Gson()
     logger.info("Load materials took " + measureTimeMillis {
         async {
@@ -101,7 +107,7 @@ fun registerBuiltin() = runBlocking {
                                     Constants.MATTER_INFO to MatterInfo().also { it.gramPerCubicCentimeter = gramPerCubicCentimeter },
                                     Constants.ORE_INFO to OreInfo().also { it.oreMultiplier = oreMultiplier; it.oreProgressingMultiplier = oreProgressingMultiplier },
                                     Constants.STATE_INFO to StateInfo().also { it.boilingPoint = boilingPoint; it.meltingPoint = meltingPoint; it.plasmaPoint = plasmaPoint },
-                                    TOOL_INFO to ToolInfo().also { it.toolDurability = toolDurability; it.toolQuality = toolQuality; it.toolSpeed = toolSpeed; it.toolTypes = toolTypes; it.handleMaterial = materialRegistry[Identifier(MODID, handleMaterial)] }
+                                    Constants.TOOL_INFO to ToolInfo().also { it.toolDurability = toolDurability; it.toolQuality = toolQuality; it.toolSpeed = toolSpeed; it.toolTypes = toolTypes; it.handleMaterial = materialRegistry[Identifier(MODID, handleMaterial)] }
                             )
                             validFormsCache = TagProcessor(tags).getForms().toList()
                         }

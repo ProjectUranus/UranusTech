@@ -18,6 +18,7 @@ import net.fabricmc.fabric.api.client.render.ColorProviderRegistry
 import net.fabricmc.fabric.api.client.screen.ScreenProviderRegistry
 import net.minecraft.client.color.block.BlockColorProvider
 import net.minecraft.client.color.item.ItemColorProvider
+import net.minecraft.item.ItemConvertible
 import org.apache.logging.log4j.LogManager
 
 val clientLogger = LogManager.getFormatterLogger("UranusTech Client")!!
@@ -60,7 +61,7 @@ object UranusTechClient : ClientModInitializer {
                     else -> toolItem.handleStack?.material?.color ?: -1
                 }
             } else -1
-        }, *(formMaterialMap.values.flatMap { it.values } + toolMaterialMap.values.flatMap { it.values }).toTypedArray())
+        }, *(formMaterialMap.values.flatMap { it.values } + toolMaterialMap.values.flatMap { it.values }.map { it as ItemConvertible }).toTypedArray())
 
         // Block Colors
         ColorProviderRegistry.BLOCK.register(BlockColorProvider { blockState, extendedBlockView, blockPos, tintIndex ->

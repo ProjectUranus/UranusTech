@@ -36,11 +36,11 @@ class FormItem(override val stack: MaterialStack): Item(Settings()
             list.add(LiteralText(stack.material.chemicalCompound).setStyle(Style().setColor(Formatting.GOLD)))
         if (tooltipContext.isAdvanced) {
             list.add(TranslatableText("item.$MODID.material.lore.2", stack.material.localizedName))
-            list.add(stack.localizedName)
+            list.add(stack.displayName)
             if (stack.material is JsonMaterial && (stack.material as JsonMaterial).components != null) {
                 val jsonMaterial = stack.material as JsonMaterial
                 jsonMaterial.components!!.dividedStacks.map {
-                    MaterialStack(materialRegistry[Identifier(MODID, it.material)], stack.form, it.amount.toDouble()).localizedName
+                    MaterialStack(materialRegistry[Identifier(MODID, it.material)], stack.form, it.amount.toDouble()).displayName
                 }.forEach { list.add(it) }
             }
         } else {

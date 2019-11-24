@@ -58,8 +58,12 @@ dependencies {
     }
 	
 	// Fabric Language Kotlin
-	modImplementation(group: "net.fabricmc", name: "fabric-language-kotlin", version: "1.3.50+build.3")
-	compile(group: "net.fabricmc", name: "fabric-language-kotlin", version: "1.3.50+build.3")
+	modImplementation(group: "net.fabricmc", name: "fabric-language-kotlin", version: "1.3.50+build.3") {
+		exclude group: 'net.fabricmc', module: 'fabric-loader' // Exclude old fabric-loader version
+	}
+	compile(group: "net.fabricmc", name: "fabric-language-kotlin", version: "1.3.50+build.3") {
+		exclude group: 'net.fabricmc', module: 'fabric-loader' // Exclude old fabric-loader version
+	}
 	
 	testCompile "junit:junit:4.12"
 }

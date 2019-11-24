@@ -2,12 +2,10 @@ package com.projecturanus.uranustech.common.util
 
 import com.projecturanus.uranustech.MODID
 import com.projecturanus.uranustech.api.material.Constants
-import com.projecturanus.uranustech.api.material.Constants.U
 import com.projecturanus.uranustech.api.material.Material
 import com.projecturanus.uranustech.api.material.MaterialAPI
 import com.projecturanus.uranustech.api.material.MaterialStack
 import com.projecturanus.uranustech.api.material.form.Form
-import com.projecturanus.uranustech.api.material.info.StateInfo
 import com.projecturanus.uranustech.common.material.MaterialContainer
 import com.projecturanus.uranustech.common.material.vanillaItemMaterialMapper
 import net.minecraft.block.Block
@@ -76,23 +74,40 @@ fun CraftingInventory.getOffsetStack(x: Int, y: Int) = get(x + offset.first, y +
 
 fun Inventory.asIterable(): Iterable<ItemStack> = Iterable { iterator() }
 
-fun Inventory.iterator(): MutableIterator<ItemStack> {
-    val inv = this
-    return object : MutableIterator<ItemStack> {
-        var index = 0
+class InventoryIterator(val inv: Inventory) : MutableListIterator<ItemStack> {
+    var index = 0
 
-        override fun hasNext() = inv.invSize > index
+    override fun hasNext() = inv.invSize > index
 
-        override fun next(): ItemStack {
-            if (!hasNext()) throw NoSuchElementException()
-            return getInvStack(index++)
-        }
+    override fun next(): ItemStack {
+        if (!hasNext()) throw NoSuchElementException()
+        return inv.getInvStack(index++)
+    }
 
-        override fun remove() {
-            removeInvStack(index)
-        }
+    override fun remove() {
+        inv.removeInvStack(index)
+    }
+
+    override fun hasPrevious(): Boolean {
+        return index > 0 && inv[index].isEmpty
+    }
+
+    override fun nextIndex() = index + 1
+
+    override fun previous() = if (index > 0) inv[index--] else ItemStack.EMPTY
+
+    override fun previousIndex() = index - 1
+
+    override fun add(element: ItemStack) {
+        TODO("")
+    }
+
+    override fun set(element: ItemStack) {
+        inv[index] = element
     }
 }
+
+fun Inventory.iterator() = InventoryIterator(this)
 
 fun Material.getItem(form: Form): ItemStack = MaterialAPI.INSTANCE.getMaterialItem(MaterialStack(this, form))
 fun Material.getBlock(form: Form): BlockState? = MaterialAPI.INSTANCE.getMaterialBlock(MaterialStack(this, form))
@@ -105,17 +120,6 @@ val Form.localizedName
 
 fun Array<Int>.toColor(): Color = Color(get(0), get(1), get(2), get(3))
 
-val MaterialStack.localizedName get(): TranslatableText {
-    val stateInfo: StateInfo = material?.getInfo(Constants.STATE_INFO) ?: StateInfo()
-    return TranslatableText("material.uranustech.stack",
-        material?.localizedName ?: "?",
-        "%.3f".format(amount / U.toDouble()),
-        stateInfo.meltingPoint,
-        stateInfo.boilingPoint,
-        if (weight == -1.0) "?.???" else "%.3f".format(weight)
-    )
-}
-
 val ItemStack.matStack: MaterialStack? get() {
     return when (item) {
         is MaterialContainer -> (item as MaterialContainer).stack
@@ -124,8 +128,6 @@ val ItemStack.matStack: MaterialStack? get() {
 }
 
 fun ItemStack.hasMaterialData() = matStack != null
-
-fun MaterialStack.createItemStack(): ItemStack = MaterialAPI.INSTANCE.getMaterialItem(this)
 
 fun Collection<Item>.asItemTag(identifier: Identifier, register: Boolean = true): Tag<Item> {
     val tag = Tag.Builder.create<Item>().add(*this.toTypedArray()).build(identifier)

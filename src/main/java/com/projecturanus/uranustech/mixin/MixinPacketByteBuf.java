@@ -39,7 +39,7 @@ public abstract class MixinPacketByteBuf extends ByteBuf {
 
             try {
                 long time = System.currentTimeMillis();
-                CompoundTag tag = NbtIo.read(new ByteBufInputStream(this), new PositionTracker(2097152L * 2));
+                CompoundTag tag = NbtIo.read(new ByteBufInputStream(this), new PositionTracker(2097152L * 4));
                 return tag;
             } catch (IOException var4) {
                 throw new EncoderException(var4);

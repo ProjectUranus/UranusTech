@@ -4,1741 +4,3576 @@ import com.projecturanus.uranustech.MODID
 import com.projecturanus.uranustech.common.materialRegistry
 import net.minecraft.util.Identifier
 
-val ACTINIUM get() = materialRegistry[Identifier(MODID, "actinium")]
-val ADAMANT get() = materialRegistry[Identifier(MODID, "adamant")]
-val ADAMANTINE get() = materialRegistry[Identifier(MODID, "adamantine")]
-val ADAMANTITE get() = materialRegistry[Identifier(MODID, "adamantite")]
-val ADAMANTIUM get() = materialRegistry[Identifier(MODID, "adamantium")]
-val ADAMITE get() = materialRegistry[Identifier(MODID, "adamite")]
-val ADLUORITE get() = materialRegistry[Identifier(MODID, "adluorite")]
-val ADVANCED get() = materialRegistry[Identifier(MODID, "advanced")]
-val AEROTHEUM get() = materialRegistry[Identifier(MODID, "aerotheum")]
-val AGATE get() = materialRegistry[Identifier(MODID, "agate")]
-val AIR get() = materialRegistry[Identifier(MODID, "air")]
-val ALDUORITE get() = materialRegistry[Identifier(MODID, "alduorite")]
-val ALEXANDRITE get() = materialRegistry[Identifier(MODID, "alexandrite")]
-val ALFIUM get() = materialRegistry[Identifier(MODID, "alfium")]
-val ALMANDINE get() = materialRegistry[Identifier(MODID, "almandine")]
-val ALMOND get() = materialRegistry[Identifier(MODID, "almond")]
-val ALUMINA get() = materialRegistry[Identifier(MODID, "alumina")]
-val ALUMINIUM get() = materialRegistry[Identifier(MODID, "aluminium")]
-val ALUMINIUM_ALLOY get() = materialRegistry[Identifier(MODID, "aluminium_alloy")]
-val ALUMINIUM_BRASS get() = materialRegistry[Identifier(MODID, "aluminium_brass")]
-val ALUMINIUM_FLUORIDE get() = materialRegistry[Identifier(MODID, "aluminium_fluoride")]
-val ALUMINIUM_HYDROXIDE get() = materialRegistry[Identifier(MODID, "aluminium_hydroxide")]
-val ALUMITE get() = materialRegistry[Identifier(MODID, "alumite")]
-val ALUNITE get() = materialRegistry[Identifier(MODID, "alunite")]
-val AMAZONITE get() = materialRegistry[Identifier(MODID, "amazonite")]
-val AMBER get() = materialRegistry[Identifier(MODID, "amber")]
-val AMBROSIUM get() = materialRegistry[Identifier(MODID, "ambrosium")]
-val AMERICIUM get() = materialRegistry[Identifier(MODID, "americium")]
-val AMERICIUM241 get() = materialRegistry[Identifier(MODID, "americium241")]
-val AMETHYST get() = materialRegistry[Identifier(MODID, "amethyst")]
-val AMETHYST_ENDER get() = materialRegistry[Identifier(MODID, "amethyst_ender")]
-val AMMONIA get() = materialRegistry[Identifier(MODID, "ammonia")]
-val AMMONIUM get() = materialRegistry[Identifier(MODID, "ammonium")]
-val AMORDRINE get() = materialRegistry[Identifier(MODID, "amordrine")]
-val ANDESITE get() = materialRegistry[Identifier(MODID, "andesite")]
-val ANDESITE_BRICKS get() = materialRegistry[Identifier(MODID, "andesite_bricks")]
-val ANDESITE_CHISELED get() = materialRegistry[Identifier(MODID, "andesite_chiseled")]
-val ANDESITE_POLISHED get() = materialRegistry[Identifier(MODID, "andesite_polished")]
-val ANDRADITE get() = materialRegistry[Identifier(MODID, "andradite")]
-val ANGMALLEN get() = materialRegistry[Identifier(MODID, "angmallen")]
-val ANNEALED_COPPER get() = materialRegistry[Identifier(MODID, "annealed_copper")]
-val ANTHRACITE get() = materialRegistry[Identifier(MODID, "anthracite")]
-val ANTIMATTER get() = materialRegistry[Identifier(MODID, "antimatter")]
-val ANTIMONY get() = materialRegistry[Identifier(MODID, "antimony")]
-val ANTI_ACTINIUM get() = materialRegistry[Identifier(MODID, "anti_actinium")]
-val ANTI_ADAMANT get() = materialRegistry[Identifier(MODID, "anti_adamant")]
-val ANTI_ADAMANTINE get() = materialRegistry[Identifier(MODID, "anti_adamantine")]
-val ANTI_ADAMANTIUM get() = materialRegistry[Identifier(MODID, "anti_adamantium")]
-val ANTI_ALUMINIUM get() = materialRegistry[Identifier(MODID, "anti_aluminium")]
-val ANTI_ALUMINUM get() = materialRegistry[Identifier(MODID, "anti_aluminum")]
-val ANTI_AMERICIUM get() = materialRegistry[Identifier(MODID, "anti_americium")]
-val ANTI_AMERICIUM241 get() = materialRegistry[Identifier(MODID, "anti_americium241")]
-val ANTI_ANTIMONY get() = materialRegistry[Identifier(MODID, "anti_antimony")]
-val ANTI_ARGON get() = materialRegistry[Identifier(MODID, "anti_argon")]
-val ANTI_ARSENIC get() = materialRegistry[Identifier(MODID, "anti_arsenic")]
-val ANTI_ASTATINE get() = materialRegistry[Identifier(MODID, "anti_astatine")]
-val ANTI_BARIUM get() = materialRegistry[Identifier(MODID, "anti_barium")]
-val ANTI_BERKELIUM get() = materialRegistry[Identifier(MODID, "anti_berkelium")]
-val ANTI_BERYLLIUM get() = materialRegistry[Identifier(MODID, "anti_beryllium")]
-val ANTI_BIBIBIUM get() = materialRegistry[Identifier(MODID, "anti_bibibium")]
-val ANTI_BIBIENNIUM get() = materialRegistry[Identifier(MODID, "anti_bibiennium")]
-val ANTI_BIBIHEXIUM get() = materialRegistry[Identifier(MODID, "anti_bibihexium")]
-val ANTI_BIBINILIUM get() = materialRegistry[Identifier(MODID, "anti_bibinilium")]
-val ANTI_BIBIOCTIUM get() = materialRegistry[Identifier(MODID, "anti_bibioctium")]
-val ANTI_BIBIPENTIUM get() = materialRegistry[Identifier(MODID, "anti_bibipentium")]
-val ANTI_BIBIQUADIUM get() = materialRegistry[Identifier(MODID, "anti_bibiquadium")]
-val ANTI_BIBISEPTIUM get() = materialRegistry[Identifier(MODID, "anti_bibiseptium")]
-val ANTI_BIBITRIUM get() = materialRegistry[Identifier(MODID, "anti_bibitrium")]
-val ANTI_BIBIUNIUM get() = materialRegistry[Identifier(MODID, "anti_bibiunium")]
-val ANTI_BIENNBIUM get() = materialRegistry[Identifier(MODID, "anti_biennbium")]
-val ANTI_BIENNENNIUM get() = materialRegistry[Identifier(MODID, "anti_biennennium")]
-val ANTI_BIENNHEXIUM get() = materialRegistry[Identifier(MODID, "anti_biennhexium")]
-val ANTI_BIENNILIUM get() = materialRegistry[Identifier(MODID, "anti_biennilium")]
-val ANTI_BIENNOCTIUM get() = materialRegistry[Identifier(MODID, "anti_biennoctium")]
-val ANTI_BIENNPENTIUM get() = materialRegistry[Identifier(MODID, "anti_biennpentium")]
-val ANTI_BIENNQUADIUM get() = materialRegistry[Identifier(MODID, "anti_biennquadium")]
-val ANTI_BIENNSEPTIUM get() = materialRegistry[Identifier(MODID, "anti_biennseptium")]
-val ANTI_BIENNTRIUM get() = materialRegistry[Identifier(MODID, "anti_bienntrium")]
-val ANTI_BIENNUNIUM get() = materialRegistry[Identifier(MODID, "anti_biennunium")]
-val ANTI_BIHEXBIUM get() = materialRegistry[Identifier(MODID, "anti_bihexbium")]
-val ANTI_BIHEXENNIUM get() = materialRegistry[Identifier(MODID, "anti_bihexennium")]
-val ANTI_BIHEXHEXIUM get() = materialRegistry[Identifier(MODID, "anti_bihexhexium")]
-val ANTI_BIHEXNILIUM get() = materialRegistry[Identifier(MODID, "anti_bihexnilium")]
-val ANTI_BIHEXOCTIUM get() = materialRegistry[Identifier(MODID, "anti_bihexoctium")]
-val ANTI_BIHEXPENTIUM get() = materialRegistry[Identifier(MODID, "anti_bihexpentium")]
-val ANTI_BIHEXQUADIUM get() = materialRegistry[Identifier(MODID, "anti_bihexquadium")]
-val ANTI_BIHEXSEPTIUM get() = materialRegistry[Identifier(MODID, "anti_bihexseptium")]
-val ANTI_BIHEXTRIUM get() = materialRegistry[Identifier(MODID, "anti_bihextrium")]
-val ANTI_BIHEXUNIUM get() = materialRegistry[Identifier(MODID, "anti_bihexunium")]
-val ANTI_BINILBIUM get() = materialRegistry[Identifier(MODID, "anti_binilbium")]
-val ANTI_BINILENNIUM get() = materialRegistry[Identifier(MODID, "anti_binilennium")]
-val ANTI_BINILHEXIUM get() = materialRegistry[Identifier(MODID, "anti_binilhexium")]
-val ANTI_BINILNILIUM get() = materialRegistry[Identifier(MODID, "anti_binilnilium")]
-val ANTI_BINILOCTIUM get() = materialRegistry[Identifier(MODID, "anti_biniloctium")]
-val ANTI_BINILPENTIUM get() = materialRegistry[Identifier(MODID, "anti_binilpentium")]
-val ANTI_BINILQUADIUM get() = materialRegistry[Identifier(MODID, "anti_binilquadium")]
-val ANTI_BINILSEPTIUM get() = materialRegistry[Identifier(MODID, "anti_binilseptium")]
-val ANTI_BINILTRIUM get() = materialRegistry[Identifier(MODID, "anti_biniltrium")]
-val ANTI_BINILUNIUM get() = materialRegistry[Identifier(MODID, "anti_binilunium")]
-val ANTI_BIOCTBIUM get() = materialRegistry[Identifier(MODID, "anti_bioctbium")]
-val ANTI_BIOCTENNIUM get() = materialRegistry[Identifier(MODID, "anti_bioctennium")]
-val ANTI_BIOCTHEXIUM get() = materialRegistry[Identifier(MODID, "anti_biocthexium")]
-val ANTI_BIOCTNILIUM get() = materialRegistry[Identifier(MODID, "anti_bioctnilium")]
-val ANTI_BIOCTOCTIUM get() = materialRegistry[Identifier(MODID, "anti_bioctoctium")]
-val ANTI_BIOCTPENTIUM get() = materialRegistry[Identifier(MODID, "anti_bioctpentium")]
-val ANTI_BIOCTQUADIUM get() = materialRegistry[Identifier(MODID, "anti_bioctquadium")]
-val ANTI_BIOCTSEPTIUM get() = materialRegistry[Identifier(MODID, "anti_bioctseptium")]
-val ANTI_BIOCTTRIUM get() = materialRegistry[Identifier(MODID, "anti_biocttrium")]
-val ANTI_BIOCTUNIUM get() = materialRegistry[Identifier(MODID, "anti_bioctunium")]
-val ANTI_BIPENTBIUM get() = materialRegistry[Identifier(MODID, "anti_bipentbium")]
-val ANTI_BIPENTENNIUM get() = materialRegistry[Identifier(MODID, "anti_bipentennium")]
-val ANTI_BIPENTHEXIUM get() = materialRegistry[Identifier(MODID, "anti_bipenthexium")]
-val ANTI_BIPENTNILIUM get() = materialRegistry[Identifier(MODID, "anti_bipentnilium")]
-val ANTI_BIPENTOCTIUM get() = materialRegistry[Identifier(MODID, "anti_bipentoctium")]
-val ANTI_BIPENTPENTIUM get() = materialRegistry[Identifier(MODID, "anti_bipentpentium")]
-val ANTI_BIPENTQUADIUM get() = materialRegistry[Identifier(MODID, "anti_bipentquadium")]
-val ANTI_BIPENTSEPTIUM get() = materialRegistry[Identifier(MODID, "anti_bipentseptium")]
-val ANTI_BIPENTTRIUM get() = materialRegistry[Identifier(MODID, "anti_bipenttrium")]
-val ANTI_BIPENTUNIUM get() = materialRegistry[Identifier(MODID, "anti_bipentunium")]
-val ANTI_BIQUADBIUM get() = materialRegistry[Identifier(MODID, "anti_biquadbium")]
-val ANTI_BIQUADENNIUM get() = materialRegistry[Identifier(MODID, "anti_biquadennium")]
-val ANTI_BIQUADHEXIUM get() = materialRegistry[Identifier(MODID, "anti_biquadhexium")]
-val ANTI_BIQUADNILIUM get() = materialRegistry[Identifier(MODID, "anti_biquadnilium")]
-val ANTI_BIQUADOCTIUM get() = materialRegistry[Identifier(MODID, "anti_biquadoctium")]
-val ANTI_BIQUADPENTIUM get() = materialRegistry[Identifier(MODID, "anti_biquadpentium")]
-val ANTI_BIQUADQUADIUM get() = materialRegistry[Identifier(MODID, "anti_biquadquadium")]
-val ANTI_BIQUADSEPTIUM get() = materialRegistry[Identifier(MODID, "anti_biquadseptium")]
-val ANTI_BIQUADTRIUM get() = materialRegistry[Identifier(MODID, "anti_biquadtrium")]
-val ANTI_BIQUADUNIUM get() = materialRegistry[Identifier(MODID, "anti_biquadunium")]
-val ANTI_BISEPTBIUM get() = materialRegistry[Identifier(MODID, "anti_biseptbium")]
-val ANTI_BISEPTENNIUM get() = materialRegistry[Identifier(MODID, "anti_biseptennium")]
-val ANTI_BISEPTHEXIUM get() = materialRegistry[Identifier(MODID, "anti_bisepthexium")]
-val ANTI_BISEPTNILIUM get() = materialRegistry[Identifier(MODID, "anti_biseptnilium")]
-val ANTI_BISEPTOCTIUM get() = materialRegistry[Identifier(MODID, "anti_biseptoctium")]
-val ANTI_BISEPTPENTIUM get() = materialRegistry[Identifier(MODID, "anti_biseptpentium")]
-val ANTI_BISEPTQUADIUM get() = materialRegistry[Identifier(MODID, "anti_biseptquadium")]
-val ANTI_BISEPTSEPTIUM get() = materialRegistry[Identifier(MODID, "anti_biseptseptium")]
-val ANTI_BISEPTTRIUM get() = materialRegistry[Identifier(MODID, "anti_bisepttrium")]
-val ANTI_BISEPTUNIUM get() = materialRegistry[Identifier(MODID, "anti_biseptunium")]
-val ANTI_BISMUTH get() = materialRegistry[Identifier(MODID, "anti_bismuth")]
-val ANTI_BITRIBIUM get() = materialRegistry[Identifier(MODID, "anti_bitribium")]
-val ANTI_BITRIENNIUM get() = materialRegistry[Identifier(MODID, "anti_bitriennium")]
-val ANTI_BITRIHEXIUM get() = materialRegistry[Identifier(MODID, "anti_bitrihexium")]
-val ANTI_BITRINILIUM get() = materialRegistry[Identifier(MODID, "anti_bitrinilium")]
-val ANTI_BITRIOCTIUM get() = materialRegistry[Identifier(MODID, "anti_bitrioctium")]
-val ANTI_BITRIPENTIUM get() = materialRegistry[Identifier(MODID, "anti_bitripentium")]
-val ANTI_BITRIQUADIUM get() = materialRegistry[Identifier(MODID, "anti_bitriquadium")]
-val ANTI_BITRISEPTIUM get() = materialRegistry[Identifier(MODID, "anti_bitriseptium")]
-val ANTI_BITRITRIUM get() = materialRegistry[Identifier(MODID, "anti_bitritrium")]
-val ANTI_BITRIUNIUM get() = materialRegistry[Identifier(MODID, "anti_bitriunium")]
-val ANTI_BIUNBIUM get() = materialRegistry[Identifier(MODID, "anti_biunbium")]
-val ANTI_BIUNENNIUM get() = materialRegistry[Identifier(MODID, "anti_biunennium")]
-val ANTI_BIUNHEXIUM get() = materialRegistry[Identifier(MODID, "anti_biunhexium")]
-val ANTI_BIUNNILIUM get() = materialRegistry[Identifier(MODID, "anti_biunnilium")]
-val ANTI_BIUNOCTIUM get() = materialRegistry[Identifier(MODID, "anti_biunoctium")]
-val ANTI_BIUNPENTIUM get() = materialRegistry[Identifier(MODID, "anti_biunpentium")]
-val ANTI_BIUNQUADIUM get() = materialRegistry[Identifier(MODID, "anti_biunquadium")]
-val ANTI_BIUNSEPTIUM get() = materialRegistry[Identifier(MODID, "anti_biunseptium")]
-val ANTI_BIUNTRIUM get() = materialRegistry[Identifier(MODID, "anti_biuntrium")]
-val ANTI_BIUNUNIUM get() = materialRegistry[Identifier(MODID, "anti_biununium")]
-val ANTI_BOHRIUM get() = materialRegistry[Identifier(MODID, "anti_bohrium")]
-val ANTI_BORON get() = materialRegistry[Identifier(MODID, "anti_boron")]
-val ANTI_BROMINE get() = materialRegistry[Identifier(MODID, "anti_bromine")]
-val ANTI_CADMIUM get() = materialRegistry[Identifier(MODID, "anti_cadmium")]
-val ANTI_CAESIUM get() = materialRegistry[Identifier(MODID, "anti_caesium")]
-val ANTI_CALCIUM get() = materialRegistry[Identifier(MODID, "anti_calcium")]
-val ANTI_CALIFORNIUM get() = materialRegistry[Identifier(MODID, "anti_californium")]
-val ANTI_CARBON get() = materialRegistry[Identifier(MODID, "anti_carbon")]
-val ANTI_CARBON13 get() = materialRegistry[Identifier(MODID, "anti_carbon13")]
-val ANTI_CARBON14 get() = materialRegistry[Identifier(MODID, "anti_carbon14")]
-val ANTI_CERIUM get() = materialRegistry[Identifier(MODID, "anti_cerium")]
-val ANTI_CHLORINE get() = materialRegistry[Identifier(MODID, "anti_chlorine")]
-val ANTI_CHROME get() = materialRegistry[Identifier(MODID, "anti_chrome")]
-val ANTI_CHROMIUM get() = materialRegistry[Identifier(MODID, "anti_chromium")]
-val ANTI_COBALT get() = materialRegistry[Identifier(MODID, "anti_cobalt")]
-val ANTI_COBALT60 get() = materialRegistry[Identifier(MODID, "anti_cobalt60")]
-val ANTI_COPERNICIUM get() = materialRegistry[Identifier(MODID, "anti_copernicium")]
-val ANTI_COPPER get() = materialRegistry[Identifier(MODID, "anti_copper")]
-val ANTI_CURIUM get() = materialRegistry[Identifier(MODID, "anti_curium")]
-val ANTI_DARMSTADTIUM get() = materialRegistry[Identifier(MODID, "anti_darmstadtium")]
-val ANTI_DEUTERIUM get() = materialRegistry[Identifier(MODID, "anti_deuterium")]
-val ANTI_DUBNIUM get() = materialRegistry[Identifier(MODID, "anti_dubnium")]
-val ANTI_DYSPROSIUM get() = materialRegistry[Identifier(MODID, "anti_dysprosium")]
-val ANTI_EINSTEINIUM get() = materialRegistry[Identifier(MODID, "anti_einsteinium")]
-val ANTI_ELECTRON get() = materialRegistry[Identifier(MODID, "anti_electron")]
-val ANTI_ERBIUM get() = materialRegistry[Identifier(MODID, "anti_erbium")]
-val ANTI_EUROPIUM get() = materialRegistry[Identifier(MODID, "anti_europium")]
-val ANTI_FARNSIUM get() = materialRegistry[Identifier(MODID, "anti_farnsium")]
-val ANTI_FERMIUM get() = materialRegistry[Identifier(MODID, "anti_fermium")]
-val ANTI_FLEROVIUM get() = materialRegistry[Identifier(MODID, "anti_flerovium")]
-val ANTI_FLEROVIUM298 get() = materialRegistry[Identifier(MODID, "anti_flerovium298")]
-val ANTI_FLUORINE get() = materialRegistry[Identifier(MODID, "anti_fluorine")]
-val ANTI_FRANCIUM get() = materialRegistry[Identifier(MODID, "anti_francium")]
-val ANTI_GADOLINIUM get() = materialRegistry[Identifier(MODID, "anti_gadolinium")]
-val ANTI_GALLIUM get() = materialRegistry[Identifier(MODID, "anti_gallium")]
-val ANTI_GERMANIUM get() = materialRegistry[Identifier(MODID, "anti_germanium")]
-val ANTI_GOLD get() = materialRegistry[Identifier(MODID, "anti_gold")]
-val ANTI_GRAVITONIUM get() = materialRegistry[Identifier(MODID, "anti_gravitonium")]
-val ANTI_GREGORIUM get() = materialRegistry[Identifier(MODID, "anti_gregorium")]
-val ANTI_HAFNIUM get() = materialRegistry[Identifier(MODID, "anti_hafnium")]
-val ANTI_HASSIUM get() = materialRegistry[Identifier(MODID, "anti_hassium")]
-val ANTI_HELIUM get() = materialRegistry[Identifier(MODID, "anti_helium")]
-val ANTI_HELIUM3 get() = materialRegistry[Identifier(MODID, "anti_helium3")]
-val ANTI_HOLMIUM get() = materialRegistry[Identifier(MODID, "anti_holmium")]
-val ANTI_HYDROGEN get() = materialRegistry[Identifier(MODID, "anti_hydrogen")]
-val ANTI_INDIUM get() = materialRegistry[Identifier(MODID, "anti_indium")]
-val ANTI_IODINE get() = materialRegistry[Identifier(MODID, "anti_iodine")]
-val ANTI_IRIDIUM get() = materialRegistry[Identifier(MODID, "anti_iridium")]
-val ANTI_IRON get() = materialRegistry[Identifier(MODID, "anti_iron")]
-val ANTI_KALIUM get() = materialRegistry[Identifier(MODID, "anti_kalium")]
-val ANTI_KRYPTON get() = materialRegistry[Identifier(MODID, "anti_krypton")]
-val ANTI_LANTANIUM get() = materialRegistry[Identifier(MODID, "anti_lantanium")]
-val ANTI_LAWRENCIUM get() = materialRegistry[Identifier(MODID, "anti_lawrencium")]
-val ANTI_LEAD get() = materialRegistry[Identifier(MODID, "anti_lead")]
-val ANTI_LITHIUM get() = materialRegistry[Identifier(MODID, "anti_lithium")]
-val ANTI_LITHIUM6 get() = materialRegistry[Identifier(MODID, "anti_lithium6")]
-val ANTI_LIVERMORIUM get() = materialRegistry[Identifier(MODID, "anti_livermorium")]
-val ANTI_LUTETIUM get() = materialRegistry[Identifier(MODID, "anti_lutetium")]
-val ANTI_MAC_GUFFIUM get() = materialRegistry[Identifier(MODID, "anti_mac_guffium")]
-val ANTI_MAGNESIUM get() = materialRegistry[Identifier(MODID, "anti_magnesium")]
-val ANTI_MANGANESE get() = materialRegistry[Identifier(MODID, "anti_manganese")]
-val ANTI_MEITNERIUM get() = materialRegistry[Identifier(MODID, "anti_meitnerium")]
-val ANTI_MENDELEVIUM get() = materialRegistry[Identifier(MODID, "anti_mendelevium")]
-val ANTI_MERCURY get() = materialRegistry[Identifier(MODID, "anti_mercury")]
-val ANTI_MOLYBDENUM get() = materialRegistry[Identifier(MODID, "anti_molybdenum")]
-val ANTI_NAQUADAH get() = materialRegistry[Identifier(MODID, "anti_naquadah")]
-val ANTI_NAQUADAH_ENRICHED get() = materialRegistry[Identifier(MODID, "anti_naquadah_enriched")]
-val ANTI_NAQUADRIA get() = materialRegistry[Identifier(MODID, "anti_naquadria")]
-val ANTI_NATRIUM get() = materialRegistry[Identifier(MODID, "anti_natrium")]
-val ANTI_NEODYMIUM get() = materialRegistry[Identifier(MODID, "anti_neodymium")]
-val ANTI_NEON get() = materialRegistry[Identifier(MODID, "anti_neon")]
-val ANTI_NEPTUNIUM get() = materialRegistry[Identifier(MODID, "anti_neptunium")]
-val ANTI_NEUTRINO get() = materialRegistry[Identifier(MODID, "anti_neutrino")]
-val ANTI_NEUTRON get() = materialRegistry[Identifier(MODID, "anti_neutron")]
-val ANTI_NICKEL get() = materialRegistry[Identifier(MODID, "anti_nickel")]
-val ANTI_NIOBIUM get() = materialRegistry[Identifier(MODID, "anti_niobium")]
-val ANTI_NITROGEN get() = materialRegistry[Identifier(MODID, "anti_nitrogen")]
-val ANTI_NOBELIUM get() = materialRegistry[Identifier(MODID, "anti_nobelium")]
-val ANTI_OSMIUM get() = materialRegistry[Identifier(MODID, "anti_osmium")]
-val ANTI_OXYGEN get() = materialRegistry[Identifier(MODID, "anti_oxygen")]
-val ANTI_PALLADIUM get() = materialRegistry[Identifier(MODID, "anti_palladium")]
-val ANTI_PHOSPHOR get() = materialRegistry[Identifier(MODID, "anti_phosphor")]
-val ANTI_PHOTON get() = materialRegistry[Identifier(MODID, "anti_photon")]
-val ANTI_PLATINUM get() = materialRegistry[Identifier(MODID, "anti_platinum")]
-val ANTI_PLUTONIUM get() = materialRegistry[Identifier(MODID, "anti_plutonium")]
-val ANTI_PLUTONIUM241 get() = materialRegistry[Identifier(MODID, "anti_plutonium241")]
-val ANTI_PLUTONIUM243 get() = materialRegistry[Identifier(MODID, "anti_plutonium243")]
-val ANTI_PLUTONIUM244 get() = materialRegistry[Identifier(MODID, "anti_plutonium244")]
-val ANTI_POLONIUM get() = materialRegistry[Identifier(MODID, "anti_polonium")]
-val ANTI_POTASSIUM get() = materialRegistry[Identifier(MODID, "anti_potassium")]
-val ANTI_PRASEODYMIUM get() = materialRegistry[Identifier(MODID, "anti_praseodymium")]
-val ANTI_PROMETHIUM get() = materialRegistry[Identifier(MODID, "anti_promethium")]
-val ANTI_PROTACTINIUM get() = materialRegistry[Identifier(MODID, "anti_protactinium")]
-val ANTI_PROTON get() = materialRegistry[Identifier(MODID, "anti_proton")]
-val ANTI_QUICK_SILVER get() = materialRegistry[Identifier(MODID, "anti_quick_silver")]
-val ANTI_RADIUM get() = materialRegistry[Identifier(MODID, "anti_radium")]
-val ANTI_RADON get() = materialRegistry[Identifier(MODID, "anti_radon")]
-val ANTI_RHENIUM get() = materialRegistry[Identifier(MODID, "anti_rhenium")]
-val ANTI_RHODIUM get() = materialRegistry[Identifier(MODID, "anti_rhodium")]
-val ANTI_ROENTGENIUM get() = materialRegistry[Identifier(MODID, "anti_roentgenium")]
-val ANTI_RUBIDIUM get() = materialRegistry[Identifier(MODID, "anti_rubidium")]
-val ANTI_RUTHENIUM get() = materialRegistry[Identifier(MODID, "anti_ruthenium")]
-val ANTI_RUTHERFORDIUM get() = materialRegistry[Identifier(MODID, "anti_rutherfordium")]
-val ANTI_SAMARIUM get() = materialRegistry[Identifier(MODID, "anti_samarium")]
-val ANTI_SCANDIUM get() = materialRegistry[Identifier(MODID, "anti_scandium")]
-val ANTI_SEABORGIUM get() = materialRegistry[Identifier(MODID, "anti_seaborgium")]
-val ANTI_SELENIUM get() = materialRegistry[Identifier(MODID, "anti_selenium")]
-val ANTI_SILICON get() = materialRegistry[Identifier(MODID, "anti_silicon")]
-val ANTI_SILVER get() = materialRegistry[Identifier(MODID, "anti_silver")]
-val ANTI_SODIUM get() = materialRegistry[Identifier(MODID, "anti_sodium")]
-val ANTI_STRONTIUM get() = materialRegistry[Identifier(MODID, "anti_strontium")]
-val ANTI_SULFUR get() = materialRegistry[Identifier(MODID, "anti_sulfur")]
-val ANTI_TANTALUM get() = materialRegistry[Identifier(MODID, "anti_tantalum")]
-val ANTI_TECHNETIUM get() = materialRegistry[Identifier(MODID, "anti_technetium")]
-val ANTI_TELLURIUM get() = materialRegistry[Identifier(MODID, "anti_tellurium")]
-val ANTI_TERBIUM get() = materialRegistry[Identifier(MODID, "anti_terbium")]
-val ANTI_THALLIUM get() = materialRegistry[Identifier(MODID, "anti_thallium")]
-val ANTI_THORIUM get() = materialRegistry[Identifier(MODID, "anti_thorium")]
-val ANTI_THULIUM get() = materialRegistry[Identifier(MODID, "anti_thulium")]
-val ANTI_TIN get() = materialRegistry[Identifier(MODID, "anti_tin")]
-val ANTI_TITAN get() = materialRegistry[Identifier(MODID, "anti_titan")]
-val ANTI_TITANIUM get() = materialRegistry[Identifier(MODID, "anti_titanium")]
-val ANTI_TRIBIBIUM get() = materialRegistry[Identifier(MODID, "anti_tribibium")]
-val ANTI_TRIBIENNIUM get() = materialRegistry[Identifier(MODID, "anti_tribiennium")]
-val ANTI_TRIBIHEXIUM get() = materialRegistry[Identifier(MODID, "anti_tribihexium")]
-val ANTI_TRIBINILIUM get() = materialRegistry[Identifier(MODID, "anti_tribinilium")]
-val ANTI_TRIBIOCTIUM get() = materialRegistry[Identifier(MODID, "anti_tribioctium")]
-val ANTI_TRIBIPENTIUM get() = materialRegistry[Identifier(MODID, "anti_tribipentium")]
-val ANTI_TRIBIQUADIUM get() = materialRegistry[Identifier(MODID, "anti_tribiquadium")]
-val ANTI_TRIBISEPTIUM get() = materialRegistry[Identifier(MODID, "anti_tribiseptium")]
-val ANTI_TRIBITRIUM get() = materialRegistry[Identifier(MODID, "anti_tribitrium")]
-val ANTI_TRIBIUNIUM get() = materialRegistry[Identifier(MODID, "anti_tribiunium")]
-val ANTI_TRIENNBIUM get() = materialRegistry[Identifier(MODID, "anti_triennbium")]
-val ANTI_TRIENNENNIUM get() = materialRegistry[Identifier(MODID, "anti_triennennium")]
-val ANTI_TRIENNHEXIUM get() = materialRegistry[Identifier(MODID, "anti_triennhexium")]
-val ANTI_TRIENNILIUM get() = materialRegistry[Identifier(MODID, "anti_triennilium")]
-val ANTI_TRIENNOCTIUM get() = materialRegistry[Identifier(MODID, "anti_triennoctium")]
-val ANTI_TRIENNPENTIUM get() = materialRegistry[Identifier(MODID, "anti_triennpentium")]
-val ANTI_TRIENNQUADIUM get() = materialRegistry[Identifier(MODID, "anti_triennquadium")]
-val ANTI_TRIENNSEPTIUM get() = materialRegistry[Identifier(MODID, "anti_triennseptium")]
-val ANTI_TRIENNTRIUM get() = materialRegistry[Identifier(MODID, "anti_trienntrium")]
-val ANTI_TRIENNUNIUM get() = materialRegistry[Identifier(MODID, "anti_triennunium")]
-val ANTI_TRIHEXBIUM get() = materialRegistry[Identifier(MODID, "anti_trihexbium")]
-val ANTI_TRIHEXENNIUM get() = materialRegistry[Identifier(MODID, "anti_trihexennium")]
-val ANTI_TRIHEXHEXIUM get() = materialRegistry[Identifier(MODID, "anti_trihexhexium")]
-val ANTI_TRIHEXNILIUM get() = materialRegistry[Identifier(MODID, "anti_trihexnilium")]
-val ANTI_TRIHEXOCTIUM get() = materialRegistry[Identifier(MODID, "anti_trihexoctium")]
-val ANTI_TRIHEXPENTIUM get() = materialRegistry[Identifier(MODID, "anti_trihexpentium")]
-val ANTI_TRIHEXQUADIUM get() = materialRegistry[Identifier(MODID, "anti_trihexquadium")]
-val ANTI_TRIHEXSEPTIUM get() = materialRegistry[Identifier(MODID, "anti_trihexseptium")]
-val ANTI_TRIHEXTRIUM get() = materialRegistry[Identifier(MODID, "anti_trihextrium")]
-val ANTI_TRIHEXUNIUM get() = materialRegistry[Identifier(MODID, "anti_trihexunium")]
-val ANTI_TRINILBIUM get() = materialRegistry[Identifier(MODID, "anti_trinilbium")]
-val ANTI_TRINILENNIUM get() = materialRegistry[Identifier(MODID, "anti_trinilennium")]
-val ANTI_TRINILHEXIUM get() = materialRegistry[Identifier(MODID, "anti_trinilhexium")]
-val ANTI_TRINILNILIUM get() = materialRegistry[Identifier(MODID, "anti_trinilnilium")]
-val ANTI_TRINILOCTIUM get() = materialRegistry[Identifier(MODID, "anti_triniloctium")]
-val ANTI_TRINILPENTIUM get() = materialRegistry[Identifier(MODID, "anti_trinilpentium")]
-val ANTI_TRINILQUADIUM get() = materialRegistry[Identifier(MODID, "anti_trinilquadium")]
-val ANTI_TRINILSEPTIUM get() = materialRegistry[Identifier(MODID, "anti_trinilseptium")]
-val ANTI_TRINILTRIUM get() = materialRegistry[Identifier(MODID, "anti_triniltrium")]
-val ANTI_TRINILUNIUM get() = materialRegistry[Identifier(MODID, "anti_trinilunium")]
-val ANTI_TRIOCTBIUM get() = materialRegistry[Identifier(MODID, "anti_trioctbium")]
-val ANTI_TRIOCTENNIUM get() = materialRegistry[Identifier(MODID, "anti_trioctennium")]
-val ANTI_TRIOCTHEXIUM get() = materialRegistry[Identifier(MODID, "anti_triocthexium")]
-val ANTI_TRIOCTNILIUM get() = materialRegistry[Identifier(MODID, "anti_trioctnilium")]
-val ANTI_TRIOCTOCTIUM get() = materialRegistry[Identifier(MODID, "anti_trioctoctium")]
-val ANTI_TRIOCTPENTIUM get() = materialRegistry[Identifier(MODID, "anti_trioctpentium")]
-val ANTI_TRIOCTQUADIUM get() = materialRegistry[Identifier(MODID, "anti_trioctquadium")]
-val ANTI_TRIOCTSEPTIUM get() = materialRegistry[Identifier(MODID, "anti_trioctseptium")]
-val ANTI_TRIOCTTRIUM get() = materialRegistry[Identifier(MODID, "anti_triocttrium")]
-val ANTI_TRIOCTUNIUM get() = materialRegistry[Identifier(MODID, "anti_trioctunium")]
-val ANTI_TRIPENTBIUM get() = materialRegistry[Identifier(MODID, "anti_tripentbium")]
-val ANTI_TRIPENTENNIUM get() = materialRegistry[Identifier(MODID, "anti_tripentennium")]
-val ANTI_TRIPENTHEXIUM get() = materialRegistry[Identifier(MODID, "anti_tripenthexium")]
-val ANTI_TRIPENTNILIUM get() = materialRegistry[Identifier(MODID, "anti_tripentnilium")]
-val ANTI_TRIPENTOCTIUM get() = materialRegistry[Identifier(MODID, "anti_tripentoctium")]
-val ANTI_TRIPENTPENTIUM get() = materialRegistry[Identifier(MODID, "anti_tripentpentium")]
-val ANTI_TRIPENTQUADIUM get() = materialRegistry[Identifier(MODID, "anti_tripentquadium")]
-val ANTI_TRIPENTSEPTIUM get() = materialRegistry[Identifier(MODID, "anti_tripentseptium")]
-val ANTI_TRIPENTTRIUM get() = materialRegistry[Identifier(MODID, "anti_tripenttrium")]
-val ANTI_TRIPENTUNIUM get() = materialRegistry[Identifier(MODID, "anti_tripentunium")]
-val ANTI_TRIQUADBIUM get() = materialRegistry[Identifier(MODID, "anti_triquadbium")]
-val ANTI_TRIQUADENNIUM get() = materialRegistry[Identifier(MODID, "anti_triquadennium")]
-val ANTI_TRIQUADHEXIUM get() = materialRegistry[Identifier(MODID, "anti_triquadhexium")]
-val ANTI_TRIQUADNILIUM get() = materialRegistry[Identifier(MODID, "anti_triquadnilium")]
-val ANTI_TRIQUADOCTIUM get() = materialRegistry[Identifier(MODID, "anti_triquadoctium")]
-val ANTI_TRIQUADPENTIUM get() = materialRegistry[Identifier(MODID, "anti_triquadpentium")]
-val ANTI_TRIQUADQUADIUM get() = materialRegistry[Identifier(MODID, "anti_triquadquadium")]
-val ANTI_TRIQUADSEPTIUM get() = materialRegistry[Identifier(MODID, "anti_triquadseptium")]
-val ANTI_TRIQUADTRIUM get() = materialRegistry[Identifier(MODID, "anti_triquadtrium")]
-val ANTI_TRIQUADUNIUM get() = materialRegistry[Identifier(MODID, "anti_triquadunium")]
-val ANTI_TRISEPTBIUM get() = materialRegistry[Identifier(MODID, "anti_triseptbium")]
-val ANTI_TRISEPTENNIUM get() = materialRegistry[Identifier(MODID, "anti_triseptennium")]
-val ANTI_TRISEPTHEXIUM get() = materialRegistry[Identifier(MODID, "anti_trisepthexium")]
-val ANTI_TRISEPTNILIUM get() = materialRegistry[Identifier(MODID, "anti_triseptnilium")]
-val ANTI_TRISEPTOCTIUM get() = materialRegistry[Identifier(MODID, "anti_triseptoctium")]
-val ANTI_TRISEPTPENTIUM get() = materialRegistry[Identifier(MODID, "anti_triseptpentium")]
-val ANTI_TRISEPTQUADIUM get() = materialRegistry[Identifier(MODID, "anti_triseptquadium")]
-val ANTI_TRISEPTSEPTIUM get() = materialRegistry[Identifier(MODID, "anti_triseptseptium")]
-val ANTI_TRISEPTTRIUM get() = materialRegistry[Identifier(MODID, "anti_trisepttrium")]
-val ANTI_TRISEPTUNIUM get() = materialRegistry[Identifier(MODID, "anti_triseptunium")]
-val ANTI_TRITIUM get() = materialRegistry[Identifier(MODID, "anti_tritium")]
-val ANTI_TRITRIBIUM get() = materialRegistry[Identifier(MODID, "anti_tritribium")]
-val ANTI_TRITRIENNIUM get() = materialRegistry[Identifier(MODID, "anti_tritriennium")]
-val ANTI_TRITRIHEXIUM get() = materialRegistry[Identifier(MODID, "anti_tritrihexium")]
-val ANTI_TRITRINILIUM get() = materialRegistry[Identifier(MODID, "anti_tritrinilium")]
-val ANTI_TRITRIOCTIUM get() = materialRegistry[Identifier(MODID, "anti_tritrioctium")]
-val ANTI_TRITRIPENTIUM get() = materialRegistry[Identifier(MODID, "anti_tritripentium")]
-val ANTI_TRITRIQUADIUM get() = materialRegistry[Identifier(MODID, "anti_tritriquadium")]
-val ANTI_TRITRISEPTIUM get() = materialRegistry[Identifier(MODID, "anti_tritriseptium")]
-val ANTI_TRITRITRIUM get() = materialRegistry[Identifier(MODID, "anti_tritritrium")]
-val ANTI_TRITRIUNIUM get() = materialRegistry[Identifier(MODID, "anti_tritriunium")]
-val ANTI_TRIUNBIUM get() = materialRegistry[Identifier(MODID, "anti_triunbium")]
-val ANTI_TRIUNENNIUM get() = materialRegistry[Identifier(MODID, "anti_triunennium")]
-val ANTI_TRIUNHEXIUM get() = materialRegistry[Identifier(MODID, "anti_triunhexium")]
-val ANTI_TRIUNNILIUM get() = materialRegistry[Identifier(MODID, "anti_triunnilium")]
-val ANTI_TRIUNOCTIUM get() = materialRegistry[Identifier(MODID, "anti_triunoctium")]
-val ANTI_TRIUNPENTIUM get() = materialRegistry[Identifier(MODID, "anti_triunpentium")]
-val ANTI_TRIUNQUADIUM get() = materialRegistry[Identifier(MODID, "anti_triunquadium")]
-val ANTI_TRIUNSEPTIUM get() = materialRegistry[Identifier(MODID, "anti_triunseptium")]
-val ANTI_TRIUNTRIUM get() = materialRegistry[Identifier(MODID, "anti_triuntrium")]
-val ANTI_TRIUNUNIUM get() = materialRegistry[Identifier(MODID, "anti_triununium")]
-val ANTI_TUNGSTEN get() = materialRegistry[Identifier(MODID, "anti_tungsten")]
-val ANTI_UNBIBIUM get() = materialRegistry[Identifier(MODID, "anti_unbibium")]
-val ANTI_UNBIENNIUM get() = materialRegistry[Identifier(MODID, "anti_unbiennium")]
-val ANTI_UNBIHEXIUM get() = materialRegistry[Identifier(MODID, "anti_unbihexium")]
-val ANTI_UNBINILIUM get() = materialRegistry[Identifier(MODID, "anti_unbinilium")]
-val ANTI_UNBIOCTIUM get() = materialRegistry[Identifier(MODID, "anti_unbioctium")]
-val ANTI_UNBIPENTIUM get() = materialRegistry[Identifier(MODID, "anti_unbipentium")]
-val ANTI_UNBIQUADIUM get() = materialRegistry[Identifier(MODID, "anti_unbiquadium")]
-val ANTI_UNBISEPTIUM get() = materialRegistry[Identifier(MODID, "anti_unbiseptium")]
-val ANTI_UNBITRIUM get() = materialRegistry[Identifier(MODID, "anti_unbitrium")]
-val ANTI_UNBIUNIUM get() = materialRegistry[Identifier(MODID, "anti_unbiunium")]
-val ANTI_UNENNBIUM get() = materialRegistry[Identifier(MODID, "anti_unennbium")]
-val ANTI_UNENNENNIUM get() = materialRegistry[Identifier(MODID, "anti_unennennium")]
-val ANTI_UNENNHEXIUM get() = materialRegistry[Identifier(MODID, "anti_unennhexium")]
-val ANTI_UNENNILIUM get() = materialRegistry[Identifier(MODID, "anti_unennilium")]
-val ANTI_UNENNOCTIUM get() = materialRegistry[Identifier(MODID, "anti_unennoctium")]
-val ANTI_UNENNPENTIUM get() = materialRegistry[Identifier(MODID, "anti_unennpentium")]
-val ANTI_UNENNQUADIUM get() = materialRegistry[Identifier(MODID, "anti_unennquadium")]
-val ANTI_UNENNSEPTIUM get() = materialRegistry[Identifier(MODID, "anti_unennseptium")]
-val ANTI_UNENNTRIUM get() = materialRegistry[Identifier(MODID, "anti_unenntrium")]
-val ANTI_UNENNUNIUM get() = materialRegistry[Identifier(MODID, "anti_unennunium")]
-val ANTI_UNHEXBIUM get() = materialRegistry[Identifier(MODID, "anti_unhexbium")]
-val ANTI_UNHEXENNIUM get() = materialRegistry[Identifier(MODID, "anti_unhexennium")]
-val ANTI_UNHEXHEXIUM get() = materialRegistry[Identifier(MODID, "anti_unhexhexium")]
-val ANTI_UNHEXNILIUM get() = materialRegistry[Identifier(MODID, "anti_unhexnilium")]
-val ANTI_UNHEXOCTIUM get() = materialRegistry[Identifier(MODID, "anti_unhexoctium")]
-val ANTI_UNHEXPENTIUM get() = materialRegistry[Identifier(MODID, "anti_unhexpentium")]
-val ANTI_UNHEXQUADIUM get() = materialRegistry[Identifier(MODID, "anti_unhexquadium")]
-val ANTI_UNHEXSEPTIUM get() = materialRegistry[Identifier(MODID, "anti_unhexseptium")]
-val ANTI_UNHEXTRIUM get() = materialRegistry[Identifier(MODID, "anti_unhextrium")]
-val ANTI_UNHEXUNIUM get() = materialRegistry[Identifier(MODID, "anti_unhexunium")]
-val ANTI_UNOCTBIUM get() = materialRegistry[Identifier(MODID, "anti_unoctbium")]
-val ANTI_UNOCTENNIUM get() = materialRegistry[Identifier(MODID, "anti_unoctennium")]
-val ANTI_UNOCTHEXIUM get() = materialRegistry[Identifier(MODID, "anti_unocthexium")]
-val ANTI_UNOCTNILIUM get() = materialRegistry[Identifier(MODID, "anti_unoctnilium")]
-val ANTI_UNOCTOCTIUM get() = materialRegistry[Identifier(MODID, "anti_unoctoctium")]
-val ANTI_UNOCTPENTIUM get() = materialRegistry[Identifier(MODID, "anti_unoctpentium")]
-val ANTI_UNOCTQUADIUM get() = materialRegistry[Identifier(MODID, "anti_unoctquadium")]
-val ANTI_UNOCTSEPTIUM get() = materialRegistry[Identifier(MODID, "anti_unoctseptium")]
-val ANTI_UNOCTTRIUM get() = materialRegistry[Identifier(MODID, "anti_unocttrium")]
-val ANTI_UNOCTUNIUM get() = materialRegistry[Identifier(MODID, "anti_unoctunium")]
-val ANTI_UNPENTBIUM get() = materialRegistry[Identifier(MODID, "anti_unpentbium")]
-val ANTI_UNPENTENNIUM get() = materialRegistry[Identifier(MODID, "anti_unpentennium")]
-val ANTI_UNPENTHEXIUM get() = materialRegistry[Identifier(MODID, "anti_unpenthexium")]
-val ANTI_UNPENTNILIUM get() = materialRegistry[Identifier(MODID, "anti_unpentnilium")]
-val ANTI_UNPENTOCTIUM get() = materialRegistry[Identifier(MODID, "anti_unpentoctium")]
-val ANTI_UNPENTPENTIUM get() = materialRegistry[Identifier(MODID, "anti_unpentpentium")]
-val ANTI_UNPENTQUADIUM get() = materialRegistry[Identifier(MODID, "anti_unpentquadium")]
-val ANTI_UNPENTSEPTIUM get() = materialRegistry[Identifier(MODID, "anti_unpentseptium")]
-val ANTI_UNPENTTRIUM get() = materialRegistry[Identifier(MODID, "anti_unpenttrium")]
-val ANTI_UNPENTUNIUM get() = materialRegistry[Identifier(MODID, "anti_unpentunium")]
-val ANTI_UNQUADBIUM get() = materialRegistry[Identifier(MODID, "anti_unquadbium")]
-val ANTI_UNQUADENNIUM get() = materialRegistry[Identifier(MODID, "anti_unquadennium")]
-val ANTI_UNQUADHEXIUM get() = materialRegistry[Identifier(MODID, "anti_unquadhexium")]
-val ANTI_UNQUADNILIUM get() = materialRegistry[Identifier(MODID, "anti_unquadnilium")]
-val ANTI_UNQUADOCTIUM get() = materialRegistry[Identifier(MODID, "anti_unquadoctium")]
-val ANTI_UNQUADPENTIUM get() = materialRegistry[Identifier(MODID, "anti_unquadpentium")]
-val ANTI_UNQUADQUADIUM get() = materialRegistry[Identifier(MODID, "anti_unquadquadium")]
-val ANTI_UNQUADSEPTIUM get() = materialRegistry[Identifier(MODID, "anti_unquadseptium")]
-val ANTI_UNQUADTRIUM get() = materialRegistry[Identifier(MODID, "anti_unquadtrium")]
-val ANTI_UNQUADUNIUM get() = materialRegistry[Identifier(MODID, "anti_unquadunium")]
-val ANTI_UNSEPTBIUM get() = materialRegistry[Identifier(MODID, "anti_unseptbium")]
-val ANTI_UNSEPTENNIUM get() = materialRegistry[Identifier(MODID, "anti_unseptennium")]
-val ANTI_UNSEPTHEXIUM get() = materialRegistry[Identifier(MODID, "anti_unsepthexium")]
-val ANTI_UNSEPTNILIUM get() = materialRegistry[Identifier(MODID, "anti_unseptnilium")]
-val ANTI_UNSEPTOCTIUM get() = materialRegistry[Identifier(MODID, "anti_unseptoctium")]
-val ANTI_UNSEPTPENTIUM get() = materialRegistry[Identifier(MODID, "anti_unseptpentium")]
-val ANTI_UNSEPTQUADIUM get() = materialRegistry[Identifier(MODID, "anti_unseptquadium")]
-val ANTI_UNSEPTSEPTIUM get() = materialRegistry[Identifier(MODID, "anti_unseptseptium")]
-val ANTI_UNSEPTTRIUM get() = materialRegistry[Identifier(MODID, "anti_unsepttrium")]
-val ANTI_UNSEPTUNIUM get() = materialRegistry[Identifier(MODID, "anti_unseptunium")]
-val ANTI_UNTRIBIUM get() = materialRegistry[Identifier(MODID, "anti_untribium")]
-val ANTI_UNTRIENNIUM get() = materialRegistry[Identifier(MODID, "anti_untriennium")]
-val ANTI_UNTRIHEXIUM get() = materialRegistry[Identifier(MODID, "anti_untrihexium")]
-val ANTI_UNTRINILIUM get() = materialRegistry[Identifier(MODID, "anti_untrinilium")]
-val ANTI_UNTRIOCTIUM get() = materialRegistry[Identifier(MODID, "anti_untrioctium")]
-val ANTI_UNTRIPENTIUM get() = materialRegistry[Identifier(MODID, "anti_untripentium")]
-val ANTI_UNTRIQUADIUM get() = materialRegistry[Identifier(MODID, "anti_untriquadium")]
-val ANTI_UNTRISEPTIUM get() = materialRegistry[Identifier(MODID, "anti_untriseptium")]
-val ANTI_UNTRITRIUM get() = materialRegistry[Identifier(MODID, "anti_untritrium")]
-val ANTI_UNTRIUNIUM get() = materialRegistry[Identifier(MODID, "anti_untriunium")]
-val ANTI_UNUNENNIUM get() = materialRegistry[Identifier(MODID, "anti_ununennium")]
-val ANTI_UNUNOCTIUM get() = materialRegistry[Identifier(MODID, "anti_ununoctium")]
-val ANTI_UNUNPENTIUM get() = materialRegistry[Identifier(MODID, "anti_ununpentium")]
-val ANTI_UNUNSEPTIUM get() = materialRegistry[Identifier(MODID, "anti_ununseptium")]
-val ANTI_UNUNTRIUM get() = materialRegistry[Identifier(MODID, "anti_ununtrium")]
-val ANTI_URAN get() = materialRegistry[Identifier(MODID, "anti_uran")]
-val ANTI_URANIUM get() = materialRegistry[Identifier(MODID, "anti_uranium")]
-val ANTI_URANIUM235 get() = materialRegistry[Identifier(MODID, "anti_uranium235")]
-val ANTI_URANIUM238 get() = materialRegistry[Identifier(MODID, "anti_uranium238")]
-val ANTI_VANADIUM get() = materialRegistry[Identifier(MODID, "anti_vanadium")]
-val ANTI_VIBRANIUM get() = materialRegistry[Identifier(MODID, "anti_vibranium")]
-val ANTI_WOLFRAM get() = materialRegistry[Identifier(MODID, "anti_wolfram")]
-val ANTI_WOLFRAMIUM get() = materialRegistry[Identifier(MODID, "anti_wolframium")]
-val ANTI_XENON get() = materialRegistry[Identifier(MODID, "anti_xenon")]
-val ANTI_YTTERBIUM get() = materialRegistry[Identifier(MODID, "anti_ytterbium")]
-val ANTI_YTTRIUM get() = materialRegistry[Identifier(MODID, "anti_yttrium")]
-val ANTI_ZINC get() = materialRegistry[Identifier(MODID, "anti_zinc")]
-val ANTI_ZIRCONIUM get() = materialRegistry[Identifier(MODID, "anti_zirconium")]
-val APATITE get() = materialRegistry[Identifier(MODID, "apatite")]
-val AQUAMARINE get() = materialRegistry[Identifier(MODID, "aquamarine")]
-val AQUA_MIDDLE get() = materialRegistry[Identifier(MODID, "aqua_middle")]
-val AQUA_REGIA get() = materialRegistry[Identifier(MODID, "aqua_regia")]
-val ARAGONITE get() = materialRegistry[Identifier(MODID, "aragonite")]
-val ARCANE_ASH get() = materialRegistry[Identifier(MODID, "arcane_ash")]
-val ARCANE_ASHES get() = materialRegistry[Identifier(MODID, "arcane_ashes")]
-val ARCANE_COMPOUND get() = materialRegistry[Identifier(MODID, "arcane_compound")]
-val ARDITE get() = materialRegistry[Identifier(MODID, "ardite")]
-val AREDRITE get() = materialRegistry[Identifier(MODID, "aredrite")]
-val ARGON get() = materialRegistry[Identifier(MODID, "argon")]
-val ARSENIC get() = materialRegistry[Identifier(MODID, "arsenic")]
-val ARSENOPYRITE get() = materialRegistry[Identifier(MODID, "arsenopyrite")]
-val ASBESTOS get() = materialRegistry[Identifier(MODID, "asbestos")]
-val ASH get() = materialRegistry[Identifier(MODID, "ash")]
-val ASHES get() = materialRegistry[Identifier(MODID, "ashes")]
-val ASH_DARK get() = materialRegistry[Identifier(MODID, "ash_dark")]
-val ASH_VOLCANIC get() = materialRegistry[Identifier(MODID, "ash_volcanic")]
-val ASPHALT get() = materialRegistry[Identifier(MODID, "asphalt")]
-val ASTATINE get() = materialRegistry[Identifier(MODID, "astatine")]
-val ASTRAL_SILVER get() = materialRegistry[Identifier(MODID, "astral_silver")]
-val ATLARUS get() = materialRegistry[Identifier(MODID, "atlarus")]
-val AZURITE get() = materialRegistry[Identifier(MODID, "azurite")]
-val BALAS_RUBY get() = materialRegistry[Identifier(MODID, "balas_ruby")]
-val BAMBOO get() = materialRegistry[Identifier(MODID, "bamboo")]
-val BANDED_IRON get() = materialRegistry[Identifier(MODID, "banded_iron")]
-val BARITE get() = materialRegistry[Identifier(MODID, "barite")]
-val BARIUM get() = materialRegistry[Identifier(MODID, "barium")]
-val BARK get() = materialRegistry[Identifier(MODID, "bark")]
-val BARLEY get() = materialRegistry[Identifier(MODID, "barley")]
-val BASALT get() = materialRegistry[Identifier(MODID, "basalt")]
-val BASALTIC_MINERAL_SAND get() = materialRegistry[Identifier(MODID, "basaltic_mineral_sand")]
-val BASALT_BRICKS get() = materialRegistry[Identifier(MODID, "basalt_bricks")]
-val BASALT_CHISELED get() = materialRegistry[Identifier(MODID, "basalt_chiseled")]
-val BASALT_POLISHED get() = materialRegistry[Identifier(MODID, "basalt_polished")]
-val BASALZ get() = materialRegistry[Identifier(MODID, "basalz")]
-val BASIC get() = materialRegistry[Identifier(MODID, "basic")]
-val BASTNASITE get() = materialRegistry[Identifier(MODID, "bastnasite")]
-val BATTERY_ALLOY get() = materialRegistry[Identifier(MODID, "battery_alloy")]
-val BAUXITE get() = materialRegistry[Identifier(MODID, "bauxite")]
-val BEDROCK get() = materialRegistry[Identifier(MODID, "bedrock")]
-val BEDROCKIUM get() = materialRegistry[Identifier(MODID, "bedrockium")]
-val BEDROCK_H_S_L_A_ALLOY get() = materialRegistry[Identifier(MODID, "bedrock_h_s_l_a_alloy")]
-val BENTONITE get() = materialRegistry[Identifier(MODID, "bentonite")]
-val BERKELIUM get() = materialRegistry[Identifier(MODID, "berkelium")]
-val BERYLLIUM get() = materialRegistry[Identifier(MODID, "beryllium")]
-val BETWEENSTONE get() = materialRegistry[Identifier(MODID, "betweenstone")]
-val BIBIBIUM get() = materialRegistry[Identifier(MODID, "bibibium")]
-val BIBIENNIUM get() = materialRegistry[Identifier(MODID, "bibiennium")]
-val BIBIHEXIUM get() = materialRegistry[Identifier(MODID, "bibihexium")]
-val BIBINILIUM get() = materialRegistry[Identifier(MODID, "bibinilium")]
-val BIBIOCTIUM get() = materialRegistry[Identifier(MODID, "bibioctium")]
-val BIBIPENTIUM get() = materialRegistry[Identifier(MODID, "bibipentium")]
-val BIBIQUADIUM get() = materialRegistry[Identifier(MODID, "bibiquadium")]
-val BIBISEPTIUM get() = materialRegistry[Identifier(MODID, "bibiseptium")]
-val BIBITRIUM get() = materialRegistry[Identifier(MODID, "bibitrium")]
-val BIBIUNIUM get() = materialRegistry[Identifier(MODID, "bibiunium")]
-val BIENNBIUM get() = materialRegistry[Identifier(MODID, "biennbium")]
-val BIENNENNIUM get() = materialRegistry[Identifier(MODID, "biennennium")]
-val BIENNHEXIUM get() = materialRegistry[Identifier(MODID, "biennhexium")]
-val BIENNNILIUM get() = materialRegistry[Identifier(MODID, "biennnilium")]
-val BIENNOCTIUM get() = materialRegistry[Identifier(MODID, "biennoctium")]
-val BIENNPENTIUM get() = materialRegistry[Identifier(MODID, "biennpentium")]
-val BIENNQUADIUM get() = materialRegistry[Identifier(MODID, "biennquadium")]
-val BIENNSEPTIUM get() = materialRegistry[Identifier(MODID, "biennseptium")]
-val BIENNTRIUM get() = materialRegistry[Identifier(MODID, "bienntrium")]
-val BIENNUNIUM get() = materialRegistry[Identifier(MODID, "biennunium")]
-val BIHEXBIUM get() = materialRegistry[Identifier(MODID, "bihexbium")]
-val BIHEXENNIUM get() = materialRegistry[Identifier(MODID, "bihexennium")]
-val BIHEXHEXIUM get() = materialRegistry[Identifier(MODID, "bihexhexium")]
-val BIHEXNILIUM get() = materialRegistry[Identifier(MODID, "bihexnilium")]
-val BIHEXOCTIUM get() = materialRegistry[Identifier(MODID, "bihexoctium")]
-val BIHEXPENTIUM get() = materialRegistry[Identifier(MODID, "bihexpentium")]
-val BIHEXQUADIUM get() = materialRegistry[Identifier(MODID, "bihexquadium")]
-val BIHEXSEPTIUM get() = materialRegistry[Identifier(MODID, "bihexseptium")]
-val BIHEXTRIUM get() = materialRegistry[Identifier(MODID, "bihextrium")]
-val BIHEXUNIUM get() = materialRegistry[Identifier(MODID, "bihexunium")]
-val BINILBIUM get() = materialRegistry[Identifier(MODID, "binilbium")]
-val BINILENNIUM get() = materialRegistry[Identifier(MODID, "binilennium")]
-val BINILHEXIUM get() = materialRegistry[Identifier(MODID, "binilhexium")]
-val BINILNILIUM get() = materialRegistry[Identifier(MODID, "binilnilium")]
-val BINILOCTIUM get() = materialRegistry[Identifier(MODID, "biniloctium")]
-val BINILPENTIUM get() = materialRegistry[Identifier(MODID, "binilpentium")]
-val BINILQUADIUM get() = materialRegistry[Identifier(MODID, "binilquadium")]
-val BINILSEPTIUM get() = materialRegistry[Identifier(MODID, "binilseptium")]
-val BINILTRIUM get() = materialRegistry[Identifier(MODID, "biniltrium")]
-val BINILUNIUM get() = materialRegistry[Identifier(MODID, "binilunium")]
-val BIOCTBIUM get() = materialRegistry[Identifier(MODID, "bioctbium")]
-val BIOCTENNIUM get() = materialRegistry[Identifier(MODID, "bioctennium")]
-val BIOCTHEXIUM get() = materialRegistry[Identifier(MODID, "biocthexium")]
-val BIOCTNILIUM get() = materialRegistry[Identifier(MODID, "bioctnilium")]
-val BIOCTOCTIUM get() = materialRegistry[Identifier(MODID, "bioctoctium")]
-val BIOCTPENTIUM get() = materialRegistry[Identifier(MODID, "bioctpentium")]
-val BIOCTQUADIUM get() = materialRegistry[Identifier(MODID, "bioctquadium")]
-val BIOCTSEPTIUM get() = materialRegistry[Identifier(MODID, "bioctseptium")]
-val BIOCTTRIUM get() = materialRegistry[Identifier(MODID, "biocttrium")]
-val BIOCTUNIUM get() = materialRegistry[Identifier(MODID, "bioctunium")]
-val BIOTITE get() = materialRegistry[Identifier(MODID, "biotite")]
-val BIO_FUEL get() = materialRegistry[Identifier(MODID, "bio_fuel")]
-val BIOMASS get() = materialRegistry[Identifier(MODID, "biomass")]
-val BIPENTBIUM get() = materialRegistry[Identifier(MODID, "bipentbium")]
-val BIPENTENNIUM get() = materialRegistry[Identifier(MODID, "bipentennium")]
-val BIPENTHEXIUM get() = materialRegistry[Identifier(MODID, "bipenthexium")]
-val BIPENTNILIUM get() = materialRegistry[Identifier(MODID, "bipentnilium")]
-val BIPENTOCTIUM get() = materialRegistry[Identifier(MODID, "bipentoctium")]
-val BIPENTPENTIUM get() = materialRegistry[Identifier(MODID, "bipentpentium")]
-val BIPENTQUADIUM get() = materialRegistry[Identifier(MODID, "bipentquadium")]
-val BIPENTSEPTIUM get() = materialRegistry[Identifier(MODID, "bipentseptium")]
-val BIPENTTRIUM get() = materialRegistry[Identifier(MODID, "bipenttrium")]
-val BIPENTUNIUM get() = materialRegistry[Identifier(MODID, "bipentunium")]
-val BIQUADBIUM get() = materialRegistry[Identifier(MODID, "biquadbium")]
-val BIQUADENNIUM get() = materialRegistry[Identifier(MODID, "biquadennium")]
-val BIQUADHEXIUM get() = materialRegistry[Identifier(MODID, "biquadhexium")]
-val BIQUADNILIUM get() = materialRegistry[Identifier(MODID, "biquadnilium")]
-val BIQUADOCTIUM get() = materialRegistry[Identifier(MODID, "biquadoctium")]
-val BIQUADPENTIUM get() = materialRegistry[Identifier(MODID, "biquadpentium")]
-val BIQUADQUADIUM get() = materialRegistry[Identifier(MODID, "biquadquadium")]
-val BIQUADSEPTIUM get() = materialRegistry[Identifier(MODID, "biquadseptium")]
-val BIQUADTRIUM get() = materialRegistry[Identifier(MODID, "biquadtrium")]
-val BIQUADUNIUM get() = materialRegistry[Identifier(MODID, "biquadunium")]
-val BISCHOFITE get() = materialRegistry[Identifier(MODID, "bischofite")]
-val BISEPTBIUM get() = materialRegistry[Identifier(MODID, "biseptbium")]
-val BISEPTENNIUM get() = materialRegistry[Identifier(MODID, "biseptennium")]
-val BISEPTHEXIUM get() = materialRegistry[Identifier(MODID, "bisepthexium")]
-val BISEPTNILIUM get() = materialRegistry[Identifier(MODID, "biseptnilium")]
-val BISEPTOCTIUM get() = materialRegistry[Identifier(MODID, "biseptoctium")]
-val BISEPTPENTIUM get() = materialRegistry[Identifier(MODID, "biseptpentium")]
-val BISEPTQUADIUM get() = materialRegistry[Identifier(MODID, "biseptquadium")]
-val BISEPTSEPTIUM get() = materialRegistry[Identifier(MODID, "biseptseptium")]
-val BISEPTTRIUM get() = materialRegistry[Identifier(MODID, "bisepttrium")]
-val BISEPTUNIUM get() = materialRegistry[Identifier(MODID, "biseptunium")]
-val BISMUTH get() = materialRegistry[Identifier(MODID, "bismuth")]
-val BISMUTH_BRONZE get() = materialRegistry[Identifier(MODID, "bismuth_bronze")]
-val BITRIBIUM get() = materialRegistry[Identifier(MODID, "bitribium")]
-val BITRIENNIUM get() = materialRegistry[Identifier(MODID, "bitriennium")]
-val BITRIHEXIUM get() = materialRegistry[Identifier(MODID, "bitrihexium")]
-val BITRINILIUM get() = materialRegistry[Identifier(MODID, "bitrinilium")]
-val BITRIOCTIUM get() = materialRegistry[Identifier(MODID, "bitrioctium")]
-val BITRIPENTIUM get() = materialRegistry[Identifier(MODID, "bitripentium")]
-val BITRIQUADIUM get() = materialRegistry[Identifier(MODID, "bitriquadium")]
-val BITRISEPTIUM get() = materialRegistry[Identifier(MODID, "bitriseptium")]
-val BITRITRIUM get() = materialRegistry[Identifier(MODID, "bitritrium")]
-val BITRIUNIUM get() = materialRegistry[Identifier(MODID, "bitriunium")]
-val BIUNBIUM get() = materialRegistry[Identifier(MODID, "biunbium")]
-val BIUNENNIUM get() = materialRegistry[Identifier(MODID, "biunennium")]
-val BIUNHEXIUM get() = materialRegistry[Identifier(MODID, "biunhexium")]
-val BIUNNILIUM get() = materialRegistry[Identifier(MODID, "biunnilium")]
-val BIUNOCTIUM get() = materialRegistry[Identifier(MODID, "biunoctium")]
-val BIUNPENTIUM get() = materialRegistry[Identifier(MODID, "biunpentium")]
-val BIUNQUADIUM get() = materialRegistry[Identifier(MODID, "biunquadium")]
-val BIUNSEPTIUM get() = materialRegistry[Identifier(MODID, "biunseptium")]
-val BIUNTRIUM get() = materialRegistry[Identifier(MODID, "biuntrium")]
-val BIUNUNIUM get() = materialRegistry[Identifier(MODID, "biununium")]
-val BIXBITE get() = materialRegistry[Identifier(MODID, "bixbite")]
-val BLACK get() = materialRegistry[Identifier(MODID, "black")]
-val BLACK_BRONZE get() = materialRegistry[Identifier(MODID, "black_bronze")]
-val BLACK_STEEL get() = materialRegistry[Identifier(MODID, "black_steel")]
-val BLACK_VITRIOL get() = materialRegistry[Identifier(MODID, "black_vitriol")]
-val BLAZE get() = materialRegistry[Identifier(MODID, "blaze")]
-val BLAZE_QUARTZ get() = materialRegistry[Identifier(MODID, "blaze_quartz")]
-val BLITZ get() = materialRegistry[Identifier(MODID, "blitz")]
-val BLIZZ get() = materialRegistry[Identifier(MODID, "blizz")]
-val BLOODSTONE get() = materialRegistry[Identifier(MODID, "bloodstone")]
-val BLUE get() = materialRegistry[Identifier(MODID, "blue")]
-val BLUESCHIST get() = materialRegistry[Identifier(MODID, "blueschist")]
-val BLUESTONE get() = materialRegistry[Identifier(MODID, "bluestone")]
-val BLUE_ALLOY get() = materialRegistry[Identifier(MODID, "blue_alloy")]
-val BLUE_SAPPHIRE get() = materialRegistry[Identifier(MODID, "blue_sapphire")]
-val BLUE_STEEL get() = materialRegistry[Identifier(MODID, "blue_steel")]
-val BLUE_TOPAZ get() = materialRegistry[Identifier(MODID, "blue_topaz")]
-val BLUE_VITRIOL get() = materialRegistry[Identifier(MODID, "blue_vitriol")]
-val BLUTONIUM get() = materialRegistry[Identifier(MODID, "blutonium")]
-val BOHRIUM get() = materialRegistry[Identifier(MODID, "bohrium")]
-val BONE get() = materialRegistry[Identifier(MODID, "bone")]
-val BORAX get() = materialRegistry[Identifier(MODID, "borax")]
-val BORIC_ACID get() = materialRegistry[Identifier(MODID, "boric_acid")]
-val BORON get() = materialRegistry[Identifier(MODID, "boron")]
-val BRASS get() = materialRegistry[Identifier(MODID, "brass")]
-val BRICK get() = materialRegistry[Identifier(MODID, "brick")]
-val BRICK_NETHER get() = materialRegistry[Identifier(MODID, "brick_nether")]
-val BROMARGYRITE get() = materialRegistry[Identifier(MODID, "bromargyrite")]
-val BROMINE get() = materialRegistry[Identifier(MODID, "bromine")]
-val BRONZE get() = materialRegistry[Identifier(MODID, "bronze")]
-val BROWN get() = materialRegistry[Identifier(MODID, "brown")]
-val BROWN_LIMONITE get() = materialRegistry[Identifier(MODID, "brown_limonite")]
-val BUTANE get() = materialRegistry[Identifier(MODID, "butane")]
-val BUTTER get() = materialRegistry[Identifier(MODID, "butter")]
-val CADMIUM get() = materialRegistry[Identifier(MODID, "cadmium")]
-val CAESIUM get() = materialRegistry[Identifier(MODID, "caesium")]
-val CALCITE get() = materialRegistry[Identifier(MODID, "calcite")]
-val CALCIUM get() = materialRegistry[Identifier(MODID, "calcium")]
-val CALCIUM_CHLORIDE get() = materialRegistry[Identifier(MODID, "calcium_chloride")]
-val CALCIUM_SULFATE get() = materialRegistry[Identifier(MODID, "calcium_sulfate")]
-val CALCIUM_TUNGSTATE get() = materialRegistry[Identifier(MODID, "calcium_tungstate")]
-val CALIFORNIUM get() = materialRegistry[Identifier(MODID, "californium")]
-val CARBIDE get() = materialRegistry[Identifier(MODID, "carbide")]
-val CARBON get() = materialRegistry[Identifier(MODID, "carbon")]
-val CARBON13 get() = materialRegistry[Identifier(MODID, "carbon13")]
-val CARBON14 get() = materialRegistry[Identifier(MODID, "carbon14")]
-val CARBON_DIOXIDE get() = materialRegistry[Identifier(MODID, "carbon_dioxide")]
-val CARBON_MONOXIDE get() = materialRegistry[Identifier(MODID, "carbon_monoxide")]
-val CARBON_TRIOXIDE get() = materialRegistry[Identifier(MODID, "carbon_trioxide")]
-val CARBORUNDUM get() = materialRegistry[Identifier(MODID, "carborundum")]
-val CARMOT get() = materialRegistry[Identifier(MODID, "carmot")]
-val CASSITERITE get() = materialRegistry[Identifier(MODID, "cassiterite")]
-val CASSITERITE_SAND get() = materialRegistry[Identifier(MODID, "cassiterite_sand")]
-val CD_IN_AG_ALLOY get() = materialRegistry[Identifier(MODID, "cd_in_ag_alloy")]
-val CELENEGIL get() = materialRegistry[Identifier(MODID, "celenegil")]
-val CELESTINE get() = materialRegistry[Identifier(MODID, "celestine")]
-val CERAMIC get() = materialRegistry[Identifier(MODID, "ceramic")]
-val CERIUM get() = materialRegistry[Identifier(MODID, "cerium")]
-val CERTUS_QUARTZ get() = materialRegistry[Identifier(MODID, "certus_quartz")]
-val CERUCLASE get() = materialRegistry[Identifier(MODID, "ceruclase")]
-val CHALCOPYRITE get() = materialRegistry[Identifier(MODID, "chalcopyrite")]
-val CHALK get() = materialRegistry[Identifier(MODID, "chalk")]
-val CHARCOAL get() = materialRegistry[Identifier(MODID, "charcoal")]
-val CHARGED_CERTUS_QUARTZ get() = materialRegistry[Identifier(MODID, "charged_certus_quartz")]
-val CHEESE get() = materialRegistry[Identifier(MODID, "cheese")]
-val CHERT get() = materialRegistry[Identifier(MODID, "chert")]
-val CHILI get() = materialRegistry[Identifier(MODID, "chili")]
-val CHIMERITE get() = materialRegistry[Identifier(MODID, "chimerite")]
-val CHLORINE get() = materialRegistry[Identifier(MODID, "chlorine")]
-val CHLOROAURIC_ACID get() = materialRegistry[Identifier(MODID, "chloroauric_acid")]
-val CHLOROPLATINIC_ACID get() = materialRegistry[Identifier(MODID, "chloroplatinic_acid")]
-val CHOCOLATE get() = materialRegistry[Identifier(MODID, "chocolate")]
-val CHROME get() = materialRegistry[Identifier(MODID, "chrome")]
-val CHROMITE get() = materialRegistry[Identifier(MODID, "chromite")]
-val CHROMIUM get() = materialRegistry[Identifier(MODID, "chromium")]
-val CHROMIUM_DIOXIDE get() = materialRegistry[Identifier(MODID, "chromium_dioxide")]
-val CHRYSOCOLLA get() = materialRegistry[Identifier(MODID, "chrysocolla")]
-val CHRYSOTILE get() = materialRegistry[Identifier(MODID, "chrysotile")]
-val CINNABAR get() = materialRegistry[Identifier(MODID, "cinnabar")]
-val CINNAMON get() = materialRegistry[Identifier(MODID, "cinnamon")]
-val CITRINE get() = materialRegistry[Identifier(MODID, "citrine")]
-val CLAY get() = materialRegistry[Identifier(MODID, "clay")]
-val CLAY_BROWN get() = materialRegistry[Identifier(MODID, "clay_brown")]
-val CLUSTER get() = materialRegistry[Identifier(MODID, "cluster")]
-val COAL get() = materialRegistry[Identifier(MODID, "coal")]
-val COAL_COKE get() = materialRegistry[Identifier(MODID, "coal_coke")]
-val COBALT get() = materialRegistry[Identifier(MODID, "cobalt")]
-val COBALT60 get() = materialRegistry[Identifier(MODID, "cobalt60")]
-val COBALTITE get() = materialRegistry[Identifier(MODID, "cobaltite")]
-val COBALT_BRASS get() = materialRegistry[Identifier(MODID, "cobalt_brass")]
-val COBALT_HEXAHYDRATE get() = materialRegistry[Identifier(MODID, "cobalt_hexahydrate")]
-val COBBLESTONE get() = materialRegistry[Identifier(MODID, "cobblestone")]
-val COCAINE get() = materialRegistry[Identifier(MODID, "cocaine")]
-val COCOA get() = materialRegistry[Identifier(MODID, "cocoa")]
-val COFFEE get() = materialRegistry[Identifier(MODID, "coffee")]
-val COFFEE_DUST get() = materialRegistry[Identifier(MODID, "coffee_dust")]
-val COKE get() = materialRegistry[Identifier(MODID, "coke")]
-val CONCRETE get() = materialRegistry[Identifier(MODID, "concrete")]
-val CONDUCTIVE_IRON get() = materialRegistry[Identifier(MODID, "conductive_iron")]
-val CONSTANTAN get() = materialRegistry[Identifier(MODID, "constantan")]
-val CONSTRUCTION_FOAM get() = materialRegistry[Identifier(MODID, "construction_foam")]
-val CONTINUUM get() = materialRegistry[Identifier(MODID, "continuum")]
-val COOPERITE get() = materialRegistry[Identifier(MODID, "cooperite")]
-val COPERNICIUM get() = materialRegistry[Identifier(MODID, "copernicium")]
-val COPPER get() = materialRegistry[Identifier(MODID, "copper")]
-val CORAL get() = materialRegistry[Identifier(MODID, "coral")]
-val CORN get() = materialRegistry[Identifier(MODID, "corn")]
-val CRAPONITE get() = materialRegistry[Identifier(MODID, "craponite")]
-val CREAM get() = materialRegistry[Identifier(MODID, "cream")]
-val CREOSOTE get() = materialRegistry[Identifier(MODID, "creosote")]
-val CRIMSON_MIDDLE get() = materialRegistry[Identifier(MODID, "crimson_middle")]
-val CRUDE_OIL get() = materialRegistry[Identifier(MODID, "crude_oil")]
-val CRYOLITE get() = materialRegistry[Identifier(MODID, "cryolite")]
-val CRYOTHEUM get() = materialRegistry[Identifier(MODID, "cryotheum")]
-val CRYSTAL get() = materialRegistry[Identifier(MODID, "crystal")]
-val CRYSTAL_FLUX get() = materialRegistry[Identifier(MODID, "crystal_flux")]
-val CUPRONICKEL get() = materialRegistry[Identifier(MODID, "cupronickel")]
-val CURIUM get() = materialRegistry[Identifier(MODID, "curium")]
-val CURRY get() = materialRegistry[Identifier(MODID, "curry")]
-val CYAN get() = materialRegistry[Identifier(MODID, "cyan")]
-val CYANITE get() = materialRegistry[Identifier(MODID, "cyanite")]
-val CYAN_VITRIOL get() = materialRegistry[Identifier(MODID, "cyan_vitriol")]
-val CYPRUS_VITRIOL get() = materialRegistry[Identifier(MODID, "cyprus_vitriol")]
-val DACITE get() = materialRegistry[Identifier(MODID, "dacite")]
-val DAMASCUS_STEEL get() = materialRegistry[Identifier(MODID, "damascus_steel")]
-val DARK get() = materialRegistry[Identifier(MODID, "dark")]
-val DARK_ASH get() = materialRegistry[Identifier(MODID, "dark_ash")]
-val DARK_ASHES get() = materialRegistry[Identifier(MODID, "dark_ashes")]
-val DARK_IRON get() = materialRegistry[Identifier(MODID, "dark_iron")]
-val DARK_MATTER get() = materialRegistry[Identifier(MODID, "dark_matter")]
-val DARK_STEEL get() = materialRegistry[Identifier(MODID, "dark_steel")]
-val DARK_STONE get() = materialRegistry[Identifier(MODID, "dark_stone")]
-val DARK_THAUMIUM get() = materialRegistry[Identifier(MODID, "dark_thaumium")]
-val DARMSTADTIUM get() = materialRegistry[Identifier(MODID, "darmstadtium")]
-val DATA get() = materialRegistry[Identifier(MODID, "data")]
-val DATOLITE get() = materialRegistry[Identifier(MODID, "datolite")]
-val DEEP_IRON get() = materialRegistry[Identifier(MODID, "deep_iron")]
-val DEMONITE get() = materialRegistry[Identifier(MODID, "demonite")]
-val DESH get() = materialRegistry[Identifier(MODID, "desh")]
-val DESICHALKOS get() = materialRegistry[Identifier(MODID, "desichalkos")]
-val DEUTERIUM get() = materialRegistry[Identifier(MODID, "deuterium")]
-val DIAMANTINE get() = materialRegistry[Identifier(MODID, "diamantine")]
-val DIAMOND get() = materialRegistry[Identifier(MODID, "diamond")]
-val DIAMOND_COPPER get() = materialRegistry[Identifier(MODID, "diamond_copper")]
-val DIAMOND_INDUSTRIAL get() = materialRegistry[Identifier(MODID, "diamond_industrial")]
-val DIATOMITE get() = materialRegistry[Identifier(MODID, "diatomite")]
-val DIDURANIUM_TRIOXIDE get() = materialRegistry[Identifier(MODID, "diduranium_trioxide")]
-val DIESEL get() = materialRegistry[Identifier(MODID, "diesel")]
-val DILITHIUM get() = materialRegistry[Identifier(MODID, "dilithium")]
-val DIOPTASE get() = materialRegistry[Identifier(MODID, "dioptase")]
-val DIORITE get() = materialRegistry[Identifier(MODID, "diorite")]
-val DIORITE_BRICKS get() = materialRegistry[Identifier(MODID, "diorite_bricks")]
-val DIORITE_CHISELED get() = materialRegistry[Identifier(MODID, "diorite_chiseled")]
-val DIORITE_POLISHED get() = materialRegistry[Identifier(MODID, "diorite_polished")]
-val DISULFURIC_ACID get() = materialRegistry[Identifier(MODID, "disulfuric_acid")]
-val DOLAMIDE get() = materialRegistry[Identifier(MODID, "dolamide")]
-val DOLOMITE get() = materialRegistry[Identifier(MODID, "dolomite")]
-val DOMINICAN_AMBER get() = materialRegistry[Identifier(MODID, "dominican_amber")]
-val DRACONIC get() = materialRegistry[Identifier(MODID, "draconic")]
-val DRACONIUM get() = materialRegistry[Identifier(MODID, "draconium")]
-val DRACONIUM_AWAKENED get() = materialRegistry[Identifier(MODID, "draconium_awakened")]
-val DREAMWOOD get() = materialRegistry[Identifier(MODID, "dreamwood")]
-val DUBNIUM get() = materialRegistry[Identifier(MODID, "dubnium")]
-val DULL get() = materialRegistry[Identifier(MODID, "dull")]
-val DURALUMIN get() = materialRegistry[Identifier(MODID, "duralumin")]
-val DURANIUM get() = materialRegistry[Identifier(MODID, "duranium")]
-val DURANIUM_ELEMENTAL get() = materialRegistry[Identifier(MODID, "duranium_elemental")]
-val DURANIUM_HEXAASTATIDE get() = materialRegistry[Identifier(MODID, "duranium_hexaastatide")]
-val DURANIUM_HEXABROMIDE get() = materialRegistry[Identifier(MODID, "duranium_hexabromide")]
-val DURANIUM_HEXACHLORIDE get() = materialRegistry[Identifier(MODID, "duranium_hexachloride")]
-val DURANIUM_HEXAFLUORIDE get() = materialRegistry[Identifier(MODID, "duranium_hexafluoride")]
-val DURANIUM_HEXAIODIDE get() = materialRegistry[Identifier(MODID, "duranium_hexaiodide")]
-val DYNAMITE get() = materialRegistry[Identifier(MODID, "dynamite")]
-val DYSPROSIUM get() = materialRegistry[Identifier(MODID, "dysprosium")]
-val ECLOGITE get() = materialRegistry[Identifier(MODID, "eclogite")]
-val ECTOPLASM get() = materialRegistry[Identifier(MODID, "ectoplasm")]
-val EINSTEINIUM get() = materialRegistry[Identifier(MODID, "einsteinium")]
-val ELECTRICAL_STEEL get() = materialRegistry[Identifier(MODID, "electrical_steel")]
-val ELECTRON get() = materialRegistry[Identifier(MODID, "electron")]
-val ELECTROTINE get() = materialRegistry[Identifier(MODID, "electrotine")]
-val ELECTROTINE_ALLOY get() = materialRegistry[Identifier(MODID, "electrotine_alloy")]
-val ELECTRUM get() = materialRegistry[Identifier(MODID, "electrum")]
-val ELECTRUM_FLUX get() = materialRegistry[Identifier(MODID, "electrum_flux")]
-val ELITE get() = materialRegistry[Identifier(MODID, "elite")]
-val ELVEN_DRAGONSTONE get() = materialRegistry[Identifier(MODID, "elven_dragonstone")]
-val ELVEN_ELEMENTIUM get() = materialRegistry[Identifier(MODID, "elven_elementium")]
-val ELVEN_QUARTZ get() = materialRegistry[Identifier(MODID, "elven_quartz")]
-val ELVORIUM get() = materialRegistry[Identifier(MODID, "elvorium")]
-val EMERADIC get() = materialRegistry[Identifier(MODID, "emeradic")]
-val EMERALD get() = materialRegistry[Identifier(MODID, "emerald")]
-val EMERY get() = materialRegistry[Identifier(MODID, "emery")]
-val EMPTY get() = materialRegistry[Identifier(MODID, "empty")]
-val ENDER get() = materialRegistry[Identifier(MODID, "ender")]
-val ENDERIUM get() = materialRegistry[Identifier(MODID, "enderium")]
-val ENDERIUM_BASE get() = materialRegistry[Identifier(MODID, "enderium_base")]
-val ENDER_EYE get() = materialRegistry[Identifier(MODID, "ender_eye")]
-val ENDER_PEARL get() = materialRegistry[Identifier(MODID, "ender_pearl")]
-val ENDIUM get() = materialRegistry[Identifier(MODID, "endium")]
-val ENDSTONE get() = materialRegistry[Identifier(MODID, "endstone")]
-val ENERGETIC_ALLOY get() = materialRegistry[Identifier(MODID, "energetic_alloy")]
-val ENERGIUM_CYAN get() = materialRegistry[Identifier(MODID, "energium_cyan")]
-val ENERGIUM_RED get() = materialRegistry[Identifier(MODID, "energium_red")]
-val ENERGIZED get() = materialRegistry[Identifier(MODID, "energized")]
-val ENORI get() = materialRegistry[Identifier(MODID, "enori")]
-val ENRICHED_COPPER get() = materialRegistry[Identifier(MODID, "enriched_copper")]
-val EPIDOTE get() = materialRegistry[Identifier(MODID, "epidote")]
-val ERBIUM get() = materialRegistry[Identifier(MODID, "erbium")]
-val ETHANOL get() = materialRegistry[Identifier(MODID, "ethanol")]
-val ETHYLENE get() = materialRegistry[Identifier(MODID, "ethylene")]
-val EUDIALYTE get() = materialRegistry[Identifier(MODID, "eudialyte")]
-val EUROPIUM get() = materialRegistry[Identifier(MODID, "europium")]
-val EXIMITE get() = materialRegistry[Identifier(MODID, "eximite")]
-val FAIRY get() = materialRegistry[Identifier(MODID, "fairy")]
-val FARNSIUM get() = materialRegistry[Identifier(MODID, "farnsium")]
-val FERBERITE get() = materialRegistry[Identifier(MODID, "ferberite")]
-val FERMIUM get() = materialRegistry[Identifier(MODID, "fermium")]
-val FERRIC_CHLORIDE get() = materialRegistry[Identifier(MODID, "ferric_chloride")]
-val FERRITE get() = materialRegistry[Identifier(MODID, "ferrite")]
-val FERROUS_CHLORIDE get() = materialRegistry[Identifier(MODID, "ferrous_chloride")]
-val FERROVANADIUM get() = materialRegistry[Identifier(MODID, "ferrovanadium")]
-val FIERY get() = materialRegistry[Identifier(MODID, "fiery")]
-val FIERY_STEEL get() = materialRegistry[Identifier(MODID, "fiery_steel")]
-val FIRESTONE get() = materialRegistry[Identifier(MODID, "firestone")]
-val FISH_COOKED get() = materialRegistry[Identifier(MODID, "fish_cooked")]
-val FISH_OIL get() = materialRegistry[Identifier(MODID, "fish_oil")]
-val FISH_RAW get() = materialRegistry[Identifier(MODID, "fish_raw")]
-val FISH_ROTTEN get() = materialRegistry[Identifier(MODID, "fish_rotten")]
-val FLEROVIUM get() = materialRegistry[Identifier(MODID, "flerovium")]
-val FLEROVIUM298 get() = materialRegistry[Identifier(MODID, "flerovium298")]
-val FLINT get() = materialRegistry[Identifier(MODID, "flint")]
-val FLOUR get() = materialRegistry[Identifier(MODID, "flour")]
-val FLUIX get() = materialRegistry[Identifier(MODID, "fluix")]
-val FLUORINE get() = materialRegistry[Identifier(MODID, "fluorine")]
-val FLUORITE get() = materialRegistry[Identifier(MODID, "fluorite")]
-val FLUX get() = materialRegistry[Identifier(MODID, "flux")]
-val FOOLS_RUBY get() = materialRegistry[Identifier(MODID, "fools_ruby")]
-val FORCE get() = materialRegistry[Identifier(MODID, "force")]
-val FORCICIUM get() = materialRegistry[Identifier(MODID, "forcicium")]
-val FOSSIL get() = materialRegistry[Identifier(MODID, "fossil")]
-val FRANCIUM get() = materialRegistry[Identifier(MODID, "francium")]
-val FRESH_WATER get() = materialRegistry[Identifier(MODID, "fresh_water")]
-val FREZARITE get() = materialRegistry[Identifier(MODID, "frezarite")]
-val FROZEN_IRON get() = materialRegistry[Identifier(MODID, "frozen_iron")]
-val FRYING_OIL_HOT get() = materialRegistry[Identifier(MODID, "frying_oil_hot")]
-val FUEL get() = materialRegistry[Identifier(MODID, "fuel")]
-val FUEL_OIL get() = materialRegistry[Identifier(MODID, "fuel_oil")]
-val FULLERS_EARTH get() = materialRegistry[Identifier(MODID, "fullers_earth")]
-val FZ_DARK_IRON get() = materialRegistry[Identifier(MODID, "fz_dark_iron")]
-val GABBRO get() = materialRegistry[Identifier(MODID, "gabbro")]
-val GADOLINIUM get() = materialRegistry[Identifier(MODID, "gadolinium")]
-val GAIA_SPIRIT get() = materialRegistry[Identifier(MODID, "gaia_spirit")]
-val GALENA get() = materialRegistry[Identifier(MODID, "galena")]
-val GALLIUM get() = materialRegistry[Identifier(MODID, "gallium")]
-val GARNET get() = materialRegistry[Identifier(MODID, "garnet")]
-val GARNET_GREEN get() = materialRegistry[Identifier(MODID, "garnet_green")]
-val GARNET_ORANGE get() = materialRegistry[Identifier(MODID, "garnet_orange")]
-val GARNET_PURPLE get() = materialRegistry[Identifier(MODID, "garnet_purple")]
-val GARNET_RED get() = materialRegistry[Identifier(MODID, "garnet_red")]
-val GARNET_SAND get() = materialRegistry[Identifier(MODID, "garnet_sand")]
-val GARNET_YELLOW get() = materialRegistry[Identifier(MODID, "garnet_yellow")]
-val GARNIERITE get() = materialRegistry[Identifier(MODID, "garnierite")]
-val GELATINE get() = materialRegistry[Identifier(MODID, "gelatine")]
-val GERMANIUM get() = materialRegistry[Identifier(MODID, "germanium")]
-val GIBBSITE get() = materialRegistry[Identifier(MODID, "gibbsite")]
-val GILDED_IRON get() = materialRegistry[Identifier(MODID, "gilded_iron")]
-val GLASS get() = materialRegistry[Identifier(MODID, "glass")]
-val GLAUCONITE get() = materialRegistry[Identifier(MODID, "glauconite")]
-val GLAUCONITE_SAND get() = materialRegistry[Identifier(MODID, "glauconite_sand")]
-val GLOWSTONE get() = materialRegistry[Identifier(MODID, "glowstone")]
-val GLOWSTONE_CERES get() = materialRegistry[Identifier(MODID, "glowstone_ceres")]
-val GLOWSTONE_ENCELADUS get() = materialRegistry[Identifier(MODID, "glowstone_enceladus")]
-val GLOWSTONE_IO get() = materialRegistry[Identifier(MODID, "glowstone_io")]
-val GLOWSTONE_PLUTO get() = materialRegistry[Identifier(MODID, "glowstone_pluto")]
-val GLOWSTONE_PROTEUS get() = materialRegistry[Identifier(MODID, "glowstone_proteus")]
-val GLOWSTONE_REFINED get() = materialRegistry[Identifier(MODID, "glowstone_refined")]
-val GLUE get() = materialRegistry[Identifier(MODID, "glue")]
-val GLYCEROL get() = materialRegistry[Identifier(MODID, "glycerol")]
-val GLYCERYL get() = materialRegistry[Identifier(MODID, "glyceryl")]
-val GNEISS get() = materialRegistry[Identifier(MODID, "gneiss")]
-val GOLD get() = materialRegistry[Identifier(MODID, "gold")]
-val GOLD_INDUCTIVE get() = materialRegistry[Identifier(MODID, "gold_inductive")]
-val GOOD get() = materialRegistry[Identifier(MODID, "good")]
-val GOSHEN get() = materialRegistry[Identifier(MODID, "goshen")]
-val GOSHENITE get() = materialRegistry[Identifier(MODID, "goshenite")]
-val GRANITE get() = materialRegistry[Identifier(MODID, "granite")]
-val GRANITE_BLACK get() = materialRegistry[Identifier(MODID, "granite_black")]
-val GRANITE_BRICKS get() = materialRegistry[Identifier(MODID, "granite_bricks")]
-val GRANITE_CHISELED get() = materialRegistry[Identifier(MODID, "granite_chiseled")]
-val GRANITE_POLISHED get() = materialRegistry[Identifier(MODID, "granite_polished")]
-val GRANITE_RED get() = materialRegistry[Identifier(MODID, "granite_red")]
-val GRANITIC_MINERAL_SAND get() = materialRegistry[Identifier(MODID, "granitic_mineral_sand")]
-val GRAPHENE get() = materialRegistry[Identifier(MODID, "graphene")]
-val GRAPHITE get() = materialRegistry[Identifier(MODID, "graphite")]
-val GRAVEL get() = materialRegistry[Identifier(MODID, "gravel")]
-val GRAVEYARD_DIRT get() = materialRegistry[Identifier(MODID, "graveyard_dirt")]
-val GRAVITITE get() = materialRegistry[Identifier(MODID, "gravitite")]
-val GRAVITONIUM get() = materialRegistry[Identifier(MODID, "gravitonium")]
-val GRAY get() = materialRegistry[Identifier(MODID, "gray")]
-val GRAY_VITRIOL get() = materialRegistry[Identifier(MODID, "gray_vitriol")]
-val GREATWOOD get() = materialRegistry[Identifier(MODID, "greatwood")]
-val GREEN get() = materialRegistry[Identifier(MODID, "green")]
-val GREENSCHIST get() = materialRegistry[Identifier(MODID, "greenschist")]
-val GREENSTONE get() = materialRegistry[Identifier(MODID, "greenstone")]
-val GREEN_MIDDLE get() = materialRegistry[Identifier(MODID, "green_middle")]
-val GREEN_SAPPHIRE get() = materialRegistry[Identifier(MODID, "green_sapphire")]
-val GREEN_VITRIOL get() = materialRegistry[Identifier(MODID, "green_vitriol")]
-val GREGORIUM get() = materialRegistry[Identifier(MODID, "gregorium")]
-val GREYWACKE get() = materialRegistry[Identifier(MODID, "greywacke")]
-val GROSSULAR get() = materialRegistry[Identifier(MODID, "grossular")]
-val GUNPOWDER get() = materialRegistry[Identifier(MODID, "gunpowder")]
-val GYPSUM get() = materialRegistry[Identifier(MODID, "gypsum")]
-val HADEROTH get() = materialRegistry[Identifier(MODID, "haderoth")]
-val HAFNIUM get() = materialRegistry[Identifier(MODID, "hafnium")]
-val HASSIUM get() = materialRegistry[Identifier(MODID, "hassium")]
-val HAZELNUT get() = materialRegistry[Identifier(MODID, "hazelnut")]
-val HELIODOR get() = materialRegistry[Identifier(MODID, "heliodor")]
-val HELIUM get() = materialRegistry[Identifier(MODID, "helium")]
-val HELIUM3 get() = materialRegistry[Identifier(MODID, "helium3")]
-val HELIUM_NEON get() = materialRegistry[Identifier(MODID, "helium_neon")]
-val HEMATITE get() = materialRegistry[Identifier(MODID, "hematite")]
-val HEMP_OIL get() = materialRegistry[Identifier(MODID, "hemp_oil")]
-val HEPATIZON get() = materialRegistry[Identifier(MODID, "hepatizon")]
-val HEXAFLUOROSILICIC_ACID get() = materialRegistry[Identifier(MODID, "hexafluorosilicic_acid")]
-val HOLMIUM get() = materialRegistry[Identifier(MODID, "holmium")]
-val HOLYSTONE get() = materialRegistry[Identifier(MODID, "holystone")]
-val HOLY_WATER get() = materialRegistry[Identifier(MODID, "holy_water")]
-val HONEY get() = materialRegistry[Identifier(MODID, "honey")]
-val HONEYDEW get() = materialRegistry[Identifier(MODID, "honeydew")]
-val HUEBNERITE get() = materialRegistry[Identifier(MODID, "huebnerite")]
-val HYDRATED_COAL get() = materialRegistry[Identifier(MODID, "hydrated_coal")]
-val HYDROCHLORIC_ACID get() = materialRegistry[Identifier(MODID, "hydrochloric_acid")]
-val HYDROGEN get() = materialRegistry[Identifier(MODID, "hydrogen")]
-val HYDROGEN_BORATE get() = materialRegistry[Identifier(MODID, "hydrogen_borate")]
-val HYDROGEN_FLUORIDE get() = materialRegistry[Identifier(MODID, "hydrogen_fluoride")]
-val HYDROGEN_PEROXIDE get() = materialRegistry[Identifier(MODID, "hydrogen_peroxide")]
-val HYDROSULFURIC_ACID get() = materialRegistry[Identifier(MODID, "hydrosulfuric_acid")]
-val H_S_L_A get() = materialRegistry[Identifier(MODID, "h_s_l_a")]
-val H_S_L_A_SPRING_STEEL get() = materialRegistry[Identifier(MODID, "h_s_l_a_spring_steel")]
-val H_S_L_A_STEEL get() = materialRegistry[Identifier(MODID, "h_s_l_a_steel")]
-val ICE get() = materialRegistry[Identifier(MODID, "ice")]
-val IFFESAL get() = materialRegistry[Identifier(MODID, "iffesal")]
-val IGNATIUS get() = materialRegistry[Identifier(MODID, "ignatius")]
-val ILLMENITE get() = materialRegistry[Identifier(MODID, "illmenite")]
-val ILMENITE get() = materialRegistry[Identifier(MODID, "ilmenite")]
-val INDIGO get() = materialRegistry[Identifier(MODID, "indigo")]
-val INDIUM get() = materialRegistry[Identifier(MODID, "indium")]
-val INFERNAL get() = materialRegistry[Identifier(MODID, "infernal")]
-val INFINITE get() = materialRegistry[Identifier(MODID, "infinite")]
-val INFUSCOLIUM get() = materialRegistry[Identifier(MODID, "infuscolium")]
-val INFUSED_AIR get() = materialRegistry[Identifier(MODID, "infused_air")]
-val INFUSED_BALANCE get() = materialRegistry[Identifier(MODID, "infused_balance")]
-val INFUSED_DULL get() = materialRegistry[Identifier(MODID, "infused_dull")]
-val INFUSED_EARTH get() = materialRegistry[Identifier(MODID, "infused_earth")]
-val INFUSED_ENTROPY get() = materialRegistry[Identifier(MODID, "infused_entropy")]
-val INFUSED_FIRE get() = materialRegistry[Identifier(MODID, "infused_fire")]
-val INFUSED_GOLD get() = materialRegistry[Identifier(MODID, "infused_gold")]
-val INFUSED_ORDER get() = materialRegistry[Identifier(MODID, "infused_order")]
-val INFUSED_TESLATITE get() = materialRegistry[Identifier(MODID, "infused_teslatite")]
-val INFUSED_VIS get() = materialRegistry[Identifier(MODID, "infused_vis")]
-val INFUSED_WATER get() = materialRegistry[Identifier(MODID, "infused_water")]
-val INOLASHITE get() = materialRegistry[Identifier(MODID, "inolashite")]
-val INVAR get() = materialRegistry[Identifier(MODID, "invar")]
-val INVISIUM get() = materialRegistry[Identifier(MODID, "invisium")]
-val IODINE get() = materialRegistry[Identifier(MODID, "iodine")]
-val IODINE_SALT get() = materialRegistry[Identifier(MODID, "iodine_salt")]
-val IRIDIUM get() = materialRegistry[Identifier(MODID, "iridium")]
-val IRIDIUM_IRON get() = materialRegistry[Identifier(MODID, "iridium_iron")]
-val IRIDIUM_IRON_REINFORCED get() = materialRegistry[Identifier(MODID, "iridium_iron_reinforced")]
-val IRIDIUM_SODIUM_OXIDE get() = materialRegistry[Identifier(MODID, "iridium_sodium_oxide")]
-val IRON get() = materialRegistry[Identifier(MODID, "iron")]
-val IRON_WOOD get() = materialRegistry[Identifier(MODID, "iron_wood")]
-val IRON_COMPRESSED get() = materialRegistry[Identifier(MODID, "iron_compressed")]
-val IRON_MAGNETIC get() = materialRegistry[Identifier(MODID, "iron_magnetic")]
-val IRON_OXIDE get() = materialRegistry[Identifier(MODID, "iron_oxide")]
-val IRON_SHARP get() = materialRegistry[Identifier(MODID, "iron_sharp")]
-val IRRIDANT_REINFORCED get() = materialRegistry[Identifier(MODID, "irridant_reinforced")]
-val IRRIDANT_URANIUM get() = materialRegistry[Identifier(MODID, "irridant_uranium")]
-val ITARIUS get() = materialRegistry[Identifier(MODID, "itarius")]
-val JADE get() = materialRegistry[Identifier(MODID, "jade")]
-val JASPER get() = materialRegistry[Identifier(MODID, "jasper")]
-val JET get() = materialRegistry[Identifier(MODID, "jet")]
-val JOSHEN get() = materialRegistry[Identifier(MODID, "joshen")]
-val KALENDRITE get() = materialRegistry[Identifier(MODID, "kalendrite")]
-val KALIUM get() = materialRegistry[Identifier(MODID, "kalium")]
-val KANTHAL get() = materialRegistry[Identifier(MODID, "kanthal")]
-val KAOLINITE get() = materialRegistry[Identifier(MODID, "kaolinite")]
-val KEROSINE get() = materialRegistry[Identifier(MODID, "kerosine")]
-val KESTERITE get() = materialRegistry[Identifier(MODID, "kesterite")]
-val KIMBERLITE get() = materialRegistry[Identifier(MODID, "kimberlite")]
-val KNIGHTMETAL get() = materialRegistry[Identifier(MODID, "knightmetal")]
-val KOMATIITE get() = materialRegistry[Identifier(MODID, "komatiite")]
-val KREKNORITE get() = materialRegistry[Identifier(MODID, "kreknorite")]
-val KRYPTON get() = materialRegistry[Identifier(MODID, "krypton")]
-val KYANITE get() = materialRegistry[Identifier(MODID, "kyanite")]
-val LANTANUM get() = materialRegistry[Identifier(MODID, "lantanum")]
-val LAPIS get() = materialRegistry[Identifier(MODID, "lapis")]
-val LATEX get() = materialRegistry[Identifier(MODID, "latex")]
-val LAVA get() = materialRegistry[Identifier(MODID, "lava")]
-val LAVENDER_QUARTZ get() = materialRegistry[Identifier(MODID, "lavender_quartz")]
-val LAWRENCIUM get() = materialRegistry[Identifier(MODID, "lawrencium")]
-val LAZURITE get() = materialRegistry[Identifier(MODID, "lazurite")]
-val LEAD get() = materialRegistry[Identifier(MODID, "lead")]
-val LEATHER get() = materialRegistry[Identifier(MODID, "leather")]
-val LEGENDARY get() = materialRegistry[Identifier(MODID, "legendary")]
-val LEMURITE get() = materialRegistry[Identifier(MODID, "lemurite")]
-val LEPIDOLITE get() = materialRegistry[Identifier(MODID, "lepidolite")]
-val LICORICE get() = materialRegistry[Identifier(MODID, "licorice")]
-val LIGHT_BLUE get() = materialRegistry[Identifier(MODID, "light_blue")]
-val LIGHT_GRAY get() = materialRegistry[Identifier(MODID, "light_gray")]
-val LIGNITE get() = materialRegistry[Identifier(MODID, "lignite")]
-val LIGNITE_COKE get() = materialRegistry[Identifier(MODID, "lignite_coke")]
-val LIME get() = materialRegistry[Identifier(MODID, "lime")]
-val LIMESTONE get() = materialRegistry[Identifier(MODID, "limestone")]
-val LIME_PURE get() = materialRegistry[Identifier(MODID, "lime_pure")]
-val LIN_OIL get() = materialRegistry[Identifier(MODID, "lin_oil")]
-val LITHIUM get() = materialRegistry[Identifier(MODID, "lithium")]
-val LITHIUM6 get() = materialRegistry[Identifier(MODID, "lithium6")]
-val LITHIUM_CHLORATE get() = materialRegistry[Identifier(MODID, "lithium_chlorate")]
-val LITHIUM_CHLORIDE get() = materialRegistry[Identifier(MODID, "lithium_chloride")]
-val LITHIUM_HYDROXIDE get() = materialRegistry[Identifier(MODID, "lithium_hydroxide")]
-val LITHIUM_OXIDE get() = materialRegistry[Identifier(MODID, "lithium_oxide")]
-val LITHIUM_PERCHLORATE get() = materialRegistry[Identifier(MODID, "lithium_perchlorate")]
-val LIVERMORIUM get() = materialRegistry[Identifier(MODID, "livermorium")]
-val LIVE_ROOT get() = materialRegistry[Identifier(MODID, "live_root")]
-val LIVINGROCK get() = materialRegistry[Identifier(MODID, "livingrock")]
-val LIVINGWOOD get() = materialRegistry[Identifier(MODID, "livingwood")]
-val LODESTONE get() = materialRegistry[Identifier(MODID, "lodestone")]
-val LONSDALEITE get() = materialRegistry[Identifier(MODID, "lonsdaleite")]
-val LUBRICANT get() = materialRegistry[Identifier(MODID, "lubricant")]
-val LUDICRITE get() = materialRegistry[Identifier(MODID, "ludicrite")]
-val LUMIUM get() = materialRegistry[Identifier(MODID, "lumium")]
-val LUTETIUM get() = materialRegistry[Identifier(MODID, "lutetium")]
-val MAC_GUFFIUM get() = materialRegistry[Identifier(MODID, "mac_guffium")]
-val MAGENTA get() = materialRegistry[Identifier(MODID, "magenta")]
-val MAGIC get() = materialRegistry[Identifier(MODID, "magic")]
-val MAGMA get() = materialRegistry[Identifier(MODID, "magma")]
-val MAGNALIUM get() = materialRegistry[Identifier(MODID, "magnalium")]
-val MAGNESITE get() = materialRegistry[Identifier(MODID, "magnesite")]
-val MAGNESIUM get() = materialRegistry[Identifier(MODID, "magnesium")]
-val MAGNESIUM_CARBONATE get() = materialRegistry[Identifier(MODID, "magnesium_carbonate")]
-val MAGNESIUM_CHLORIDE get() = materialRegistry[Identifier(MODID, "magnesium_chloride")]
-val MAGNETITE get() = materialRegistry[Identifier(MODID, "magnetite")]
-val MALACHITE get() = materialRegistry[Identifier(MODID, "malachite")]
-val MANASTEEL get() = materialRegistry[Identifier(MODID, "manasteel")]
-val MANA_DIAMOND get() = materialRegistry[Identifier(MODID, "mana_diamond")]
-val MANA_QUARTZ get() = materialRegistry[Identifier(MODID, "mana_quartz")]
-val MANGANESE get() = materialRegistry[Identifier(MODID, "manganese")]
-val MANGANESE_CHLORIDE get() = materialRegistry[Identifier(MODID, "manganese_chloride")]
-val MANYULLYN get() = materialRegistry[Identifier(MODID, "manyullyn")]
-val MARBLE get() = materialRegistry[Identifier(MODID, "marble")]
-val MARSHMALLOW get() = materialRegistry[Identifier(MODID, "marshmallow")]
-val MARS_SAND get() = materialRegistry[Identifier(MODID, "mars_sand")]
-val MARS_STONE get() = materialRegistry[Identifier(MODID, "mars_stone")]
-val MARTIAN_VITRIOL get() = materialRegistry[Identifier(MODID, "martian_vitriol")]
-val MASTER get() = materialRegistry[Identifier(MODID, "master")]
-val MAUFTRIUM get() = materialRegistry[Identifier(MODID, "mauftrium")]
-val MAWSITSIT get() = materialRegistry[Identifier(MODID, "mawsitsit")]
-val MAXIXE get() = materialRegistry[Identifier(MODID, "maxixe")]
-val MEAT get() = materialRegistry[Identifier(MODID, "meat")]
-val MEAT_COOKED get() = materialRegistry[Identifier(MODID, "meat_cooked")]
-val MEAT_RAW get() = materialRegistry[Identifier(MODID, "meat_raw")]
-val MEAT_ROTTEN get() = materialRegistry[Identifier(MODID, "meat_rotten")]
-val MEITNERIUM get() = materialRegistry[Identifier(MODID, "meitnerium")]
-val MENDELEVIUM get() = materialRegistry[Identifier(MODID, "mendelevium")]
-val MERCASSIUM get() = materialRegistry[Identifier(MODID, "mercassium")]
-val MERCURY get() = materialRegistry[Identifier(MODID, "mercury")]
-val METEORIC_IRON get() = materialRegistry[Identifier(MODID, "meteoric_iron")]
-val METEORIC_STEEL get() = materialRegistry[Identifier(MODID, "meteoric_steel")]
-val METEORITE get() = materialRegistry[Identifier(MODID, "meteorite")]
-val METHANE get() = materialRegistry[Identifier(MODID, "methane")]
-val METHANE_ICE get() = materialRegistry[Identifier(MODID, "methane_ice")]
-val MEUTOITE get() = materialRegistry[Identifier(MODID, "meutoite")]
-val MICA get() = materialRegistry[Identifier(MODID, "mica")]
-val MICROCLINE get() = materialRegistry[Identifier(MODID, "microcline")]
-val MIDASIUM get() = materialRegistry[Identifier(MODID, "midasium")]
-val MIGMATITE get() = materialRegistry[Identifier(MODID, "migmatite")]
-val MILK get() = materialRegistry[Identifier(MODID, "milk")]
-val MIMICHITE get() = materialRegistry[Identifier(MODID, "mimichite")]
-val MINT get() = materialRegistry[Identifier(MODID, "mint")]
-val MIRABILITE get() = materialRegistry[Identifier(MODID, "mirabilite")]
-val MITHRIL get() = materialRegistry[Identifier(MODID, "mithril")]
-val MOLYBDENITE get() = materialRegistry[Identifier(MODID, "molybdenite")]
-val MOLYBDENUM get() = materialRegistry[Identifier(MODID, "molybdenum")]
-val MONAZITE get() = materialRegistry[Identifier(MODID, "monazite")]
-val MOON_STONE get() = materialRegistry[Identifier(MODID, "moon_stone")]
-val MOON_TURF get() = materialRegistry[Identifier(MODID, "moon_turf")]
-val MORGANITE get() = materialRegistry[Identifier(MODID, "morganite")]
-val MOSCOVIUM get() = materialRegistry[Identifier(MODID, "moscovium")]
-val MUD get() = materialRegistry[Identifier(MODID, "mud")]
-val MUSPELHEIM_POWER get() = materialRegistry[Identifier(MODID, "muspelheim_power")]
-val MUTATED_IRON get() = materialRegistry[Identifier(MODID, "mutated_iron")]
-val MUTATION get() = materialRegistry[Identifier(MODID, "mutation")]
-val NAQUADAH get() = materialRegistry[Identifier(MODID, "naquadah")]
-val NAQUADAH_ALLOY get() = materialRegistry[Identifier(MODID, "naquadah_alloy")]
-val NAQUADAH_ENRICHED get() = materialRegistry[Identifier(MODID, "naquadah_enriched")]
-val NAQUADRIA get() = materialRegistry[Identifier(MODID, "naquadria")]
-val NATRIUM get() = materialRegistry[Identifier(MODID, "natrium")]
-val NATURAL_ALUMINUM get() = materialRegistry[Identifier(MODID, "natural_aluminum")]
-val NEODYMIUM get() = materialRegistry[Identifier(MODID, "neodymium")]
-val NEODYMIUM_MAGNETIC get() = materialRegistry[Identifier(MODID, "neodymium_magnetic")]
-val NEON get() = materialRegistry[Identifier(MODID, "neon")]
-val NEPTUNIUM get() = materialRegistry[Identifier(MODID, "neptunium")]
-val NETHER get() = materialRegistry[Identifier(MODID, "nether")]
-val NETHERRACK get() = materialRegistry[Identifier(MODID, "netherrack")]
-val NETHER_BRICK get() = materialRegistry[Identifier(MODID, "nether_brick")]
-val NETHER_QUARTZ get() = materialRegistry[Identifier(MODID, "nether_quartz")]
-val NETHER_STAR get() = materialRegistry[Identifier(MODID, "nether_star")]
-val NEUTRINO get() = materialRegistry[Identifier(MODID, "neutrino")]
-val NEUTRON get() = materialRegistry[Identifier(MODID, "neutron")]
-val NEUTRONIUM get() = materialRegistry[Identifier(MODID, "neutronium")]
-val NICHROME get() = materialRegistry[Identifier(MODID, "nichrome")]
-val NICKEL get() = materialRegistry[Identifier(MODID, "nickel")]
-val NIFLHEIM_POWER get() = materialRegistry[Identifier(MODID, "niflheim_power")]
-val NIHONIUM get() = materialRegistry[Identifier(MODID, "nihonium")]
-val NIKOLINE_ALLOY get() = materialRegistry[Identifier(MODID, "nikoline_alloy")]
-val NIKOLITE get() = materialRegistry[Identifier(MODID, "nikolite")]
-val NIOBIUM get() = materialRegistry[Identifier(MODID, "niobium")]
-val NIOBIUM_NITRIDE get() = materialRegistry[Identifier(MODID, "niobium_nitride")]
-val NIOBIUM_TITANIUM get() = materialRegistry[Identifier(MODID, "niobium_titanium")]
-val NITER get() = materialRegistry[Identifier(MODID, "niter")]
-val NITRIC_ACID get() = materialRegistry[Identifier(MODID, "nitric_acid")]
-val NITROGEN get() = materialRegistry[Identifier(MODID, "nitrogen")]
-val NITROGEN_DIOXIDE get() = materialRegistry[Identifier(MODID, "nitrogen_dioxide")]
-val NITROGEN_MONOXIDE get() = materialRegistry[Identifier(MODID, "nitrogen_monoxide")]
-val NITRO_CARBON get() = materialRegistry[Identifier(MODID, "nitro_carbon")]
-val NITRO_FUEL get() = materialRegistry[Identifier(MODID, "nitro_fuel")]
-val NOBELIUM get() = materialRegistry[Identifier(MODID, "nobelium")]
-val NOUGAT get() = materialRegistry[Identifier(MODID, "nougat")]
-val NUTMEG get() = materialRegistry[Identifier(MODID, "nutmeg")]
-val NUT_OIL get() = materialRegistry[Identifier(MODID, "nut_oil")]
-val N_U_L_L get() = materialRegistry[Identifier(MODID, "n_u_l_l")]
-val OAT get() = materialRegistry[Identifier(MODID, "oat")]
-val OBSIDIAN get() = materialRegistry[Identifier(MODID, "obsidian")]
-val OBSIDIAN_FLUX get() = materialRegistry[Identifier(MODID, "obsidian_flux")]
-val OBSIDIAN_REFINED get() = materialRegistry[Identifier(MODID, "obsidian_refined")]
-val OBSIDIAN_STEEL get() = materialRegistry[Identifier(MODID, "obsidian_steel")]
-val OCTINE get() = materialRegistry[Identifier(MODID, "octine")]
-val OGANESSON get() = materialRegistry[Identifier(MODID, "oganesson")]
-val OIL get() = materialRegistry[Identifier(MODID, "oil")]
-val OILSANDS get() = materialRegistry[Identifier(MODID, "oilsands")]
-val OILSHALE get() = materialRegistry[Identifier(MODID, "oilshale")]
-val OLIVE_OIL get() = materialRegistry[Identifier(MODID, "olive_oil")]
-val OLIVINE get() = materialRegistry[Identifier(MODID, "olivine")]
-val ONYX get() = materialRegistry[Identifier(MODID, "onyx")]
-val ONYX_BLACK get() = materialRegistry[Identifier(MODID, "onyx_black")]
-val ONYX_RED get() = materialRegistry[Identifier(MODID, "onyx_red")]
-val OPAL get() = materialRegistry[Identifier(MODID, "opal")]
-val ORANGE get() = materialRegistry[Identifier(MODID, "orange")]
-val ORANGE_SAPPHIRE get() = materialRegistry[Identifier(MODID, "orange_sapphire")]
-val ORGANIC get() = materialRegistry[Identifier(MODID, "organic")]
-val ORICHALCUM get() = materialRegistry[Identifier(MODID, "orichalcum")]
-val ORIHARUKON get() = materialRegistry[Identifier(MODID, "oriharukon")]
-val OSMIRIDIUM get() = materialRegistry[Identifier(MODID, "osmiridium")]
-val OSMIUM get() = materialRegistry[Identifier(MODID, "osmium")]
-val OSMIUM_TETROXIDE get() = materialRegistry[Identifier(MODID, "osmium_tetroxide")]
-val OSMONIUM get() = materialRegistry[Identifier(MODID, "osmonium")]
-val OURECLASE get() = materialRegistry[Identifier(MODID, "oureclase")]
-val OXYGEN get() = materialRegistry[Identifier(MODID, "oxygen")]
-val PAINITE get() = materialRegistry[Identifier(MODID, "painite")]
-val PALIS get() = materialRegistry[Identifier(MODID, "palis")]
-val PALLADIUM get() = materialRegistry[Identifier(MODID, "palladium")]
-val PAPER get() = materialRegistry[Identifier(MODID, "paper")]
-val PARAFFIN_WAX get() = materialRegistry[Identifier(MODID, "paraffin_wax")]
-val PEANUT get() = materialRegistry[Identifier(MODID, "peanut")]
-val PEANUT_WOOD get() = materialRegistry[Identifier(MODID, "peanut_wood")]
-val PEAT get() = materialRegistry[Identifier(MODID, "peat")]
-val PEAT_BITUMINOUS get() = materialRegistry[Identifier(MODID, "peat_bituminous")]
-val PENTLANDITE get() = materialRegistry[Identifier(MODID, "pentlandite")]
-val PEPPER get() = materialRegistry[Identifier(MODID, "pepper")]
-val PEPPER_BLACK get() = materialRegistry[Identifier(MODID, "pepper_black")]
-val PERLITE get() = materialRegistry[Identifier(MODID, "perlite")]
-val PETRIFIED_WOOD get() = materialRegistry[Identifier(MODID, "petrified_wood")]
-val PETROL get() = materialRegistry[Identifier(MODID, "petrol")]
-val PETROLEUM get() = materialRegistry[Identifier(MODID, "petroleum")]
-val PETROLEUM_COKE get() = materialRegistry[Identifier(MODID, "petroleum_coke")]
-val PETROTHEUM get() = materialRegistry[Identifier(MODID, "petrotheum")]
-val PEWTER get() = materialRegistry[Identifier(MODID, "pewter")]
-val PHASED_GOLD get() = materialRegistry[Identifier(MODID, "phased_gold")]
-val PHOENIXITE get() = materialRegistry[Identifier(MODID, "phoenixite")]
-val PHOSPHATE get() = materialRegistry[Identifier(MODID, "phosphate")]
-val PHOSPHOR get() = materialRegistry[Identifier(MODID, "phosphor")]
-val PHOSPHORITE get() = materialRegistry[Identifier(MODID, "phosphorite")]
-val PHOSPHORUS get() = materialRegistry[Identifier(MODID, "phosphorus")]
-val PHOTON get() = materialRegistry[Identifier(MODID, "photon")]
-val PIG_IRON get() = materialRegistry[Identifier(MODID, "pig_iron")]
-val PINALITE get() = materialRegistry[Identifier(MODID, "pinalite")]
-val PINK get() = materialRegistry[Identifier(MODID, "pink")]
-val PINK_VITRIOL get() = materialRegistry[Identifier(MODID, "pink_vitriol")]
-val PISTACHIO get() = materialRegistry[Identifier(MODID, "pistachio")]
-val PITCHBLENDE get() = materialRegistry[Identifier(MODID, "pitchblende")]
-val PITSTONE get() = materialRegistry[Identifier(MODID, "pitstone")]
-val PLASTIC get() = materialRegistry[Identifier(MODID, "plastic")]
-val PLATINUM get() = materialRegistry[Identifier(MODID, "platinum")]
-val PLATINUM_GROUP_SLUDGE get() = materialRegistry[Identifier(MODID, "platinum_group_sludge")]
-val PLUTONIUM get() = materialRegistry[Identifier(MODID, "plutonium")]
-val PLUTONIUM241 get() = materialRegistry[Identifier(MODID, "plutonium241")]
-val PLUTONIUM243 get() = materialRegistry[Identifier(MODID, "plutonium243")]
-val PLUTONIUM244 get() = materialRegistry[Identifier(MODID, "plutonium244")]
-val POKEFENNIUM get() = materialRegistry[Identifier(MODID, "pokefennium")]
-val POLLUCITE get() = materialRegistry[Identifier(MODID, "pollucite")]
-val POLONIUM get() = materialRegistry[Identifier(MODID, "polonium")]
-val PORCELAIN get() = materialRegistry[Identifier(MODID, "porcelain")]
-val POSITRON get() = materialRegistry[Identifier(MODID, "positron")]
-val POTASH get() = materialRegistry[Identifier(MODID, "potash")]
-val POTASSIUM get() = materialRegistry[Identifier(MODID, "potassium")]
-val POTASSIUM_ALUMINATE get() = materialRegistry[Identifier(MODID, "potassium_aluminate")]
-val POTASSIUM_BISULFATE get() = materialRegistry[Identifier(MODID, "potassium_bisulfate")]
-val POTASSIUM_CARBONATE get() = materialRegistry[Identifier(MODID, "potassium_carbonate")]
-val POTASSIUM_FELDSPAR get() = materialRegistry[Identifier(MODID, "potassium_feldspar")]
-val POTASSIUM_HYDROXIDE get() = materialRegistry[Identifier(MODID, "potassium_hydroxide")]
-val POTASSIUM_NITRATE get() = materialRegistry[Identifier(MODID, "potassium_nitrate")]
-val POTASSIUM_PERSULFATE get() = materialRegistry[Identifier(MODID, "potassium_persulfate")]
-val POTASSIUM_PYROSULFATE get() = materialRegistry[Identifier(MODID, "potassium_pyrosulfate")]
-val POTASSIUM_SULFATE get() = materialRegistry[Identifier(MODID, "potassium_sulfate")]
-val POTASSIUM_SULFIDE get() = materialRegistry[Identifier(MODID, "potassium_sulfide")]
-val POTASSIUM_SULFITE get() = materialRegistry[Identifier(MODID, "potassium_sulfite")]
-val POTATO get() = materialRegistry[Identifier(MODID, "potato")]
-val POWELLITE get() = materialRegistry[Identifier(MODID, "powellite")]
-val PRASEODYMIUM get() = materialRegistry[Identifier(MODID, "praseodymium")]
-val PRIMITIVE get() = materialRegistry[Identifier(MODID, "primitive")]
-val PRISMANE get() = materialRegistry[Identifier(MODID, "prismane")]
-val PRISMARINE get() = materialRegistry[Identifier(MODID, "prismarine")]
-val PRISMARINE_DARK get() = materialRegistry[Identifier(MODID, "prismarine_dark")]
-val PROMETHEUM get() = materialRegistry[Identifier(MODID, "prometheum")]
-val PROMETHIUM get() = materialRegistry[Identifier(MODID, "promethium")]
-val PROPANE get() = materialRegistry[Identifier(MODID, "propane")]
-val PROPYLENE get() = materialRegistry[Identifier(MODID, "propylene")]
-val PROTACTINIUM get() = materialRegistry[Identifier(MODID, "protactinium")]
-val PROTON get() = materialRegistry[Identifier(MODID, "proton")]
-val PULSATING_IRON get() = materialRegistry[Identifier(MODID, "pulsating_iron")]
-val PUMICE get() = materialRegistry[Identifier(MODID, "pumice")]
-val PURPLE get() = materialRegistry[Identifier(MODID, "purple")]
-val PURPLE_ALLOY get() = materialRegistry[Identifier(MODID, "purple_alloy")]
-val PURPLE_SAPPHIRE get() = materialRegistry[Identifier(MODID, "purple_sapphire")]
-val PYRITE get() = materialRegistry[Identifier(MODID, "pyrite")]
-val PYROLUSITE get() = materialRegistry[Identifier(MODID, "pyrolusite")]
-val PYROPE get() = materialRegistry[Identifier(MODID, "pyrope")]
-val PYROTHEUM get() = materialRegistry[Identifier(MODID, "pyrotheum")]
-val P_E_Z get() = materialRegistry[Identifier(MODID, "p_e_z")]
-val QUANTUM get() = materialRegistry[Identifier(MODID, "quantum")]
-val QUARTZ get() = materialRegistry[Identifier(MODID, "quartz")]
-val QUARTZITE get() = materialRegistry[Identifier(MODID, "quartzite")]
-val QUARTZ_BLACK get() = materialRegistry[Identifier(MODID, "quartz_black")]
-val QUARTZ_SAND get() = materialRegistry[Identifier(MODID, "quartz_sand")]
-val QUARTZ_SMOKY get() = materialRegistry[Identifier(MODID, "quartz_smoky")]
-val QUICKLIME get() = materialRegistry[Identifier(MODID, "quicklime")]
-val QUICKSILVER get() = materialRegistry[Identifier(MODID, "quicksilver")]
-val RADIUM get() = materialRegistry[Identifier(MODID, "radium")]
-val RADON get() = materialRegistry[Identifier(MODID, "radon")]
-val RANDOMITE get() = materialRegistry[Identifier(MODID, "randomite")]
-val RARE_EARTH get() = materialRegistry[Identifier(MODID, "rare_earth")]
-val RASPITE get() = materialRegistry[Identifier(MODID, "raspite")]
-val RED get() = materialRegistry[Identifier(MODID, "red")]
-val REDSTONE get() = materialRegistry[Identifier(MODID, "redstone")]
-val REDSTONE_ALLOY get() = materialRegistry[Identifier(MODID, "redstone_alloy")]
-val REDSTONIA get() = materialRegistry[Identifier(MODID, "redstonia")]
-val RED_ALLOY get() = materialRegistry[Identifier(MODID, "red_alloy")]
-val RED_MATTER get() = materialRegistry[Identifier(MODID, "red_matter")]
-val RED_METEOR get() = materialRegistry[Identifier(MODID, "red_meteor")]
-val RED_QUARTZ get() = materialRegistry[Identifier(MODID, "red_quartz")]
-val REDROCK get() = materialRegistry[Identifier(MODID, "redrock")]
-val RED_STEEL get() = materialRegistry[Identifier(MODID, "red_steel")]
-val RED_VITRIOL get() = materialRegistry[Identifier(MODID, "red_vitriol")]
-val REFRACTORYWAX get() = materialRegistry[Identifier(MODID, "refractorywax")]
-val REINFORCED get() = materialRegistry[Identifier(MODID, "reinforced")]
-val RHENIUM get() = materialRegistry[Identifier(MODID, "rhenium")]
-val RHODIUM get() = materialRegistry[Identifier(MODID, "rhodium")]
-val RHYOLITE get() = materialRegistry[Identifier(MODID, "rhyolite")]
-val RICE get() = materialRegistry[Identifier(MODID, "rice")]
-val ROCK_SALT get() = materialRegistry[Identifier(MODID, "rock_salt")]
-val ROENTGENIUM get() = materialRegistry[Identifier(MODID, "roentgenium")]
-val ROMAN_VITRIOL get() = materialRegistry[Identifier(MODID, "roman_vitriol")]
-val ROSE_GOLD get() = materialRegistry[Identifier(MODID, "rose_gold")]
-val RUBBER get() = materialRegistry[Identifier(MODID, "rubber")]
-val RUBBER_TREE_SAP get() = materialRegistry[Identifier(MODID, "rubber_tree_sap")]
-val RUBIDIUM get() = materialRegistry[Identifier(MODID, "rubidium")]
-val RUBRACIUM get() = materialRegistry[Identifier(MODID, "rubracium")]
-val RUBY get() = materialRegistry[Identifier(MODID, "ruby")]
-val RUSSELLITE get() = materialRegistry[Identifier(MODID, "russellite")]
-val RUTHENIUM get() = materialRegistry[Identifier(MODID, "ruthenium")]
-val RUTHERFORDIUM get() = materialRegistry[Identifier(MODID, "rutherfordium")]
-val RUTILE get() = materialRegistry[Identifier(MODID, "rutile")]
-val RYE get() = materialRegistry[Identifier(MODID, "rye")]
-val RYU get() = materialRegistry[Identifier(MODID, "ryu")]
-val RYU_DRAGON_RYDER get() = materialRegistry[Identifier(MODID, "ryu_dragon_ryder")]
-val SALT get() = materialRegistry[Identifier(MODID, "salt")]
-val SALTED_BUTTER get() = materialRegistry[Identifier(MODID, "salted_butter")]
-val SALT_WATER get() = materialRegistry[Identifier(MODID, "salt_water")]
-val SAMARIUM get() = materialRegistry[Identifier(MODID, "samarium")]
-val SAND get() = materialRegistry[Identifier(MODID, "sand")]
-val SANGUINITE get() = materialRegistry[Identifier(MODID, "sanguinite")]
-val SAPPHIRE get() = materialRegistry[Identifier(MODID, "sapphire")]
-val SATINSPAR get() = materialRegistry[Identifier(MODID, "satinspar")]
-val SCABYST get() = materialRegistry[Identifier(MODID, "scabyst")]
-val SCANDIUM get() = materialRegistry[Identifier(MODID, "scandium")]
-val SCARLET_EMERALD get() = materialRegistry[Identifier(MODID, "scarlet_emerald")]
-val SCHEELITE get() = materialRegistry[Identifier(MODID, "scheelite")]
-val SEABORGIUM get() = materialRegistry[Identifier(MODID, "seaborgium")]
-val SEA_WATER get() = materialRegistry[Identifier(MODID, "sea_water")]
-val SEED_OIL get() = materialRegistry[Identifier(MODID, "seed_oil")]
-val SELENITE get() = materialRegistry[Identifier(MODID, "selenite")]
-val SELENIUM get() = materialRegistry[Identifier(MODID, "selenium")]
-val SERPENTINE get() = materialRegistry[Identifier(MODID, "serpentine")]
-val SHADOW_IRON get() = materialRegistry[Identifier(MODID, "shadow_iron")]
-val SHADOW_STEEL get() = materialRegistry[Identifier(MODID, "shadow_steel")]
-val SHALE get() = materialRegistry[Identifier(MODID, "shale")]
-val SHELDONITE get() = materialRegistry[Identifier(MODID, "sheldonite")]
-val SHIMMERWOOD get() = materialRegistry[Identifier(MODID, "shimmerwood")]
-val SIGNALUM get() = materialRegistry[Identifier(MODID, "signalum")]
-val SILICON get() = materialRegistry[Identifier(MODID, "silicon")]
-val SILICON_DIOXIDE get() = materialRegistry[Identifier(MODID, "silicon_dioxide")]
-val SILTSTONE get() = materialRegistry[Identifier(MODID, "siltstone")]
-val SILVER get() = materialRegistry[Identifier(MODID, "silver")]
-val SILVERWOOD get() = materialRegistry[Identifier(MODID, "silverwood")]
-val SILVER_IODIDE get() = materialRegistry[Identifier(MODID, "silver_iodide")]
-val SKYROOT get() = materialRegistry[Identifier(MODID, "skyroot")]
-val SLIMY_BONE get() = materialRegistry[Identifier(MODID, "slimy_bone")]
-val SLUICE_SAND get() = materialRegistry[Identifier(MODID, "sluice_sand")]
-val SMITHSONITE get() = materialRegistry[Identifier(MODID, "smithsonite")]
-val SMOKEY_QUARTZ get() = materialRegistry[Identifier(MODID, "smokey_quartz")]
-val SNOW get() = materialRegistry[Identifier(MODID, "snow")]
-val SOAPSTONE get() = materialRegistry[Identifier(MODID, "soapstone")]
-val SODALITE get() = materialRegistry[Identifier(MODID, "sodalite")]
-val SODIUM get() = materialRegistry[Identifier(MODID, "sodium")]
-val SODIUM_ALUMINATE get() = materialRegistry[Identifier(MODID, "sodium_aluminate")]
-val SODIUM_BISULFATE get() = materialRegistry[Identifier(MODID, "sodium_bisulfate")]
-val SODIUM_CARBONATE get() = materialRegistry[Identifier(MODID, "sodium_carbonate")]
-val SODIUM_HYDROGEN_SULFATE get() = materialRegistry[Identifier(MODID, "sodium_hydrogen_sulfate")]
-val SODIUM_HYDROXIDE get() = materialRegistry[Identifier(MODID, "sodium_hydroxide")]
-val SODIUM_NITRATE get() = materialRegistry[Identifier(MODID, "sodium_nitrate")]
-val SODIUM_PEROXIDE get() = materialRegistry[Identifier(MODID, "sodium_peroxide")]
-val SODIUM_PERSULFATE get() = materialRegistry[Identifier(MODID, "sodium_persulfate")]
-val SODIUM_PYROSULFATE get() = materialRegistry[Identifier(MODID, "sodium_pyrosulfate")]
-val SODIUM_SULFATE get() = materialRegistry[Identifier(MODID, "sodium_sulfate")]
-val SODIUM_SULFIDE get() = materialRegistry[Identifier(MODID, "sodium_sulfide")]
-val SODIUM_SULFITE get() = materialRegistry[Identifier(MODID, "sodium_sulfite")]
-val SOLDERING_ALLOY get() = materialRegistry[Identifier(MODID, "soldering_alloy")]
-val SOLUTION_BLUE_VITRIOL get() = materialRegistry[Identifier(MODID, "solution_blue_vitriol")]
-val SOLUTION_NICKEL_SULFATE get() = materialRegistry[Identifier(MODID, "solution_nickel_sulfate")]
-val SOULARIUM get() = materialRegistry[Identifier(MODID, "soularium")]
-val SOULIUM get() = materialRegistry[Identifier(MODID, "soulium")]
-val SOULSAND get() = materialRegistry[Identifier(MODID, "soulsand")]
-val SOYLENT_GREEN get() = materialRegistry[Identifier(MODID, "soylent_green")]
-val SPACE_STONE get() = materialRegistry[Identifier(MODID, "space_stone")]
-val SPECTRE_IRON get() = materialRegistry[Identifier(MODID, "spectre_iron")]
-val SPERRYLITE get() = materialRegistry[Identifier(MODID, "sperrylite")]
-val SPESSARTINE get() = materialRegistry[Identifier(MODID, "spessartine")]
-val SPHALERITE get() = materialRegistry[Identifier(MODID, "sphalerite")]
-val SPINEL get() = materialRegistry[Identifier(MODID, "spinel")]
-val SPODUMENE get() = materialRegistry[Identifier(MODID, "spodumene")]
-val STAINLESS_STEEL get() = materialRegistry[Identifier(MODID, "stainless_steel")]
-val STANNIC_CHLORIDE get() = materialRegistry[Identifier(MODID, "stannic_chloride")]
-val STANNITE get() = materialRegistry[Identifier(MODID, "stannite")]
-val STARCONIUM get() = materialRegistry[Identifier(MODID, "starconium")]
-val STEEL get() = materialRegistry[Identifier(MODID, "steel")]
-val STEELEAF get() = materialRegistry[Identifier(MODID, "steeleaf")]
-val STEEL_GALVANIZED get() = materialRegistry[Identifier(MODID, "steel_galvanized")]
-val STEEL_MAGNETIC get() = materialRegistry[Identifier(MODID, "steel_magnetic")]
-val STERLING_SILVER get() = materialRegistry[Identifier(MODID, "sterling_silver")]
-val STIBNITE get() = materialRegistry[Identifier(MODID, "stibnite")]
-val STOLZITE get() = materialRegistry[Identifier(MODID, "stolzite")]
-val STONE get() = materialRegistry[Identifier(MODID, "stone")]
-val STRONTIUM get() = materialRegistry[Identifier(MODID, "strontium")]
-val SUGAR get() = materialRegistry[Identifier(MODID, "sugar")]
-val SUGILITE get() = materialRegistry[Identifier(MODID, "sugilite")]
-val SULFUR get() = materialRegistry[Identifier(MODID, "sulfur")]
-val SULFURIC_ACID get() = materialRegistry[Identifier(MODID, "sulfuric_acid")]
-val SULFUR_DIOXIDE get() = materialRegistry[Identifier(MODID, "sulfur_dioxide")]
-val SULFUR_TRIOXIDE get() = materialRegistry[Identifier(MODID, "sulfur_trioxide")]
-val SUNFLOWER_OIL get() = materialRegistry[Identifier(MODID, "sunflower_oil")]
-val SUNNARIUM get() = materialRegistry[Identifier(MODID, "sunnarium")]
-val SUNNY_QUARTZ get() = materialRegistry[Identifier(MODID, "sunny_quartz")]
-val SUNSTONE get() = materialRegistry[Identifier(MODID, "sunstone")]
-val SUPERCONDUCTOR get() = materialRegistry[Identifier(MODID, "superconductor")]
-val SWEET get() = materialRegistry[Identifier(MODID, "sweet")]
-val SYLVITE get() = materialRegistry[Identifier(MODID, "sylvite")]
-val SYRMORITE get() = materialRegistry[Identifier(MODID, "syrmorite")]
-val TALC get() = materialRegistry[Identifier(MODID, "talc")]
-val TALLOW get() = materialRegistry[Identifier(MODID, "tallow")]
-val TANTALITE get() = materialRegistry[Identifier(MODID, "tantalite")]
-val TANTALUM get() = materialRegistry[Identifier(MODID, "tantalum")]
-val TANZANITE get() = materialRegistry[Identifier(MODID, "tanzanite")]
-val TAPAZITE get() = materialRegistry[Identifier(MODID, "tapazite")]
-val TAR get() = materialRegistry[Identifier(MODID, "tar")]
-val TARTARITE get() = materialRegistry[Identifier(MODID, "tartarite")]
-val TAR_PITCH get() = materialRegistry[Identifier(MODID, "tar_pitch")]
-val TEA get() = materialRegistry[Identifier(MODID, "tea")]
-val TECHNETIUM get() = materialRegistry[Identifier(MODID, "technetium")]
-val TELLURIUM get() = materialRegistry[Identifier(MODID, "tellurium")]
-val TENNANTITE get() = materialRegistry[Identifier(MODID, "tennantite")]
-val TENNESSINE get() = materialRegistry[Identifier(MODID, "tennessine")]
-val TERBIUM get() = materialRegistry[Identifier(MODID, "terbium")]
-val TERRASTEEL get() = materialRegistry[Identifier(MODID, "terrasteel")]
-val TERRASTEEL_ALLOY_RAW get() = materialRegistry[Identifier(MODID, "terrasteel_alloy_raw")]
-val TERRASTEEL_ALLOY_STRENGTHENED get() = materialRegistry[Identifier(MODID, "terrasteel_alloy_strengthened")]
-val TESLATINE_ALLOY get() = materialRegistry[Identifier(MODID, "teslatine_alloy")]
-val TESLATITE get() = materialRegistry[Identifier(MODID, "teslatite")]
-val TETRAHEDRITE get() = materialRegistry[Identifier(MODID, "tetrahedrite")]
-val THALLIUM get() = materialRegistry[Identifier(MODID, "thallium")]
-val THAUMIUM get() = materialRegistry[Identifier(MODID, "thaumium")]
-val THORIUM get() = materialRegistry[Identifier(MODID, "thorium")]
-val THULIUM get() = materialRegistry[Identifier(MODID, "thulium")]
-val THYRIUM get() = materialRegistry[Identifier(MODID, "thyrium")]
-val TIN get() = materialRegistry[Identifier(MODID, "tin")]
-val TIN_ALLOY get() = materialRegistry[Identifier(MODID, "tin_alloy")]
-val TITAN get() = materialRegistry[Identifier(MODID, "titan")]
-val TITANIUM get() = materialRegistry[Identifier(MODID, "titanium")]
-val TITANIUM_ALUMINIDE get() = materialRegistry[Identifier(MODID, "titanium_aluminide")]
-val TITANIUM_GOLD get() = materialRegistry[Identifier(MODID, "titanium_gold")]
-val TITANIUM_IRIDIUM get() = materialRegistry[Identifier(MODID, "titanium_iridium")]
-val TITANIUM_IRON get() = materialRegistry[Identifier(MODID, "titanium_iron")]
-val TITANIUM_TETRACHLORIDE get() = materialRegistry[Identifier(MODID, "titanium_tetrachloride")]
-val TOFU get() = materialRegistry[Identifier(MODID, "tofu")]
-val TOPAZ get() = materialRegistry[Identifier(MODID, "topaz")]
-val TOURMALINE get() = materialRegistry[Identifier(MODID, "tourmaline")]
-val TRIBIBIUM get() = materialRegistry[Identifier(MODID, "tribibium")]
-val TRIBIENNIUM get() = materialRegistry[Identifier(MODID, "tribiennium")]
-val TRIBIHEXIUM get() = materialRegistry[Identifier(MODID, "tribihexium")]
-val TRIBINILIUM get() = materialRegistry[Identifier(MODID, "tribinilium")]
-val TRIBIOCTIUM get() = materialRegistry[Identifier(MODID, "tribioctium")]
-val TRIBIPENTIUM get() = materialRegistry[Identifier(MODID, "tribipentium")]
-val TRIBIQUADIUM get() = materialRegistry[Identifier(MODID, "tribiquadium")]
-val TRIBISEPTIUM get() = materialRegistry[Identifier(MODID, "tribiseptium")]
-val TRIBITRIUM get() = materialRegistry[Identifier(MODID, "tribitrium")]
-val TRIBIUNIUM get() = materialRegistry[Identifier(MODID, "tribiunium")]
-val TRIENNBIUM get() = materialRegistry[Identifier(MODID, "triennbium")]
-val TRIENNENNIUM get() = materialRegistry[Identifier(MODID, "triennennium")]
-val TRIENNHEXIUM get() = materialRegistry[Identifier(MODID, "triennhexium")]
-val TRIENNNILIUM get() = materialRegistry[Identifier(MODID, "triennnilium")]
-val TRIENNOCTIUM get() = materialRegistry[Identifier(MODID, "triennoctium")]
-val TRIENNPENTIUM get() = materialRegistry[Identifier(MODID, "triennpentium")]
-val TRIENNQUADIUM get() = materialRegistry[Identifier(MODID, "triennquadium")]
-val TRIENNSEPTIUM get() = materialRegistry[Identifier(MODID, "triennseptium")]
-val TRIENNTRIUM get() = materialRegistry[Identifier(MODID, "trienntrium")]
-val TRIENNUNIUM get() = materialRegistry[Identifier(MODID, "triennunium")]
-val TRIHEXBIUM get() = materialRegistry[Identifier(MODID, "trihexbium")]
-val TRIHEXENNIUM get() = materialRegistry[Identifier(MODID, "trihexennium")]
-val TRIHEXHEXIUM get() = materialRegistry[Identifier(MODID, "trihexhexium")]
-val TRIHEXNILIUM get() = materialRegistry[Identifier(MODID, "trihexnilium")]
-val TRIHEXOCTIUM get() = materialRegistry[Identifier(MODID, "trihexoctium")]
-val TRIHEXPENTIUM get() = materialRegistry[Identifier(MODID, "trihexpentium")]
-val TRIHEXQUADIUM get() = materialRegistry[Identifier(MODID, "trihexquadium")]
-val TRIHEXSEPTIUM get() = materialRegistry[Identifier(MODID, "trihexseptium")]
-val TRIHEXTRIUM get() = materialRegistry[Identifier(MODID, "trihextrium")]
-val TRIHEXUNIUM get() = materialRegistry[Identifier(MODID, "trihexunium")]
-val TRINAQUADALLOY get() = materialRegistry[Identifier(MODID, "trinaquadalloy")]
-val TRINILBIUM get() = materialRegistry[Identifier(MODID, "trinilbium")]
-val TRINILENNIUM get() = materialRegistry[Identifier(MODID, "trinilennium")]
-val TRINILHEXIUM get() = materialRegistry[Identifier(MODID, "trinilhexium")]
-val TRINILNILIUM get() = materialRegistry[Identifier(MODID, "trinilnilium")]
-val TRINILOCTIUM get() = materialRegistry[Identifier(MODID, "triniloctium")]
-val TRINILPENTIUM get() = materialRegistry[Identifier(MODID, "trinilpentium")]
-val TRINILQUADIUM get() = materialRegistry[Identifier(MODID, "trinilquadium")]
-val TRINILSEPTIUM get() = materialRegistry[Identifier(MODID, "trinilseptium")]
-val TRINILTRIUM get() = materialRegistry[Identifier(MODID, "triniltrium")]
-val TRINILUNIUM get() = materialRegistry[Identifier(MODID, "trinilunium")]
-val TRINITANIUM get() = materialRegistry[Identifier(MODID, "trinitanium")]
-val TRINIUM get() = materialRegistry[Identifier(MODID, "trinium")]
-val TRIOCTBIUM get() = materialRegistry[Identifier(MODID, "trioctbium")]
-val TRIOCTENNIUM get() = materialRegistry[Identifier(MODID, "trioctennium")]
-val TRIOCTHEXIUM get() = materialRegistry[Identifier(MODID, "triocthexium")]
-val TRIOCTNILIUM get() = materialRegistry[Identifier(MODID, "trioctnilium")]
-val TRIOCTOCTIUM get() = materialRegistry[Identifier(MODID, "trioctoctium")]
-val TRIOCTPENTIUM get() = materialRegistry[Identifier(MODID, "trioctpentium")]
-val TRIOCTQUADIUM get() = materialRegistry[Identifier(MODID, "trioctquadium")]
-val TRIOCTSEPTIUM get() = materialRegistry[Identifier(MODID, "trioctseptium")]
-val TRIOCTTRIUM get() = materialRegistry[Identifier(MODID, "triocttrium")]
-val TRIOCTUNIUM get() = materialRegistry[Identifier(MODID, "trioctunium")]
-val TRIPENTBIUM get() = materialRegistry[Identifier(MODID, "tripentbium")]
-val TRIPENTENNIUM get() = materialRegistry[Identifier(MODID, "tripentennium")]
-val TRIPENTHEXIUM get() = materialRegistry[Identifier(MODID, "tripenthexium")]
-val TRIPENTNILIUM get() = materialRegistry[Identifier(MODID, "tripentnilium")]
-val TRIPENTOCTIUM get() = materialRegistry[Identifier(MODID, "tripentoctium")]
-val TRIPENTPENTIUM get() = materialRegistry[Identifier(MODID, "tripentpentium")]
-val TRIPENTQUADIUM get() = materialRegistry[Identifier(MODID, "tripentquadium")]
-val TRIPENTSEPTIUM get() = materialRegistry[Identifier(MODID, "tripentseptium")]
-val TRIPENTTRIUM get() = materialRegistry[Identifier(MODID, "tripenttrium")]
-val TRIPENTUNIUM get() = materialRegistry[Identifier(MODID, "tripentunium")]
-val TRIQUADBIUM get() = materialRegistry[Identifier(MODID, "triquadbium")]
-val TRIQUADENNIUM get() = materialRegistry[Identifier(MODID, "triquadennium")]
-val TRIQUADHEXIUM get() = materialRegistry[Identifier(MODID, "triquadhexium")]
-val TRIQUADNILIUM get() = materialRegistry[Identifier(MODID, "triquadnilium")]
-val TRIQUADOCTIUM get() = materialRegistry[Identifier(MODID, "triquadoctium")]
-val TRIQUADPENTIUM get() = materialRegistry[Identifier(MODID, "triquadpentium")]
-val TRIQUADQUADIUM get() = materialRegistry[Identifier(MODID, "triquadquadium")]
-val TRIQUADSEPTIUM get() = materialRegistry[Identifier(MODID, "triquadseptium")]
-val TRIQUADTRIUM get() = materialRegistry[Identifier(MODID, "triquadtrium")]
-val TRIQUADUNIUM get() = materialRegistry[Identifier(MODID, "triquadunium")]
-val TRISEPTBIUM get() = materialRegistry[Identifier(MODID, "triseptbium")]
-val TRISEPTENNIUM get() = materialRegistry[Identifier(MODID, "triseptennium")]
-val TRISEPTHEXIUM get() = materialRegistry[Identifier(MODID, "trisepthexium")]
-val TRISEPTNILIUM get() = materialRegistry[Identifier(MODID, "triseptnilium")]
-val TRISEPTOCTIUM get() = materialRegistry[Identifier(MODID, "triseptoctium")]
-val TRISEPTPENTIUM get() = materialRegistry[Identifier(MODID, "triseptpentium")]
-val TRISEPTQUADIUM get() = materialRegistry[Identifier(MODID, "triseptquadium")]
-val TRISEPTSEPTIUM get() = materialRegistry[Identifier(MODID, "triseptseptium")]
-val TRISEPTTRIUM get() = materialRegistry[Identifier(MODID, "trisepttrium")]
-val TRISEPTUNIUM get() = materialRegistry[Identifier(MODID, "triseptunium")]
-val TRITANIUM get() = materialRegistry[Identifier(MODID, "tritanium")]
-val TRITANIUM_DIOXIDE get() = materialRegistry[Identifier(MODID, "tritanium_dioxide")]
-val TRITANIUM_ELEMENTAL get() = materialRegistry[Identifier(MODID, "tritanium_elemental")]
-val TRITANIUM_HEXAASTATIDE get() = materialRegistry[Identifier(MODID, "tritanium_hexaastatide")]
-val TRITANIUM_HEXABROMIDE get() = materialRegistry[Identifier(MODID, "tritanium_hexabromide")]
-val TRITANIUM_HEXACHLORIDE get() = materialRegistry[Identifier(MODID, "tritanium_hexachloride")]
-val TRITANIUM_HEXAFLUORIDE get() = materialRegistry[Identifier(MODID, "tritanium_hexafluoride")]
-val TRITANIUM_HEXAIODIDE get() = materialRegistry[Identifier(MODID, "tritanium_hexaiodide")]
-val TRITIUM get() = materialRegistry[Identifier(MODID, "tritium")]
-val TRITRIBIUM get() = materialRegistry[Identifier(MODID, "tritribium")]
-val TRITRIENNIUM get() = materialRegistry[Identifier(MODID, "tritriennium")]
-val TRITRIHEXIUM get() = materialRegistry[Identifier(MODID, "tritrihexium")]
-val TRITRINILIUM get() = materialRegistry[Identifier(MODID, "tritrinilium")]
-val TRITRIOCTIUM get() = materialRegistry[Identifier(MODID, "tritrioctium")]
-val TRITRIPENTIUM get() = materialRegistry[Identifier(MODID, "tritripentium")]
-val TRITRIQUADIUM get() = materialRegistry[Identifier(MODID, "tritriquadium")]
-val TRITRISEPTIUM get() = materialRegistry[Identifier(MODID, "tritriseptium")]
-val TRITRITRIUM get() = materialRegistry[Identifier(MODID, "tritritrium")]
-val TRITRIUNIUM get() = materialRegistry[Identifier(MODID, "tritriunium")]
-val TRIUNBIUM get() = materialRegistry[Identifier(MODID, "triunbium")]
-val TRIUNENNIUM get() = materialRegistry[Identifier(MODID, "triunennium")]
-val TRIUNHEXIUM get() = materialRegistry[Identifier(MODID, "triunhexium")]
-val TRIUNNILIUM get() = materialRegistry[Identifier(MODID, "triunnilium")]
-val TRIUNOCTIUM get() = materialRegistry[Identifier(MODID, "triunoctium")]
-val TRIUNPENTIUM get() = materialRegistry[Identifier(MODID, "triunpentium")]
-val TRIUNQUADIUM get() = materialRegistry[Identifier(MODID, "triunquadium")]
-val TRIUNSEPTIUM get() = materialRegistry[Identifier(MODID, "triunseptium")]
-val TRIUNTRIUM get() = materialRegistry[Identifier(MODID, "triuntrium")]
-val TRIUNUNIUM get() = materialRegistry[Identifier(MODID, "triununium")]
-val TRONA get() = materialRegistry[Identifier(MODID, "trona")]
-val TUMBAGA get() = materialRegistry[Identifier(MODID, "tumbaga")]
-val TUNGSTATE get() = materialRegistry[Identifier(MODID, "tungstate")]
-val TUNGSTEN get() = materialRegistry[Identifier(MODID, "tungsten")]
-val TUNGSTEN_CARBIDE get() = materialRegistry[Identifier(MODID, "tungsten_carbide")]
-val TUNGSTEN_OXIDE get() = materialRegistry[Identifier(MODID, "tungsten_oxide")]
-val TUNGSTEN_SINTERED get() = materialRegistry[Identifier(MODID, "tungsten_sintered")]
-val TUNGSTENSTEEL get() = materialRegistry[Identifier(MODID, "tungstensteel")]
-val TUNGSTEN_TRIOXIDE get() = materialRegistry[Identifier(MODID, "tungsten_trioxide")]
-val TUNGSTIC_ACID get() = materialRegistry[Identifier(MODID, "tungstic_acid")]
-val TURQUOISE get() = materialRegistry[Identifier(MODID, "turquoise")]
-val T_N_T get() = materialRegistry[Identifier(MODID, "t_n_t")]
-val ULTIMATE get() = materialRegistry[Identifier(MODID, "ultimate")]
-val ULTIMET get() = materialRegistry[Identifier(MODID, "ultimet")]
-val UMBER get() = materialRegistry[Identifier(MODID, "umber")]
-val UNBIBIUM get() = materialRegistry[Identifier(MODID, "unbibium")]
-val UNBIENNIUM get() = materialRegistry[Identifier(MODID, "unbiennium")]
-val UNBIHEXIUM get() = materialRegistry[Identifier(MODID, "unbihexium")]
-val UNBINILIUM get() = materialRegistry[Identifier(MODID, "unbinilium")]
-val UNBIOCTIUM get() = materialRegistry[Identifier(MODID, "unbioctium")]
-val UNBIPENTIUM get() = materialRegistry[Identifier(MODID, "unbipentium")]
-val UNBIQUADIUM get() = materialRegistry[Identifier(MODID, "unbiquadium")]
-val UNBISEPTIUM get() = materialRegistry[Identifier(MODID, "unbiseptium")]
-val UNBITRIUM get() = materialRegistry[Identifier(MODID, "unbitrium")]
-val UNBIUNIUM get() = materialRegistry[Identifier(MODID, "unbiunium")]
-val UNENNBIUM get() = materialRegistry[Identifier(MODID, "unennbium")]
-val UNENNENNIUM get() = materialRegistry[Identifier(MODID, "unennennium")]
-val UNENNHEXIUM get() = materialRegistry[Identifier(MODID, "unennhexium")]
-val UNENNNILIUM get() = materialRegistry[Identifier(MODID, "unennnilium")]
-val UNENNOCTIUM get() = materialRegistry[Identifier(MODID, "unennoctium")]
-val UNENNPENTIUM get() = materialRegistry[Identifier(MODID, "unennpentium")]
-val UNENNQUADIUM get() = materialRegistry[Identifier(MODID, "unennquadium")]
-val UNENNSEPTIUM get() = materialRegistry[Identifier(MODID, "unennseptium")]
-val UNENNTRIUM get() = materialRegistry[Identifier(MODID, "unenntrium")]
-val UNENNUNIUM get() = materialRegistry[Identifier(MODID, "unennunium")]
-val UNHEXBIUM get() = materialRegistry[Identifier(MODID, "unhexbium")]
-val UNHEXENNIUM get() = materialRegistry[Identifier(MODID, "unhexennium")]
-val UNHEXHEXIUM get() = materialRegistry[Identifier(MODID, "unhexhexium")]
-val UNHEXNILIUM get() = materialRegistry[Identifier(MODID, "unhexnilium")]
-val UNHEXOCTIUM get() = materialRegistry[Identifier(MODID, "unhexoctium")]
-val UNHEXPENTIUM get() = materialRegistry[Identifier(MODID, "unhexpentium")]
-val UNHEXQUADIUM get() = materialRegistry[Identifier(MODID, "unhexquadium")]
-val UNHEXSEPTIUM get() = materialRegistry[Identifier(MODID, "unhexseptium")]
-val UNHEXTRIUM get() = materialRegistry[Identifier(MODID, "unhextrium")]
-val UNHEXUNIUM get() = materialRegistry[Identifier(MODID, "unhexunium")]
-val UNKNOWN get() = materialRegistry[Identifier(MODID, "unknown")]
-val UNOCTBIUM get() = materialRegistry[Identifier(MODID, "unoctbium")]
-val UNOCTENNIUM get() = materialRegistry[Identifier(MODID, "unoctennium")]
-val UNOCTHEXIUM get() = materialRegistry[Identifier(MODID, "unocthexium")]
-val UNOCTNILIUM get() = materialRegistry[Identifier(MODID, "unoctnilium")]
-val UNOCTOCTIUM get() = materialRegistry[Identifier(MODID, "unoctoctium")]
-val UNOCTPENTIUM get() = materialRegistry[Identifier(MODID, "unoctpentium")]
-val UNOCTQUADIUM get() = materialRegistry[Identifier(MODID, "unoctquadium")]
-val UNOCTSEPTIUM get() = materialRegistry[Identifier(MODID, "unoctseptium")]
-val UNOCTTRIUM get() = materialRegistry[Identifier(MODID, "unocttrium")]
-val UNOCTUNIUM get() = materialRegistry[Identifier(MODID, "unoctunium")]
-val UNPENTBIUM get() = materialRegistry[Identifier(MODID, "unpentbium")]
-val UNPENTENNIUM get() = materialRegistry[Identifier(MODID, "unpentennium")]
-val UNPENTHEXIUM get() = materialRegistry[Identifier(MODID, "unpenthexium")]
-val UNPENTNILIUM get() = materialRegistry[Identifier(MODID, "unpentnilium")]
-val UNPENTOCTIUM get() = materialRegistry[Identifier(MODID, "unpentoctium")]
-val UNPENTPENTIUM get() = materialRegistry[Identifier(MODID, "unpentpentium")]
-val UNPENTQUADIUM get() = materialRegistry[Identifier(MODID, "unpentquadium")]
-val UNPENTSEPTIUM get() = materialRegistry[Identifier(MODID, "unpentseptium")]
-val UNPENTTRIUM get() = materialRegistry[Identifier(MODID, "unpenttrium")]
-val UNPENTUNIUM get() = materialRegistry[Identifier(MODID, "unpentunium")]
-val UNQUADBIUM get() = materialRegistry[Identifier(MODID, "unquadbium")]
-val UNQUADENNIUM get() = materialRegistry[Identifier(MODID, "unquadennium")]
-val UNQUADHEXIUM get() = materialRegistry[Identifier(MODID, "unquadhexium")]
-val UNQUADNILIUM get() = materialRegistry[Identifier(MODID, "unquadnilium")]
-val UNQUADOCTIUM get() = materialRegistry[Identifier(MODID, "unquadoctium")]
-val UNQUADPENTIUM get() = materialRegistry[Identifier(MODID, "unquadpentium")]
-val UNQUADQUADIUM get() = materialRegistry[Identifier(MODID, "unquadquadium")]
-val UNQUADSEPTIUM get() = materialRegistry[Identifier(MODID, "unquadseptium")]
-val UNQUADTRIUM get() = materialRegistry[Identifier(MODID, "unquadtrium")]
-val UNQUADUNIUM get() = materialRegistry[Identifier(MODID, "unquadunium")]
-val UNSEPTBIUM get() = materialRegistry[Identifier(MODID, "unseptbium")]
-val UNSEPTENNIUM get() = materialRegistry[Identifier(MODID, "unseptennium")]
-val UNSEPTHEXIUM get() = materialRegistry[Identifier(MODID, "unsepthexium")]
-val UNSEPTNILIUM get() = materialRegistry[Identifier(MODID, "unseptnilium")]
-val UNSEPTOCTIUM get() = materialRegistry[Identifier(MODID, "unseptoctium")]
-val UNSEPTPENTIUM get() = materialRegistry[Identifier(MODID, "unseptpentium")]
-val UNSEPTQUADIUM get() = materialRegistry[Identifier(MODID, "unseptquadium")]
-val UNSEPTSEPTIUM get() = materialRegistry[Identifier(MODID, "unseptseptium")]
-val UNSEPTTRIUM get() = materialRegistry[Identifier(MODID, "unsepttrium")]
-val UNSEPTUNIUM get() = materialRegistry[Identifier(MODID, "unseptunium")]
-val UNSTABLE get() = materialRegistry[Identifier(MODID, "unstable")]
-val UNSTABLEINGOT get() = materialRegistry[Identifier(MODID, "unstableingot")]
-val UNTRIBIUM get() = materialRegistry[Identifier(MODID, "untribium")]
-val UNTRIENNIUM get() = materialRegistry[Identifier(MODID, "untriennium")]
-val UNTRIHEXIUM get() = materialRegistry[Identifier(MODID, "untrihexium")]
-val UNTRINILIUM get() = materialRegistry[Identifier(MODID, "untrinilium")]
-val UNTRIOCTIUM get() = materialRegistry[Identifier(MODID, "untrioctium")]
-val UNTRIPENTIUM get() = materialRegistry[Identifier(MODID, "untripentium")]
-val UNTRIQUADIUM get() = materialRegistry[Identifier(MODID, "untriquadium")]
-val UNTRISEPTIUM get() = materialRegistry[Identifier(MODID, "untriseptium")]
-val UNTRITRIUM get() = materialRegistry[Identifier(MODID, "untritrium")]
-val UNTRIUNIUM get() = materialRegistry[Identifier(MODID, "untriunium")]
-val UNUNENNIUM get() = materialRegistry[Identifier(MODID, "ununennium")]
-val URAN get() = materialRegistry[Identifier(MODID, "uran")]
-val URANINITE get() = materialRegistry[Identifier(MODID, "uraninite")]
-val URANIUM get() = materialRegistry[Identifier(MODID, "uranium")]
-val URANIUM235 get() = materialRegistry[Identifier(MODID, "uranium235")]
-val URANIUM238 get() = materialRegistry[Identifier(MODID, "uranium238")]
-val URANIUM_ENRICHED get() = materialRegistry[Identifier(MODID, "uranium_enriched")]
-val UVAROVITE get() = materialRegistry[Identifier(MODID, "uvarovite")]
-val U_U_AMPLIFIER get() = materialRegistry[Identifier(MODID, "u_u_amplifier")]
-val U_U_MATTER get() = materialRegistry[Identifier(MODID, "u_u_matter")]
-val VALERITE get() = materialRegistry[Identifier(MODID, "valerite")]
-val VALONITE get() = materialRegistry[Identifier(MODID, "valonite")]
-val VANADIUM get() = materialRegistry[Identifier(MODID, "vanadium")]
-val VANADIUM_GALLIUM get() = materialRegistry[Identifier(MODID, "vanadium_gallium")]
-val VANADIUM_MAGNETITE get() = materialRegistry[Identifier(MODID, "vanadium_magnetite")]
-val VANADIUM_PENTOXIDE get() = materialRegistry[Identifier(MODID, "vanadium_pentoxide")]
-val VANADIUM_STEEL get() = materialRegistry[Identifier(MODID, "vanadium_steel")]
-val VANILLA get() = materialRegistry[Identifier(MODID, "vanilla")]
-val VERMICULITE get() = materialRegistry[Identifier(MODID, "vermiculite")]
-val VIBRAMANTIUM get() = materialRegistry[Identifier(MODID, "vibramantium")]
-val VIBRANIUM get() = materialRegistry[Identifier(MODID, "vibranium")]
-val VIBRANIUM_SILVER get() = materialRegistry[Identifier(MODID, "vibranium_silver")]
-val VIBRANIUM_STEEL get() = materialRegistry[Identifier(MODID, "vibranium_steel")]
-val VIBRANT_ALLOY get() = materialRegistry[Identifier(MODID, "vibrant_alloy")]
-val VILE get() = materialRegistry[Identifier(MODID, "vile")]
-val VINTEUM get() = materialRegistry[Identifier(MODID, "vinteum")]
-val VINTEUM_PURIFIED get() = materialRegistry[Identifier(MODID, "vinteum_purified")]
-val VIS get() = materialRegistry[Identifier(MODID, "vis")]
-val VITRIOL_OF_CLAY get() = materialRegistry[Identifier(MODID, "vitriol_of_clay")]
-val VOID get() = materialRegistry[Identifier(MODID, "void")]
-val VOIDSTONE get() = materialRegistry[Identifier(MODID, "voidstone")]
-val VOID_CRYSTAL get() = materialRegistry[Identifier(MODID, "void_crystal")]
-val VOID_METAL get() = materialRegistry[Identifier(MODID, "void_metal")]
-val VOLCANIC_ASH get() = materialRegistry[Identifier(MODID, "volcanic_ash")]
-val VOLCANIC_ASHES get() = materialRegistry[Identifier(MODID, "volcanic_ashes")]
-val VULCANITE get() = materialRegistry[Identifier(MODID, "vulcanite")]
-val VYROXERES get() = materialRegistry[Identifier(MODID, "vyroxeres")]
-val WATER get() = materialRegistry[Identifier(MODID, "water")]
-val WATER_DIRTY get() = materialRegistry[Identifier(MODID, "water_dirty")]
-val WATER_DISTILLED get() = materialRegistry[Identifier(MODID, "water_distilled")]
-val WAX get() = materialRegistry[Identifier(MODID, "wax")]
-val WAX_AMNESIC get() = materialRegistry[Identifier(MODID, "wax_amnesic")]
-val WAX_BEE get() = materialRegistry[Identifier(MODID, "wax_bee")]
-val WAX_MAGIC get() = materialRegistry[Identifier(MODID, "wax_magic")]
-val WAX_PARAFFIN get() = materialRegistry[Identifier(MODID, "wax_paraffin")]
-val WAX_PLANT get() = materialRegistry[Identifier(MODID, "wax_plant")]
-val WAX_REFRACTORY get() = materialRegistry[Identifier(MODID, "wax_refractory")]
-val WAX_SOULFUL get() = materialRegistry[Identifier(MODID, "wax_soulful")]
-val WEEDWOOD get() = materialRegistry[Identifier(MODID, "weedwood")]
-val WHEAT get() = materialRegistry[Identifier(MODID, "wheat")]
-val WHITE get() = materialRegistry[Identifier(MODID, "white")]
-val WHITE_VITRIOL get() = materialRegistry[Identifier(MODID, "white_vitriol")]
-val WIMALITE get() = materialRegistry[Identifier(MODID, "wimalite")]
-val WITHERIA get() = materialRegistry[Identifier(MODID, "witheria")]
-val WOLFRAMITE get() = materialRegistry[Identifier(MODID, "wolframite")]
-val WOLLASTONITE get() = materialRegistry[Identifier(MODID, "wollastonite")]
-val WOOD get() = materialRegistry[Identifier(MODID, "wood")]
-val WOOD_POLISHED get() = materialRegistry[Identifier(MODID, "wood_polished")]
-val WOOD_RUBBER get() = materialRegistry[Identifier(MODID, "wood_rubber")]
-val WOOD_SEALED get() = materialRegistry[Identifier(MODID, "wood_sealed")]
-val WROUGHT_IRON get() = materialRegistry[Identifier(MODID, "wrought_iron")]
-val WULFENITE get() = materialRegistry[Identifier(MODID, "wulfenite")]
-val XENON get() = materialRegistry[Identifier(MODID, "xenon")]
-val YELLORITE get() = materialRegistry[Identifier(MODID, "yellorite")]
-val YELLORIUM get() = materialRegistry[Identifier(MODID, "yellorium")]
-val YELLOW get() = materialRegistry[Identifier(MODID, "yellow")]
-val YELLOW_LIMONITE get() = materialRegistry[Identifier(MODID, "yellow_limonite")]
-val YELLOW_SAPPHIRE get() = materialRegistry[Identifier(MODID, "yellow_sapphire")]
-val YTTERBIUM get() = materialRegistry[Identifier(MODID, "ytterbium")]
-val YTTRIUM get() = materialRegistry[Identifier(MODID, "yttrium")]
-val YTTRIUM_BARIUM_CUPRATE get() = materialRegistry[Identifier(MODID, "yttrium_barium_cuprate")]
-val ZANITE get() = materialRegistry[Identifier(MODID, "zanite")]
-val ZECTIUM get() = materialRegistry[Identifier(MODID, "zectium")]
-val ZEOLITE get() = materialRegistry[Identifier(MODID, "zeolite")]
-val ZINC get() = materialRegistry[Identifier(MODID, "zinc")]
-val ZIRCON get() = materialRegistry[Identifier(MODID, "zircon")]
-val ZIRCONIUM get() = materialRegistry[Identifier(MODID, "zirconium")]
+lateinit var ACTINIUM: Material
+lateinit var ADAMANT: Material
+lateinit var ADAMITE: Material
+lateinit var ADAMANTINE: Material
+lateinit var ADLUORITE: Material
+lateinit var ADAMANTITE: Material
+lateinit var ADVANCED: Material
+lateinit var AEROTHEUM: Material
+lateinit var AGATE: Material
+lateinit var ALDUORITE: Material
+lateinit var AIR: Material
+lateinit var ALFIUM: Material
+lateinit var ALEXANDRITE: Material
+lateinit var ADAMANTIUM: Material
+lateinit var ALMOND: Material
+lateinit var ALUMINA: Material
+lateinit var ALUMINIUM: Material
+lateinit var ALMANDINE: Material
+lateinit var ALUMINIUM_ALLOY: Material
+lateinit var ALUMINIUM_BRASS: Material
+lateinit var ALUMINIUM_FLUORIDE: Material
+lateinit var ALUMINIUM_HYDROXIDE: Material
+lateinit var ALUMINUM_BRASS: Material
+lateinit var ALUMINUM: Material
+lateinit var ALUMITE: Material
+lateinit var ALUNITE: Material
+lateinit var AMAZONITE: Material
+lateinit var AMBER: Material
+lateinit var AMBROSIUM: Material
+lateinit var AMERICIUM241: Material
+lateinit var AMERICIUM: Material
+lateinit var AMETHYST: Material
+lateinit var AMETHYST_ENDER: Material
+lateinit var AMMONIA: Material
+lateinit var AMMONIUM: Material
+lateinit var AMORDRINE: Material
+lateinit var ANDESITE: Material
+lateinit var ANDESITE_BRICKS: Material
+lateinit var ANDESITE_CHISELED: Material
+lateinit var ANDESITE_POLISHED: Material
+lateinit var ANDRADITE: Material
+lateinit var ANGMALLEN: Material
+lateinit var ANNEALED_COPPER: Material
+lateinit var ANTIMATTER: Material
+lateinit var ANTI_ACTINIUM: Material
+lateinit var ANTI_ADAMANT: Material
+lateinit var ANTHRACITE: Material
+lateinit var ANTI_ADAMANTINE: Material
+lateinit var ANTI_ADAMANTIUM: Material
+lateinit var ANTI_ALUMINIUM: Material
+lateinit var ANTI_ALUMINUM: Material
+lateinit var ANTI_AMERICIUM: Material
+lateinit var ANTI_AMERICIUM241: Material
+lateinit var ANTI_ANTIMONY: Material
+lateinit var ANTIMONY: Material
+lateinit var ANTI_ARGON: Material
+lateinit var ANTI_ARSENIC: Material
+lateinit var ANTI_ASTATINE: Material
+lateinit var ANTI_BARIUM: Material
+lateinit var ANTI_BERKELIUM: Material
+lateinit var ANTI_BERYLLIUM: Material
+lateinit var ANTI_BIBIBIUM: Material
+lateinit var ANTI_BIBIENNIUM: Material
+lateinit var ANTI_BIBIHEXIUM: Material
+lateinit var ANTI_BIBINILIUM: Material
+lateinit var ANTI_BIBIOCTIUM: Material
+lateinit var ANTI_BIBIPENTIUM: Material
+lateinit var ANTI_BIBIQUADIUM: Material
+lateinit var ANTI_BIBISEPTIUM: Material
+lateinit var ANTI_BIBITRIUM: Material
+lateinit var ANTI_BIBIUNIUM: Material
+lateinit var ANTI_BIENNBIUM: Material
+lateinit var ANTI_BIENNHEXIUM: Material
+lateinit var ANTI_BIENNENNIUM: Material
+lateinit var ANTI_BIENNILIUM: Material
+lateinit var ANTI_BIENNOCTIUM: Material
+lateinit var ANTI_BIENNQUADIUM: Material
+lateinit var ANTI_BIENNSEPTIUM: Material
+lateinit var ANTI_BIENNPENTIUM: Material
+lateinit var ANTI_BIENNTRIUM: Material
+lateinit var ANTI_BIHEXBIUM: Material
+lateinit var ANTI_BIENNUNIUM: Material
+lateinit var ANTI_BIHEXENNIUM: Material
+lateinit var ANTI_BIHEXHEXIUM: Material
+lateinit var ANTI_BIHEXNILIUM: Material
+lateinit var ANTI_BIHEXOCTIUM: Material
+lateinit var ANTI_BIHEXPENTIUM: Material
+lateinit var ANTI_BIHEXQUADIUM: Material
+lateinit var ANTI_BIHEXSEPTIUM: Material
+lateinit var ANTI_BIHEXTRIUM: Material
+lateinit var ANTI_BIHEXUNIUM: Material
+lateinit var ANTI_BINILBIUM: Material
+lateinit var ANTI_BINILENNIUM: Material
+lateinit var ANTI_BINILHEXIUM: Material
+lateinit var ANTI_BINILNILIUM: Material
+lateinit var ANTI_BINILOCTIUM: Material
+lateinit var ANTI_BINILPENTIUM: Material
+lateinit var ANTI_BINILQUADIUM: Material
+lateinit var ANTI_BINILSEPTIUM: Material
+lateinit var ANTI_BINILTRIUM: Material
+lateinit var ANTI_BINILUNIUM: Material
+lateinit var ANTI_BIOCTBIUM: Material
+lateinit var ANTI_BIOCTENNIUM: Material
+lateinit var ANTI_BIOCTNILIUM: Material
+lateinit var ANTI_BIOCTHEXIUM: Material
+lateinit var ANTI_BIOCTOCTIUM: Material
+lateinit var ANTI_BIOCTPENTIUM: Material
+lateinit var ANTI_BIOCTQUADIUM: Material
+lateinit var ANTI_BIOCTSEPTIUM: Material
+lateinit var ANTI_BIOCTTRIUM: Material
+lateinit var ANTI_BIOCTUNIUM: Material
+lateinit var ANTI_BIPENTENNIUM: Material
+lateinit var ANTI_BIPENTBIUM: Material
+lateinit var ANTI_BIPENTNILIUM: Material
+lateinit var ANTI_BIPENTHEXIUM: Material
+lateinit var ANTI_BIPENTPENTIUM: Material
+lateinit var ANTI_BIPENTOCTIUM: Material
+lateinit var ANTI_BIPENTQUADIUM: Material
+lateinit var ANTI_BIPENTSEPTIUM: Material
+lateinit var ANTI_BIPENTTRIUM: Material
+lateinit var ANTI_BIPENTUNIUM: Material
+lateinit var ANTI_BIQUADBIUM: Material
+lateinit var ANTI_BIQUADENNIUM: Material
+lateinit var ANTI_BIQUADHEXIUM: Material
+lateinit var ANTI_BIQUADNILIUM: Material
+lateinit var ANTI_BIQUADOCTIUM: Material
+lateinit var ANTI_BIQUADPENTIUM: Material
+lateinit var ANTI_BIQUADQUADIUM: Material
+lateinit var ANTI_BIQUADSEPTIUM: Material
+lateinit var ANTI_BIQUADTRIUM: Material
+lateinit var ANTI_BIQUADUNIUM: Material
+lateinit var ANTI_BISEPTBIUM: Material
+lateinit var ANTI_BISEPTENNIUM: Material
+lateinit var ANTI_BISEPTHEXIUM: Material
+lateinit var ANTI_BISEPTOCTIUM: Material
+lateinit var ANTI_BISEPTNILIUM: Material
+lateinit var ANTI_BISEPTPENTIUM: Material
+lateinit var ANTI_BISEPTQUADIUM: Material
+lateinit var ANTI_BISEPTSEPTIUM: Material
+lateinit var ANTI_BISEPTTRIUM: Material
+lateinit var ANTI_BISEPTUNIUM: Material
+lateinit var ANTI_BISMUTH: Material
+lateinit var ANTI_BITRIBIUM: Material
+lateinit var ANTI_BITRIENNIUM: Material
+lateinit var ANTI_BITRIHEXIUM: Material
+lateinit var ANTI_BITRINILIUM: Material
+lateinit var ANTI_BITRIPENTIUM: Material
+lateinit var ANTI_BITRIOCTIUM: Material
+lateinit var ANTI_BITRIQUADIUM: Material
+lateinit var ANTI_BITRISEPTIUM: Material
+lateinit var ANTI_BITRITRIUM: Material
+lateinit var ANTI_BITRIUNIUM: Material
+lateinit var ANTI_BIUNBIUM: Material
+lateinit var ANTI_BIUNENNIUM: Material
+lateinit var ANTI_BIUNNILIUM: Material
+lateinit var ANTI_BIUNOCTIUM: Material
+lateinit var ANTI_BIUNHEXIUM: Material
+lateinit var ANTI_BIUNPENTIUM: Material
+lateinit var ANTI_BIUNQUADIUM: Material
+lateinit var ANTI_BIUNTRIUM: Material
+lateinit var ANTI_BIUNSEPTIUM: Material
+lateinit var ANTI_CADMIUM: Material
+lateinit var ANTI_BROMINE: Material
+lateinit var ANTI_CAESIUM: Material
+lateinit var ANTI_CALIFORNIUM: Material
+lateinit var ANTI_CALCIUM: Material
+lateinit var ANTI_CARBON13: Material
+lateinit var ANTI_CARBON: Material
+lateinit var ANTI_BIUNUNIUM: Material
+lateinit var ANTI_CARBON14: Material
+lateinit var ANTI_CERIUM: Material
+lateinit var ANTI_CHLORINE: Material
+lateinit var ANTI_CHROMIUM: Material
+lateinit var ANTI_CHROME: Material
+lateinit var ANTI_COBALT60: Material
+lateinit var ANTI_COBALT: Material
+lateinit var ANTI_COPERNICIUM: Material
+lateinit var ANTI_CURIUM: Material
+lateinit var ANTI_COPPER: Material
+lateinit var ANTI_DARMSTADTIUM: Material
+lateinit var ANTI_BOHRIUM: Material
+lateinit var ANTI_DUBNIUM: Material
+lateinit var ANTI_DYSPROSIUM: Material
+lateinit var ANTI_EINSTEINIUM: Material
+lateinit var ANTI_DEUTERIUM: Material
+lateinit var ANTI_ELECTRON: Material
+lateinit var ANTI_ERBIUM: Material
+lateinit var ANTI_EUROPIUM: Material
+lateinit var ANTI_FARNSIUM: Material
+lateinit var ANTI_FERMIUM: Material
+lateinit var ANTI_FLEROVIUM298: Material
+lateinit var ANTI_FLEROVIUM: Material
+lateinit var ANTI_BORON: Material
+lateinit var ANTI_FLUORINE: Material
+lateinit var ANTI_GADOLINIUM: Material
+lateinit var ANTI_FRANCIUM: Material
+lateinit var ANTI_GALLIUM: Material
+lateinit var ANTI_GERMANIUM: Material
+lateinit var ANTI_GOLD: Material
+lateinit var ANTI_HAFNIUM: Material
+lateinit var ANTI_GRAVITONIUM: Material
+lateinit var ANTI_HASSIUM: Material
+lateinit var ANTI_HELIUM: Material
+lateinit var ANTI_GREGORIUM: Material
+lateinit var ANTI_HELIUM3: Material
+lateinit var ANTI_HOLMIUM: Material
+lateinit var ANTI_HYDROGEN: Material
+lateinit var ANTI_INDIUM: Material
+lateinit var ANTI_IODINE: Material
+lateinit var ANTI_IRIDIUM: Material
+lateinit var ANTI_IRON: Material
+lateinit var ANTI_KALIUM: Material
+lateinit var ANTI_KRYPTON: Material
+lateinit var ANTI_LANTANIUM: Material
+lateinit var ANTI_LAWRENCIUM: Material
+lateinit var ANTI_LEAD: Material
+lateinit var ANTI_LITHIUM: Material
+lateinit var ANTI_LITHIUM6: Material
+lateinit var ANTI_LIVERMORIUM: Material
+lateinit var ANTI_LUTETIUM: Material
+lateinit var ANTI_MAC_GUFFIUM: Material
+lateinit var ANTI_MAGNESIUM: Material
+lateinit var ANTI_MANGANESE: Material
+lateinit var ANTI_MENDELEVIUM: Material
+lateinit var ANTI_MERCURY: Material
+lateinit var ANTI_MEITNERIUM: Material
+lateinit var ANTI_MOLYBDENUM: Material
+lateinit var ANTI_NAQUADAH: Material
+lateinit var ANTI_NAQUADAH_ENRICHED: Material
+lateinit var ANTI_NAQUADRIA: Material
+lateinit var ANTI_NEON: Material
+lateinit var ANTI_NATRIUM: Material
+lateinit var ANTI_NEPTUNIUM: Material
+lateinit var ANTI_NEUTRON: Material
+lateinit var ANTI_NEUTRINO: Material
+lateinit var ANTI_NICKEL: Material
+lateinit var ANTI_NEODYMIUM: Material
+lateinit var ANTI_NITROGEN: Material
+lateinit var ANTI_NIOBIUM: Material
+lateinit var ANTI_OSMIUM: Material
+lateinit var ANTI_OXYGEN: Material
+lateinit var ANTI_NOBELIUM: Material
+lateinit var ANTI_PALLADIUM: Material
+lateinit var ANTI_PHOSPHOR: Material
+lateinit var ANTI_PHOTON: Material
+lateinit var ANTI_PLATINUM: Material
+lateinit var ANTI_PLUTONIUM241: Material
+lateinit var ANTI_PLUTONIUM: Material
+lateinit var ANTI_PLUTONIUM243: Material
+lateinit var ANTI_PLUTONIUM244: Material
+lateinit var ANTI_POLONIUM: Material
+lateinit var ANTI_POTASSIUM: Material
+lateinit var ANTI_PROMETHIUM: Material
+lateinit var ANTI_QUICK_SILVER: Material
+lateinit var ANTI_PRASEODYMIUM: Material
+lateinit var ANTI_PROTACTINIUM: Material
+lateinit var ANTI_PROTON: Material
+lateinit var ANTI_RHENIUM: Material
+lateinit var ANTI_RADON: Material
+lateinit var ANTI_ROENTGENIUM: Material
+lateinit var ANTI_RADIUM: Material
+lateinit var ANTI_RHODIUM: Material
+lateinit var ANTI_RUBIDIUM: Material
+lateinit var ANTI_RUTHERFORDIUM: Material
+lateinit var ANTI_RUTHENIUM: Material
+lateinit var ANTI_SAMARIUM: Material
+lateinit var ANTI_SEABORGIUM: Material
+lateinit var ANTI_SCANDIUM: Material
+lateinit var ANTI_SILICON: Material
+lateinit var ANTI_SELENIUM: Material
+lateinit var ANTI_SILVER: Material
+lateinit var ANTI_STRONTIUM: Material
+lateinit var ANTI_SODIUM: Material
+lateinit var ANTI_TANTALUM: Material
+lateinit var ANTI_TECHNETIUM: Material
+lateinit var ANTI_SULFUR: Material
+lateinit var ANTI_THALLIUM: Material
+lateinit var ANTI_TERBIUM: Material
+lateinit var ANTI_THORIUM: Material
+lateinit var ANTI_THULIUM: Material
+lateinit var ANTI_TIN: Material
+lateinit var ANTI_TITAN: Material
+lateinit var ANTI_TITANIUM: Material
+lateinit var ANTI_TRIBIBIUM: Material
+lateinit var ANTI_TRIBIENNIUM: Material
+lateinit var ANTI_TRIBIHEXIUM: Material
+lateinit var ANTI_TRIBINILIUM: Material
+lateinit var ANTI_TRIBIPENTIUM: Material
+lateinit var ANTI_TRIBIOCTIUM: Material
+lateinit var ANTI_TRIBIQUADIUM: Material
+lateinit var ANTI_TRIBISEPTIUM: Material
+lateinit var ANTI_TRIBITRIUM: Material
+lateinit var ANTI_TRIBIUNIUM: Material
+lateinit var ANTI_TRIENNBIUM: Material
+lateinit var ANTI_TRIENNENNIUM: Material
+lateinit var ANTI_TELLURIUM: Material
+lateinit var ANTI_TRIENNHEXIUM: Material
+lateinit var ANTI_TRIENNOCTIUM: Material
+lateinit var ANTI_TRIENNILIUM: Material
+lateinit var ANTI_TRIENNQUADIUM: Material
+lateinit var ANTI_TRIENNPENTIUM: Material
+lateinit var ANTI_TRIENNSEPTIUM: Material
+lateinit var ANTI_TRIENNUNIUM: Material
+lateinit var ANTI_TRIENNTRIUM: Material
+lateinit var ANTI_TRIHEXBIUM: Material
+lateinit var ANTI_TRIHEXENNIUM: Material
+lateinit var ANTI_TRIHEXHEXIUM: Material
+lateinit var ANTI_TRIHEXNILIUM: Material
+lateinit var ANTI_TRIHEXPENTIUM: Material
+lateinit var ANTI_TRIHEXOCTIUM: Material
+lateinit var ANTI_TRIHEXQUADIUM: Material
+lateinit var ANTI_TRIHEXSEPTIUM: Material
+lateinit var ANTI_TRIHEXTRIUM: Material
+lateinit var ANTI_TRIHEXUNIUM: Material
+lateinit var ANTI_TRINILBIUM: Material
+lateinit var ANTI_TRINILENNIUM: Material
+lateinit var ANTI_TRINILHEXIUM: Material
+lateinit var ANTI_TRINILOCTIUM: Material
+lateinit var ANTI_TRINILQUADIUM: Material
+lateinit var ANTI_TRINILPENTIUM: Material
+lateinit var ANTI_TRINILSEPTIUM: Material
+lateinit var ANTI_TRINILTRIUM: Material
+lateinit var ANTI_TRINILUNIUM: Material
+lateinit var ANTI_TRIOCTBIUM: Material
+lateinit var ANTI_TRIOCTENNIUM: Material
+lateinit var ANTI_TRIOCTHEXIUM: Material
+lateinit var ANTI_TRIOCTNILIUM: Material
+lateinit var ANTI_TRIOCTOCTIUM: Material
+lateinit var ANTI_TRIOCTPENTIUM: Material
+lateinit var ANTI_TRIOCTSEPTIUM: Material
+lateinit var ANTI_TRIOCTQUADIUM: Material
+lateinit var ANTI_TRIOCTTRIUM: Material
+lateinit var ANTI_TRIOCTUNIUM: Material
+lateinit var ANTI_TRIPENTBIUM: Material
+lateinit var ANTI_TRIPENTENNIUM: Material
+lateinit var ANTI_TRINILNILIUM: Material
+lateinit var ANTI_TRIPENTHEXIUM: Material
+lateinit var ANTI_TRIPENTNILIUM: Material
+lateinit var ANTI_TRIPENTOCTIUM: Material
+lateinit var ANTI_TRIPENTPENTIUM: Material
+lateinit var ANTI_TRIPENTQUADIUM: Material
+lateinit var ANTI_TRIPENTTRIUM: Material
+lateinit var ANTI_TRIPENTSEPTIUM: Material
+lateinit var ANTI_TRIQUADBIUM: Material
+lateinit var ANTI_TRIPENTUNIUM: Material
+lateinit var ANTI_TRIQUADNILIUM: Material
+lateinit var ANTI_TRIQUADENNIUM: Material
+lateinit var ANTI_TRIQUADHEXIUM: Material
+lateinit var ANTI_TRIQUADOCTIUM: Material
+lateinit var ANTI_TRIQUADPENTIUM: Material
+lateinit var ANTI_TRIQUADTRIUM: Material
+lateinit var ANTI_TRIQUADQUADIUM: Material
+lateinit var ANTI_TRIQUADSEPTIUM: Material
+lateinit var ANTI_TRIQUADUNIUM: Material
+lateinit var ANTI_TRISEPTBIUM: Material
+lateinit var ANTI_TRISEPTENNIUM: Material
+lateinit var ANTI_TRISEPTHEXIUM: Material
+lateinit var ANTI_TRISEPTNILIUM: Material
+lateinit var ANTI_TRISEPTOCTIUM: Material
+lateinit var ANTI_TRISEPTPENTIUM: Material
+lateinit var ANTI_TRISEPTQUADIUM: Material
+lateinit var ANTI_TRISEPTSEPTIUM: Material
+lateinit var ANTI_TRISEPTTRIUM: Material
+lateinit var ANTI_TRISEPTUNIUM: Material
+lateinit var ANTI_TRITIUM: Material
+lateinit var ANTI_TRITRIBIUM: Material
+lateinit var ANTI_TRITRIENNIUM: Material
+lateinit var ANTI_TRITRINILIUM: Material
+lateinit var ANTI_TRITRIHEXIUM: Material
+lateinit var ANTI_TRITRIPENTIUM: Material
+lateinit var ANTI_TRITRIQUADIUM: Material
+lateinit var ANTI_TRITRIOCTIUM: Material
+lateinit var ANTI_TRITRISEPTIUM: Material
+lateinit var ANTI_TRITRIUNIUM: Material
+lateinit var ANTI_TRITRITRIUM: Material
+lateinit var ANTI_TRIUNBIUM: Material
+lateinit var ANTI_TRIUNHEXIUM: Material
+lateinit var ANTI_TRIUNENNIUM: Material
+lateinit var ANTI_TRIUNOCTIUM: Material
+lateinit var ANTI_TRIUNNILIUM: Material
+lateinit var ANTI_TRIUNPENTIUM: Material
+lateinit var ANTI_TRIUNQUADIUM: Material
+lateinit var ANTI_TRIUNSEPTIUM: Material
+lateinit var ANTI_TRIUNTRIUM: Material
+lateinit var ANTI_TUNGSTEN: Material
+lateinit var ANTI_TRIUNUNIUM: Material
+lateinit var ANTI_UNBIBIUM: Material
+lateinit var ANTI_UNBIHEXIUM: Material
+lateinit var ANTI_UNBIENNIUM: Material
+lateinit var ANTI_UNBINILIUM: Material
+lateinit var ANTI_UNBIOCTIUM: Material
+lateinit var ANTI_UNBIPENTIUM: Material
+lateinit var ANTI_UNBIQUADIUM: Material
+lateinit var ANTI_UNBISEPTIUM: Material
+lateinit var ANTI_UNBITRIUM: Material
+lateinit var ANTI_UNENNBIUM: Material
+lateinit var ANTI_UNBIUNIUM: Material
+lateinit var ANTI_UNENNHEXIUM: Material
+lateinit var ANTI_UNENNILIUM: Material
+lateinit var ANTI_UNENNENNIUM: Material
+lateinit var ANTI_UNENNPENTIUM: Material
+lateinit var ANTI_UNENNOCTIUM: Material
+lateinit var ANTI_UNENNQUADIUM: Material
+lateinit var ANTI_UNENNSEPTIUM: Material
+lateinit var ANTI_UNENNTRIUM: Material
+lateinit var ANTI_UNENNUNIUM: Material
+lateinit var ANTI_UNHEXBIUM: Material
+lateinit var ANTI_UNHEXENNIUM: Material
+lateinit var ANTI_UNHEXNILIUM: Material
+lateinit var ANTI_UNHEXHEXIUM: Material
+lateinit var ANTI_UNHEXOCTIUM: Material
+lateinit var ANTI_UNHEXPENTIUM: Material
+lateinit var ANTI_UNHEXQUADIUM: Material
+lateinit var ANTI_UNHEXSEPTIUM: Material
+lateinit var ANTI_UNHEXTRIUM: Material
+lateinit var ANTI_UNOCTBIUM: Material
+lateinit var ANTI_UNHEXUNIUM: Material
+lateinit var ANTI_UNOCTENNIUM: Material
+lateinit var ANTI_UNOCTHEXIUM: Material
+lateinit var ANTI_UNOCTNILIUM: Material
+lateinit var ANTI_UNOCTOCTIUM: Material
+lateinit var ANTI_UNOCTQUADIUM: Material
+lateinit var ANTI_UNOCTPENTIUM: Material
+lateinit var ANTI_UNOCTSEPTIUM: Material
+lateinit var ANTI_UNOCTUNIUM: Material
+lateinit var ANTI_UNOCTTRIUM: Material
+lateinit var ANTI_UNPENTENNIUM: Material
+lateinit var ANTI_UNPENTBIUM: Material
+lateinit var ANTI_UNPENTHEXIUM: Material
+lateinit var ANTI_UNPENTOCTIUM: Material
+lateinit var ANTI_UNPENTNILIUM: Material
+lateinit var ANTI_UNPENTPENTIUM: Material
+lateinit var ANTI_UNPENTSEPTIUM: Material
+lateinit var ANTI_UNPENTQUADIUM: Material
+lateinit var ANTI_UNPENTTRIUM: Material
+lateinit var ANTI_UNQUADBIUM: Material
+lateinit var ANTI_UNQUADENNIUM: Material
+lateinit var ANTI_UNPENTUNIUM: Material
+lateinit var ANTI_UNQUADHEXIUM: Material
+lateinit var ANTI_UNQUADOCTIUM: Material
+lateinit var ANTI_UNQUADNILIUM: Material
+lateinit var ANTI_UNQUADPENTIUM: Material
+lateinit var ANTI_UNQUADQUADIUM: Material
+lateinit var ANTI_UNQUADTRIUM: Material
+lateinit var ANTI_UNQUADSEPTIUM: Material
+lateinit var ANTI_UNQUADUNIUM: Material
+lateinit var ANTI_UNSEPTBIUM: Material
+lateinit var ANTI_UNSEPTHEXIUM: Material
+lateinit var ANTI_UNSEPTENNIUM: Material
+lateinit var ANTI_UNSEPTNILIUM: Material
+lateinit var ANTI_UNSEPTOCTIUM: Material
+lateinit var ANTI_UNSEPTPENTIUM: Material
+lateinit var ANTI_UNSEPTQUADIUM: Material
+lateinit var ANTI_UNSEPTSEPTIUM: Material
+lateinit var ANTI_UNTRIENNIUM: Material
+lateinit var ANTI_UNSEPTTRIUM: Material
+lateinit var ANTI_UNTRIBIUM: Material
+lateinit var ANTI_UNSEPTUNIUM: Material
+lateinit var ANTI_UNTRIHEXIUM: Material
+lateinit var ANTI_UNTRINILIUM: Material
+lateinit var ANTI_UNTRIOCTIUM: Material
+lateinit var ANTI_UNTRIQUADIUM: Material
+lateinit var ANTI_UNTRIPENTIUM: Material
+lateinit var ANTI_UNTRITRIUM: Material
+lateinit var ANTI_UNTRISEPTIUM: Material
+lateinit var ANTI_UNTRIUNIUM: Material
+lateinit var ANTI_UNUNENNIUM: Material
+lateinit var ANTI_UNUNOCTIUM: Material
+lateinit var ANTI_UNUNPENTIUM: Material
+lateinit var ANTI_UNUNSEPTIUM: Material
+lateinit var ANTI_UNUNTRIUM: Material
+lateinit var ANTI_URAN: Material
+lateinit var ANTI_URANIUM: Material
+lateinit var ANTI_URANIUM238: Material
+lateinit var ANTI_URANIUM235: Material
+lateinit var ANTI_VANADIUM: Material
+lateinit var ANTI_VIBRANIUM: Material
+lateinit var ANTI_WOLFRAM: Material
+lateinit var ANTI_WOLFRAMIUM: Material
+lateinit var ANTI_XENON: Material
+lateinit var ANTI_YTTERBIUM: Material
+lateinit var ANTI_YTTRIUM: Material
+lateinit var ANTI_ZIRCONIUM: Material
+lateinit var APATITE: Material
+lateinit var ANTI_ZINC: Material
+lateinit var AQUA_MIDDLE: Material
+lateinit var AQUAMARINE: Material
+lateinit var ARAGONITE: Material
+lateinit var AQUA_REGIA: Material
+lateinit var ARCANE_ASH: Material
+lateinit var ARCANE_ASHES: Material
+lateinit var ARCANE_COMPOUND: Material
+lateinit var ARDITE: Material
+lateinit var AREDRITE: Material
+lateinit var ARGON: Material
+lateinit var ARSENIC: Material
+lateinit var ARSENOPYRITE: Material
+lateinit var ASBESTOS: Material
+lateinit var ASH: Material
+lateinit var ASHES_DARK: Material
+lateinit var ASHES: Material
+lateinit var ASHES_VOLCANIC: Material
+lateinit var ASH_DARK: Material
+lateinit var ASH_VOLCANIC: Material
+lateinit var ASPHALT: Material
+lateinit var ASTATINE: Material
+lateinit var ASTRAL_SILVER: Material
+lateinit var AZURITE: Material
+lateinit var ATLARUS: Material
+lateinit var BALAS_RUBY: Material
+lateinit var BAMBOO: Material
+lateinit var BANDED_IRON: Material
+lateinit var BASALT: Material
+lateinit var BARITE: Material
+lateinit var BASALT_BRICKS: Material
+lateinit var BASALT_CHISELED: Material
+lateinit var BASALT_POLISHED: Material
+lateinit var BASALZ: Material
+lateinit var BARLEY: Material
+lateinit var BASIC: Material
+lateinit var BASALTIC_MINERAL_SAND: Material
+lateinit var BASTNASITE: Material
+lateinit var BATTERY_ALLOY: Material
+lateinit var BAUXITE: Material
+lateinit var BEDROCK: Material
+lateinit var BEDROCKIUM: Material
+lateinit var BEDROCK_H_S_L_A_ALLOY: Material
+lateinit var BARK: Material
+lateinit var BEES_WAX: Material
+lateinit var BEE_WAX: Material
+lateinit var BERKELIUM: Material
+lateinit var BENTONITE: Material
+lateinit var BERYLLIUM: Material
+lateinit var BETWEENSTONE: Material
+lateinit var BIBIBIUM: Material
+lateinit var BIBIENNIUM: Material
+lateinit var BIBIHEXIUM: Material
+lateinit var BARIUM: Material
+lateinit var BIBINILIUM: Material
+lateinit var BIBIOCTIUM: Material
+lateinit var BIBIQUADIUM: Material
+lateinit var BIBIPENTIUM: Material
+lateinit var BIBISEPTIUM: Material
+lateinit var BIBITRIUM: Material
+lateinit var BIBIUNIUM: Material
+lateinit var BIENNBIUM: Material
+lateinit var BIENNHEXIUM: Material
+lateinit var BIENNENNIUM: Material
+lateinit var BIENNNILIUM: Material
+lateinit var BIENNOCTIUM: Material
+lateinit var BIENNQUADIUM: Material
+lateinit var BIENNPENTIUM: Material
+lateinit var BIENNSEPTIUM: Material
+lateinit var BIHEXBIUM: Material
+lateinit var BIENNTRIUM: Material
+lateinit var BIENNUNIUM: Material
+lateinit var BIHEXHEXIUM: Material
+lateinit var BIHEXENNIUM: Material
+lateinit var BIHEXNILIUM: Material
+lateinit var BIHEXOCTIUM: Material
+lateinit var BIHEXPENTIUM: Material
+lateinit var BIHEXQUADIUM: Material
+lateinit var BIHEXSEPTIUM: Material
+lateinit var BIHEXTRIUM: Material
+lateinit var BIHEXUNIUM: Material
+lateinit var BINILBIUM: Material
+lateinit var BINILHEXIUM: Material
+lateinit var BINILENNIUM: Material
+lateinit var BINILOCTIUM: Material
+lateinit var BINILNILIUM: Material
+lateinit var BINILPENTIUM: Material
+lateinit var BINILSEPTIUM: Material
+lateinit var BINILQUADIUM: Material
+lateinit var BINILTRIUM: Material
+lateinit var BIOCTBIUM: Material
+lateinit var BINILUNIUM: Material
+lateinit var BIOCTENNIUM: Material
+lateinit var BIOCTHEXIUM: Material
+lateinit var BIOCTNILIUM: Material
+lateinit var BIOCTOCTIUM: Material
+lateinit var BIOCTPENTIUM: Material
+lateinit var BIOCTQUADIUM: Material
+lateinit var BIOCTUNIUM: Material
+lateinit var BIOTITE: Material
+lateinit var BIOMASS: Material
+lateinit var BIOCTTRIUM: Material
+lateinit var BIO_FUEL: Material
+lateinit var BIPENTENNIUM: Material
+lateinit var BIPENTBIUM: Material
+lateinit var BIPENTHEXIUM: Material
+lateinit var BIPENTNILIUM: Material
+lateinit var BIPENTOCTIUM: Material
+lateinit var BIPENTPENTIUM: Material
+lateinit var BIPENTQUADIUM: Material
+lateinit var BIPENTTRIUM: Material
+lateinit var BIPENTSEPTIUM: Material
+lateinit var BIOCTSEPTIUM: Material
+lateinit var BIQUADBIUM: Material
+lateinit var BIPENTUNIUM: Material
+lateinit var BIQUADNILIUM: Material
+lateinit var BIQUADHEXIUM: Material
+lateinit var BIQUADOCTIUM: Material
+lateinit var BIQUADENNIUM: Material
+lateinit var BIQUADPENTIUM: Material
+lateinit var BIQUADQUADIUM: Material
+lateinit var BIQUADSEPTIUM: Material
+lateinit var BIQUADTRIUM: Material
+lateinit var BIQUADUNIUM: Material
+lateinit var BISCHOFITE: Material
+lateinit var BISEPTENNIUM: Material
+lateinit var BISEPTBIUM: Material
+lateinit var BISEPTHEXIUM: Material
+lateinit var BISEPTNILIUM: Material
+lateinit var BISEPTOCTIUM: Material
+lateinit var BISEPTQUADIUM: Material
+lateinit var BISEPTSEPTIUM: Material
+lateinit var BISEPTTRIUM: Material
+lateinit var BISEPTUNIUM: Material
+lateinit var BISMUTH: Material
+lateinit var BISMUTH_BRONZE: Material
+lateinit var BITRIBIUM: Material
+lateinit var BISEPTPENTIUM: Material
+lateinit var BITRIHEXIUM: Material
+lateinit var BITRIENNIUM: Material
+lateinit var BITRINILIUM: Material
+lateinit var BITRIOCTIUM: Material
+lateinit var BITRIQUADIUM: Material
+lateinit var BITRIPENTIUM: Material
+lateinit var BITRITRIUM: Material
+lateinit var BITRISEPTIUM: Material
+lateinit var BITUMEN: Material
+lateinit var BITRIUNIUM: Material
+lateinit var BIUNBIUM: Material
+lateinit var BIUNENNIUM: Material
+lateinit var BIUNHEXIUM: Material
+lateinit var BIUNOCTIUM: Material
+lateinit var BIUNNILIUM: Material
+lateinit var BIUNPENTIUM: Material
+lateinit var BIUNQUADIUM: Material
+lateinit var BIUNSEPTIUM: Material
+lateinit var BIUNUNIUM: Material
+lateinit var BIUNTRIUM: Material
+lateinit var BLACK: Material
+lateinit var BIXBITE: Material
+lateinit var BLACK_BRONZE: Material
+lateinit var BLACK_VITRIOL: Material
+lateinit var BLACK_STEEL: Material
+lateinit var BLAZE: Material
+lateinit var BLITZ: Material
+lateinit var BLIZZ: Material
+lateinit var BLOODSTONE: Material
+lateinit var BLUE: Material
+lateinit var BLUESTONE: Material
+lateinit var BLUESCHIST: Material
+lateinit var BLUE_ALLOY: Material
+lateinit var BLUE_SAPPHIRE: Material
+lateinit var BLUE_STEEL: Material
+lateinit var BLUE_VITRIOL: Material
+lateinit var BLUE_TOPAZ: Material
+lateinit var BLUTONIUM: Material
+lateinit var BOHRIUM: Material
+lateinit var BONE: Material
+lateinit var BORAX: Material
+lateinit var BORIC_ACID: Material
+lateinit var BLAZE_QUARTZ: Material
+lateinit var BRICK: Material
+lateinit var BORON: Material
+lateinit var BRASS: Material
+lateinit var BROMARGYRITE: Material
+lateinit var BROMINE: Material
+lateinit var BRICK_NETHER: Material
+lateinit var BRONZE: Material
+lateinit var BROWN: Material
+lateinit var BROWN_LIMONITE: Material
+lateinit var BUTTER: Material
+lateinit var BUTANE: Material
+lateinit var CAESIUM: Material
+lateinit var CADMIUM: Material
+lateinit var CALCITE: Material
+lateinit var CALCIUM: Material
+lateinit var CALCIUM_CHLORIDE: Material
+lateinit var CALCIUM_SULPHATE: Material
+lateinit var CALCIUM_SULFATE: Material
+lateinit var CALCIUM_TUNGSTATE: Material
+lateinit var CARBIDE: Material
+lateinit var CALIFORNIUM: Material
+lateinit var CARBON: Material
+lateinit var CARBON14: Material
+lateinit var CARBON13: Material
+lateinit var CARBON_DIOXIDE: Material
+lateinit var CARBON_MONOXIDE: Material
+lateinit var CARBON_TRIOXIDE: Material
+lateinit var CARBORUNDUM: Material
+lateinit var CASSITERITE: Material
+lateinit var CARMOT: Material
+lateinit var CASSITERITE_SAND: Material
+lateinit var CELENEGIL: Material
+lateinit var CD_IN_AG_ALLOY: Material
+lateinit var CELESTINE: Material
+lateinit var CERTUS_QUARTZ: Material
+lateinit var CERIUM: Material
+lateinit var CERUCLASE: Material
+lateinit var CERAMIC: Material
+lateinit var CHALCOPYRITE: Material
+lateinit var CHALK: Material
+lateinit var CHARCOAL: Material
+lateinit var CHEESE: Material
+lateinit var CHARGED_CERTUS_QUARTZ: Material
+lateinit var CHERT: Material
+lateinit var CHILI: Material
+lateinit var CHIMERITE: Material
+lateinit var CHLORINE: Material
+lateinit var CHLOROAURIC_ACID: Material
+lateinit var CHLOROPLATINIC_ACID: Material
+lateinit var CHOCOLATE: Material
+lateinit var CHROMIUM: Material
+lateinit var CHROME: Material
+lateinit var CHROMIUM_DIOXIDE: Material
+lateinit var CHROMITE: Material
+lateinit var CHRYSOCOLLA: Material
+lateinit var CHRYSOTILE: Material
+lateinit var CINNABAR: Material
+lateinit var CINNAMON: Material
+lateinit var CLAY: Material
+lateinit var CITRINE: Material
+lateinit var COAL: Material
+lateinit var CLAY_BROWN: Material
+lateinit var CLUSTER: Material
+lateinit var COAL_COKE: Material
+lateinit var COBALT: Material
+lateinit var COBALTITE: Material
+lateinit var COBALT60: Material
+lateinit var COBALT_BRASS: Material
+lateinit var COBALT_HEXAHYDRATE: Material
+lateinit var COBBLESTONE: Material
+lateinit var COCAINE: Material
+lateinit var COCOA: Material
+lateinit var COFFEE_DUST: Material
+lateinit var COKE: Material
+lateinit var COFFEE: Material
+lateinit var CONCRETE: Material
+lateinit var CONDUCTIVE_IRON: Material
+lateinit var CONSTANTAN: Material
+lateinit var CONSTRUCTION_FOAM: Material
+lateinit var CONTINUUM: Material
+lateinit var COOPERITE: Material
+lateinit var COPERNICIUM: Material
+lateinit var COPPER: Material
+lateinit var CORAL: Material
+lateinit var CORN: Material
+lateinit var CRAPONITE: Material
+lateinit var CREOSOTE: Material
+lateinit var CREAM: Material
+lateinit var CREOSOTE_OIL: Material
+lateinit var CRIMSON_MIDDLE: Material
+lateinit var CRUDE_OIL: Material
+lateinit var CRYOLITE: Material
+lateinit var CRYOTHEUM: Material
+lateinit var CRYSTAL: Material
+lateinit var CRYSTAL_FLUX: Material
+lateinit var CUPRONICKEL: Material
+lateinit var CURRY: Material
+lateinit var CURIUM: Material
+lateinit var CYAN: Material
+lateinit var CYANITE: Material
+lateinit var CYAN_VITRIOL: Material
+lateinit var CYPRUS_VITRIOL: Material
+lateinit var DACITE: Material
+lateinit var DAMASCUS_STEEL: Material
+lateinit var DARK: Material
+lateinit var DARK_ASHES: Material
+lateinit var DARK_ASH: Material
+lateinit var DARK_IRON: Material
+lateinit var DARK_MATTER: Material
+lateinit var DARK_STEEL: Material
+lateinit var DARK_STONE: Material
+lateinit var DARMSTADTIUM: Material
+lateinit var DATA: Material
+lateinit var DEEP_IRON: Material
+lateinit var DATOLITE: Material
+lateinit var DEMONITE: Material
+lateinit var DESH: Material
+lateinit var DARK_THAUMIUM: Material
+lateinit var DESICHALKOS: Material
+lateinit var DEUTERIUM: Material
+lateinit var DIAMANTINE: Material
+lateinit var DIAMOND_COPPER: Material
+lateinit var DIAMOND_INDUSTRIAL: Material
+lateinit var DIAMOND: Material
+lateinit var DIATOMITE: Material
+lateinit var DIDURANIUM_TRIOXIDE: Material
+lateinit var DIESEL: Material
+lateinit var DILITHIUM: Material
+lateinit var DIOPTASE: Material
+lateinit var DIORITE: Material
+lateinit var DIORITE_BRICKS: Material
+lateinit var DIORITE_CHISELED: Material
+lateinit var DIORITE_POLISHED: Material
+lateinit var DISULFURIC_ACID: Material
+lateinit var DOLAMIDE: Material
+lateinit var DOLOMITE: Material
+lateinit var DOMINICAN_AMBER: Material
+lateinit var DRACONIC: Material
+lateinit var DRACONIUM_AWAKENED: Material
+lateinit var DRACONIUM: Material
+lateinit var DREAMWOOD: Material
+lateinit var DUBNIUM: Material
+lateinit var DULL: Material
+lateinit var DURALUMIN: Material
+lateinit var DURANIUM: Material
+lateinit var DURANIUM_ELEMENTAL: Material
+lateinit var DURANIUM_HEXABROMIDE: Material
+lateinit var DURANIUM_HEXAASTATIDE: Material
+lateinit var DURANIUM_HEXACHLORIDE: Material
+lateinit var DURANIUM_HEXAFLUORIDE: Material
+lateinit var DURANIUM_HEXAIODIDE: Material
+lateinit var DYNAMITE: Material
+lateinit var ECLOGITE: Material
+lateinit var DYSPROSIUM: Material
+lateinit var ECTOPLASM: Material
+lateinit var ELECTRICAL_STEEL: Material
+lateinit var EINSTEINIUM: Material
+lateinit var ELECTROTINE: Material
+lateinit var ELECTRON: Material
+lateinit var ELECTROTINE_ALLOY: Material
+lateinit var ELECTRUM: Material
+lateinit var ELECTRUM_FLUX: Material
+lateinit var ELITE: Material
+lateinit var ELVEN_DRAGONSTONE: Material
+lateinit var ELVEN_ELEMENTIUM: Material
+lateinit var ELVEN_QUARTZ: Material
+lateinit var ELVORIUM: Material
+lateinit var EMERALD: Material
+lateinit var EMERADIC: Material
+lateinit var EMERY: Material
+lateinit var EMPTY: Material
+lateinit var ENDER: Material
+lateinit var ENDERIUM: Material
+lateinit var ENDERIUM_BASE: Material
+lateinit var ENDER_EYE: Material
+lateinit var ENDER_PEARL: Material
+lateinit var ENDIUM: Material
+lateinit var ENERGETIC_ALLOY: Material
+lateinit var ENDSTONE: Material
+lateinit var ENERGIUM_CYAN: Material
+lateinit var ENERGIUM_RED: Material
+lateinit var ENERGIZED: Material
+lateinit var ENORI: Material
+lateinit var ENRICHED_COPPER: Material
+lateinit var ERBIUM: Material
+lateinit var EPIDOTE: Material
+lateinit var ETHANOL: Material
+lateinit var EUDIALYTE: Material
+lateinit var ETHYLENE: Material
+lateinit var EUROPIUM: Material
+lateinit var FAIRY: Material
+lateinit var EXIMITE: Material
+lateinit var FARNSIUM: Material
+lateinit var FERBERITE: Material
+lateinit var FERMIUM: Material
+lateinit var FERRITE: Material
+lateinit var FERRIC_CHLORIDE: Material
+lateinit var FERROUS_CHLORIDE: Material
+lateinit var FERROVANADIUM: Material
+lateinit var FIERY: Material
+lateinit var FISH_OIL: Material
+lateinit var FISH_RAW: Material
+lateinit var FLEROVIUM: Material
+lateinit var FIRESTONE: Material
+lateinit var FISH_ROTTEN: Material
+lateinit var FLEROVIUM298: Material
+lateinit var FLINT: Material
+lateinit var FLOUR: Material
+lateinit var FLUIX: Material
+lateinit var FLUORINE: Material
+lateinit var FLUORITE: Material
+lateinit var FLUX: Material
+lateinit var FOOLS_RUBY: Material
+lateinit var FIERY_STEEL: Material
+lateinit var FORCE: Material
+lateinit var FRANCIUM: Material
+lateinit var FORCICIUM: Material
+lateinit var FORCILLIUM: Material
+lateinit var FOSSIL: Material
+lateinit var FREZARITE: Material
+lateinit var FRESH_WATER: Material
+lateinit var FROZEN_IRON: Material
+lateinit var FRYING_OIL_HOT: Material
+lateinit var FUEL: Material
+lateinit var FUEL_OIL: Material
+lateinit var FISH_COOKED: Material
+lateinit var FULLERS_EARTH: Material
+lateinit var FZ_DARK_IRON: Material
+lateinit var GABBRO: Material
+lateinit var GAIA_SPIRIT: Material
+lateinit var GADOLINIUM: Material
+lateinit var GALENA: Material
+lateinit var GALLIUM: Material
+lateinit var GARNET: Material
+lateinit var GARNET_GREEN: Material
+lateinit var GARNET_ORANGE: Material
+lateinit var GARNET_PURPLE: Material
+lateinit var GARNET_RED: Material
+lateinit var GARNET_SAND: Material
+lateinit var GARNET_YELLOW: Material
+lateinit var GARNIERITE: Material
+lateinit var GASOLINE: Material
+lateinit var GERMANIUM: Material
+lateinit var GELATINE: Material
+lateinit var GIBBSITE: Material
+lateinit var GILDED_IRON: Material
+lateinit var GLASS: Material
+lateinit var GLAUCONITE: Material
+lateinit var GLOWSTONE: Material
+lateinit var GLAUCONITE_SAND: Material
+lateinit var GLOWSTONE_PLUTO: Material
+lateinit var GLOWSTONE_ENCELADUS: Material
+lateinit var GLOWSTONE_PROTEUS: Material
+lateinit var GLOWSTONE_CERES: Material
+lateinit var GLOWSTONE_REFINED: Material
+lateinit var GLUE: Material
+lateinit var GLYCERYL: Material
+lateinit var GNEISS: Material
+lateinit var GLYCEROL: Material
+lateinit var GOLD: Material
+lateinit var GOLD_INDUCTIVE: Material
+lateinit var GOOD: Material
+lateinit var GRANITE: Material
+lateinit var GOSHEN: Material
+lateinit var GRANITE_BLACK: Material
+lateinit var GLOWSTONE_IO: Material
+lateinit var GRANITE_BRICKS: Material
+lateinit var GRANITE_CHISELED: Material
+lateinit var GRANITE_POLISHED: Material
+lateinit var GRANITE_RED: Material
+lateinit var GRANITIC_MINERAL_SAND: Material
+lateinit var GRAPHENE: Material
+lateinit var GRAVEYARD_DIRT: Material
+lateinit var GRAVEL: Material
+lateinit var GRAPHITE: Material
+lateinit var GRAVITONIUM: Material
+lateinit var GRAVITITE: Material
+lateinit var GRAY_VITRIOL: Material
+lateinit var GRAY: Material
+lateinit var GREATWOOD: Material
+lateinit var GREEN: Material
+lateinit var GREENSCHIST: Material
+lateinit var GREENSTONE: Material
+lateinit var GREEN_MIDDLE: Material
+lateinit var GREEN_SAPPHIRE: Material
+lateinit var GREYWACKE: Material
+lateinit var GREGORIUM: Material
+lateinit var GREEN_VITRIOL: Material
+lateinit var GROSSULAR: Material
+lateinit var GOSHENITE: Material
+lateinit var GUNPOWDER: Material
+lateinit var GYPSUM: Material
+lateinit var HASSIUM: Material
+lateinit var GYUBNERA: Material
+lateinit var HAZELNUT: Material
+lateinit var HELIODOR: Material
+lateinit var HADEROTH: Material
+lateinit var HELIUM: Material
+lateinit var HELIUM3: Material
+lateinit var HAFNIUM: Material
+lateinit var HEMATITE: Material
+lateinit var HELIUM_NEON: Material
+lateinit var HEMP_OIL: Material
+lateinit var HEPATIZON: Material
+lateinit var HEXAFLUOROSILICIC_ACID: Material
+lateinit var HOLMIUM: Material
+lateinit var HOLYSTONE: Material
+lateinit var HONEY: Material
+lateinit var HOLY_WATER: Material
+lateinit var HONEYDEW: Material
+lateinit var HUEBNERITE: Material
+lateinit var HYDRATED_COAL: Material
+lateinit var HYDROCHLORIC_ACID: Material
+lateinit var HYDROGEN: Material
+lateinit var HYDROGEN_FLUORIDE: Material
+lateinit var HYDROGEN_PEROXIDE: Material
+lateinit var HYDROGEN_BORATE: Material
+lateinit var HYDROSULFURIC_ACID: Material
+lateinit var H_S_L_A: Material
+lateinit var H_S_L_A_SPRING_STEEL: Material
+lateinit var H_S_L_A_STEEL: Material
+lateinit var IFFESAL: Material
+lateinit var IGNATIUS: Material
+lateinit var ICE: Material
+lateinit var ILLMENITE: Material
+lateinit var INDIGO: Material
+lateinit var ILMENITE: Material
+lateinit var INDIUM: Material
+lateinit var INFERNAL: Material
+lateinit var INFINITE: Material
+lateinit var INFUSCOLIUM: Material
+lateinit var INFUSED_AIR: Material
+lateinit var INFUSED_DULL: Material
+lateinit var INFUSED_BALANCE: Material
+lateinit var INFUSED_FIRE: Material
+lateinit var INFUSED_GOLD: Material
+lateinit var INFUSED_ORDER: Material
+lateinit var INFUSED_ENTROPY: Material
+lateinit var INFUSED_TESLATITE: Material
+lateinit var INFUSED_EARTH: Material
+lateinit var INFUSED_WATER: Material
+lateinit var INFUSED_VIS: Material
+lateinit var INOLASHITE: Material
+lateinit var INVAR: Material
+lateinit var IRIDIUM: Material
+lateinit var IRIDIUM_IRON: Material
+lateinit var INVISIUM: Material
+lateinit var IRIDIUM_SODIUM_OXIDE: Material
+lateinit var IODINE: Material
+lateinit var IRON: Material
+lateinit var IODINE_SALT: Material
+lateinit var IRON_WOOD: Material
+lateinit var IRITANIUM: Material
+lateinit var IRON_MAGNETIC: Material
+lateinit var IRON_OXIDE: Material
+lateinit var IRON_COMPRESSED: Material
+lateinit var IRON_SHARP: Material
+lateinit var ITARIUS: Material
+lateinit var IRRIDANT_REINFORCED: Material
+lateinit var JADE: Material
+lateinit var IRRIDANT_URANIUM: Material
+lateinit var JET: Material
+lateinit var JOSHEN: Material
+lateinit var JASPER: Material
+lateinit var KALENDRITE: Material
+lateinit var KALIUM: Material
+lateinit var KANTHAL: Material
+lateinit var KAOLINITE: Material
+lateinit var KEROSINE: Material
+lateinit var KIMBERLITE: Material
+lateinit var KOMATIITE: Material
+lateinit var KREKNORITE: Material
+lateinit var KNIGHTMETAL: Material
+lateinit var KYANITE: Material
+lateinit var KESTERITE: Material
+lateinit var LANTANUM: Material
+lateinit var KRYPTON: Material
+lateinit var LAPIS: Material
+lateinit var LAVA: Material
+lateinit var LAWRENCIUM: Material
+lateinit var LAZURITE: Material
+lateinit var LEAD: Material
+lateinit var LEATHER: Material
+lateinit var LEGENDARY: Material
+lateinit var LEPIDOLITE: Material
+lateinit var LATEX: Material
+lateinit var LEMURITE: Material
+lateinit var LAVENDER_QUARTZ: Material
+lateinit var LICORICE: Material
+lateinit var LIGHT_BLUE: Material
+lateinit var LIGNITE_COKE: Material
+lateinit var LIGNITE: Material
+lateinit var LIGHT_GRAY: Material
+lateinit var LIMESTONE: Material
+lateinit var LIME_PURE: Material
+lateinit var LIN_OIL: Material
+lateinit var LITHIUM6: Material
+lateinit var LITHIUM: Material
+lateinit var LIME: Material
+lateinit var LITHIUM_CHLORATE: Material
+lateinit var LITHIUM_CHLORIDE: Material
+lateinit var LITHIUM_HYDROXIDE: Material
+lateinit var LITHIUM_OXIDE: Material
+lateinit var LIVERMORIUM: Material
+lateinit var IRIDIUM_IRON_REINFORCED: Material
+lateinit var LIVE_ROOT: Material
+lateinit var LIVINGROCK: Material
+lateinit var LIVINGWOOD: Material
+lateinit var LITHIUM_PERCHLORATE: Material
+lateinit var LUBRICANT: Material
+lateinit var LODESTONE: Material
+lateinit var LUDICRITE: Material
+lateinit var LUMINITE: Material
+lateinit var LUTETIUM: Material
+lateinit var LONSDALEITE: Material
+lateinit var MAGENTA: Material
+lateinit var MAC_GUFFIUM: Material
+lateinit var MAGIC: Material
+lateinit var MAGNESITE: Material
+lateinit var MAGNALIUM: Material
+lateinit var LUMIUM: Material
+lateinit var MAGNESIUM: Material
+lateinit var MAGNESIUM_CARBONATE: Material
+lateinit var MAGNESIUM_CHLORIDE: Material
+lateinit var MAGMA: Material
+lateinit var MANASTEEL: Material
+lateinit var MANA_QUARTZ: Material
+lateinit var MANGANESE_CHLORIDE: Material
+lateinit var MALACHITE: Material
+lateinit var MANGANESE: Material
+lateinit var MAGNETITE: Material
+lateinit var MARBLE: Material
+lateinit var MANYULLYN: Material
+lateinit var MARSHMALLOW: Material
+lateinit var MARS_STONE: Material
+lateinit var MARTIAN_VITRIOL: Material
+lateinit var MASTER: Material
+lateinit var MAUFTRIUM: Material
+lateinit var MAWSITSIT: Material
+lateinit var MAXIXE: Material
+lateinit var MEAT_COOKED: Material
+lateinit var MARS_SAND: Material
+lateinit var MEAT: Material
+lateinit var MEAT_ROTTEN: Material
+lateinit var MERCASSIUM: Material
+lateinit var MEAT_RAW: Material
+lateinit var MENDELEVIUM: Material
+lateinit var MERCURY: Material
+lateinit var METEORIC_STEEL: Material
+lateinit var METEORITE: Material
+lateinit var METEORIC_IRON: Material
+lateinit var MEUTOITE: Material
+lateinit var MICA: Material
+lateinit var METHANE_ICE: Material
+lateinit var MEITNERIUM: Material
+lateinit var MICROCLINE: Material
+lateinit var MIGMATITE: Material
+lateinit var MILK: Material
+lateinit var MIDASIUM: Material
+lateinit var MIMICHITE: Material
+lateinit var MINT: Material
+lateinit var MIRABILITE: Material
+lateinit var MOLYBDENITE: Material
+lateinit var MITHRIL: Material
+lateinit var MOLYBDENUM: Material
+lateinit var MONAZITE: Material
+lateinit var MOON_TURF: Material
+lateinit var MORGANITE: Material
+lateinit var MOSCOVIUM: Material
+lateinit var MOON_STONE: Material
+lateinit var MUD: Material
+lateinit var MUSPELHEIM_POWER: Material
+lateinit var MUTATED_IRON: Material
+lateinit var MUTATION: Material
+lateinit var NAQUADAH: Material
+lateinit var NAQUADAH_ENRICHED: Material
+lateinit var NAQUADRIA: Material
+lateinit var NEODYMIUM: Material
+lateinit var NATURAL_ALUMINUM: Material
+lateinit var METHANE: Material
+lateinit var NATRIUM: Material
+lateinit var MANA_DIAMOND: Material
+lateinit var NEODYMIUM_MAGNETIC: Material
+lateinit var NEON: Material
+lateinit var NAQUADAH_ALLOY: Material
+lateinit var NETHERRACK: Material
+lateinit var NETHER: Material
+lateinit var NEPTUNIUM: Material
+lateinit var NETHER_BRICK: Material
+lateinit var NETHER_QUARTZ: Material
+lateinit var NETHER_STAR: Material
+lateinit var NEUTRINO: Material
+lateinit var NEUTRON: Material
+lateinit var NEUTRONIUM: Material
+lateinit var NICHROME: Material
+lateinit var NICKEL: Material
+lateinit var NIFLHEIM_POWER: Material
+lateinit var NIHONIUM: Material
+lateinit var NIKOLINE_ALLOY: Material
+lateinit var NIKOLITE: Material
+lateinit var NIOBIUM: Material
+lateinit var NIOBIUM_NITRIDE: Material
+lateinit var NITER: Material
+lateinit var NIOBIUM_TITANIUM: Material
+lateinit var NITRIC_ACID: Material
+lateinit var NITROGEN: Material
+lateinit var NITROGEN_DIOXIDE: Material
+lateinit var NITROGEN_MONOXIDE: Material
+lateinit var NITRO_CARBON: Material
+lateinit var NITRO_FUEL: Material
+lateinit var NOBELIUM: Material
+lateinit var NOUGAT: Material
+lateinit var NUTMEG: Material
+lateinit var NUT_OIL: Material
+lateinit var N_U_L_L: Material
+lateinit var OAT: Material
+lateinit var OATS: Material
+lateinit var OBSIDIAN_FLUX: Material
+lateinit var OBSIDIAN: Material
+lateinit var OBSIDIAN_REFINED: Material
+lateinit var OBSIDIAN_STEEL: Material
+lateinit var OCTINE: Material
+lateinit var OIL: Material
+lateinit var OGANESSON: Material
+lateinit var OILSANDS: Material
+lateinit var OILSHALE: Material
+lateinit var OLIVE_OIL: Material
+lateinit var OLIVINE: Material
+lateinit var ONYX: Material
+lateinit var ONYX_BLACK: Material
+lateinit var ONYX_RED: Material
+lateinit var ORANGE: Material
+lateinit var OPAL: Material
+lateinit var ORANGE_SAPPHIRE: Material
+lateinit var ORGANIC: Material
+lateinit var ORIHARUKON: Material
+lateinit var ORICHALCUM: Material
+lateinit var OSMIRIDIUM: Material
+lateinit var OSMIUM: Material
+lateinit var OSMIUM_TETROXIDE: Material
+lateinit var OSMONIUM: Material
+lateinit var OURECLASE: Material
+lateinit var OXYGEN: Material
+lateinit var PAINITE: Material
+lateinit var PALIS: Material
+lateinit var PAPER: Material
+lateinit var PALLADIUM: Material
+lateinit var PARAFFIN_WAX: Material
+lateinit var PEANUT: Material
+lateinit var PEANUT_WOOD: Material
+lateinit var PEAT: Material
+lateinit var PEAT_BITUMINOUS: Material
+lateinit var PEPPER_BLACK: Material
+lateinit var PERIDOT: Material
+lateinit var PERLITE: Material
+lateinit var PETRIFIED_WOOD: Material
+lateinit var PETROL: Material
+lateinit var PETROLEUM: Material
+lateinit var PENTLANDITE: Material
+lateinit var PETROLEUM_COKE: Material
+lateinit var PETROTHEUM: Material
+lateinit var PET_COKE: Material
+lateinit var PEPPER: Material
+lateinit var PHASED_GOLD: Material
+lateinit var PEWTER: Material
+lateinit var PHASED_IRON: Material
+lateinit var PHOENIXITE: Material
+lateinit var PHOSPHATE: Material
+lateinit var PHOSPHOR: Material
+lateinit var PHOSPHORITE: Material
+lateinit var PHOSPHORUS: Material
+lateinit var PHOTON: Material
+lateinit var PIG_IRON: Material
+lateinit var PINK: Material
+lateinit var PINALITE: Material
+lateinit var PINK_VITRIOL: Material
+lateinit var PISTACHIO: Material
+lateinit var PITCHBLENDE: Material
+lateinit var PITSTONE: Material
+lateinit var PLASTIC: Material
+lateinit var PLATINUM: Material
+lateinit var PLATINUM_GROUP_SLUDGE: Material
+lateinit var PLUTONIUM: Material
+lateinit var PLUTONIUM241: Material
+lateinit var PLUTONIUM243: Material
+lateinit var PLUTONIUM244: Material
+lateinit var POKEFENNIUM: Material
+lateinit var POLLUCITE: Material
+lateinit var POLONIUM: Material
+lateinit var PORCELAIN: Material
+lateinit var POSITRON: Material
+lateinit var POTASH: Material
+lateinit var POTASSIUM: Material
+lateinit var POTASSIUM_ALUMINATE: Material
+lateinit var POTASSIUM_BISULFATE: Material
+lateinit var POTASSIUM_BISULPHATE: Material
+lateinit var POTASSIUM_CARBONATE: Material
+lateinit var POTASSIUM_FELDSPAR: Material
+lateinit var POTASSIUM_HYDROXIDE: Material
+lateinit var POTASSIUM_NITRATE: Material
+lateinit var POTASSIUM_PYROSULFATE: Material
+lateinit var POTASSIUM_PYROSULPHATE: Material
+lateinit var POTASSIUM_SULFATE: Material
+lateinit var POTASSIUM_SULFIDE: Material
+lateinit var POTASSIUM_SULFITE: Material
+lateinit var POTASSIUM_SULPHIDE: Material
+lateinit var POTASSIUM_SULPHITE: Material
+lateinit var POWELLITE: Material
+lateinit var POTATO: Material
+lateinit var PRIMITIVE: Material
+lateinit var POTASSIUM_SULPHATE: Material
+lateinit var PRASEODYMIUM: Material
+lateinit var POTASSIUM_PERSULFATE: Material
+lateinit var PRISMARINE: Material
+lateinit var PRISMARINE_DARK: Material
+lateinit var PROMETHEUM: Material
+lateinit var PROMETHIUM: Material
+lateinit var PROPYLENE: Material
+lateinit var PROPANE: Material
+lateinit var PROTON: Material
+lateinit var PULSATING_IRON: Material
+lateinit var PROTACTINIUM: Material
+lateinit var PUMICE: Material
+lateinit var PURPLE: Material
+lateinit var PURPLE_ALLOY: Material
+lateinit var PURPLE_SAPPHIRE: Material
+lateinit var PYRITE: Material
+lateinit var PYROLUSITE: Material
+lateinit var PYROPE: Material
+lateinit var PYROTHEUM: Material
+lateinit var POTASSIUM_PERSULPHATE: Material
+lateinit var QUANTUM: Material
+lateinit var QUARTZITE: Material
+lateinit var QUARTZ_BLACK: Material
+lateinit var QUARTZ: Material
+lateinit var QUARTZ_SAND: Material
+lateinit var QUARTZ_SMOKY: Material
+lateinit var QUICKLIME: Material
+lateinit var QUICKSILVER: Material
+lateinit var RADIUM: Material
+lateinit var P_E_Z: Material
+lateinit var RADON: Material
+lateinit var RANDOMITE: Material
+lateinit var RASPITE: Material
+lateinit var RAW_TERRASTEEL_ALLOY: Material
+lateinit var RARE_EARTH: Material
+lateinit var REDSTONE: Material
+lateinit var REDSTONE_ALLOY: Material
+lateinit var RED: Material
+lateinit var REDSTONIA: Material
+lateinit var RED_ALLOY: Material
+lateinit var RED_MATTER: Material
+lateinit var RED_METEOR: Material
+lateinit var RED_QUARTZ: Material
+lateinit var RED_STEEL: Material
+lateinit var RED_VITRIOL: Material
+lateinit var REFINED_GLOWSTONE: Material
+lateinit var REFINED_IRON: Material
+lateinit var REFINED_OBSIDIAN: Material
+lateinit var REFRACTORYWAX: Material
+lateinit var REINFORCED: Material
+lateinit var RHENIUM: Material
+lateinit var RHODIUM: Material
+lateinit var REDROCK: Material
+lateinit var RHYOLITE: Material
+lateinit var RICE: Material
+lateinit var ROCK_SALT: Material
+lateinit var ROENTGENIUM: Material
+lateinit var ROMAN_VITRIOL: Material
+lateinit var ROSE_GOLD: Material
+lateinit var RUBBER: Material
+lateinit var RUBIDIUM: Material
+lateinit var RUBBER_TREE_SAP: Material
+lateinit var PRISMANE: Material
+lateinit var RUBRACIUM: Material
+lateinit var RUBY: Material
+lateinit var RUSSELLITE: Material
+lateinit var RUTILE: Material
+lateinit var RYU: Material
+lateinit var RUTHERFORDIUM: Material
+lateinit var RYU_DRAGON_RYDER: Material
+lateinit var SALT: Material
+lateinit var SALTED_BUTTER: Material
+lateinit var SALTPETER: Material
+lateinit var SALT_WATER: Material
+lateinit var RYE: Material
+lateinit var SAMARIUM: Material
+lateinit var SAND: Material
+lateinit var SANGUINITE: Material
+lateinit var SAPHIRE: Material
+lateinit var SAPPHIRE: Material
+lateinit var SATINSPAR: Material
+lateinit var SCABYST: Material
+lateinit var SCANDIUM: Material
+lateinit var SCARLET_EMERALD: Material
+lateinit var SCHEELITE: Material
+lateinit var SEABORGIUM: Material
+lateinit var SEA_WATER: Material
+lateinit var SEED_OIL: Material
+lateinit var SELENITE: Material
+lateinit var SELENIUM: Material
+lateinit var SHADOW_IRON: Material
+lateinit var SHADOW_STEEL: Material
+lateinit var SERPENTINE: Material
+lateinit var SHALE: Material
+lateinit var SHELDONITE: Material
+lateinit var SHIMMERWOOD: Material
+lateinit var SIGNALUM: Material
+lateinit var SILICON: Material
+lateinit var SILTSTONE: Material
+lateinit var SILICON_DIOXIDE: Material
+lateinit var SILVER: Material
+lateinit var SKYROOT: Material
+lateinit var SILVER_IODIDE: Material
+lateinit var SLIMY_BONE: Material
+lateinit var SLUICE_SAND: Material
+lateinit var SMITHSONITE: Material
+lateinit var SMOKEY_QUARTZ: Material
+lateinit var SILVERWOOD: Material
+lateinit var SNOW: Material
+lateinit var SODIUM: Material
+lateinit var SODIUM_ALUMINATE: Material
+lateinit var SODIUM_BISULFATE: Material
+lateinit var SODALITE: Material
+lateinit var SODIUM_BISULPHATE: Material
+lateinit var SODIUM_CARBONATE: Material
+lateinit var SODIUM_HYDROGEN_SULPHATE: Material
+lateinit var SODIUM_HYDROGEN_SULFATE: Material
+lateinit var SODIUM_PEROXIDE: Material
+lateinit var SODIUM_NITRATE: Material
+lateinit var SODIUM_PERSULFATE: Material
+lateinit var SODIUM_HYDROXIDE: Material
+lateinit var SODIUM_PERSULPHATE: Material
+lateinit var RUTHENIUM: Material
+lateinit var SODIUM_PYROSULPHATE: Material
+lateinit var SODIUM_SULFATE: Material
+lateinit var SODIUM_SULFIDE: Material
+lateinit var SODIUM_SULFITE: Material
+lateinit var SODIUM_SULPHATE: Material
+lateinit var SODIUM_SULPHIDE: Material
+lateinit var SODIUM_SULPHITE: Material
+lateinit var SOLUTION_BLUE_VITRIOL: Material
+lateinit var SOLDERING_ALLOY: Material
+lateinit var SODIUM_PYROSULFATE: Material
+lateinit var SOLUTION_NICKEL_SULFATE: Material
+lateinit var SOULIUM: Material
+lateinit var SOLUTION_NICKEL_SULPHATE: Material
+lateinit var SOULSAND: Material
+lateinit var SPECTRE_IRON: Material
+lateinit var SPERRYLITE: Material
+lateinit var SPESSARTINE: Material
+lateinit var SPHALERITE: Material
+lateinit var SPACE_STONE: Material
+lateinit var SPODUMENE: Material
+lateinit var SPINEL: Material
+lateinit var SOYLENT_GREEN: Material
+lateinit var STAINLESS_STEEL: Material
+lateinit var STANNIC_CHLORIDE: Material
+lateinit var SOULARIUM: Material
+lateinit var STANNITE: Material
+lateinit var STARCONIUM: Material
+lateinit var STEEL: Material
+lateinit var STEELEAF: Material
+lateinit var SOAPSTONE: Material
+lateinit var STEEL_GALVANIZED: Material
+lateinit var STEEL_MAGNETIC: Material
+lateinit var STERLING_SILVER: Material
+lateinit var STOLZITE: Material
+lateinit var STIBNITE: Material
+lateinit var STONE: Material
+lateinit var STRENGTHENED_TERRASTEEL_ALLOY: Material
+lateinit var STRONTIUM: Material
+lateinit var SUGAR: Material
+lateinit var SUGILITE: Material
+lateinit var SULFUR: Material
+lateinit var SULFURIC_ACID: Material
+lateinit var SULFUR_DIOXIDE: Material
+lateinit var SULPHUR: Material
+lateinit var SULFUR_TRIOXIDE: Material
+lateinit var SULPHURIC_ACID: Material
+lateinit var SULPHUR_DIOXIDE: Material
+lateinit var SULPHUR_TRIOXIDE: Material
+lateinit var SUNFLOWER_OIL: Material
+lateinit var SUNNARIUM: Material
+lateinit var SUNNY_QUARTZ: Material
+lateinit var SUNSTONE: Material
+lateinit var SUPERCONDUCTOR: Material
+lateinit var SWEET: Material
+lateinit var SYLVITE: Material
+lateinit var SYRMORITE: Material
+lateinit var TALC: Material
+lateinit var TALLOW: Material
+lateinit var TANTALITE: Material
+lateinit var TANTALUM: Material
+lateinit var TANZANITE: Material
+lateinit var TAPAZITE: Material
+lateinit var TAR: Material
+lateinit var TARTARITE: Material
+lateinit var TEA: Material
+lateinit var TAR_PITCH: Material
+lateinit var TECHNETIUM: Material
+lateinit var TELLURIUM: Material
+lateinit var TENNANTITE: Material
+lateinit var TENNESSINE: Material
+lateinit var TERRASTEEL: Material
+lateinit var TERBIUM: Material
+lateinit var TERRASTEEL_ALLOY_RAW: Material
+lateinit var TERRASTEEL_ALLOY_STRENGTHENED: Material
+lateinit var TESLATINE_ALLOY: Material
+lateinit var TESLATITE: Material
+lateinit var TETRAHEDRITE: Material
+lateinit var THALLIUM: Material
+lateinit var THAUMIUM: Material
+lateinit var THORIUM: Material
+lateinit var THULIUM: Material
+lateinit var THYRIUM: Material
+lateinit var TITANIUM: Material
+lateinit var TITANIUM_ALUMINIDE: Material
+lateinit var TITANIUM_GOLD: Material
+lateinit var TITAN: Material
+lateinit var TITANIUM_IRIDIUM: Material
+lateinit var TITANIUM_IRON: Material
+lateinit var TITANIUM_TETRACHLORIDE: Material
+lateinit var TOFU: Material
+lateinit var TOPAZ: Material
+lateinit var TOURMALINE: Material
+lateinit var TIN: Material
+lateinit var TRIBIBIUM: Material
+lateinit var TRIBIENNIUM: Material
+lateinit var TRIBIHEXIUM: Material
+lateinit var TIN_ALLOY: Material
+lateinit var TRIBINILIUM: Material
+lateinit var TRIBIOCTIUM: Material
+lateinit var TRIBIPENTIUM: Material
+lateinit var TRIBIQUADIUM: Material
+lateinit var TRIBISEPTIUM: Material
+lateinit var TRIBITRIUM: Material
+lateinit var TRIBIUNIUM: Material
+lateinit var TRIENNBIUM: Material
+lateinit var TRIENNENNIUM: Material
+lateinit var TRIENNHEXIUM: Material
+lateinit var TRIENNOCTIUM: Material
+lateinit var TRIENNNILIUM: Material
+lateinit var TRIENNPENTIUM: Material
+lateinit var TRIENNQUADIUM: Material
+lateinit var TRIENNSEPTIUM: Material
+lateinit var TRIENNTRIUM: Material
+lateinit var TRIENNUNIUM: Material
+lateinit var TRIHEXBIUM: Material
+lateinit var TRIHEXENNIUM: Material
+lateinit var TRIHEXHEXIUM: Material
+lateinit var TRIHEXOCTIUM: Material
+lateinit var TRIHEXNILIUM: Material
+lateinit var TRIHEXPENTIUM: Material
+lateinit var TRIHEXQUADIUM: Material
+lateinit var TRIHEXSEPTIUM: Material
+lateinit var TRIHEXTRIUM: Material
+lateinit var TRIHEXUNIUM: Material
+lateinit var TRINAQUADALLOY: Material
+lateinit var TRINILENNIUM: Material
+lateinit var TRINILBIUM: Material
+lateinit var TRINILHEXIUM: Material
+lateinit var TRINILNILIUM: Material
+lateinit var TRINILOCTIUM: Material
+lateinit var TRINILPENTIUM: Material
+lateinit var TRINILQUADIUM: Material
+lateinit var TRINILSEPTIUM: Material
+lateinit var TRINILTRIUM: Material
+lateinit var TRINILUNIUM: Material
+lateinit var TRINITANIUM: Material
+lateinit var TRINIUM: Material
+lateinit var TRIOCTBIUM: Material
+lateinit var TRIOCTENNIUM: Material
+lateinit var TRIOCTHEXIUM: Material
+lateinit var TRIOCTNILIUM: Material
+lateinit var TRIOCTPENTIUM: Material
+lateinit var TRIOCTOCTIUM: Material
+lateinit var TRIOCTQUADIUM: Material
+lateinit var TRIOCTSEPTIUM: Material
+lateinit var TRIOCTUNIUM: Material
+lateinit var TRIOCTTRIUM: Material
+lateinit var TRIPENTBIUM: Material
+lateinit var TRIPENTENNIUM: Material
+lateinit var TRIPENTNILIUM: Material
+lateinit var TRIPENTHEXIUM: Material
+lateinit var TRIPENTOCTIUM: Material
+lateinit var TRIPENTPENTIUM: Material
+lateinit var TRIPENTQUADIUM: Material
+lateinit var TRIPENTSEPTIUM: Material
+lateinit var TRIPENTTRIUM: Material
+lateinit var TRIPENTUNIUM: Material
+lateinit var TRIQUADBIUM: Material
+lateinit var TRIQUADHEXIUM: Material
+lateinit var TRIQUADOCTIUM: Material
+lateinit var TRIQUADNILIUM: Material
+lateinit var TRIQUADPENTIUM: Material
+lateinit var TRIQUADQUADIUM: Material
+lateinit var TRIQUADSEPTIUM: Material
+lateinit var TRIQUADTRIUM: Material
+lateinit var TRISEPTBIUM: Material
+lateinit var TRISEPTENNIUM: Material
+lateinit var TRIQUADUNIUM: Material
+lateinit var TRISEPTNILIUM: Material
+lateinit var TRISEPTHEXIUM: Material
+lateinit var TRISEPTOCTIUM: Material
+lateinit var TRISEPTQUADIUM: Material
+lateinit var TRISEPTPENTIUM: Material
+lateinit var TRISEPTSEPTIUM: Material
+lateinit var TRISEPTTRIUM: Material
+lateinit var TRIQUADENNIUM: Material
+lateinit var TRISEPTUNIUM: Material
+lateinit var TRITANIUM_ELEMENTAL: Material
+lateinit var TRITANIUM_DIOXIDE: Material
+lateinit var TRITANIUM: Material
+lateinit var TRITANIUM_HEXAASTATIDE: Material
+lateinit var TRITANIUM_HEXACHLORIDE: Material
+lateinit var TRITANIUM_HEXABROMIDE: Material
+lateinit var TRITANIUM_HEXAFLUORIDE: Material
+lateinit var TRITANIUM_HEXAIODIDE: Material
+lateinit var TRITIUM: Material
+lateinit var TRITRIBIUM: Material
+lateinit var TRITRINILIUM: Material
+lateinit var TRITRIHEXIUM: Material
+lateinit var TRITRIOCTIUM: Material
+lateinit var TRITRIPENTIUM: Material
+lateinit var TRITRIQUADIUM: Material
+lateinit var TRITRISEPTIUM: Material
+lateinit var TRITRIENNIUM: Material
+lateinit var TRITRITRIUM: Material
+lateinit var TRITRIUNIUM: Material
+lateinit var TRIUNBIUM: Material
+lateinit var TRIUNENNIUM: Material
+lateinit var TRIUNHEXIUM: Material
+lateinit var TRIUNNILIUM: Material
+lateinit var TRIUNPENTIUM: Material
+lateinit var TRIUNOCTIUM: Material
+lateinit var TRIUNTRIUM: Material
+lateinit var TRIUNSEPTIUM: Material
+lateinit var TRIUNUNIUM: Material
+lateinit var TRONA: Material
+lateinit var TRIUNQUADIUM: Material
+lateinit var TUNGSTATE: Material
+lateinit var TUMBAGA: Material
+lateinit var TUNGSTEN: Material
+lateinit var TUNGSTEN_OXIDE: Material
+lateinit var TUNGSTEN_SINTERED: Material
+lateinit var TUNGSTEN_CARBIDE: Material
+lateinit var TUNGSTENSTEEL: Material
+lateinit var TUNGSTEN_TRIOXIDE: Material
+lateinit var TURQUOISE: Material
+lateinit var TUNGSTIC_ACID: Material
+lateinit var T_N_T: Material
+lateinit var ULTIMATE: Material
+lateinit var UMBER: Material
+lateinit var ULTIMET: Material
+lateinit var UNBIENNIUM: Material
+lateinit var UNBIBIUM: Material
+lateinit var UNBINILIUM: Material
+lateinit var UNBIOCTIUM: Material
+lateinit var UNBIHEXIUM: Material
+lateinit var UNBIQUADIUM: Material
+lateinit var UNBIPENTIUM: Material
+lateinit var UNBITRIUM: Material
+lateinit var UNBIUNIUM: Material
+lateinit var UNBISEPTIUM: Material
+lateinit var UNENNENNIUM: Material
+lateinit var UNENNBIUM: Material
+lateinit var UNENNHEXIUM: Material
+lateinit var UNENNNILIUM: Material
+lateinit var UNENNOCTIUM: Material
+lateinit var UNENNPENTIUM: Material
+lateinit var UNENNQUADIUM: Material
+lateinit var UNENNSEPTIUM: Material
+lateinit var UNENNUNIUM: Material
+lateinit var UNENNTRIUM: Material
+lateinit var UNHEXBIUM: Material
+lateinit var UNHEXENNIUM: Material
+lateinit var UNHEXHEXIUM: Material
+lateinit var UNHEXOCTIUM: Material
+lateinit var UNHEXNILIUM: Material
+lateinit var UNHEXPENTIUM: Material
+lateinit var UNHEXQUADIUM: Material
+lateinit var UNHEXSEPTIUM: Material
+lateinit var UNHEXTRIUM: Material
+lateinit var UNHEXUNIUM: Material
+lateinit var UNKNOWN: Material
+lateinit var UNOCTENNIUM: Material
+lateinit var UNOCTBIUM: Material
+lateinit var UNOCTHEXIUM: Material
+lateinit var UNOCTNILIUM: Material
+lateinit var UNOCTOCTIUM: Material
+lateinit var UNOCTPENTIUM: Material
+lateinit var UNOCTQUADIUM: Material
+lateinit var UNOCTSEPTIUM: Material
+lateinit var UNOCTTRIUM: Material
+lateinit var UNOCTUNIUM: Material
+lateinit var UNPENTBIUM: Material
+lateinit var UNPENTENNIUM: Material
+lateinit var UNPENTHEXIUM: Material
+lateinit var UNPENTNILIUM: Material
+lateinit var UNPENTOCTIUM: Material
+lateinit var UNPENTPENTIUM: Material
+lateinit var UNPENTQUADIUM: Material
+lateinit var UNPENTSEPTIUM: Material
+lateinit var UNPENTTRIUM: Material
+lateinit var UNQUADBIUM: Material
+lateinit var UNQUADNILIUM: Material
+lateinit var UNQUADHEXIUM: Material
+lateinit var UNQUADENNIUM: Material
+lateinit var UNPENTUNIUM: Material
+lateinit var UNQUADPENTIUM: Material
+lateinit var UNQUADQUADIUM: Material
+lateinit var UNQUADOCTIUM: Material
+lateinit var UNQUADSEPTIUM: Material
+lateinit var UNQUADTRIUM: Material
+lateinit var UNQUADUNIUM: Material
+lateinit var UNSEPTBIUM: Material
+lateinit var UNSEPTHEXIUM: Material
+lateinit var UNSEPTNILIUM: Material
+lateinit var UNSEPTOCTIUM: Material
+lateinit var UNSEPTPENTIUM: Material
+lateinit var UNSEPTQUADIUM: Material
+lateinit var UNSEPTSEPTIUM: Material
+lateinit var UNSEPTTRIUM: Material
+lateinit var UNSEPTUNIUM: Material
+lateinit var UNSEPTENNIUM: Material
+lateinit var UNSTABLE: Material
+lateinit var UNTRIBIUM: Material
+lateinit var UNSTABLEINGOT: Material
+lateinit var UNTRINILIUM: Material
+lateinit var UNTRIOCTIUM: Material
+lateinit var UNTRIPENTIUM: Material
+lateinit var UNTRIQUADIUM: Material
+lateinit var UNTRISEPTIUM: Material
+lateinit var UNTRIHEXIUM: Material
+lateinit var UNTRIUNIUM: Material
+lateinit var UNTRITRIUM: Material
+lateinit var UNUNENNIUM: Material
+lateinit var URAN: Material
+lateinit var URANINITE: Material
+lateinit var URANIUM: Material
+lateinit var URANIUM235: Material
+lateinit var URANIUM238: Material
+lateinit var URANIUM_ENRICHED: Material
+lateinit var UVAROVITE: Material
+lateinit var VALONITE: Material
+lateinit var U_U_AMPLIFIER: Material
+lateinit var VANADIUM: Material
+lateinit var U_U_MATTER: Material
+lateinit var VALERITE: Material
+lateinit var UNTRIENNIUM: Material
+lateinit var VANADIUM_GALLIUM: Material
+lateinit var VANADIUM_STEEL: Material
+lateinit var VANADIUM_MAGNETITE: Material
+lateinit var VANILLA: Material
+lateinit var VANADIUM_PENTOXIDE: Material
+lateinit var VERMICULITE: Material
+lateinit var VIBRAMANTIUM: Material
+lateinit var VIBRANIUM: Material
+lateinit var VIBRANIUM_SILVER: Material
+lateinit var VIBRANT_ALLOY: Material
+lateinit var VIBRANIUM_STEEL: Material
+lateinit var VILE: Material
+lateinit var VINTEUM: Material
+lateinit var VINTEUM_PURIFIED: Material
+lateinit var VIS: Material
+lateinit var VITRIOL_OF_CLAY: Material
+lateinit var VOID: Material
+lateinit var VOIDSTONE: Material
+lateinit var VOID_CRYSTAL: Material
+lateinit var VOLCANIC_ASH: Material
+lateinit var VOID_METAL: Material
+lateinit var VOLCANIC_ASHES: Material
+lateinit var VULCANITE: Material
+lateinit var WATER: Material
+lateinit var VYROXERES: Material
+lateinit var WATER_DIRTY: Material
+lateinit var WATER_DISTILLED: Material
+lateinit var WAX: Material
+lateinit var WAX_AMNESIC: Material
+lateinit var WAX_PARAFFIN: Material
+lateinit var WAX_MAGIC: Material
+lateinit var WAX_PLANT: Material
+lateinit var WAX_REFRACTORY: Material
+lateinit var WAX_SOULFUL: Material
+lateinit var WEEDWOOD: Material
+lateinit var WAX_BEE: Material
+lateinit var WHEAT: Material
+lateinit var WHITE: Material
+lateinit var WHITE_VITRIOL: Material
+lateinit var WITHERIA: Material
+lateinit var WIMALITE: Material
+lateinit var WOLFRAM: Material
+lateinit var WOLFRAMIUM: Material
+lateinit var WOLFRAMITE: Material
+lateinit var WOLFRAM_STEEL: Material
+lateinit var WOLFRAM_CARBIDE: Material
+lateinit var WOLLASTONITE: Material
+lateinit var WOOD: Material
+lateinit var WOOD_RUBBER: Material
+lateinit var WOOD_POLISHED: Material
+lateinit var WOOD_SEALED: Material
+lateinit var WROUGHT_IRON: Material
+lateinit var WROUGT_IRON: Material
+lateinit var YELLORITE: Material
+lateinit var YELLORIUM: Material
+lateinit var XENON: Material
+lateinit var YELLOW: Material
+lateinit var WULFENITE: Material
+lateinit var YELLOW_SAPPHIRE: Material
+lateinit var YELLOW_LIMONITE: Material
+lateinit var YTTERBIUM: Material
+lateinit var ZANITE: Material
+lateinit var YTTRIUM: Material
+lateinit var ZECTIUM: Material
+lateinit var ZEOLITE: Material
+lateinit var ZINC: Material
+lateinit var ZIRCON: Material
+lateinit var YTTRIUM_BARIUM_CUPRATE: Material
+lateinit var ZIRCONIUM: Material
 
+fun refreshMaterials() {
+    ACTINIUM = materialRegistry[Identifier(MODID, "actinium")]!!
+    ADAMANT = materialRegistry[Identifier(MODID, "adamant")]!!
+    ADAMANTINE = materialRegistry[Identifier(MODID, "adamantine")]!!
+    ADAMANTIUM = materialRegistry[Identifier(MODID, "adamantium")]!!
+    ADVANCED = materialRegistry[Identifier(MODID, "advanced")]!!
+    ADAMANTITE = materialRegistry[Identifier(MODID, "adamantite")]!!
+    ADLUORITE = materialRegistry[Identifier(MODID, "adluorite")]!!
+    ADAMITE = materialRegistry[Identifier(MODID, "adamite")]!!
+    AEROTHEUM = materialRegistry[Identifier(MODID, "aerotheum")]!!
+    AIR = materialRegistry[Identifier(MODID, "air")]!!
+    ALDUORITE = materialRegistry[Identifier(MODID, "alduorite")]!!
+    AGATE = materialRegistry[Identifier(MODID, "agate")]!!
+    ALEXANDRITE = materialRegistry[Identifier(MODID, "alexandrite")]!!
+    ALFIUM = materialRegistry[Identifier(MODID, "alfium")]!!
+    ALMANDINE = materialRegistry[Identifier(MODID, "almandine")]!!
+    ALMOND = materialRegistry[Identifier(MODID, "almond")]!!
+    ALUMINA = materialRegistry[Identifier(MODID, "alumina")]!!
+    ALUMINIUM_FLUORIDE = materialRegistry[Identifier(MODID, "aluminium_fluoride")]!!
+    ALUMINIUM = materialRegistry[Identifier(MODID, "aluminium")]!!
+    ALUMINIUM_ALLOY = materialRegistry[Identifier(MODID, "aluminium_alloy")]!!
+    ALUMINUM = materialRegistry[Identifier(MODID, "aluminum")]!!
+    ALUMINIUM_HYDROXIDE = materialRegistry[Identifier(MODID, "aluminium_hydroxide")]!!
+    ALUMINUM_BRASS = materialRegistry[Identifier(MODID, "aluminum_brass")]!!
+    ALUMINIUM_BRASS = materialRegistry[Identifier(MODID, "aluminium_brass")]!!
+    ALUMITE = materialRegistry[Identifier(MODID, "alumite")]!!
+    AMAZONITE = materialRegistry[Identifier(MODID, "amazonite")]!!
+    AMBER = materialRegistry[Identifier(MODID, "amber")]!!
+    ALUNITE = materialRegistry[Identifier(MODID, "alunite")]!!
+    AMBROSIUM = materialRegistry[Identifier(MODID, "ambrosium")]!!
+    AMERICIUM = materialRegistry[Identifier(MODID, "americium")]!!
+    AMERICIUM241 = materialRegistry[Identifier(MODID, "americium241")]!!
+    AMETHYST = materialRegistry[Identifier(MODID, "amethyst")]!!
+    AMETHYST_ENDER = materialRegistry[Identifier(MODID, "amethyst_ender")]!!
+    AMMONIA = materialRegistry[Identifier(MODID, "ammonia")]!!
+    AMMONIUM = materialRegistry[Identifier(MODID, "ammonium")]!!
+    ANDESITE = materialRegistry[Identifier(MODID, "andesite")]!!
+    AMORDRINE = materialRegistry[Identifier(MODID, "amordrine")]!!
+    ANDESITE_CHISELED = materialRegistry[Identifier(MODID, "andesite_chiseled")]!!
+    ANDESITE_BRICKS = materialRegistry[Identifier(MODID, "andesite_bricks")]!!
+    ANDESITE_POLISHED = materialRegistry[Identifier(MODID, "andesite_polished")]!!
+    ANDRADITE = materialRegistry[Identifier(MODID, "andradite")]!!
+    ANGMALLEN = materialRegistry[Identifier(MODID, "angmallen")]!!
+    ANNEALED_COPPER = materialRegistry[Identifier(MODID, "annealed_copper")]!!
+    ANTHRACITE = materialRegistry[Identifier(MODID, "anthracite")]!!
+    ANTIMATTER = materialRegistry[Identifier(MODID, "antimatter")]!!
+    ANTIMONY = materialRegistry[Identifier(MODID, "antimony")]!!
+    ANTI_ACTINIUM = materialRegistry[Identifier(MODID, "anti_actinium")]!!
+    ANTI_ADAMANT = materialRegistry[Identifier(MODID, "anti_adamant")]!!
+    ANTI_ADAMANTINE = materialRegistry[Identifier(MODID, "anti_adamantine")]!!
+    ANTI_ADAMANTIUM = materialRegistry[Identifier(MODID, "anti_adamantium")]!!
+    ANTI_ALUMINIUM = materialRegistry[Identifier(MODID, "anti_aluminium")]!!
+    ANTI_ALUMINUM = materialRegistry[Identifier(MODID, "anti_aluminum")]!!
+    ANTI_AMERICIUM = materialRegistry[Identifier(MODID, "anti_americium")]!!
+    ANTI_AMERICIUM241 = materialRegistry[Identifier(MODID, "anti_americium241")]!!
+    ANTI_ANTIMONY = materialRegistry[Identifier(MODID, "anti_antimony")]!!
+    ANTI_ARGON = materialRegistry[Identifier(MODID, "anti_argon")]!!
+    ANTI_ARSENIC = materialRegistry[Identifier(MODID, "anti_arsenic")]!!
+    ANTI_ASTATINE = materialRegistry[Identifier(MODID, "anti_astatine")]!!
+    ANTI_BARIUM = materialRegistry[Identifier(MODID, "anti_barium")]!!
+    ANTI_BERKELIUM = materialRegistry[Identifier(MODID, "anti_berkelium")]!!
+    ANTI_BERYLLIUM = materialRegistry[Identifier(MODID, "anti_beryllium")]!!
+    ANTI_BIBIBIUM = materialRegistry[Identifier(MODID, "anti_bibibium")]!!
+    ANTI_BIBIENNIUM = materialRegistry[Identifier(MODID, "anti_bibiennium")]!!
+    ANTI_BIBIHEXIUM = materialRegistry[Identifier(MODID, "anti_bibihexium")]!!
+    ANTI_BIBINILIUM = materialRegistry[Identifier(MODID, "anti_bibinilium")]!!
+    ANTI_BIBIOCTIUM = materialRegistry[Identifier(MODID, "anti_bibioctium")]!!
+    ANTI_BIBIPENTIUM = materialRegistry[Identifier(MODID, "anti_bibipentium")]!!
+    ANTI_BIBIQUADIUM = materialRegistry[Identifier(MODID, "anti_bibiquadium")]!!
+    ANTI_BIBISEPTIUM = materialRegistry[Identifier(MODID, "anti_bibiseptium")]!!
+    ANTI_BIBITRIUM = materialRegistry[Identifier(MODID, "anti_bibitrium")]!!
+    ANTI_BIBIUNIUM = materialRegistry[Identifier(MODID, "anti_bibiunium")]!!
+    ANTI_BIENNBIUM = materialRegistry[Identifier(MODID, "anti_biennbium")]!!
+    ANTI_BIENNENNIUM = materialRegistry[Identifier(MODID, "anti_biennennium")]!!
+    ANTI_BIENNHEXIUM = materialRegistry[Identifier(MODID, "anti_biennhexium")]!!
+    ANTI_BIENNILIUM = materialRegistry[Identifier(MODID, "anti_biennilium")]!!
+    ANTI_BIENNOCTIUM = materialRegistry[Identifier(MODID, "anti_biennoctium")]!!
+    ANTI_BIENNQUADIUM = materialRegistry[Identifier(MODID, "anti_biennquadium")]!!
+    ANTI_BIENNSEPTIUM = materialRegistry[Identifier(MODID, "anti_biennseptium")]!!
+    ANTI_BIENNPENTIUM = materialRegistry[Identifier(MODID, "anti_biennpentium")]!!
+    ANTI_BIENNTRIUM = materialRegistry[Identifier(MODID, "anti_bienntrium")]!!
+    ANTI_BIENNUNIUM = materialRegistry[Identifier(MODID, "anti_biennunium")]!!
+    ANTI_BIHEXBIUM = materialRegistry[Identifier(MODID, "anti_bihexbium")]!!
+    ANTI_BIHEXHEXIUM = materialRegistry[Identifier(MODID, "anti_bihexhexium")]!!
+    ANTI_BIHEXENNIUM = materialRegistry[Identifier(MODID, "anti_bihexennium")]!!
+    ANTI_BIHEXNILIUM = materialRegistry[Identifier(MODID, "anti_bihexnilium")]!!
+    ANTI_BIHEXOCTIUM = materialRegistry[Identifier(MODID, "anti_bihexoctium")]!!
+    ANTI_BIHEXPENTIUM = materialRegistry[Identifier(MODID, "anti_bihexpentium")]!!
+    ANTI_BIHEXQUADIUM = materialRegistry[Identifier(MODID, "anti_bihexquadium")]!!
+    ANTI_BIHEXSEPTIUM = materialRegistry[Identifier(MODID, "anti_bihexseptium")]!!
+    ANTI_BIHEXTRIUM = materialRegistry[Identifier(MODID, "anti_bihextrium")]!!
+    ANTI_BINILBIUM = materialRegistry[Identifier(MODID, "anti_binilbium")]!!
+    ANTI_BIHEXUNIUM = materialRegistry[Identifier(MODID, "anti_bihexunium")]!!
+    ANTI_BINILENNIUM = materialRegistry[Identifier(MODID, "anti_binilennium")]!!
+    ANTI_BINILHEXIUM = materialRegistry[Identifier(MODID, "anti_binilhexium")]!!
+    ANTI_BINILNILIUM = materialRegistry[Identifier(MODID, "anti_binilnilium")]!!
+    ANTI_BINILPENTIUM = materialRegistry[Identifier(MODID, "anti_binilpentium")]!!
+    ANTI_BINILOCTIUM = materialRegistry[Identifier(MODID, "anti_biniloctium")]!!
+    ANTI_BINILQUADIUM = materialRegistry[Identifier(MODID, "anti_binilquadium")]!!
+    ANTI_BINILSEPTIUM = materialRegistry[Identifier(MODID, "anti_binilseptium")]!!
+    ANTI_BINILUNIUM = materialRegistry[Identifier(MODID, "anti_binilunium")]!!
+    ANTI_BINILTRIUM = materialRegistry[Identifier(MODID, "anti_biniltrium")]!!
+    ANTI_BIOCTBIUM = materialRegistry[Identifier(MODID, "anti_bioctbium")]!!
+    ANTI_BIOCTENNIUM = materialRegistry[Identifier(MODID, "anti_bioctennium")]!!
+    ANTI_BIOCTHEXIUM = materialRegistry[Identifier(MODID, "anti_biocthexium")]!!
+    ANTI_BIOCTNILIUM = materialRegistry[Identifier(MODID, "anti_bioctnilium")]!!
+    ANTI_BIOCTOCTIUM = materialRegistry[Identifier(MODID, "anti_bioctoctium")]!!
+    ANTI_BIOCTPENTIUM = materialRegistry[Identifier(MODID, "anti_bioctpentium")]!!
+    ANTI_BIOCTQUADIUM = materialRegistry[Identifier(MODID, "anti_bioctquadium")]!!
+    ANTI_BIOCTSEPTIUM = materialRegistry[Identifier(MODID, "anti_bioctseptium")]!!
+    ANTI_BIOCTTRIUM = materialRegistry[Identifier(MODID, "anti_biocttrium")]!!
+    ANTI_BIOCTUNIUM = materialRegistry[Identifier(MODID, "anti_bioctunium")]!!
+    ANTI_BIPENTBIUM = materialRegistry[Identifier(MODID, "anti_bipentbium")]!!
+    ANTI_BIPENTENNIUM = materialRegistry[Identifier(MODID, "anti_bipentennium")]!!
+    ANTI_BIPENTHEXIUM = materialRegistry[Identifier(MODID, "anti_bipenthexium")]!!
+    ANTI_BIPENTNILIUM = materialRegistry[Identifier(MODID, "anti_bipentnilium")]!!
+    ANTI_BIPENTPENTIUM = materialRegistry[Identifier(MODID, "anti_bipentpentium")]!!
+    ANTI_BIPENTOCTIUM = materialRegistry[Identifier(MODID, "anti_bipentoctium")]!!
+    ANTI_BIPENTTRIUM = materialRegistry[Identifier(MODID, "anti_bipenttrium")]!!
+    ANTI_BIPENTSEPTIUM = materialRegistry[Identifier(MODID, "anti_bipentseptium")]!!
+    ANTI_BIPENTQUADIUM = materialRegistry[Identifier(MODID, "anti_bipentquadium")]!!
+    ANTI_BIPENTUNIUM = materialRegistry[Identifier(MODID, "anti_bipentunium")]!!
+    ANTI_BIQUADENNIUM = materialRegistry[Identifier(MODID, "anti_biquadennium")]!!
+    ANTI_BIQUADBIUM = materialRegistry[Identifier(MODID, "anti_biquadbium")]!!
+    ANTI_BIQUADHEXIUM = materialRegistry[Identifier(MODID, "anti_biquadhexium")]!!
+    ANTI_BIQUADNILIUM = materialRegistry[Identifier(MODID, "anti_biquadnilium")]!!
+    ANTI_BIQUADOCTIUM = materialRegistry[Identifier(MODID, "anti_biquadoctium")]!!
+    ANTI_BIQUADPENTIUM = materialRegistry[Identifier(MODID, "anti_biquadpentium")]!!
+    ANTI_BIQUADTRIUM = materialRegistry[Identifier(MODID, "anti_biquadtrium")]!!
+    ANTI_BIQUADSEPTIUM = materialRegistry[Identifier(MODID, "anti_biquadseptium")]!!
+    ANTI_BIQUADUNIUM = materialRegistry[Identifier(MODID, "anti_biquadunium")]!!
+    ANTI_BIQUADQUADIUM = materialRegistry[Identifier(MODID, "anti_biquadquadium")]!!
+    ANTI_BISEPTBIUM = materialRegistry[Identifier(MODID, "anti_biseptbium")]!!
+    ANTI_BISEPTENNIUM = materialRegistry[Identifier(MODID, "anti_biseptennium")]!!
+    ANTI_BISEPTNILIUM = materialRegistry[Identifier(MODID, "anti_biseptnilium")]!!
+    ANTI_BISEPTOCTIUM = materialRegistry[Identifier(MODID, "anti_biseptoctium")]!!
+    ANTI_BISEPTPENTIUM = materialRegistry[Identifier(MODID, "anti_biseptpentium")]!!
+    ANTI_BISEPTQUADIUM = materialRegistry[Identifier(MODID, "anti_biseptquadium")]!!
+    ANTI_BISEPTHEXIUM = materialRegistry[Identifier(MODID, "anti_bisepthexium")]!!
+    ANTI_BISEPTSEPTIUM = materialRegistry[Identifier(MODID, "anti_biseptseptium")]!!
+    ANTI_BITRIBIUM = materialRegistry[Identifier(MODID, "anti_bitribium")]!!
+    ANTI_BITRIENNIUM = materialRegistry[Identifier(MODID, "anti_bitriennium")]!!
+    ANTI_BISEPTUNIUM = materialRegistry[Identifier(MODID, "anti_biseptunium")]!!
+    ANTI_BISMUTH = materialRegistry[Identifier(MODID, "anti_bismuth")]!!
+    ANTI_BITRIHEXIUM = materialRegistry[Identifier(MODID, "anti_bitrihexium")]!!
+    ANTI_BITRINILIUM = materialRegistry[Identifier(MODID, "anti_bitrinilium")]!!
+    ANTI_BITRIPENTIUM = materialRegistry[Identifier(MODID, "anti_bitripentium")]!!
+    ANTI_BITRIQUADIUM = materialRegistry[Identifier(MODID, "anti_bitriquadium")]!!
+    ANTI_BITRISEPTIUM = materialRegistry[Identifier(MODID, "anti_bitriseptium")]!!
+    ANTI_BITRITRIUM = materialRegistry[Identifier(MODID, "anti_bitritrium")]!!
+    ANTI_BITRIOCTIUM = materialRegistry[Identifier(MODID, "anti_bitrioctium")]!!
+    ANTI_BITRIUNIUM = materialRegistry[Identifier(MODID, "anti_bitriunium")]!!
+    ANTI_BIUNBIUM = materialRegistry[Identifier(MODID, "anti_biunbium")]!!
+    ANTI_BIUNNILIUM = materialRegistry[Identifier(MODID, "anti_biunnilium")]!!
+    ANTI_BIUNHEXIUM = materialRegistry[Identifier(MODID, "anti_biunhexium")]!!
+    ANTI_BIUNENNIUM = materialRegistry[Identifier(MODID, "anti_biunennium")]!!
+    ANTI_BIUNOCTIUM = materialRegistry[Identifier(MODID, "anti_biunoctium")]!!
+    ANTI_BIUNQUADIUM = materialRegistry[Identifier(MODID, "anti_biunquadium")]!!
+    ANTI_BIUNUNIUM = materialRegistry[Identifier(MODID, "anti_biununium")]!!
+    ANTI_BIUNSEPTIUM = materialRegistry[Identifier(MODID, "anti_biunseptium")]!!
+    ANTI_BIUNTRIUM = materialRegistry[Identifier(MODID, "anti_biuntrium")]!!
+    ANTI_BISEPTTRIUM = materialRegistry[Identifier(MODID, "anti_bisepttrium")]!!
+    ANTI_BOHRIUM = materialRegistry[Identifier(MODID, "anti_bohrium")]!!
+    ANTI_BORON = materialRegistry[Identifier(MODID, "anti_boron")]!!
+    ANTI_BROMINE = materialRegistry[Identifier(MODID, "anti_bromine")]!!
+    ANTI_BIUNPENTIUM = materialRegistry[Identifier(MODID, "anti_biunpentium")]!!
+    ANTI_CADMIUM = materialRegistry[Identifier(MODID, "anti_cadmium")]!!
+    ANTI_CAESIUM = materialRegistry[Identifier(MODID, "anti_caesium")]!!
+    ANTI_CALCIUM = materialRegistry[Identifier(MODID, "anti_calcium")]!!
+    ANTI_CARBON13 = materialRegistry[Identifier(MODID, "anti_carbon13")]!!
+    ANTI_CERIUM = materialRegistry[Identifier(MODID, "anti_cerium")]!!
+    ANTI_CHLORINE = materialRegistry[Identifier(MODID, "anti_chlorine")]!!
+    ANTI_CHROME = materialRegistry[Identifier(MODID, "anti_chrome")]!!
+    ANTI_CALIFORNIUM = materialRegistry[Identifier(MODID, "anti_californium")]!!
+    ANTI_CHROMIUM = materialRegistry[Identifier(MODID, "anti_chromium")]!!
+    ANTI_COBALT = materialRegistry[Identifier(MODID, "anti_cobalt")]!!
+    ANTI_CARBON14 = materialRegistry[Identifier(MODID, "anti_carbon14")]!!
+    ANTI_CARBON = materialRegistry[Identifier(MODID, "anti_carbon")]!!
+    ANTI_COPERNICIUM = materialRegistry[Identifier(MODID, "anti_copernicium")]!!
+    ANTI_COPPER = materialRegistry[Identifier(MODID, "anti_copper")]!!
+    ANTI_COBALT60 = materialRegistry[Identifier(MODID, "anti_cobalt60")]!!
+    ANTI_DARMSTADTIUM = materialRegistry[Identifier(MODID, "anti_darmstadtium")]!!
+    ANTI_DEUTERIUM = materialRegistry[Identifier(MODID, "anti_deuterium")]!!
+    ANTI_DUBNIUM = materialRegistry[Identifier(MODID, "anti_dubnium")]!!
+    ANTI_EINSTEINIUM = materialRegistry[Identifier(MODID, "anti_einsteinium")]!!
+    ANTI_DYSPROSIUM = materialRegistry[Identifier(MODID, "anti_dysprosium")]!!
+    ANTI_CURIUM = materialRegistry[Identifier(MODID, "anti_curium")]!!
+    ANTI_ELECTRON = materialRegistry[Identifier(MODID, "anti_electron")]!!
+    ANTI_ERBIUM = materialRegistry[Identifier(MODID, "anti_erbium")]!!
+    ANTI_FERMIUM = materialRegistry[Identifier(MODID, "anti_fermium")]!!
+    ANTI_FARNSIUM = materialRegistry[Identifier(MODID, "anti_farnsium")]!!
+    ANTI_FLEROVIUM298 = materialRegistry[Identifier(MODID, "anti_flerovium298")]!!
+    ANTI_EUROPIUM = materialRegistry[Identifier(MODID, "anti_europium")]!!
+    ANTI_FLUORINE = materialRegistry[Identifier(MODID, "anti_fluorine")]!!
+    ANTI_FRANCIUM = materialRegistry[Identifier(MODID, "anti_francium")]!!
+    ANTI_FLEROVIUM = materialRegistry[Identifier(MODID, "anti_flerovium")]!!
+    ANTI_GADOLINIUM = materialRegistry[Identifier(MODID, "anti_gadolinium")]!!
+    ANTI_GALLIUM = materialRegistry[Identifier(MODID, "anti_gallium")]!!
+    ANTI_GOLD = materialRegistry[Identifier(MODID, "anti_gold")]!!
+    ANTI_GERMANIUM = materialRegistry[Identifier(MODID, "anti_germanium")]!!
+    ANTI_GRAVITONIUM = materialRegistry[Identifier(MODID, "anti_gravitonium")]!!
+    ANTI_GREGORIUM = materialRegistry[Identifier(MODID, "anti_gregorium")]!!
+    ANTI_HASSIUM = materialRegistry[Identifier(MODID, "anti_hassium")]!!
+    ANTI_HAFNIUM = materialRegistry[Identifier(MODID, "anti_hafnium")]!!
+    ANTI_HELIUM = materialRegistry[Identifier(MODID, "anti_helium")]!!
+    ANTI_HOLMIUM = materialRegistry[Identifier(MODID, "anti_holmium")]!!
+    ANTI_HELIUM3 = materialRegistry[Identifier(MODID, "anti_helium3")]!!
+    ANTI_IODINE = materialRegistry[Identifier(MODID, "anti_iodine")]!!
+    ANTI_INDIUM = materialRegistry[Identifier(MODID, "anti_indium")]!!
+    ANTI_HYDROGEN = materialRegistry[Identifier(MODID, "anti_hydrogen")]!!
+    ANTI_IRON = materialRegistry[Identifier(MODID, "anti_iron")]!!
+    ANTI_KALIUM = materialRegistry[Identifier(MODID, "anti_kalium")]!!
+    ANTI_IRIDIUM = materialRegistry[Identifier(MODID, "anti_iridium")]!!
+    ANTI_KRYPTON = materialRegistry[Identifier(MODID, "anti_krypton")]!!
+    ANTI_LANTANIUM = materialRegistry[Identifier(MODID, "anti_lantanium")]!!
+    ANTI_LAWRENCIUM = materialRegistry[Identifier(MODID, "anti_lawrencium")]!!
+    ANTI_LITHIUM = materialRegistry[Identifier(MODID, "anti_lithium")]!!
+    ANTI_LEAD = materialRegistry[Identifier(MODID, "anti_lead")]!!
+    ANTI_LIVERMORIUM = materialRegistry[Identifier(MODID, "anti_livermorium")]!!
+    ANTI_LUTETIUM = materialRegistry[Identifier(MODID, "anti_lutetium")]!!
+    ANTI_LITHIUM6 = materialRegistry[Identifier(MODID, "anti_lithium6")]!!
+    ANTI_MAC_GUFFIUM = materialRegistry[Identifier(MODID, "anti_mac_guffium")]!!
+    ANTI_MAGNESIUM = materialRegistry[Identifier(MODID, "anti_magnesium")]!!
+    ANTI_MANGANESE = materialRegistry[Identifier(MODID, "anti_manganese")]!!
+    ANTI_MEITNERIUM = materialRegistry[Identifier(MODID, "anti_meitnerium")]!!
+    ANTI_MENDELEVIUM = materialRegistry[Identifier(MODID, "anti_mendelevium")]!!
+    ANTI_MERCURY = materialRegistry[Identifier(MODID, "anti_mercury")]!!
+    ANTI_MOLYBDENUM = materialRegistry[Identifier(MODID, "anti_molybdenum")]!!
+    ANTI_NAQUADRIA = materialRegistry[Identifier(MODID, "anti_naquadria")]!!
+    ANTI_NATRIUM = materialRegistry[Identifier(MODID, "anti_natrium")]!!
+    ANTI_NAQUADAH = materialRegistry[Identifier(MODID, "anti_naquadah")]!!
+    ANTI_NAQUADAH_ENRICHED = materialRegistry[Identifier(MODID, "anti_naquadah_enriched")]!!
+    ANTI_NEODYMIUM = materialRegistry[Identifier(MODID, "anti_neodymium")]!!
+    ANTI_NEON = materialRegistry[Identifier(MODID, "anti_neon")]!!
+    ANTI_NEPTUNIUM = materialRegistry[Identifier(MODID, "anti_neptunium")]!!
+    ANTI_NEUTRON = materialRegistry[Identifier(MODID, "anti_neutron")]!!
+    ANTI_NICKEL = materialRegistry[Identifier(MODID, "anti_nickel")]!!
+    ANTI_NEUTRINO = materialRegistry[Identifier(MODID, "anti_neutrino")]!!
+    ANTI_NIOBIUM = materialRegistry[Identifier(MODID, "anti_niobium")]!!
+    ANTI_NITROGEN = materialRegistry[Identifier(MODID, "anti_nitrogen")]!!
+    ANTI_OXYGEN = materialRegistry[Identifier(MODID, "anti_oxygen")]!!
+    ANTI_OSMIUM = materialRegistry[Identifier(MODID, "anti_osmium")]!!
+    ANTI_NOBELIUM = materialRegistry[Identifier(MODID, "anti_nobelium")]!!
+    ANTI_PALLADIUM = materialRegistry[Identifier(MODID, "anti_palladium")]!!
+    ANTI_PLUTONIUM = materialRegistry[Identifier(MODID, "anti_plutonium")]!!
+    ANTI_PHOTON = materialRegistry[Identifier(MODID, "anti_photon")]!!
+    ANTI_PHOSPHOR = materialRegistry[Identifier(MODID, "anti_phosphor")]!!
+    ANTI_PLATINUM = materialRegistry[Identifier(MODID, "anti_platinum")]!!
+    ANTI_PLUTONIUM243 = materialRegistry[Identifier(MODID, "anti_plutonium243")]!!
+    ANTI_PLUTONIUM241 = materialRegistry[Identifier(MODID, "anti_plutonium241")]!!
+    ANTI_POTASSIUM = materialRegistry[Identifier(MODID, "anti_potassium")]!!
+    ANTI_PRASEODYMIUM = materialRegistry[Identifier(MODID, "anti_praseodymium")]!!
+    ANTI_PLUTONIUM244 = materialRegistry[Identifier(MODID, "anti_plutonium244")]!!
+    ANTI_POLONIUM = materialRegistry[Identifier(MODID, "anti_polonium")]!!
+    ANTI_PROTACTINIUM = materialRegistry[Identifier(MODID, "anti_protactinium")]!!
+    ANTI_PROTON = materialRegistry[Identifier(MODID, "anti_proton")]!!
+    ANTI_RADIUM = materialRegistry[Identifier(MODID, "anti_radium")]!!
+    ANTI_QUICK_SILVER = materialRegistry[Identifier(MODID, "anti_quick_silver")]!!
+    ANTI_PROMETHIUM = materialRegistry[Identifier(MODID, "anti_promethium")]!!
+    ANTI_RADON = materialRegistry[Identifier(MODID, "anti_radon")]!!
+    ANTI_RHODIUM = materialRegistry[Identifier(MODID, "anti_rhodium")]!!
+    ANTI_ROENTGENIUM = materialRegistry[Identifier(MODID, "anti_roentgenium")]!!
+    ANTI_RUTHENIUM = materialRegistry[Identifier(MODID, "anti_ruthenium")]!!
+    ANTI_RUBIDIUM = materialRegistry[Identifier(MODID, "anti_rubidium")]!!
+    ANTI_RUTHERFORDIUM = materialRegistry[Identifier(MODID, "anti_rutherfordium")]!!
+    ANTI_RHENIUM = materialRegistry[Identifier(MODID, "anti_rhenium")]!!
+    ANTI_SCANDIUM = materialRegistry[Identifier(MODID, "anti_scandium")]!!
+    ANTI_SEABORGIUM = materialRegistry[Identifier(MODID, "anti_seaborgium")]!!
+    ANTI_SAMARIUM = materialRegistry[Identifier(MODID, "anti_samarium")]!!
+    ANTI_SELENIUM = materialRegistry[Identifier(MODID, "anti_selenium")]!!
+    ANTI_SODIUM = materialRegistry[Identifier(MODID, "anti_sodium")]!!
+    ANTI_SILVER = materialRegistry[Identifier(MODID, "anti_silver")]!!
+    ANTI_SILICON = materialRegistry[Identifier(MODID, "anti_silicon")]!!
+    ANTI_STRONTIUM = materialRegistry[Identifier(MODID, "anti_strontium")]!!
+    ANTI_TANTALUM = materialRegistry[Identifier(MODID, "anti_tantalum")]!!
+    ANTI_SULFUR = materialRegistry[Identifier(MODID, "anti_sulfur")]!!
+    ANTI_TECHNETIUM = materialRegistry[Identifier(MODID, "anti_technetium")]!!
+    ANTI_TERBIUM = materialRegistry[Identifier(MODID, "anti_terbium")]!!
+    ANTI_THALLIUM = materialRegistry[Identifier(MODID, "anti_thallium")]!!
+    ANTI_THORIUM = materialRegistry[Identifier(MODID, "anti_thorium")]!!
+    ANTI_TIN = materialRegistry[Identifier(MODID, "anti_tin")]!!
+    ANTI_TITAN = materialRegistry[Identifier(MODID, "anti_titan")]!!
+    ANTI_THULIUM = materialRegistry[Identifier(MODID, "anti_thulium")]!!
+    ANTI_TELLURIUM = materialRegistry[Identifier(MODID, "anti_tellurium")]!!
+    ANTI_TITANIUM = materialRegistry[Identifier(MODID, "anti_titanium")]!!
+    ANTI_TRIBIBIUM = materialRegistry[Identifier(MODID, "anti_tribibium")]!!
+    ANTI_TRIBIHEXIUM = materialRegistry[Identifier(MODID, "anti_tribihexium")]!!
+    ANTI_TRIBIOCTIUM = materialRegistry[Identifier(MODID, "anti_tribioctium")]!!
+    ANTI_TRIBIPENTIUM = materialRegistry[Identifier(MODID, "anti_tribipentium")]!!
+    ANTI_TRIBINILIUM = materialRegistry[Identifier(MODID, "anti_tribinilium")]!!
+    ANTI_TRIBIQUADIUM = materialRegistry[Identifier(MODID, "anti_tribiquadium")]!!
+    ANTI_TRIBIENNIUM = materialRegistry[Identifier(MODID, "anti_tribiennium")]!!
+    ANTI_TRIBISEPTIUM = materialRegistry[Identifier(MODID, "anti_tribiseptium")]!!
+    ANTI_TRIBITRIUM = materialRegistry[Identifier(MODID, "anti_tribitrium")]!!
+    ANTI_TRIBIUNIUM = materialRegistry[Identifier(MODID, "anti_tribiunium")]!!
+    ANTI_TRIENNENNIUM = materialRegistry[Identifier(MODID, "anti_triennennium")]!!
+    ANTI_TRIENNHEXIUM = materialRegistry[Identifier(MODID, "anti_triennhexium")]!!
+    ANTI_TRIENNBIUM = materialRegistry[Identifier(MODID, "anti_triennbium")]!!
+    ANTI_TRIENNILIUM = materialRegistry[Identifier(MODID, "anti_triennilium")]!!
+    ANTI_TRIENNQUADIUM = materialRegistry[Identifier(MODID, "anti_triennquadium")]!!
+    ANTI_TRIENNOCTIUM = materialRegistry[Identifier(MODID, "anti_triennoctium")]!!
+    ANTI_TRIENNPENTIUM = materialRegistry[Identifier(MODID, "anti_triennpentium")]!!
+    ANTI_TRIENNTRIUM = materialRegistry[Identifier(MODID, "anti_trienntrium")]!!
+    ANTI_TRIHEXBIUM = materialRegistry[Identifier(MODID, "anti_trihexbium")]!!
+    ANTI_TRIENNSEPTIUM = materialRegistry[Identifier(MODID, "anti_triennseptium")]!!
+    ANTI_TRIHEXENNIUM = materialRegistry[Identifier(MODID, "anti_trihexennium")]!!
+    ANTI_TRIHEXHEXIUM = materialRegistry[Identifier(MODID, "anti_trihexhexium")]!!
+    ANTI_TRIENNUNIUM = materialRegistry[Identifier(MODID, "anti_triennunium")]!!
+    ANTI_TRIHEXOCTIUM = materialRegistry[Identifier(MODID, "anti_trihexoctium")]!!
+    ANTI_TRIHEXPENTIUM = materialRegistry[Identifier(MODID, "anti_trihexpentium")]!!
+    ANTI_TRIHEXQUADIUM = materialRegistry[Identifier(MODID, "anti_trihexquadium")]!!
+    ANTI_TRIHEXSEPTIUM = materialRegistry[Identifier(MODID, "anti_trihexseptium")]!!
+    ANTI_TRIHEXNILIUM = materialRegistry[Identifier(MODID, "anti_trihexnilium")]!!
+    ANTI_TRINILBIUM = materialRegistry[Identifier(MODID, "anti_trinilbium")]!!
+    ANTI_TRIHEXTRIUM = materialRegistry[Identifier(MODID, "anti_trihextrium")]!!
+    ANTI_TRINILENNIUM = materialRegistry[Identifier(MODID, "anti_trinilennium")]!!
+    ANTI_TRINILHEXIUM = materialRegistry[Identifier(MODID, "anti_trinilhexium")]!!
+    ANTI_TRINILOCTIUM = materialRegistry[Identifier(MODID, "anti_triniloctium")]!!
+    ANTI_TRINILNILIUM = materialRegistry[Identifier(MODID, "anti_trinilnilium")]!!
+    ANTI_TRINILPENTIUM = materialRegistry[Identifier(MODID, "anti_trinilpentium")]!!
+    ANTI_TRINILQUADIUM = materialRegistry[Identifier(MODID, "anti_trinilquadium")]!!
+    ANTI_TRINILTRIUM = materialRegistry[Identifier(MODID, "anti_triniltrium")]!!
+    ANTI_TRINILSEPTIUM = materialRegistry[Identifier(MODID, "anti_trinilseptium")]!!
+    ANTI_TRIOCTBIUM = materialRegistry[Identifier(MODID, "anti_trioctbium")]!!
+    ANTI_TRIOCTENNIUM = materialRegistry[Identifier(MODID, "anti_trioctennium")]!!
+    ANTI_TRINILUNIUM = materialRegistry[Identifier(MODID, "anti_trinilunium")]!!
+    ANTI_TRIOCTHEXIUM = materialRegistry[Identifier(MODID, "anti_triocthexium")]!!
+    ANTI_TRIOCTNILIUM = materialRegistry[Identifier(MODID, "anti_trioctnilium")]!!
+    ANTI_TRIOCTOCTIUM = materialRegistry[Identifier(MODID, "anti_trioctoctium")]!!
+    ANTI_TRIOCTQUADIUM = materialRegistry[Identifier(MODID, "anti_trioctquadium")]!!
+    ANTI_TRIOCTSEPTIUM = materialRegistry[Identifier(MODID, "anti_trioctseptium")]!!
+    ANTI_TRIHEXUNIUM = materialRegistry[Identifier(MODID, "anti_trihexunium")]!!
+    ANTI_TRIOCTUNIUM = materialRegistry[Identifier(MODID, "anti_trioctunium")]!!
+    ANTI_TRIPENTBIUM = materialRegistry[Identifier(MODID, "anti_tripentbium")]!!
+    ANTI_TRIOCTTRIUM = materialRegistry[Identifier(MODID, "anti_triocttrium")]!!
+    ANTI_TRIOCTPENTIUM = materialRegistry[Identifier(MODID, "anti_trioctpentium")]!!
+    ANTI_TRIPENTHEXIUM = materialRegistry[Identifier(MODID, "anti_tripenthexium")]!!
+    ANTI_TRIPENTOCTIUM = materialRegistry[Identifier(MODID, "anti_tripentoctium")]!!
+    ANTI_TRIPENTNILIUM = materialRegistry[Identifier(MODID, "anti_tripentnilium")]!!
+    ANTI_TRIPENTENNIUM = materialRegistry[Identifier(MODID, "anti_tripentennium")]!!
+    ANTI_TRIPENTSEPTIUM = materialRegistry[Identifier(MODID, "anti_tripentseptium")]!!
+    ANTI_TRIPENTPENTIUM = materialRegistry[Identifier(MODID, "anti_tripentpentium")]!!
+    ANTI_TRIPENTTRIUM = materialRegistry[Identifier(MODID, "anti_tripenttrium")]!!
+    ANTI_TRIPENTQUADIUM = materialRegistry[Identifier(MODID, "anti_tripentquadium")]!!
+    ANTI_TRIPENTUNIUM = materialRegistry[Identifier(MODID, "anti_tripentunium")]!!
+    ANTI_TRIQUADBIUM = materialRegistry[Identifier(MODID, "anti_triquadbium")]!!
+    ANTI_TRIQUADHEXIUM = materialRegistry[Identifier(MODID, "anti_triquadhexium")]!!
+    ANTI_TRIQUADNILIUM = materialRegistry[Identifier(MODID, "anti_triquadnilium")]!!
+    ANTI_TRIQUADENNIUM = materialRegistry[Identifier(MODID, "anti_triquadennium")]!!
+    ANTI_TRIQUADOCTIUM = materialRegistry[Identifier(MODID, "anti_triquadoctium")]!!
+    ANTI_TRIQUADPENTIUM = materialRegistry[Identifier(MODID, "anti_triquadpentium")]!!
+    ANTI_TRIQUADQUADIUM = materialRegistry[Identifier(MODID, "anti_triquadquadium")]!!
+    ANTI_TRIQUADSEPTIUM = materialRegistry[Identifier(MODID, "anti_triquadseptium")]!!
+    ANTI_TRIQUADUNIUM = materialRegistry[Identifier(MODID, "anti_triquadunium")]!!
+    ANTI_TRISEPTBIUM = materialRegistry[Identifier(MODID, "anti_triseptbium")]!!
+    ANTI_TRISEPTENNIUM = materialRegistry[Identifier(MODID, "anti_triseptennium")]!!
+    ANTI_TRISEPTHEXIUM = materialRegistry[Identifier(MODID, "anti_trisepthexium")]!!
+    ANTI_TRISEPTPENTIUM = materialRegistry[Identifier(MODID, "anti_triseptpentium")]!!
+    ANTI_TRISEPTOCTIUM = materialRegistry[Identifier(MODID, "anti_triseptoctium")]!!
+    ANTI_TRISEPTSEPTIUM = materialRegistry[Identifier(MODID, "anti_triseptseptium")]!!
+    ANTI_TRISEPTUNIUM = materialRegistry[Identifier(MODID, "anti_triseptunium")]!!
+    ANTI_TRISEPTTRIUM = materialRegistry[Identifier(MODID, "anti_trisepttrium")]!!
+    ANTI_TRITRIBIUM = materialRegistry[Identifier(MODID, "anti_tritribium")]!!
+    ANTI_TRISEPTQUADIUM = materialRegistry[Identifier(MODID, "anti_triseptquadium")]!!
+    ANTI_TRITIUM = materialRegistry[Identifier(MODID, "anti_tritium")]!!
+    ANTI_TRITRIENNIUM = materialRegistry[Identifier(MODID, "anti_tritriennium")]!!
+    ANTI_TRITRINILIUM = materialRegistry[Identifier(MODID, "anti_tritrinilium")]!!
+    ANTI_TRITRIOCTIUM = materialRegistry[Identifier(MODID, "anti_tritrioctium")]!!
+    ANTI_TRITRIHEXIUM = materialRegistry[Identifier(MODID, "anti_tritrihexium")]!!
+    ANTI_TRITRIPENTIUM = materialRegistry[Identifier(MODID, "anti_tritripentium")]!!
+    ANTI_TRITRIQUADIUM = materialRegistry[Identifier(MODID, "anti_tritriquadium")]!!
+    ANTI_TRITRISEPTIUM = materialRegistry[Identifier(MODID, "anti_tritriseptium")]!!
+    ANTI_TRITRIUNIUM = materialRegistry[Identifier(MODID, "anti_tritriunium")]!!
+    ANTI_TRIUNBIUM = materialRegistry[Identifier(MODID, "anti_triunbium")]!!
+    ANTI_TRITRITRIUM = materialRegistry[Identifier(MODID, "anti_tritritrium")]!!
+    ANTI_TRIUNHEXIUM = materialRegistry[Identifier(MODID, "anti_triunhexium")]!!
+    ANTI_TRIUNENNIUM = materialRegistry[Identifier(MODID, "anti_triunennium")]!!
+    ANTI_TRIUNOCTIUM = materialRegistry[Identifier(MODID, "anti_triunoctium")]!!
+    ANTI_TRIUNNILIUM = materialRegistry[Identifier(MODID, "anti_triunnilium")]!!
+    ANTI_TRIUNPENTIUM = materialRegistry[Identifier(MODID, "anti_triunpentium")]!!
+    ANTI_TRIQUADTRIUM = materialRegistry[Identifier(MODID, "anti_triquadtrium")]!!
+    ANTI_TRIUNQUADIUM = materialRegistry[Identifier(MODID, "anti_triunquadium")]!!
+    ANTI_TRIUNSEPTIUM = materialRegistry[Identifier(MODID, "anti_triunseptium")]!!
+    ANTI_TRIUNTRIUM = materialRegistry[Identifier(MODID, "anti_triuntrium")]!!
+    ANTI_TRIUNUNIUM = materialRegistry[Identifier(MODID, "anti_triununium")]!!
+    ANTI_UNBIBIUM = materialRegistry[Identifier(MODID, "anti_unbibium")]!!
+    ANTI_TUNGSTEN = materialRegistry[Identifier(MODID, "anti_tungsten")]!!
+    ANTI_UNBIENNIUM = materialRegistry[Identifier(MODID, "anti_unbiennium")]!!
+    ANTI_UNBIHEXIUM = materialRegistry[Identifier(MODID, "anti_unbihexium")]!!
+    ANTI_UNBIOCTIUM = materialRegistry[Identifier(MODID, "anti_unbioctium")]!!
+    ANTI_UNBIPENTIUM = materialRegistry[Identifier(MODID, "anti_unbipentium")]!!
+    ANTI_UNBISEPTIUM = materialRegistry[Identifier(MODID, "anti_unbiseptium")]!!
+    ANTI_UNBITRIUM = materialRegistry[Identifier(MODID, "anti_unbitrium")]!!
+    ANTI_UNBIQUADIUM = materialRegistry[Identifier(MODID, "anti_unbiquadium")]!!
+    ANTI_UNENNBIUM = materialRegistry[Identifier(MODID, "anti_unennbium")]!!
+    ANTI_UNBIUNIUM = materialRegistry[Identifier(MODID, "anti_unbiunium")]!!
+    ANTI_UNENNENNIUM = materialRegistry[Identifier(MODID, "anti_unennennium")]!!
+    ANTI_UNENNHEXIUM = materialRegistry[Identifier(MODID, "anti_unennhexium")]!!
+    ANTI_UNENNILIUM = materialRegistry[Identifier(MODID, "anti_unennilium")]!!
+    ANTI_UNENNOCTIUM = materialRegistry[Identifier(MODID, "anti_unennoctium")]!!
+    ANTI_UNBINILIUM = materialRegistry[Identifier(MODID, "anti_unbinilium")]!!
+    ANTI_UNENNPENTIUM = materialRegistry[Identifier(MODID, "anti_unennpentium")]!!
+    ANTI_UNENNQUADIUM = materialRegistry[Identifier(MODID, "anti_unennquadium")]!!
+    ANTI_UNENNSEPTIUM = materialRegistry[Identifier(MODID, "anti_unennseptium")]!!
+    ANTI_UNENNTRIUM = materialRegistry[Identifier(MODID, "anti_unenntrium")]!!
+    ANTI_TRISEPTNILIUM = materialRegistry[Identifier(MODID, "anti_triseptnilium")]!!
+    ANTI_UNENNUNIUM = materialRegistry[Identifier(MODID, "anti_unennunium")]!!
+    ANTI_UNHEXBIUM = materialRegistry[Identifier(MODID, "anti_unhexbium")]!!
+    ANTI_UNHEXHEXIUM = materialRegistry[Identifier(MODID, "anti_unhexhexium")]!!
+    ANTI_UNHEXENNIUM = materialRegistry[Identifier(MODID, "anti_unhexennium")]!!
+    ANTI_UNHEXNILIUM = materialRegistry[Identifier(MODID, "anti_unhexnilium")]!!
+    ANTI_UNHEXOCTIUM = materialRegistry[Identifier(MODID, "anti_unhexoctium")]!!
+    ANTI_UNHEXPENTIUM = materialRegistry[Identifier(MODID, "anti_unhexpentium")]!!
+    ANTI_UNHEXQUADIUM = materialRegistry[Identifier(MODID, "anti_unhexquadium")]!!
+    ANTI_UNHEXSEPTIUM = materialRegistry[Identifier(MODID, "anti_unhexseptium")]!!
+    ANTI_UNHEXTRIUM = materialRegistry[Identifier(MODID, "anti_unhextrium")]!!
+    ANTI_UNHEXUNIUM = materialRegistry[Identifier(MODID, "anti_unhexunium")]!!
+    ANTI_UNOCTBIUM = materialRegistry[Identifier(MODID, "anti_unoctbium")]!!
+    ANTI_UNOCTENNIUM = materialRegistry[Identifier(MODID, "anti_unoctennium")]!!
+    ANTI_UNOCTHEXIUM = materialRegistry[Identifier(MODID, "anti_unocthexium")]!!
+    ANTI_UNOCTNILIUM = materialRegistry[Identifier(MODID, "anti_unoctnilium")]!!
+    ANTI_UNOCTOCTIUM = materialRegistry[Identifier(MODID, "anti_unoctoctium")]!!
+    ANTI_UNOCTPENTIUM = materialRegistry[Identifier(MODID, "anti_unoctpentium")]!!
+    ANTI_UNOCTQUADIUM = materialRegistry[Identifier(MODID, "anti_unoctquadium")]!!
+    ANTI_UNOCTSEPTIUM = materialRegistry[Identifier(MODID, "anti_unoctseptium")]!!
+    ANTI_UNOCTTRIUM = materialRegistry[Identifier(MODID, "anti_unocttrium")]!!
+    ANTI_UNOCTUNIUM = materialRegistry[Identifier(MODID, "anti_unoctunium")]!!
+    ANTI_UNPENTBIUM = materialRegistry[Identifier(MODID, "anti_unpentbium")]!!
+    ANTI_UNPENTENNIUM = materialRegistry[Identifier(MODID, "anti_unpentennium")]!!
+    ANTI_UNPENTHEXIUM = materialRegistry[Identifier(MODID, "anti_unpenthexium")]!!
+    ANTI_UNPENTNILIUM = materialRegistry[Identifier(MODID, "anti_unpentnilium")]!!
+    ANTI_UNPENTOCTIUM = materialRegistry[Identifier(MODID, "anti_unpentoctium")]!!
+    ANTI_UNPENTPENTIUM = materialRegistry[Identifier(MODID, "anti_unpentpentium")]!!
+    ANTI_UNPENTQUADIUM = materialRegistry[Identifier(MODID, "anti_unpentquadium")]!!
+    ANTI_UNPENTSEPTIUM = materialRegistry[Identifier(MODID, "anti_unpentseptium")]!!
+    ANTI_UNPENTTRIUM = materialRegistry[Identifier(MODID, "anti_unpenttrium")]!!
+    ANTI_UNQUADBIUM = materialRegistry[Identifier(MODID, "anti_unquadbium")]!!
+    ANTI_UNPENTUNIUM = materialRegistry[Identifier(MODID, "anti_unpentunium")]!!
+    ANTI_UNQUADHEXIUM = materialRegistry[Identifier(MODID, "anti_unquadhexium")]!!
+    ANTI_UNQUADENNIUM = materialRegistry[Identifier(MODID, "anti_unquadennium")]!!
+    ANTI_UNQUADOCTIUM = materialRegistry[Identifier(MODID, "anti_unquadoctium")]!!
+    ANTI_UNQUADPENTIUM = materialRegistry[Identifier(MODID, "anti_unquadpentium")]!!
+    ANTI_UNQUADQUADIUM = materialRegistry[Identifier(MODID, "anti_unquadquadium")]!!
+    ANTI_UNQUADSEPTIUM = materialRegistry[Identifier(MODID, "anti_unquadseptium")]!!
+    ANTI_UNQUADTRIUM = materialRegistry[Identifier(MODID, "anti_unquadtrium")]!!
+    ANTI_UNQUADUNIUM = materialRegistry[Identifier(MODID, "anti_unquadunium")]!!
+    ANTI_UNSEPTHEXIUM = materialRegistry[Identifier(MODID, "anti_unsepthexium")]!!
+    ANTI_UNSEPTNILIUM = materialRegistry[Identifier(MODID, "anti_unseptnilium")]!!
+    ANTI_UNSEPTENNIUM = materialRegistry[Identifier(MODID, "anti_unseptennium")]!!
+    ANTI_UNSEPTOCTIUM = materialRegistry[Identifier(MODID, "anti_unseptoctium")]!!
+    ANTI_UNSEPTQUADIUM = materialRegistry[Identifier(MODID, "anti_unseptquadium")]!!
+    ANTI_UNSEPTPENTIUM = materialRegistry[Identifier(MODID, "anti_unseptpentium")]!!
+    ANTI_UNTRIBIUM = materialRegistry[Identifier(MODID, "anti_untribium")]!!
+    ANTI_UNSEPTSEPTIUM = materialRegistry[Identifier(MODID, "anti_unseptseptium")]!!
+    ANTI_UNSEPTUNIUM = materialRegistry[Identifier(MODID, "anti_unseptunium")]!!
+    ANTI_UNSEPTTRIUM = materialRegistry[Identifier(MODID, "anti_unsepttrium")]!!
+    ANTI_UNTRIENNIUM = materialRegistry[Identifier(MODID, "anti_untriennium")]!!
+    ANTI_UNQUADNILIUM = materialRegistry[Identifier(MODID, "anti_unquadnilium")]!!
+    ANTI_UNTRIHEXIUM = materialRegistry[Identifier(MODID, "anti_untrihexium")]!!
+    ANTI_UNTRINILIUM = materialRegistry[Identifier(MODID, "anti_untrinilium")]!!
+    ANTI_UNTRIOCTIUM = materialRegistry[Identifier(MODID, "anti_untrioctium")]!!
+    ANTI_UNTRIPENTIUM = materialRegistry[Identifier(MODID, "anti_untripentium")]!!
+    ANTI_UNTRITRIUM = materialRegistry[Identifier(MODID, "anti_untritrium")]!!
+    ANTI_UNTRIQUADIUM = materialRegistry[Identifier(MODID, "anti_untriquadium")]!!
+    ANTI_UNUNENNIUM = materialRegistry[Identifier(MODID, "anti_ununennium")]!!
+    ANTI_UNTRISEPTIUM = materialRegistry[Identifier(MODID, "anti_untriseptium")]!!
+    ANTI_UNUNOCTIUM = materialRegistry[Identifier(MODID, "anti_ununoctium")]!!
+    ANTI_UNTRIUNIUM = materialRegistry[Identifier(MODID, "anti_untriunium")]!!
+    ANTI_UNUNSEPTIUM = materialRegistry[Identifier(MODID, "anti_ununseptium")]!!
+    ANTI_UNUNTRIUM = materialRegistry[Identifier(MODID, "anti_ununtrium")]!!
+    ANTI_UNUNPENTIUM = materialRegistry[Identifier(MODID, "anti_ununpentium")]!!
+    ANTI_URAN = materialRegistry[Identifier(MODID, "anti_uran")]!!
+    ANTI_URANIUM = materialRegistry[Identifier(MODID, "anti_uranium")]!!
+    ANTI_URANIUM235 = materialRegistry[Identifier(MODID, "anti_uranium235")]!!
+    ANTI_URANIUM238 = materialRegistry[Identifier(MODID, "anti_uranium238")]!!
+    ANTI_VANADIUM = materialRegistry[Identifier(MODID, "anti_vanadium")]!!
+    ANTI_VIBRANIUM = materialRegistry[Identifier(MODID, "anti_vibranium")]!!
+    ANTI_WOLFRAM = materialRegistry[Identifier(MODID, "anti_wolfram")]!!
+    ANTI_XENON = materialRegistry[Identifier(MODID, "anti_xenon")]!!
+    ANTI_WOLFRAMIUM = materialRegistry[Identifier(MODID, "anti_wolframium")]!!
+    ANTI_YTTRIUM = materialRegistry[Identifier(MODID, "anti_yttrium")]!!
+    ANTI_ZINC = materialRegistry[Identifier(MODID, "anti_zinc")]!!
+    ANTI_YTTERBIUM = materialRegistry[Identifier(MODID, "anti_ytterbium")]!!
+    ANTI_ZIRCONIUM = materialRegistry[Identifier(MODID, "anti_zirconium")]!!
+    APATITE = materialRegistry[Identifier(MODID, "apatite")]!!
+    AQUAMARINE = materialRegistry[Identifier(MODID, "aquamarine")]!!
+    AQUA_MIDDLE = materialRegistry[Identifier(MODID, "aqua_middle")]!!
+    AQUA_REGIA = materialRegistry[Identifier(MODID, "aqua_regia")]!!
+    ARCANE_ASH = materialRegistry[Identifier(MODID, "arcane_ash")]!!
+    ARCANE_ASHES = materialRegistry[Identifier(MODID, "arcane_ashes")]!!
+    ARCANE_COMPOUND = materialRegistry[Identifier(MODID, "arcane_compound")]!!
+    ARAGONITE = materialRegistry[Identifier(MODID, "aragonite")]!!
+    ARDITE = materialRegistry[Identifier(MODID, "ardite")]!!
+    AREDRITE = materialRegistry[Identifier(MODID, "aredrite")]!!
+    ARGON = materialRegistry[Identifier(MODID, "argon")]!!
+    ASBESTOS = materialRegistry[Identifier(MODID, "asbestos")]!!
+    ARSENOPYRITE = materialRegistry[Identifier(MODID, "arsenopyrite")]!!
+    ASH = materialRegistry[Identifier(MODID, "ash")]!!
+    ARSENIC = materialRegistry[Identifier(MODID, "arsenic")]!!
+    ASHES = materialRegistry[Identifier(MODID, "ashes")]!!
+    ASHES_DARK = materialRegistry[Identifier(MODID, "ashes_dark")]!!
+    ASH_DARK = materialRegistry[Identifier(MODID, "ash_dark")]!!
+    ASH_VOLCANIC = materialRegistry[Identifier(MODID, "ash_volcanic")]!!
+    ASHES_VOLCANIC = materialRegistry[Identifier(MODID, "ashes_volcanic")]!!
+    ANTI_UNSEPTBIUM = materialRegistry[Identifier(MODID, "anti_unseptbium")]!!
+    ASTATINE = materialRegistry[Identifier(MODID, "astatine")]!!
+    ATLARUS = materialRegistry[Identifier(MODID, "atlarus")]!!
+    ASTRAL_SILVER = materialRegistry[Identifier(MODID, "astral_silver")]!!
+    ASPHALT = materialRegistry[Identifier(MODID, "asphalt")]!!
+    AZURITE = materialRegistry[Identifier(MODID, "azurite")]!!
+    BALAS_RUBY = materialRegistry[Identifier(MODID, "balas_ruby")]!!
+    BAMBOO = materialRegistry[Identifier(MODID, "bamboo")]!!
+    BARITE = materialRegistry[Identifier(MODID, "barite")]!!
+    BANDED_IRON = materialRegistry[Identifier(MODID, "banded_iron")]!!
+    BARIUM = materialRegistry[Identifier(MODID, "barium")]!!
+    BARLEY = materialRegistry[Identifier(MODID, "barley")]!!
+    BASALT = materialRegistry[Identifier(MODID, "basalt")]!!
+    BARK = materialRegistry[Identifier(MODID, "bark")]!!
+    BASALTIC_MINERAL_SAND = materialRegistry[Identifier(MODID, "basaltic_mineral_sand")]!!
+    BASALT_POLISHED = materialRegistry[Identifier(MODID, "basalt_polished")]!!
+    BASALT_CHISELED = materialRegistry[Identifier(MODID, "basalt_chiseled")]!!
+    BASALZ = materialRegistry[Identifier(MODID, "basalz")]!!
+    BASIC = materialRegistry[Identifier(MODID, "basic")]!!
+    BASTNASITE = materialRegistry[Identifier(MODID, "bastnasite")]!!
+    BATTERY_ALLOY = materialRegistry[Identifier(MODID, "battery_alloy")]!!
+    BAUXITE = materialRegistry[Identifier(MODID, "bauxite")]!!
+    BASALT_BRICKS = materialRegistry[Identifier(MODID, "basalt_bricks")]!!
+    BEDROCK = materialRegistry[Identifier(MODID, "bedrock")]!!
+    BEDROCKIUM = materialRegistry[Identifier(MODID, "bedrockium")]!!
+    BEDROCK_H_S_L_A_ALLOY = materialRegistry[Identifier(MODID, "bedrock_h_s_l_a_alloy")]!!
+    BEE_WAX = materialRegistry[Identifier(MODID, "bee_wax")]!!
+    BENTONITE = materialRegistry[Identifier(MODID, "bentonite")]!!
+    BERKELIUM = materialRegistry[Identifier(MODID, "berkelium")]!!
+    BERYLLIUM = materialRegistry[Identifier(MODID, "beryllium")]!!
+    BETWEENSTONE = materialRegistry[Identifier(MODID, "betweenstone")]!!
+    BIBIBIUM = materialRegistry[Identifier(MODID, "bibibium")]!!
+    BIBIENNIUM = materialRegistry[Identifier(MODID, "bibiennium")]!!
+    BIBIHEXIUM = materialRegistry[Identifier(MODID, "bibihexium")]!!
+    BIBINILIUM = materialRegistry[Identifier(MODID, "bibinilium")]!!
+    BIBIOCTIUM = materialRegistry[Identifier(MODID, "bibioctium")]!!
+    BIBIPENTIUM = materialRegistry[Identifier(MODID, "bibipentium")]!!
+    BIBITRIUM = materialRegistry[Identifier(MODID, "bibitrium")]!!
+    BIBISEPTIUM = materialRegistry[Identifier(MODID, "bibiseptium")]!!
+    BIBIQUADIUM = materialRegistry[Identifier(MODID, "bibiquadium")]!!
+    BIENNBIUM = materialRegistry[Identifier(MODID, "biennbium")]!!
+    BIBIUNIUM = materialRegistry[Identifier(MODID, "bibiunium")]!!
+    BIENNENNIUM = materialRegistry[Identifier(MODID, "biennennium")]!!
+    BIENNNILIUM = materialRegistry[Identifier(MODID, "biennnilium")]!!
+    BIENNHEXIUM = materialRegistry[Identifier(MODID, "biennhexium")]!!
+    BIENNOCTIUM = materialRegistry[Identifier(MODID, "biennoctium")]!!
+    BIENNPENTIUM = materialRegistry[Identifier(MODID, "biennpentium")]!!
+    BEES_WAX = materialRegistry[Identifier(MODID, "bees_wax")]!!
+    BIENNQUADIUM = materialRegistry[Identifier(MODID, "biennquadium")]!!
+    BIENNTRIUM = materialRegistry[Identifier(MODID, "bienntrium")]!!
+    BIENNSEPTIUM = materialRegistry[Identifier(MODID, "biennseptium")]!!
+    BIHEXENNIUM = materialRegistry[Identifier(MODID, "bihexennium")]!!
+    BIHEXBIUM = materialRegistry[Identifier(MODID, "bihexbium")]!!
+    BIENNUNIUM = materialRegistry[Identifier(MODID, "biennunium")]!!
+    BIHEXHEXIUM = materialRegistry[Identifier(MODID, "bihexhexium")]!!
+    BIHEXNILIUM = materialRegistry[Identifier(MODID, "bihexnilium")]!!
+    BIHEXPENTIUM = materialRegistry[Identifier(MODID, "bihexpentium")]!!
+    BIHEXOCTIUM = materialRegistry[Identifier(MODID, "bihexoctium")]!!
+    BIHEXQUADIUM = materialRegistry[Identifier(MODID, "bihexquadium")]!!
+    BIHEXTRIUM = materialRegistry[Identifier(MODID, "bihextrium")]!!
+    BIHEXSEPTIUM = materialRegistry[Identifier(MODID, "bihexseptium")]!!
+    BIHEXUNIUM = materialRegistry[Identifier(MODID, "bihexunium")]!!
+    BINILBIUM = materialRegistry[Identifier(MODID, "binilbium")]!!
+    BINILENNIUM = materialRegistry[Identifier(MODID, "binilennium")]!!
+    BINILHEXIUM = materialRegistry[Identifier(MODID, "binilhexium")]!!
+    BINILNILIUM = materialRegistry[Identifier(MODID, "binilnilium")]!!
+    BINILOCTIUM = materialRegistry[Identifier(MODID, "biniloctium")]!!
+    BINILPENTIUM = materialRegistry[Identifier(MODID, "binilpentium")]!!
+    BINILQUADIUM = materialRegistry[Identifier(MODID, "binilquadium")]!!
+    BINILSEPTIUM = materialRegistry[Identifier(MODID, "binilseptium")]!!
+    BINILTRIUM = materialRegistry[Identifier(MODID, "biniltrium")]!!
+    BINILUNIUM = materialRegistry[Identifier(MODID, "binilunium")]!!
+    BIOCTENNIUM = materialRegistry[Identifier(MODID, "bioctennium")]!!
+    BIOCTBIUM = materialRegistry[Identifier(MODID, "bioctbium")]!!
+    BIOCTNILIUM = materialRegistry[Identifier(MODID, "bioctnilium")]!!
+    BIOCTHEXIUM = materialRegistry[Identifier(MODID, "biocthexium")]!!
+    BIOCTOCTIUM = materialRegistry[Identifier(MODID, "bioctoctium")]!!
+    BIOCTPENTIUM = materialRegistry[Identifier(MODID, "bioctpentium")]!!
+    BIOCTQUADIUM = materialRegistry[Identifier(MODID, "bioctquadium")]!!
+    BIOCTSEPTIUM = materialRegistry[Identifier(MODID, "bioctseptium")]!!
+    BIOCTTRIUM = materialRegistry[Identifier(MODID, "biocttrium")]!!
+    BIOCTUNIUM = materialRegistry[Identifier(MODID, "bioctunium")]!!
+    BIO_FUEL = materialRegistry[Identifier(MODID, "bio_fuel")]!!
+    BIOTITE = materialRegistry[Identifier(MODID, "biotite")]!!
+    BIPENTBIUM = materialRegistry[Identifier(MODID, "bipentbium")]!!
+    BIPENTENNIUM = materialRegistry[Identifier(MODID, "bipentennium")]!!
+    BIOMASS = materialRegistry[Identifier(MODID, "biomass")]!!
+    BIPENTOCTIUM = materialRegistry[Identifier(MODID, "bipentoctium")]!!
+    BIPENTHEXIUM = materialRegistry[Identifier(MODID, "bipenthexium")]!!
+    BIPENTNILIUM = materialRegistry[Identifier(MODID, "bipentnilium")]!!
+    BIPENTPENTIUM = materialRegistry[Identifier(MODID, "bipentpentium")]!!
+    BIPENTQUADIUM = materialRegistry[Identifier(MODID, "bipentquadium")]!!
+    BIPENTTRIUM = materialRegistry[Identifier(MODID, "bipenttrium")]!!
+    BIPENTSEPTIUM = materialRegistry[Identifier(MODID, "bipentseptium")]!!
+    BIQUADBIUM = materialRegistry[Identifier(MODID, "biquadbium")]!!
+    BIPENTUNIUM = materialRegistry[Identifier(MODID, "bipentunium")]!!
+    BIQUADENNIUM = materialRegistry[Identifier(MODID, "biquadennium")]!!
+    BIQUADNILIUM = materialRegistry[Identifier(MODID, "biquadnilium")]!!
+    BIQUADHEXIUM = materialRegistry[Identifier(MODID, "biquadhexium")]!!
+    BIQUADOCTIUM = materialRegistry[Identifier(MODID, "biquadoctium")]!!
+    BIQUADPENTIUM = materialRegistry[Identifier(MODID, "biquadpentium")]!!
+    BIQUADQUADIUM = materialRegistry[Identifier(MODID, "biquadquadium")]!!
+    BIQUADSEPTIUM = materialRegistry[Identifier(MODID, "biquadseptium")]!!
+    BIQUADTRIUM = materialRegistry[Identifier(MODID, "biquadtrium")]!!
+    BISCHOFITE = materialRegistry[Identifier(MODID, "bischofite")]!!
+    BISEPTBIUM = materialRegistry[Identifier(MODID, "biseptbium")]!!
+    BIQUADUNIUM = materialRegistry[Identifier(MODID, "biquadunium")]!!
+    BISEPTENNIUM = materialRegistry[Identifier(MODID, "biseptennium")]!!
+    BISEPTNILIUM = materialRegistry[Identifier(MODID, "biseptnilium")]!!
+    BISEPTHEXIUM = materialRegistry[Identifier(MODID, "bisepthexium")]!!
+    BISEPTOCTIUM = materialRegistry[Identifier(MODID, "biseptoctium")]!!
+    BISEPTPENTIUM = materialRegistry[Identifier(MODID, "biseptpentium")]!!
+    BISEPTQUADIUM = materialRegistry[Identifier(MODID, "biseptquadium")]!!
+    BISEPTSEPTIUM = materialRegistry[Identifier(MODID, "biseptseptium")]!!
+    BISEPTUNIUM = materialRegistry[Identifier(MODID, "biseptunium")]!!
+    BISEPTTRIUM = materialRegistry[Identifier(MODID, "bisepttrium")]!!
+    BISMUTH = materialRegistry[Identifier(MODID, "bismuth")]!!
+    BISMUTH_BRONZE = materialRegistry[Identifier(MODID, "bismuth_bronze")]!!
+    BITRIBIUM = materialRegistry[Identifier(MODID, "bitribium")]!!
+    BITRIENNIUM = materialRegistry[Identifier(MODID, "bitriennium")]!!
+    BITRINILIUM = materialRegistry[Identifier(MODID, "bitrinilium")]!!
+    BITRIHEXIUM = materialRegistry[Identifier(MODID, "bitrihexium")]!!
+    BITRIOCTIUM = materialRegistry[Identifier(MODID, "bitrioctium")]!!
+    BITRIPENTIUM = materialRegistry[Identifier(MODID, "bitripentium")]!!
+    BITRISEPTIUM = materialRegistry[Identifier(MODID, "bitriseptium")]!!
+    BITRITRIUM = materialRegistry[Identifier(MODID, "bitritrium")]!!
+    BITRIUNIUM = materialRegistry[Identifier(MODID, "bitriunium")]!!
+    BIUNBIUM = materialRegistry[Identifier(MODID, "biunbium")]!!
+    BITUMEN = materialRegistry[Identifier(MODID, "bitumen")]!!
+    BITRIQUADIUM = materialRegistry[Identifier(MODID, "bitriquadium")]!!
+    BIUNENNIUM = materialRegistry[Identifier(MODID, "biunennium")]!!
+    BIUNHEXIUM = materialRegistry[Identifier(MODID, "biunhexium")]!!
+    BIUNOCTIUM = materialRegistry[Identifier(MODID, "biunoctium")]!!
+    BIUNNILIUM = materialRegistry[Identifier(MODID, "biunnilium")]!!
+    BIUNPENTIUM = materialRegistry[Identifier(MODID, "biunpentium")]!!
+    BIUNQUADIUM = materialRegistry[Identifier(MODID, "biunquadium")]!!
+    BIUNTRIUM = materialRegistry[Identifier(MODID, "biuntrium")]!!
+    BIUNSEPTIUM = materialRegistry[Identifier(MODID, "biunseptium")]!!
+    BIUNUNIUM = materialRegistry[Identifier(MODID, "biununium")]!!
+    BLACK = materialRegistry[Identifier(MODID, "black")]!!
+    BIXBITE = materialRegistry[Identifier(MODID, "bixbite")]!!
+    BLACK_BRONZE = materialRegistry[Identifier(MODID, "black_bronze")]!!
+    BLACK_STEEL = materialRegistry[Identifier(MODID, "black_steel")]!!
+    BLAZE = materialRegistry[Identifier(MODID, "blaze")]!!
+    BLACK_VITRIOL = materialRegistry[Identifier(MODID, "black_vitriol")]!!
+    BLAZE_QUARTZ = materialRegistry[Identifier(MODID, "blaze_quartz")]!!
+    BLITZ = materialRegistry[Identifier(MODID, "blitz")]!!
+    BLIZZ = materialRegistry[Identifier(MODID, "blizz")]!!
+    BLOODSTONE = materialRegistry[Identifier(MODID, "bloodstone")]!!
+    BLUESCHIST = materialRegistry[Identifier(MODID, "blueschist")]!!
+    BLUE = materialRegistry[Identifier(MODID, "blue")]!!
+    BLUE_SAPPHIRE = materialRegistry[Identifier(MODID, "blue_sapphire")]!!
+    BLUE_ALLOY = materialRegistry[Identifier(MODID, "blue_alloy")]!!
+    BLUE_STEEL = materialRegistry[Identifier(MODID, "blue_steel")]!!
+    BLUE_TOPAZ = materialRegistry[Identifier(MODID, "blue_topaz")]!!
+    BLUE_VITRIOL = materialRegistry[Identifier(MODID, "blue_vitriol")]!!
+    BOHRIUM = materialRegistry[Identifier(MODID, "bohrium")]!!
+    BLUTONIUM = materialRegistry[Identifier(MODID, "blutonium")]!!
+    BORAX = materialRegistry[Identifier(MODID, "borax")]!!
+    BONE = materialRegistry[Identifier(MODID, "bone")]!!
+    BORON = materialRegistry[Identifier(MODID, "boron")]!!
+    BORIC_ACID = materialRegistry[Identifier(MODID, "boric_acid")]!!
+    BRASS = materialRegistry[Identifier(MODID, "brass")]!!
+    BRICK = materialRegistry[Identifier(MODID, "brick")]!!
+    BRICK_NETHER = materialRegistry[Identifier(MODID, "brick_nether")]!!
+    BROMINE = materialRegistry[Identifier(MODID, "bromine")]!!
+    BROMARGYRITE = materialRegistry[Identifier(MODID, "bromargyrite")]!!
+    BROWN_LIMONITE = materialRegistry[Identifier(MODID, "brown_limonite")]!!
+    BROWN = materialRegistry[Identifier(MODID, "brown")]!!
+    BUTTER = materialRegistry[Identifier(MODID, "butter")]!!
+    BUTANE = materialRegistry[Identifier(MODID, "butane")]!!
+    CADMIUM = materialRegistry[Identifier(MODID, "cadmium")]!!
+    CALCITE = materialRegistry[Identifier(MODID, "calcite")]!!
+    CALCIUM = materialRegistry[Identifier(MODID, "calcium")]!!
+    CAESIUM = materialRegistry[Identifier(MODID, "caesium")]!!
+    CALCIUM_CHLORIDE = materialRegistry[Identifier(MODID, "calcium_chloride")]!!
+    BLUESTONE = materialRegistry[Identifier(MODID, "bluestone")]!!
+    CALCIUM_SULFATE = materialRegistry[Identifier(MODID, "calcium_sulfate")]!!
+    CALCIUM_SULPHATE = materialRegistry[Identifier(MODID, "calcium_sulphate")]!!
+    BRONZE = materialRegistry[Identifier(MODID, "bronze")]!!
+    CALCIUM_TUNGSTATE = materialRegistry[Identifier(MODID, "calcium_tungstate")]!!
+    CALIFORNIUM = materialRegistry[Identifier(MODID, "californium")]!!
+    CARBON = materialRegistry[Identifier(MODID, "carbon")]!!
+    CARBON13 = materialRegistry[Identifier(MODID, "carbon13")]!!
+    CARBON14 = materialRegistry[Identifier(MODID, "carbon14")]!!
+    CARBIDE = materialRegistry[Identifier(MODID, "carbide")]!!
+    CARBON_TRIOXIDE = materialRegistry[Identifier(MODID, "carbon_trioxide")]!!
+    CARBON_MONOXIDE = materialRegistry[Identifier(MODID, "carbon_monoxide")]!!
+    CARMOT = materialRegistry[Identifier(MODID, "carmot")]!!
+    CARBORUNDUM = materialRegistry[Identifier(MODID, "carborundum")]!!
+    CARBON_DIOXIDE = materialRegistry[Identifier(MODID, "carbon_dioxide")]!!
+    CASSITERITE = materialRegistry[Identifier(MODID, "cassiterite")]!!
+    CASSITERITE_SAND = materialRegistry[Identifier(MODID, "cassiterite_sand")]!!
+    CD_IN_AG_ALLOY = materialRegistry[Identifier(MODID, "cd_in_ag_alloy")]!!
+    CELESTINE = materialRegistry[Identifier(MODID, "celestine")]!!
+    CERAMIC = materialRegistry[Identifier(MODID, "ceramic")]!!
+    CERIUM = materialRegistry[Identifier(MODID, "cerium")]!!
+    CERTUS_QUARTZ = materialRegistry[Identifier(MODID, "certus_quartz")]!!
+    CERUCLASE = materialRegistry[Identifier(MODID, "ceruclase")]!!
+    CELENEGIL = materialRegistry[Identifier(MODID, "celenegil")]!!
+    CHALCOPYRITE = materialRegistry[Identifier(MODID, "chalcopyrite")]!!
+    CHALK = materialRegistry[Identifier(MODID, "chalk")]!!
+    CHARGED_CERTUS_QUARTZ = materialRegistry[Identifier(MODID, "charged_certus_quartz")]!!
+    CHARCOAL = materialRegistry[Identifier(MODID, "charcoal")]!!
+    CHEESE = materialRegistry[Identifier(MODID, "cheese")]!!
+    CHERT = materialRegistry[Identifier(MODID, "chert")]!!
+    CHILI = materialRegistry[Identifier(MODID, "chili")]!!
+    CHIMERITE = materialRegistry[Identifier(MODID, "chimerite")]!!
+    CHLORINE = materialRegistry[Identifier(MODID, "chlorine")]!!
+    CHLOROAURIC_ACID = materialRegistry[Identifier(MODID, "chloroauric_acid")]!!
+    CHOCOLATE = materialRegistry[Identifier(MODID, "chocolate")]!!
+    CHLOROPLATINIC_ACID = materialRegistry[Identifier(MODID, "chloroplatinic_acid")]!!
+    CHROMITE = materialRegistry[Identifier(MODID, "chromite")]!!
+    CHROMIUM_DIOXIDE = materialRegistry[Identifier(MODID, "chromium_dioxide")]!!
+    CHROMIUM = materialRegistry[Identifier(MODID, "chromium")]!!
+    CHROME = materialRegistry[Identifier(MODID, "chrome")]!!
+    CHRYSOCOLLA = materialRegistry[Identifier(MODID, "chrysocolla")]!!
+    CHRYSOTILE = materialRegistry[Identifier(MODID, "chrysotile")]!!
+    CINNABAR = materialRegistry[Identifier(MODID, "cinnabar")]!!
+    CINNAMON = materialRegistry[Identifier(MODID, "cinnamon")]!!
+    CLAY = materialRegistry[Identifier(MODID, "clay")]!!
+    CITRINE = materialRegistry[Identifier(MODID, "citrine")]!!
+    CLUSTER = materialRegistry[Identifier(MODID, "cluster")]!!
+    COAL = materialRegistry[Identifier(MODID, "coal")]!!
+    CLAY_BROWN = materialRegistry[Identifier(MODID, "clay_brown")]!!
+    COAL_COKE = materialRegistry[Identifier(MODID, "coal_coke")]!!
+    COBALT = materialRegistry[Identifier(MODID, "cobalt")]!!
+    COBALT60 = materialRegistry[Identifier(MODID, "cobalt60")]!!
+    COBALTITE = materialRegistry[Identifier(MODID, "cobaltite")]!!
+    COBALT_BRASS = materialRegistry[Identifier(MODID, "cobalt_brass")]!!
+    COBALT_HEXAHYDRATE = materialRegistry[Identifier(MODID, "cobalt_hexahydrate")]!!
+    COBBLESTONE = materialRegistry[Identifier(MODID, "cobblestone")]!!
+    COCOA = materialRegistry[Identifier(MODID, "cocoa")]!!
+    COCAINE = materialRegistry[Identifier(MODID, "cocaine")]!!
+    COFFEE = materialRegistry[Identifier(MODID, "coffee")]!!
+    COFFEE_DUST = materialRegistry[Identifier(MODID, "coffee_dust")]!!
+    COKE = materialRegistry[Identifier(MODID, "coke")]!!
+    CONDUCTIVE_IRON = materialRegistry[Identifier(MODID, "conductive_iron")]!!
+    CONCRETE = materialRegistry[Identifier(MODID, "concrete")]!!
+    CONSTANTAN = materialRegistry[Identifier(MODID, "constantan")]!!
+    CONSTRUCTION_FOAM = materialRegistry[Identifier(MODID, "construction_foam")]!!
+    CONTINUUM = materialRegistry[Identifier(MODID, "continuum")]!!
+    COOPERITE = materialRegistry[Identifier(MODID, "cooperite")]!!
+    CORAL = materialRegistry[Identifier(MODID, "coral")]!!
+    COPERNICIUM = materialRegistry[Identifier(MODID, "copernicium")]!!
+    COPPER = materialRegistry[Identifier(MODID, "copper")]!!
+    CORN = materialRegistry[Identifier(MODID, "corn")]!!
+    CREAM = materialRegistry[Identifier(MODID, "cream")]!!
+    CRAPONITE = materialRegistry[Identifier(MODID, "craponite")]!!
+    CRIMSON_MIDDLE = materialRegistry[Identifier(MODID, "crimson_middle")]!!
+    CREOSOTE_OIL = materialRegistry[Identifier(MODID, "creosote_oil")]!!
+    CRUDE_OIL = materialRegistry[Identifier(MODID, "crude_oil")]!!
+    CREOSOTE = materialRegistry[Identifier(MODID, "creosote")]!!
+    CRYOLITE = materialRegistry[Identifier(MODID, "cryolite")]!!
+    CRYSTAL_FLUX = materialRegistry[Identifier(MODID, "crystal_flux")]!!
+    CUPRONICKEL = materialRegistry[Identifier(MODID, "cupronickel")]!!
+    CURRY = materialRegistry[Identifier(MODID, "curry")]!!
+    CURIUM = materialRegistry[Identifier(MODID, "curium")]!!
+    CRYSTAL = materialRegistry[Identifier(MODID, "crystal")]!!
+    CYAN = materialRegistry[Identifier(MODID, "cyan")]!!
+    CYANITE = materialRegistry[Identifier(MODID, "cyanite")]!!
+    CYAN_VITRIOL = materialRegistry[Identifier(MODID, "cyan_vitriol")]!!
+    CYPRUS_VITRIOL = materialRegistry[Identifier(MODID, "cyprus_vitriol")]!!
+    DACITE = materialRegistry[Identifier(MODID, "dacite")]!!
+    DAMASCUS_STEEL = materialRegistry[Identifier(MODID, "damascus_steel")]!!
+    CRYOTHEUM = materialRegistry[Identifier(MODID, "cryotheum")]!!
+    DARK = materialRegistry[Identifier(MODID, "dark")]!!
+    DARK_ASH = materialRegistry[Identifier(MODID, "dark_ash")]!!
+    DARK_MATTER = materialRegistry[Identifier(MODID, "dark_matter")]!!
+    DARK_ASHES = materialRegistry[Identifier(MODID, "dark_ashes")]!!
+    DARK_IRON = materialRegistry[Identifier(MODID, "dark_iron")]!!
+    DARK_STEEL = materialRegistry[Identifier(MODID, "dark_steel")]!!
+    DARK_STONE = materialRegistry[Identifier(MODID, "dark_stone")]!!
+    DARK_THAUMIUM = materialRegistry[Identifier(MODID, "dark_thaumium")]!!
+    DARMSTADTIUM = materialRegistry[Identifier(MODID, "darmstadtium")]!!
+    DATA = materialRegistry[Identifier(MODID, "data")]!!
+    DEEP_IRON = materialRegistry[Identifier(MODID, "deep_iron")]!!
+    DEMONITE = materialRegistry[Identifier(MODID, "demonite")]!!
+    DESH = materialRegistry[Identifier(MODID, "desh")]!!
+    DESICHALKOS = materialRegistry[Identifier(MODID, "desichalkos")]!!
+    DEUTERIUM = materialRegistry[Identifier(MODID, "deuterium")]!!
+    DIAMANTINE = materialRegistry[Identifier(MODID, "diamantine")]!!
+    DATOLITE = materialRegistry[Identifier(MODID, "datolite")]!!
+    DIAMOND_COPPER = materialRegistry[Identifier(MODID, "diamond_copper")]!!
+    DIAMOND = materialRegistry[Identifier(MODID, "diamond")]!!
+    DIAMOND_INDUSTRIAL = materialRegistry[Identifier(MODID, "diamond_industrial")]!!
+    DIATOMITE = materialRegistry[Identifier(MODID, "diatomite")]!!
+    DIDURANIUM_TRIOXIDE = materialRegistry[Identifier(MODID, "diduranium_trioxide")]!!
+    DIESEL = materialRegistry[Identifier(MODID, "diesel")]!!
+    DILITHIUM = materialRegistry[Identifier(MODID, "dilithium")]!!
+    DIOPTASE = materialRegistry[Identifier(MODID, "dioptase")]!!
+    DIORITE = materialRegistry[Identifier(MODID, "diorite")]!!
+    DIORITE_BRICKS = materialRegistry[Identifier(MODID, "diorite_bricks")]!!
+    DIORITE_CHISELED = materialRegistry[Identifier(MODID, "diorite_chiseled")]!!
+    DISULFURIC_ACID = materialRegistry[Identifier(MODID, "disulfuric_acid")]!!
+    DOLAMIDE = materialRegistry[Identifier(MODID, "dolamide")]!!
+    DOMINICAN_AMBER = materialRegistry[Identifier(MODID, "dominican_amber")]!!
+    DIORITE_POLISHED = materialRegistry[Identifier(MODID, "diorite_polished")]!!
+    DRACONIC = materialRegistry[Identifier(MODID, "draconic")]!!
+    DRACONIUM = materialRegistry[Identifier(MODID, "draconium")]!!
+    DREAMWOOD = materialRegistry[Identifier(MODID, "dreamwood")]!!
+    DUBNIUM = materialRegistry[Identifier(MODID, "dubnium")]!!
+    DRACONIUM_AWAKENED = materialRegistry[Identifier(MODID, "draconium_awakened")]!!
+    DURALUMIN = materialRegistry[Identifier(MODID, "duralumin")]!!
+    DULL = materialRegistry[Identifier(MODID, "dull")]!!
+    DURANIUM = materialRegistry[Identifier(MODID, "duranium")]!!
+    DURANIUM_ELEMENTAL = materialRegistry[Identifier(MODID, "duranium_elemental")]!!
+    DURANIUM_HEXABROMIDE = materialRegistry[Identifier(MODID, "duranium_hexabromide")]!!
+    DURANIUM_HEXAASTATIDE = materialRegistry[Identifier(MODID, "duranium_hexaastatide")]!!
+    DURANIUM_HEXACHLORIDE = materialRegistry[Identifier(MODID, "duranium_hexachloride")]!!
+    DURANIUM_HEXAFLUORIDE = materialRegistry[Identifier(MODID, "duranium_hexafluoride")]!!
+    DOLOMITE = materialRegistry[Identifier(MODID, "dolomite")]!!
+    DYNAMITE = materialRegistry[Identifier(MODID, "dynamite")]!!
+    DYSPROSIUM = materialRegistry[Identifier(MODID, "dysprosium")]!!
+    DURANIUM_HEXAIODIDE = materialRegistry[Identifier(MODID, "duranium_hexaiodide")]!!
+    ECTOPLASM = materialRegistry[Identifier(MODID, "ectoplasm")]!!
+    EINSTEINIUM = materialRegistry[Identifier(MODID, "einsteinium")]!!
+    ELECTRICAL_STEEL = materialRegistry[Identifier(MODID, "electrical_steel")]!!
+    ELECTRON = materialRegistry[Identifier(MODID, "electron")]!!
+    ECLOGITE = materialRegistry[Identifier(MODID, "eclogite")]!!
+    ELECTROTINE_ALLOY = materialRegistry[Identifier(MODID, "electrotine_alloy")]!!
+    ELECTROTINE = materialRegistry[Identifier(MODID, "electrotine")]!!
+    ELECTRUM = materialRegistry[Identifier(MODID, "electrum")]!!
+    ELITE = materialRegistry[Identifier(MODID, "elite")]!!
+    ELVEN_DRAGONSTONE = materialRegistry[Identifier(MODID, "elven_dragonstone")]!!
+    ELVEN_ELEMENTIUM = materialRegistry[Identifier(MODID, "elven_elementium")]!!
+    EMERADIC = materialRegistry[Identifier(MODID, "emeradic")]!!
+    ELVORIUM = materialRegistry[Identifier(MODID, "elvorium")]!!
+    ELVEN_QUARTZ = materialRegistry[Identifier(MODID, "elven_quartz")]!!
+    ELECTRUM_FLUX = materialRegistry[Identifier(MODID, "electrum_flux")]!!
+    EMERALD = materialRegistry[Identifier(MODID, "emerald")]!!
+    ENDERIUM = materialRegistry[Identifier(MODID, "enderium")]!!
+    EMERY = materialRegistry[Identifier(MODID, "emery")]!!
+    EMPTY = materialRegistry[Identifier(MODID, "empty")]!!
+    ENDERIUM_BASE = materialRegistry[Identifier(MODID, "enderium_base")]!!
+    ENDER = materialRegistry[Identifier(MODID, "ender")]!!
+    ENDER_PEARL = materialRegistry[Identifier(MODID, "ender_pearl")]!!
+    ENDIUM = materialRegistry[Identifier(MODID, "endium")]!!
+    ENDER_EYE = materialRegistry[Identifier(MODID, "ender_eye")]!!
+    ENDSTONE = materialRegistry[Identifier(MODID, "endstone")]!!
+    ENERGETIC_ALLOY = materialRegistry[Identifier(MODID, "energetic_alloy")]!!
+    ENERGIUM_CYAN = materialRegistry[Identifier(MODID, "energium_cyan")]!!
+    ENERGIUM_RED = materialRegistry[Identifier(MODID, "energium_red")]!!
+    ENERGIZED = materialRegistry[Identifier(MODID, "energized")]!!
+    ENORI = materialRegistry[Identifier(MODID, "enori")]!!
+    ENRICHED_COPPER = materialRegistry[Identifier(MODID, "enriched_copper")]!!
+    EPIDOTE = materialRegistry[Identifier(MODID, "epidote")]!!
+    ETHANOL = materialRegistry[Identifier(MODID, "ethanol")]!!
+    ERBIUM = materialRegistry[Identifier(MODID, "erbium")]!!
+    EUDIALYTE = materialRegistry[Identifier(MODID, "eudialyte")]!!
+    ETHYLENE = materialRegistry[Identifier(MODID, "ethylene")]!!
+    EUROPIUM = materialRegistry[Identifier(MODID, "europium")]!!
+    FAIRY = materialRegistry[Identifier(MODID, "fairy")]!!
+    EXIMITE = materialRegistry[Identifier(MODID, "eximite")]!!
+    FARNSIUM = materialRegistry[Identifier(MODID, "farnsium")]!!
+    FERBERITE = materialRegistry[Identifier(MODID, "ferberite")]!!
+    FERMIUM = materialRegistry[Identifier(MODID, "fermium")]!!
+    FERRIC_CHLORIDE = materialRegistry[Identifier(MODID, "ferric_chloride")]!!
+    FERRITE = materialRegistry[Identifier(MODID, "ferrite")]!!
+    FERROUS_CHLORIDE = materialRegistry[Identifier(MODID, "ferrous_chloride")]!!
+    FIERY = materialRegistry[Identifier(MODID, "fiery")]!!
+    FIERY_STEEL = materialRegistry[Identifier(MODID, "fiery_steel")]!!
+    FERROVANADIUM = materialRegistry[Identifier(MODID, "ferrovanadium")]!!
+    FISH_COOKED = materialRegistry[Identifier(MODID, "fish_cooked")]!!
+    FIRESTONE = materialRegistry[Identifier(MODID, "firestone")]!!
+    FISH_OIL = materialRegistry[Identifier(MODID, "fish_oil")]!!
+    FISH_RAW = materialRegistry[Identifier(MODID, "fish_raw")]!!
+    FISH_ROTTEN = materialRegistry[Identifier(MODID, "fish_rotten")]!!
+    FLEROVIUM = materialRegistry[Identifier(MODID, "flerovium")]!!
+    FLEROVIUM298 = materialRegistry[Identifier(MODID, "flerovium298")]!!
+    FLINT = materialRegistry[Identifier(MODID, "flint")]!!
+    FLUIX = materialRegistry[Identifier(MODID, "fluix")]!!
+    FLOUR = materialRegistry[Identifier(MODID, "flour")]!!
+    FLUORINE = materialRegistry[Identifier(MODID, "fluorine")]!!
+    FLUX = materialRegistry[Identifier(MODID, "flux")]!!
+    FLUORITE = materialRegistry[Identifier(MODID, "fluorite")]!!
+    FOOLS_RUBY = materialRegistry[Identifier(MODID, "fools_ruby")]!!
+    FORCE = materialRegistry[Identifier(MODID, "force")]!!
+    FORCICIUM = materialRegistry[Identifier(MODID, "forcicium")]!!
+    FOSSIL = materialRegistry[Identifier(MODID, "fossil")]!!
+    FORCILLIUM = materialRegistry[Identifier(MODID, "forcillium")]!!
+    FRANCIUM = materialRegistry[Identifier(MODID, "francium")]!!
+    FRESH_WATER = materialRegistry[Identifier(MODID, "fresh_water")]!!
+    FREZARITE = materialRegistry[Identifier(MODID, "frezarite")]!!
+    FROZEN_IRON = materialRegistry[Identifier(MODID, "frozen_iron")]!!
+    FRYING_OIL_HOT = materialRegistry[Identifier(MODID, "frying_oil_hot")]!!
+    FUEL_OIL = materialRegistry[Identifier(MODID, "fuel_oil")]!!
+    FULLERS_EARTH = materialRegistry[Identifier(MODID, "fullers_earth")]!!
+    FZ_DARK_IRON = materialRegistry[Identifier(MODID, "fz_dark_iron")]!!
+    GABBRO = materialRegistry[Identifier(MODID, "gabbro")]!!
+    GADOLINIUM = materialRegistry[Identifier(MODID, "gadolinium")]!!
+    GAIA_SPIRIT = materialRegistry[Identifier(MODID, "gaia_spirit")]!!
+    GALENA = materialRegistry[Identifier(MODID, "galena")]!!
+    GALLIUM = materialRegistry[Identifier(MODID, "gallium")]!!
+    GARNET_GREEN = materialRegistry[Identifier(MODID, "garnet_green")]!!
+    FUEL = materialRegistry[Identifier(MODID, "fuel")]!!
+    GARNET = materialRegistry[Identifier(MODID, "garnet")]!!
+    GARNET_ORANGE = materialRegistry[Identifier(MODID, "garnet_orange")]!!
+    GARNET_PURPLE = materialRegistry[Identifier(MODID, "garnet_purple")]!!
+    GARNET_YELLOW = materialRegistry[Identifier(MODID, "garnet_yellow")]!!
+    GARNIERITE = materialRegistry[Identifier(MODID, "garnierite")]!!
+    GARNET_RED = materialRegistry[Identifier(MODID, "garnet_red")]!!
+    GASOLINE = materialRegistry[Identifier(MODID, "gasoline")]!!
+    GELATINE = materialRegistry[Identifier(MODID, "gelatine")]!!
+    GERMANIUM = materialRegistry[Identifier(MODID, "germanium")]!!
+    GIBBSITE = materialRegistry[Identifier(MODID, "gibbsite")]!!
+    GARNET_SAND = materialRegistry[Identifier(MODID, "garnet_sand")]!!
+    GILDED_IRON = materialRegistry[Identifier(MODID, "gilded_iron")]!!
+    GLAUCONITE = materialRegistry[Identifier(MODID, "glauconite")]!!
+    GLASS = materialRegistry[Identifier(MODID, "glass")]!!
+    GLAUCONITE_SAND = materialRegistry[Identifier(MODID, "glauconite_sand")]!!
+    GLOWSTONE = materialRegistry[Identifier(MODID, "glowstone")]!!
+    GLOWSTONE_CERES = materialRegistry[Identifier(MODID, "glowstone_ceres")]!!
+    GLOWSTONE_ENCELADUS = materialRegistry[Identifier(MODID, "glowstone_enceladus")]!!
+    GLOWSTONE_IO = materialRegistry[Identifier(MODID, "glowstone_io")]!!
+    GLOWSTONE_PLUTO = materialRegistry[Identifier(MODID, "glowstone_pluto")]!!
+    GLOWSTONE_PROTEUS = materialRegistry[Identifier(MODID, "glowstone_proteus")]!!
+    GLOWSTONE_REFINED = materialRegistry[Identifier(MODID, "glowstone_refined")]!!
+    GLUE = materialRegistry[Identifier(MODID, "glue")]!!
+    GLYCERYL = materialRegistry[Identifier(MODID, "glyceryl")]!!
+    GNEISS = materialRegistry[Identifier(MODID, "gneiss")]!!
+    GOLD = materialRegistry[Identifier(MODID, "gold")]!!
+    GLYCEROL = materialRegistry[Identifier(MODID, "glycerol")]!!
+    GOLD_INDUCTIVE = materialRegistry[Identifier(MODID, "gold_inductive")]!!
+    GOSHENITE = materialRegistry[Identifier(MODID, "goshenite")]!!
+    GOOD = materialRegistry[Identifier(MODID, "good")]!!
+    GOSHEN = materialRegistry[Identifier(MODID, "goshen")]!!
+    GRANITE_BLACK = materialRegistry[Identifier(MODID, "granite_black")]!!
+    GRANITE = materialRegistry[Identifier(MODID, "granite")]!!
+    GRANITE_BRICKS = materialRegistry[Identifier(MODID, "granite_bricks")]!!
+    GRANITE_CHISELED = materialRegistry[Identifier(MODID, "granite_chiseled")]!!
+    GRANITE_POLISHED = materialRegistry[Identifier(MODID, "granite_polished")]!!
+    GRANITIC_MINERAL_SAND = materialRegistry[Identifier(MODID, "granitic_mineral_sand")]!!
+    GRAPHENE = materialRegistry[Identifier(MODID, "graphene")]!!
+    GRAVEL = materialRegistry[Identifier(MODID, "gravel")]!!
+    GRAVEYARD_DIRT = materialRegistry[Identifier(MODID, "graveyard_dirt")]!!
+    GRANITE_RED = materialRegistry[Identifier(MODID, "granite_red")]!!
+    GRAVITITE = materialRegistry[Identifier(MODID, "gravitite")]!!
+    GRAVITONIUM = materialRegistry[Identifier(MODID, "gravitonium")]!!
+    GRAY = materialRegistry[Identifier(MODID, "gray")]!!
+    GRAY_VITRIOL = materialRegistry[Identifier(MODID, "gray_vitriol")]!!
+    GREATWOOD = materialRegistry[Identifier(MODID, "greatwood")]!!
+    GREEN = materialRegistry[Identifier(MODID, "green")]!!
+    GREENSTONE = materialRegistry[Identifier(MODID, "greenstone")]!!
+    GREEN_MIDDLE = materialRegistry[Identifier(MODID, "green_middle")]!!
+    GREEN_SAPPHIRE = materialRegistry[Identifier(MODID, "green_sapphire")]!!
+    GREEN_VITRIOL = materialRegistry[Identifier(MODID, "green_vitriol")]!!
+    GREYWACKE = materialRegistry[Identifier(MODID, "greywacke")]!!
+    GREGORIUM = materialRegistry[Identifier(MODID, "gregorium")]!!
+    GREENSCHIST = materialRegistry[Identifier(MODID, "greenschist")]!!
+    GROSSULAR = materialRegistry[Identifier(MODID, "grossular")]!!
+    GUNPOWDER = materialRegistry[Identifier(MODID, "gunpowder")]!!
+    GYPSUM = materialRegistry[Identifier(MODID, "gypsum")]!!
+    HAFNIUM = materialRegistry[Identifier(MODID, "hafnium")]!!
+    GYUBNERA = materialRegistry[Identifier(MODID, "gyubnera")]!!
+    HASSIUM = materialRegistry[Identifier(MODID, "hassium")]!!
+    GRAPHITE = materialRegistry[Identifier(MODID, "graphite")]!!
+    HAZELNUT = materialRegistry[Identifier(MODID, "hazelnut")]!!
+    HELIUM = materialRegistry[Identifier(MODID, "helium")]!!
+    HELIUM3 = materialRegistry[Identifier(MODID, "helium3")]!!
+    HELIODOR = materialRegistry[Identifier(MODID, "heliodor")]!!
+    HELIUM_NEON = materialRegistry[Identifier(MODID, "helium_neon")]!!
+    HEPATIZON = materialRegistry[Identifier(MODID, "hepatizon")]!!
+    HEMATITE = materialRegistry[Identifier(MODID, "hematite")]!!
+    HOLMIUM = materialRegistry[Identifier(MODID, "holmium")]!!
+    HEMP_OIL = materialRegistry[Identifier(MODID, "hemp_oil")]!!
+    HOLYSTONE = materialRegistry[Identifier(MODID, "holystone")]!!
+    HOLY_WATER = materialRegistry[Identifier(MODID, "holy_water")]!!
+    HONEYDEW = materialRegistry[Identifier(MODID, "honeydew")]!!
+    HONEY = materialRegistry[Identifier(MODID, "honey")]!!
+    HUEBNERITE = materialRegistry[Identifier(MODID, "huebnerite")]!!
+    HYDRATED_COAL = materialRegistry[Identifier(MODID, "hydrated_coal")]!!
+    HYDROCHLORIC_ACID = materialRegistry[Identifier(MODID, "hydrochloric_acid")]!!
+    HEXAFLUOROSILICIC_ACID = materialRegistry[Identifier(MODID, "hexafluorosilicic_acid")]!!
+    HYDROGEN = materialRegistry[Identifier(MODID, "hydrogen")]!!
+    HYDROGEN_FLUORIDE = materialRegistry[Identifier(MODID, "hydrogen_fluoride")]!!
+    HYDROGEN_BORATE = materialRegistry[Identifier(MODID, "hydrogen_borate")]!!
+    HYDROSULFURIC_ACID = materialRegistry[Identifier(MODID, "hydrosulfuric_acid")]!!
+    HYDROGEN_PEROXIDE = materialRegistry[Identifier(MODID, "hydrogen_peroxide")]!!
+    H_S_L_A_SPRING_STEEL = materialRegistry[Identifier(MODID, "h_s_l_a_spring_steel")]!!
+    ICE = materialRegistry[Identifier(MODID, "ice")]!!
+    H_S_L_A_STEEL = materialRegistry[Identifier(MODID, "h_s_l_a_steel")]!!
+    IFFESAL = materialRegistry[Identifier(MODID, "iffesal")]!!
+    IGNATIUS = materialRegistry[Identifier(MODID, "ignatius")]!!
+    ILLMENITE = materialRegistry[Identifier(MODID, "illmenite")]!!
+    ILMENITE = materialRegistry[Identifier(MODID, "ilmenite")]!!
+    INDIGO = materialRegistry[Identifier(MODID, "indigo")]!!
+    INDIUM = materialRegistry[Identifier(MODID, "indium")]!!
+    HADEROTH = materialRegistry[Identifier(MODID, "haderoth")]!!
+    INFERNAL = materialRegistry[Identifier(MODID, "infernal")]!!
+    INFINITE = materialRegistry[Identifier(MODID, "infinite")]!!
+    INFUSED_BALANCE = materialRegistry[Identifier(MODID, "infused_balance")]!!
+    INFUSCOLIUM = materialRegistry[Identifier(MODID, "infuscolium")]!!
+    INFUSED_AIR = materialRegistry[Identifier(MODID, "infused_air")]!!
+    INFUSED_DULL = materialRegistry[Identifier(MODID, "infused_dull")]!!
+    INFUSED_FIRE = materialRegistry[Identifier(MODID, "infused_fire")]!!
+    INFUSED_EARTH = materialRegistry[Identifier(MODID, "infused_earth")]!!
+    INFUSED_ENTROPY = materialRegistry[Identifier(MODID, "infused_entropy")]!!
+    INFUSED_GOLD = materialRegistry[Identifier(MODID, "infused_gold")]!!
+    INFUSED_ORDER = materialRegistry[Identifier(MODID, "infused_order")]!!
+    INFUSED_VIS = materialRegistry[Identifier(MODID, "infused_vis")]!!
+    INFUSED_TESLATITE = materialRegistry[Identifier(MODID, "infused_teslatite")]!!
+    INFUSED_WATER = materialRegistry[Identifier(MODID, "infused_water")]!!
+    INOLASHITE = materialRegistry[Identifier(MODID, "inolashite")]!!
+    INVISIUM = materialRegistry[Identifier(MODID, "invisium")]!!
+    INVAR = materialRegistry[Identifier(MODID, "invar")]!!
+    IODINE = materialRegistry[Identifier(MODID, "iodine")]!!
+    IODINE_SALT = materialRegistry[Identifier(MODID, "iodine_salt")]!!
+    IRIDIUM_IRON = materialRegistry[Identifier(MODID, "iridium_iron")]!!
+    IRIDIUM_SODIUM_OXIDE = materialRegistry[Identifier(MODID, "iridium_sodium_oxide")]!!
+    IRITANIUM = materialRegistry[Identifier(MODID, "iritanium")]!!
+    IRON = materialRegistry[Identifier(MODID, "iron")]!!
+    IRIDIUM_IRON_REINFORCED = materialRegistry[Identifier(MODID, "iridium_iron_reinforced")]!!
+    IRON_WOOD = materialRegistry[Identifier(MODID, "iron_wood")]!!
+    IRIDIUM = materialRegistry[Identifier(MODID, "iridium")]!!
+    IRON_COMPRESSED = materialRegistry[Identifier(MODID, "iron_compressed")]!!
+    IRON_MAGNETIC = materialRegistry[Identifier(MODID, "iron_magnetic")]!!
+    IRON_OXIDE = materialRegistry[Identifier(MODID, "iron_oxide")]!!
+    IRRIDANT_REINFORCED = materialRegistry[Identifier(MODID, "irridant_reinforced")]!!
+    IRRIDANT_URANIUM = materialRegistry[Identifier(MODID, "irridant_uranium")]!!
+    IRON_SHARP = materialRegistry[Identifier(MODID, "iron_sharp")]!!
+    ITARIUS = materialRegistry[Identifier(MODID, "itarius")]!!
+    JADE = materialRegistry[Identifier(MODID, "jade")]!!
+    JASPER = materialRegistry[Identifier(MODID, "jasper")]!!
+    JET = materialRegistry[Identifier(MODID, "jet")]!!
+    KALENDRITE = materialRegistry[Identifier(MODID, "kalendrite")]!!
+    JOSHEN = materialRegistry[Identifier(MODID, "joshen")]!!
+    KALIUM = materialRegistry[Identifier(MODID, "kalium")]!!
+    KAOLINITE = materialRegistry[Identifier(MODID, "kaolinite")]!!
+    KEROSINE = materialRegistry[Identifier(MODID, "kerosine")]!!
+    KESTERITE = materialRegistry[Identifier(MODID, "kesterite")]!!
+    KIMBERLITE = materialRegistry[Identifier(MODID, "kimberlite")]!!
+    KNIGHTMETAL = materialRegistry[Identifier(MODID, "knightmetal")]!!
+    KANTHAL = materialRegistry[Identifier(MODID, "kanthal")]!!
+    KOMATIITE = materialRegistry[Identifier(MODID, "komatiite")]!!
+    KREKNORITE = materialRegistry[Identifier(MODID, "kreknorite")]!!
+    KRYPTON = materialRegistry[Identifier(MODID, "krypton")]!!
+    KYANITE = materialRegistry[Identifier(MODID, "kyanite")]!!
+    LANTANUM = materialRegistry[Identifier(MODID, "lantanum")]!!
+    LATEX = materialRegistry[Identifier(MODID, "latex")]!!
+    LAPIS = materialRegistry[Identifier(MODID, "lapis")]!!
+    LAVA = materialRegistry[Identifier(MODID, "lava")]!!
+    LAVENDER_QUARTZ = materialRegistry[Identifier(MODID, "lavender_quartz")]!!
+    LAWRENCIUM = materialRegistry[Identifier(MODID, "lawrencium")]!!
+    LAZURITE = materialRegistry[Identifier(MODID, "lazurite")]!!
+    LEAD = materialRegistry[Identifier(MODID, "lead")]!!
+    LEATHER = materialRegistry[Identifier(MODID, "leather")]!!
+    LEGENDARY = materialRegistry[Identifier(MODID, "legendary")]!!
+    LEMURITE = materialRegistry[Identifier(MODID, "lemurite")]!!
+    LICORICE = materialRegistry[Identifier(MODID, "licorice")]!!
+    LIGHT_BLUE = materialRegistry[Identifier(MODID, "light_blue")]!!
+    LEPIDOLITE = materialRegistry[Identifier(MODID, "lepidolite")]!!
+    LIGHT_GRAY = materialRegistry[Identifier(MODID, "light_gray")]!!
+    LIGNITE = materialRegistry[Identifier(MODID, "lignite")]!!
+    LIME = materialRegistry[Identifier(MODID, "lime")]!!
+    LIMESTONE = materialRegistry[Identifier(MODID, "limestone")]!!
+    LIGNITE_COKE = materialRegistry[Identifier(MODID, "lignite_coke")]!!
+    LIN_OIL = materialRegistry[Identifier(MODID, "lin_oil")]!!
+    LITHIUM = materialRegistry[Identifier(MODID, "lithium")]!!
+    LITHIUM6 = materialRegistry[Identifier(MODID, "lithium6")]!!
+    LITHIUM_CHLORATE = materialRegistry[Identifier(MODID, "lithium_chlorate")]!!
+    LITHIUM_CHLORIDE = materialRegistry[Identifier(MODID, "lithium_chloride")]!!
+    LITHIUM_OXIDE = materialRegistry[Identifier(MODID, "lithium_oxide")]!!
+    LIME_PURE = materialRegistry[Identifier(MODID, "lime_pure")]!!
+    LITHIUM_PERCHLORATE = materialRegistry[Identifier(MODID, "lithium_perchlorate")]!!
+    LIVERMORIUM = materialRegistry[Identifier(MODID, "livermorium")]!!
+    LITHIUM_HYDROXIDE = materialRegistry[Identifier(MODID, "lithium_hydroxide")]!!
+    LIVE_ROOT = materialRegistry[Identifier(MODID, "live_root")]!!
+    LIVINGROCK = materialRegistry[Identifier(MODID, "livingrock")]!!
+    LODESTONE = materialRegistry[Identifier(MODID, "lodestone")]!!
+    LIVINGWOOD = materialRegistry[Identifier(MODID, "livingwood")]!!
+    LONSDALEITE = materialRegistry[Identifier(MODID, "lonsdaleite")]!!
+    LUBRICANT = materialRegistry[Identifier(MODID, "lubricant")]!!
+    LUMINITE = materialRegistry[Identifier(MODID, "luminite")]!!
+    LUDICRITE = materialRegistry[Identifier(MODID, "ludicrite")]!!
+    LUTETIUM = materialRegistry[Identifier(MODID, "lutetium")]!!
+    MAC_GUFFIUM = materialRegistry[Identifier(MODID, "mac_guffium")]!!
+    MAGENTA = materialRegistry[Identifier(MODID, "magenta")]!!
+    H_S_L_A = materialRegistry[Identifier(MODID, "h_s_l_a")]!!
+    MAGIC = materialRegistry[Identifier(MODID, "magic")]!!
+    LUMIUM = materialRegistry[Identifier(MODID, "lumium")]!!
+    MAGMA = materialRegistry[Identifier(MODID, "magma")]!!
+    MAGNESITE = materialRegistry[Identifier(MODID, "magnesite")]!!
+    MAGNALIUM = materialRegistry[Identifier(MODID, "magnalium")]!!
+    MAGNESIUM_CARBONATE = materialRegistry[Identifier(MODID, "magnesium_carbonate")]!!
+    MAGNESIUM = materialRegistry[Identifier(MODID, "magnesium")]!!
+    MAGNESIUM_CHLORIDE = materialRegistry[Identifier(MODID, "magnesium_chloride")]!!
+    MAGNETITE = materialRegistry[Identifier(MODID, "magnetite")]!!
+    MALACHITE = materialRegistry[Identifier(MODID, "malachite")]!!
+    MANASTEEL = materialRegistry[Identifier(MODID, "manasteel")]!!
+    MANA_DIAMOND = materialRegistry[Identifier(MODID, "mana_diamond")]!!
+    MANA_QUARTZ = materialRegistry[Identifier(MODID, "mana_quartz")]!!
+    MANGANESE = materialRegistry[Identifier(MODID, "manganese")]!!
+    MANGANESE_CHLORIDE = materialRegistry[Identifier(MODID, "manganese_chloride")]!!
+    MANYULLYN = materialRegistry[Identifier(MODID, "manyullyn")]!!
+    MARBLE = materialRegistry[Identifier(MODID, "marble")]!!
+    MARS_SAND = materialRegistry[Identifier(MODID, "mars_sand")]!!
+    MARS_STONE = materialRegistry[Identifier(MODID, "mars_stone")]!!
+    MARTIAN_VITRIOL = materialRegistry[Identifier(MODID, "martian_vitriol")]!!
+    MASTER = materialRegistry[Identifier(MODID, "master")]!!
+    MAUFTRIUM = materialRegistry[Identifier(MODID, "mauftrium")]!!
+    MAWSITSIT = materialRegistry[Identifier(MODID, "mawsitsit")]!!
+    MEAT = materialRegistry[Identifier(MODID, "meat")]!!
+    MAXIXE = materialRegistry[Identifier(MODID, "maxixe")]!!
+    MEAT_COOKED = materialRegistry[Identifier(MODID, "meat_cooked")]!!
+    MEAT_RAW = materialRegistry[Identifier(MODID, "meat_raw")]!!
+    MEAT_ROTTEN = materialRegistry[Identifier(MODID, "meat_rotten")]!!
+    MENDELEVIUM = materialRegistry[Identifier(MODID, "mendelevium")]!!
+    MERCASSIUM = materialRegistry[Identifier(MODID, "mercassium")]!!
+    MARSHMALLOW = materialRegistry[Identifier(MODID, "marshmallow")]!!
+    MEITNERIUM = materialRegistry[Identifier(MODID, "meitnerium")]!!
+    MERCURY = materialRegistry[Identifier(MODID, "mercury")]!!
+    METEORIC_IRON = materialRegistry[Identifier(MODID, "meteoric_iron")]!!
+    METEORIC_STEEL = materialRegistry[Identifier(MODID, "meteoric_steel")]!!
+    METEORITE = materialRegistry[Identifier(MODID, "meteorite")]!!
+    METHANE = materialRegistry[Identifier(MODID, "methane")]!!
+    METHANE_ICE = materialRegistry[Identifier(MODID, "methane_ice")]!!
+    MEUTOITE = materialRegistry[Identifier(MODID, "meutoite")]!!
+    MICA = materialRegistry[Identifier(MODID, "mica")]!!
+    MICROCLINE = materialRegistry[Identifier(MODID, "microcline")]!!
+    MINT = materialRegistry[Identifier(MODID, "mint")]!!
+    MIDASIUM = materialRegistry[Identifier(MODID, "midasium")]!!
+    MIRABILITE = materialRegistry[Identifier(MODID, "mirabilite")]!!
+    MILK = materialRegistry[Identifier(MODID, "milk")]!!
+    MIMICHITE = materialRegistry[Identifier(MODID, "mimichite")]!!
+    MITHRIL = materialRegistry[Identifier(MODID, "mithril")]!!
+    MOLYBDENUM = materialRegistry[Identifier(MODID, "molybdenum")]!!
+    MOON_STONE = materialRegistry[Identifier(MODID, "moon_stone")]!!
+    MOLYBDENITE = materialRegistry[Identifier(MODID, "molybdenite")]!!
+    MIGMATITE = materialRegistry[Identifier(MODID, "migmatite")]!!
+    MOON_TURF = materialRegistry[Identifier(MODID, "moon_turf")]!!
+    MORGANITE = materialRegistry[Identifier(MODID, "morganite")]!!
+    MUD = materialRegistry[Identifier(MODID, "mud")]!!
+    MOSCOVIUM = materialRegistry[Identifier(MODID, "moscovium")]!!
+    MUSPELHEIM_POWER = materialRegistry[Identifier(MODID, "muspelheim_power")]!!
+    MUTATED_IRON = materialRegistry[Identifier(MODID, "mutated_iron")]!!
+    MUTATION = materialRegistry[Identifier(MODID, "mutation")]!!
+    NAQUADAH = materialRegistry[Identifier(MODID, "naquadah")]!!
+    MONAZITE = materialRegistry[Identifier(MODID, "monazite")]!!
+    NAQUADAH_ALLOY = materialRegistry[Identifier(MODID, "naquadah_alloy")]!!
+    NATURAL_ALUMINUM = materialRegistry[Identifier(MODID, "natural_aluminum")]!!
+    NAQUADRIA = materialRegistry[Identifier(MODID, "naquadria")]!!
+    NEODYMIUM = materialRegistry[Identifier(MODID, "neodymium")]!!
+    NEODYMIUM_MAGNETIC = materialRegistry[Identifier(MODID, "neodymium_magnetic")]!!
+    NAQUADAH_ENRICHED = materialRegistry[Identifier(MODID, "naquadah_enriched")]!!
+    NEON = materialRegistry[Identifier(MODID, "neon")]!!
+    NEPTUNIUM = materialRegistry[Identifier(MODID, "neptunium")]!!
+    NETHER = materialRegistry[Identifier(MODID, "nether")]!!
+    NETHER_STAR = materialRegistry[Identifier(MODID, "nether_star")]!!
+    NETHER_QUARTZ = materialRegistry[Identifier(MODID, "nether_quartz")]!!
+    NEUTRINO = materialRegistry[Identifier(MODID, "neutrino")]!!
+    NETHERRACK = materialRegistry[Identifier(MODID, "netherrack")]!!
+    NEUTRON = materialRegistry[Identifier(MODID, "neutron")]!!
+    NICHROME = materialRegistry[Identifier(MODID, "nichrome")]!!
+    NEUTRONIUM = materialRegistry[Identifier(MODID, "neutronium")]!!
+    NICKEL = materialRegistry[Identifier(MODID, "nickel")]!!
+    NIFLHEIM_POWER = materialRegistry[Identifier(MODID, "niflheim_power")]!!
+    NIHONIUM = materialRegistry[Identifier(MODID, "nihonium")]!!
+    NIKOLINE_ALLOY = materialRegistry[Identifier(MODID, "nikoline_alloy")]!!
+    NIKOLITE = materialRegistry[Identifier(MODID, "nikolite")]!!
+    NIOBIUM = materialRegistry[Identifier(MODID, "niobium")]!!
+    NETHER_BRICK = materialRegistry[Identifier(MODID, "nether_brick")]!!
+    NIOBIUM_NITRIDE = materialRegistry[Identifier(MODID, "niobium_nitride")]!!
+    NIOBIUM_TITANIUM = materialRegistry[Identifier(MODID, "niobium_titanium")]!!
+    NITER = materialRegistry[Identifier(MODID, "niter")]!!
+    NATRIUM = materialRegistry[Identifier(MODID, "natrium")]!!
+    NITRIC_ACID = materialRegistry[Identifier(MODID, "nitric_acid")]!!
+    NITROGEN = materialRegistry[Identifier(MODID, "nitrogen")]!!
+    NITROGEN_DIOXIDE = materialRegistry[Identifier(MODID, "nitrogen_dioxide")]!!
+    NITROGEN_MONOXIDE = materialRegistry[Identifier(MODID, "nitrogen_monoxide")]!!
+    NITRO_CARBON = materialRegistry[Identifier(MODID, "nitro_carbon")]!!
+    NITRO_FUEL = materialRegistry[Identifier(MODID, "nitro_fuel")]!!
+    NOBELIUM = materialRegistry[Identifier(MODID, "nobelium")]!!
+    NOUGAT = materialRegistry[Identifier(MODID, "nougat")]!!
+    NUTMEG = materialRegistry[Identifier(MODID, "nutmeg")]!!
+    N_U_L_L = materialRegistry[Identifier(MODID, "n_u_l_l")]!!
+    NUT_OIL = materialRegistry[Identifier(MODID, "nut_oil")]!!
+    OAT = materialRegistry[Identifier(MODID, "oat")]!!
+    OATS = materialRegistry[Identifier(MODID, "oats")]!!
+    OBSIDIAN = materialRegistry[Identifier(MODID, "obsidian")]!!
+    OBSIDIAN_FLUX = materialRegistry[Identifier(MODID, "obsidian_flux")]!!
+    OBSIDIAN_STEEL = materialRegistry[Identifier(MODID, "obsidian_steel")]!!
+    OBSIDIAN_REFINED = materialRegistry[Identifier(MODID, "obsidian_refined")]!!
+    OCTINE = materialRegistry[Identifier(MODID, "octine")]!!
+    OGANESSON = materialRegistry[Identifier(MODID, "oganesson")]!!
+    OIL = materialRegistry[Identifier(MODID, "oil")]!!
+    OILSANDS = materialRegistry[Identifier(MODID, "oilsands")]!!
+    OILSHALE = materialRegistry[Identifier(MODID, "oilshale")]!!
+    OLIVE_OIL = materialRegistry[Identifier(MODID, "olive_oil")]!!
+    OLIVINE = materialRegistry[Identifier(MODID, "olivine")]!!
+    ONYX = materialRegistry[Identifier(MODID, "onyx")]!!
+    ONYX_BLACK = materialRegistry[Identifier(MODID, "onyx_black")]!!
+    ONYX_RED = materialRegistry[Identifier(MODID, "onyx_red")]!!
+    ORANGE = materialRegistry[Identifier(MODID, "orange")]!!
+    OPAL = materialRegistry[Identifier(MODID, "opal")]!!
+    ORGANIC = materialRegistry[Identifier(MODID, "organic")]!!
+    ORICHALCUM = materialRegistry[Identifier(MODID, "orichalcum")]!!
+    ORANGE_SAPPHIRE = materialRegistry[Identifier(MODID, "orange_sapphire")]!!
+    OSMIRIDIUM = materialRegistry[Identifier(MODID, "osmiridium")]!!
+    ORIHARUKON = materialRegistry[Identifier(MODID, "oriharukon")]!!
+    OSMIUM = materialRegistry[Identifier(MODID, "osmium")]!!
+    OSMIUM_TETROXIDE = materialRegistry[Identifier(MODID, "osmium_tetroxide")]!!
+    OSMONIUM = materialRegistry[Identifier(MODID, "osmonium")]!!
+    OURECLASE = materialRegistry[Identifier(MODID, "oureclase")]!!
+    OXYGEN = materialRegistry[Identifier(MODID, "oxygen")]!!
+    PAINITE = materialRegistry[Identifier(MODID, "painite")]!!
+    PALIS = materialRegistry[Identifier(MODID, "palis")]!!
+    PALLADIUM = materialRegistry[Identifier(MODID, "palladium")]!!
+    PAPER = materialRegistry[Identifier(MODID, "paper")]!!
+    PARAFFIN_WAX = materialRegistry[Identifier(MODID, "paraffin_wax")]!!
+    PEANUT = materialRegistry[Identifier(MODID, "peanut")]!!
+    PEAT_BITUMINOUS = materialRegistry[Identifier(MODID, "peat_bituminous")]!!
+    PEAT = materialRegistry[Identifier(MODID, "peat")]!!
+    PENTLANDITE = materialRegistry[Identifier(MODID, "pentlandite")]!!
+    PEANUT_WOOD = materialRegistry[Identifier(MODID, "peanut_wood")]!!
+    PEPPER_BLACK = materialRegistry[Identifier(MODID, "pepper_black")]!!
+    PEPPER = materialRegistry[Identifier(MODID, "pepper")]!!
+    PERLITE = materialRegistry[Identifier(MODID, "perlite")]!!
+    PETRIFIED_WOOD = materialRegistry[Identifier(MODID, "petrified_wood")]!!
+    PETROL = materialRegistry[Identifier(MODID, "petrol")]!!
+    PETROLEUM_COKE = materialRegistry[Identifier(MODID, "petroleum_coke")]!!
+    PERIDOT = materialRegistry[Identifier(MODID, "peridot")]!!
+    PETROTHEUM = materialRegistry[Identifier(MODID, "petrotheum")]!!
+    PETROLEUM = materialRegistry[Identifier(MODID, "petroleum")]!!
+    PEWTER = materialRegistry[Identifier(MODID, "pewter")]!!
+    PHASED_GOLD = materialRegistry[Identifier(MODID, "phased_gold")]!!
+    PHOENIXITE = materialRegistry[Identifier(MODID, "phoenixite")]!!
+    PHASED_IRON = materialRegistry[Identifier(MODID, "phased_iron")]!!
+    PHOSPHORITE = materialRegistry[Identifier(MODID, "phosphorite")]!!
+    PHOSPHATE = materialRegistry[Identifier(MODID, "phosphate")]!!
+    PHOSPHOR = materialRegistry[Identifier(MODID, "phosphor")]!!
+    PHOSPHORUS = materialRegistry[Identifier(MODID, "phosphorus")]!!
+    PIG_IRON = materialRegistry[Identifier(MODID, "pig_iron")]!!
+    PHOTON = materialRegistry[Identifier(MODID, "photon")]!!
+    PINALITE = materialRegistry[Identifier(MODID, "pinalite")]!!
+    PINK = materialRegistry[Identifier(MODID, "pink")]!!
+    PINK_VITRIOL = materialRegistry[Identifier(MODID, "pink_vitriol")]!!
+    PISTACHIO = materialRegistry[Identifier(MODID, "pistachio")]!!
+    PITSTONE = materialRegistry[Identifier(MODID, "pitstone")]!!
+    PITCHBLENDE = materialRegistry[Identifier(MODID, "pitchblende")]!!
+    PLATINUM = materialRegistry[Identifier(MODID, "platinum")]!!
+    PLASTIC = materialRegistry[Identifier(MODID, "plastic")]!!
+    PLATINUM_GROUP_SLUDGE = materialRegistry[Identifier(MODID, "platinum_group_sludge")]!!
+    PLUTONIUM = materialRegistry[Identifier(MODID, "plutonium")]!!
+    PLUTONIUM243 = materialRegistry[Identifier(MODID, "plutonium243")]!!
+    PLUTONIUM244 = materialRegistry[Identifier(MODID, "plutonium244")]!!
+    POKEFENNIUM = materialRegistry[Identifier(MODID, "pokefennium")]!!
+    POLLUCITE = materialRegistry[Identifier(MODID, "pollucite")]!!
+    PLUTONIUM241 = materialRegistry[Identifier(MODID, "plutonium241")]!!
+    POLONIUM = materialRegistry[Identifier(MODID, "polonium")]!!
+    PORCELAIN = materialRegistry[Identifier(MODID, "porcelain")]!!
+    POTASH = materialRegistry[Identifier(MODID, "potash")]!!
+    POSITRON = materialRegistry[Identifier(MODID, "positron")]!!
+    POTASSIUM = materialRegistry[Identifier(MODID, "potassium")]!!
+    POTASSIUM_ALUMINATE = materialRegistry[Identifier(MODID, "potassium_aluminate")]!!
+    POTASSIUM_BISULFATE = materialRegistry[Identifier(MODID, "potassium_bisulfate")]!!
+    POTASSIUM_BISULPHATE = materialRegistry[Identifier(MODID, "potassium_bisulphate")]!!
+    POTASSIUM_FELDSPAR = materialRegistry[Identifier(MODID, "potassium_feldspar")]!!
+    POTASSIUM_HYDROXIDE = materialRegistry[Identifier(MODID, "potassium_hydroxide")]!!
+    POTASSIUM_NITRATE = materialRegistry[Identifier(MODID, "potassium_nitrate")]!!
+    POTASSIUM_PERSULFATE = materialRegistry[Identifier(MODID, "potassium_persulfate")]!!
+    POTASSIUM_PERSULPHATE = materialRegistry[Identifier(MODID, "potassium_persulphate")]!!
+    POTASSIUM_PYROSULFATE = materialRegistry[Identifier(MODID, "potassium_pyrosulfate")]!!
+    POTASSIUM_CARBONATE = materialRegistry[Identifier(MODID, "potassium_carbonate")]!!
+    POTASSIUM_PYROSULPHATE = materialRegistry[Identifier(MODID, "potassium_pyrosulphate")]!!
+    POTASSIUM_SULFATE = materialRegistry[Identifier(MODID, "potassium_sulfate")]!!
+    POTASSIUM_SULFIDE = materialRegistry[Identifier(MODID, "potassium_sulfide")]!!
+    POTASSIUM_SULFITE = materialRegistry[Identifier(MODID, "potassium_sulfite")]!!
+    POTASSIUM_SULPHIDE = materialRegistry[Identifier(MODID, "potassium_sulphide")]!!
+    POTASSIUM_SULPHITE = materialRegistry[Identifier(MODID, "potassium_sulphite")]!!
+    POTASSIUM_SULPHATE = materialRegistry[Identifier(MODID, "potassium_sulphate")]!!
+    POTATO = materialRegistry[Identifier(MODID, "potato")]!!
+    POWELLITE = materialRegistry[Identifier(MODID, "powellite")]!!
+    PRASEODYMIUM = materialRegistry[Identifier(MODID, "praseodymium")]!!
+    PRISMANE = materialRegistry[Identifier(MODID, "prismane")]!!
+    PRIMITIVE = materialRegistry[Identifier(MODID, "primitive")]!!
+    PRISMARINE = materialRegistry[Identifier(MODID, "prismarine")]!!
+    PET_COKE = materialRegistry[Identifier(MODID, "pet_coke")]!!
+    PRISMARINE_DARK = materialRegistry[Identifier(MODID, "prismarine_dark")]!!
+    PROMETHIUM = materialRegistry[Identifier(MODID, "promethium")]!!
+    PROMETHEUM = materialRegistry[Identifier(MODID, "prometheum")]!!
+    PROPANE = materialRegistry[Identifier(MODID, "propane")]!!
+    PROTACTINIUM = materialRegistry[Identifier(MODID, "protactinium")]!!
+    PROTON = materialRegistry[Identifier(MODID, "proton")]!!
+    PROPYLENE = materialRegistry[Identifier(MODID, "propylene")]!!
+    PULSATING_IRON = materialRegistry[Identifier(MODID, "pulsating_iron")]!!
+    PURPLE = materialRegistry[Identifier(MODID, "purple")]!!
+    PUMICE = materialRegistry[Identifier(MODID, "pumice")]!!
+    PURPLE_ALLOY = materialRegistry[Identifier(MODID, "purple_alloy")]!!
+    PYRITE = materialRegistry[Identifier(MODID, "pyrite")]!!
+    PURPLE_SAPPHIRE = materialRegistry[Identifier(MODID, "purple_sapphire")]!!
+    PYROLUSITE = materialRegistry[Identifier(MODID, "pyrolusite")]!!
+    PYROTHEUM = materialRegistry[Identifier(MODID, "pyrotheum")]!!
+    PYROPE = materialRegistry[Identifier(MODID, "pyrope")]!!
+    P_E_Z = materialRegistry[Identifier(MODID, "p_e_z")]!!
+    QUANTUM = materialRegistry[Identifier(MODID, "quantum")]!!
+    QUARTZITE = materialRegistry[Identifier(MODID, "quartzite")]!!
+    QUARTZ = materialRegistry[Identifier(MODID, "quartz")]!!
+    QUARTZ_BLACK = materialRegistry[Identifier(MODID, "quartz_black")]!!
+    QUARTZ_SAND = materialRegistry[Identifier(MODID, "quartz_sand")]!!
+    QUARTZ_SMOKY = materialRegistry[Identifier(MODID, "quartz_smoky")]!!
+    QUICKLIME = materialRegistry[Identifier(MODID, "quicklime")]!!
+    QUICKSILVER = materialRegistry[Identifier(MODID, "quicksilver")]!!
+    RADIUM = materialRegistry[Identifier(MODID, "radium")]!!
+    RADON = materialRegistry[Identifier(MODID, "radon")]!!
+    RARE_EARTH = materialRegistry[Identifier(MODID, "rare_earth")]!!
+    RANDOMITE = materialRegistry[Identifier(MODID, "randomite")]!!
+    RAW_TERRASTEEL_ALLOY = materialRegistry[Identifier(MODID, "raw_terrasteel_alloy")]!!
+    RED = materialRegistry[Identifier(MODID, "red")]!!
+    RASPITE = materialRegistry[Identifier(MODID, "raspite")]!!
+    REDSTONE = materialRegistry[Identifier(MODID, "redstone")]!!
+    REDSTONIA = materialRegistry[Identifier(MODID, "redstonia")]!!
+    REDSTONE_ALLOY = materialRegistry[Identifier(MODID, "redstone_alloy")]!!
+    RED_MATTER = materialRegistry[Identifier(MODID, "red_matter")]!!
+    RED_ALLOY = materialRegistry[Identifier(MODID, "red_alloy")]!!
+    RED_STEEL = materialRegistry[Identifier(MODID, "red_steel")]!!
+    RED_METEOR = materialRegistry[Identifier(MODID, "red_meteor")]!!
+    REDROCK = materialRegistry[Identifier(MODID, "redrock")]!!
+    RED_QUARTZ = materialRegistry[Identifier(MODID, "red_quartz")]!!
+    RED_VITRIOL = materialRegistry[Identifier(MODID, "red_vitriol")]!!
+    REFINED_IRON = materialRegistry[Identifier(MODID, "refined_iron")]!!
+    REFINED_GLOWSTONE = materialRegistry[Identifier(MODID, "refined_glowstone")]!!
+    REFRACTORYWAX = materialRegistry[Identifier(MODID, "refractorywax")]!!
+    RHENIUM = materialRegistry[Identifier(MODID, "rhenium")]!!
+    RHYOLITE = materialRegistry[Identifier(MODID, "rhyolite")]!!
+    RICE = materialRegistry[Identifier(MODID, "rice")]!!
+    REINFORCED = materialRegistry[Identifier(MODID, "reinforced")]!!
+    ROCK_SALT = materialRegistry[Identifier(MODID, "rock_salt")]!!
+    ROMAN_VITRIOL = materialRegistry[Identifier(MODID, "roman_vitriol")]!!
+    ROSE_GOLD = materialRegistry[Identifier(MODID, "rose_gold")]!!
+    ROENTGENIUM = materialRegistry[Identifier(MODID, "roentgenium")]!!
+    RUBBER = materialRegistry[Identifier(MODID, "rubber")]!!
+    RUBBER_TREE_SAP = materialRegistry[Identifier(MODID, "rubber_tree_sap")]!!
+    RUBY = materialRegistry[Identifier(MODID, "ruby")]!!
+    RUSSELLITE = materialRegistry[Identifier(MODID, "russellite")]!!
+    REFINED_OBSIDIAN = materialRegistry[Identifier(MODID, "refined_obsidian")]!!
+    RHODIUM = materialRegistry[Identifier(MODID, "rhodium")]!!
+    RUTHENIUM = materialRegistry[Identifier(MODID, "ruthenium")]!!
+    RUTHERFORDIUM = materialRegistry[Identifier(MODID, "rutherfordium")]!!
+    RUBIDIUM = materialRegistry[Identifier(MODID, "rubidium")]!!
+    RYE = materialRegistry[Identifier(MODID, "rye")]!!
+    RUTILE = materialRegistry[Identifier(MODID, "rutile")]!!
+    RYU = materialRegistry[Identifier(MODID, "ryu")]!!
+    RYU_DRAGON_RYDER = materialRegistry[Identifier(MODID, "ryu_dragon_ryder")]!!
+    SALTED_BUTTER = materialRegistry[Identifier(MODID, "salted_butter")]!!
+    SALT = materialRegistry[Identifier(MODID, "salt")]!!
+    RUBRACIUM = materialRegistry[Identifier(MODID, "rubracium")]!!
+    SAND = materialRegistry[Identifier(MODID, "sand")]!!
+    SAMARIUM = materialRegistry[Identifier(MODID, "samarium")]!!
+    SANGUINITE = materialRegistry[Identifier(MODID, "sanguinite")]!!
+    SAPHIRE = materialRegistry[Identifier(MODID, "saphire")]!!
+    SALTPETER = materialRegistry[Identifier(MODID, "saltpeter")]!!
+    SALT_WATER = materialRegistry[Identifier(MODID, "salt_water")]!!
+    SAPPHIRE = materialRegistry[Identifier(MODID, "sapphire")]!!
+    SATINSPAR = materialRegistry[Identifier(MODID, "satinspar")]!!
+    SCABYST = materialRegistry[Identifier(MODID, "scabyst")]!!
+    SCANDIUM = materialRegistry[Identifier(MODID, "scandium")]!!
+    SCHEELITE = materialRegistry[Identifier(MODID, "scheelite")]!!
+    SCARLET_EMERALD = materialRegistry[Identifier(MODID, "scarlet_emerald")]!!
+    SEABORGIUM = materialRegistry[Identifier(MODID, "seaborgium")]!!
+    SEA_WATER = materialRegistry[Identifier(MODID, "sea_water")]!!
+    SEED_OIL = materialRegistry[Identifier(MODID, "seed_oil")]!!
+    SELENITE = materialRegistry[Identifier(MODID, "selenite")]!!
+    SELENIUM = materialRegistry[Identifier(MODID, "selenium")]!!
+    SERPENTINE = materialRegistry[Identifier(MODID, "serpentine")]!!
+    SHADOW_IRON = materialRegistry[Identifier(MODID, "shadow_iron")]!!
+    SHADOW_STEEL = materialRegistry[Identifier(MODID, "shadow_steel")]!!
+    SHELDONITE = materialRegistry[Identifier(MODID, "sheldonite")]!!
+    SHALE = materialRegistry[Identifier(MODID, "shale")]!!
+    SHIMMERWOOD = materialRegistry[Identifier(MODID, "shimmerwood")]!!
+    SILICON = materialRegistry[Identifier(MODID, "silicon")]!!
+    SIGNALUM = materialRegistry[Identifier(MODID, "signalum")]!!
+    SILICON_DIOXIDE = materialRegistry[Identifier(MODID, "silicon_dioxide")]!!
+    SILTSTONE = materialRegistry[Identifier(MODID, "siltstone")]!!
+    SILVER = materialRegistry[Identifier(MODID, "silver")]!!
+    SILVERWOOD = materialRegistry[Identifier(MODID, "silverwood")]!!
+    SILVER_IODIDE = materialRegistry[Identifier(MODID, "silver_iodide")]!!
+    SKYROOT = materialRegistry[Identifier(MODID, "skyroot")]!!
+    SLUICE_SAND = materialRegistry[Identifier(MODID, "sluice_sand")]!!
+    SLIMY_BONE = materialRegistry[Identifier(MODID, "slimy_bone")]!!
+    SMOKEY_QUARTZ = materialRegistry[Identifier(MODID, "smokey_quartz")]!!
+    SOAPSTONE = materialRegistry[Identifier(MODID, "soapstone")]!!
+    SODALITE = materialRegistry[Identifier(MODID, "sodalite")]!!
+    SODIUM = materialRegistry[Identifier(MODID, "sodium")]!!
+    SODIUM_ALUMINATE = materialRegistry[Identifier(MODID, "sodium_aluminate")]!!
+    SNOW = materialRegistry[Identifier(MODID, "snow")]!!
+    SODIUM_BISULFATE = materialRegistry[Identifier(MODID, "sodium_bisulfate")]!!
+    SODIUM_BISULPHATE = materialRegistry[Identifier(MODID, "sodium_bisulphate")]!!
+    SODIUM_CARBONATE = materialRegistry[Identifier(MODID, "sodium_carbonate")]!!
+    SMITHSONITE = materialRegistry[Identifier(MODID, "smithsonite")]!!
+    SODIUM_HYDROGEN_SULFATE = materialRegistry[Identifier(MODID, "sodium_hydrogen_sulfate")]!!
+    SODIUM_HYDROGEN_SULPHATE = materialRegistry[Identifier(MODID, "sodium_hydrogen_sulphate")]!!
+    SODIUM_HYDROXIDE = materialRegistry[Identifier(MODID, "sodium_hydroxide")]!!
+    SODIUM_PEROXIDE = materialRegistry[Identifier(MODID, "sodium_peroxide")]!!
+    SODIUM_NITRATE = materialRegistry[Identifier(MODID, "sodium_nitrate")]!!
+    SODIUM_PERSULPHATE = materialRegistry[Identifier(MODID, "sodium_persulphate")]!!
+    SODIUM_PERSULFATE = materialRegistry[Identifier(MODID, "sodium_persulfate")]!!
+    SODIUM_PYROSULPHATE = materialRegistry[Identifier(MODID, "sodium_pyrosulphate")]!!
+    SODIUM_PYROSULFATE = materialRegistry[Identifier(MODID, "sodium_pyrosulfate")]!!
+    SODIUM_SULFATE = materialRegistry[Identifier(MODID, "sodium_sulfate")]!!
+    SODIUM_SULFIDE = materialRegistry[Identifier(MODID, "sodium_sulfide")]!!
+    SODIUM_SULPHATE = materialRegistry[Identifier(MODID, "sodium_sulphate")]!!
+    SODIUM_SULFITE = materialRegistry[Identifier(MODID, "sodium_sulfite")]!!
+    SODIUM_SULPHIDE = materialRegistry[Identifier(MODID, "sodium_sulphide")]!!
+    SOLDERING_ALLOY = materialRegistry[Identifier(MODID, "soldering_alloy")]!!
+    SODIUM_SULPHITE = materialRegistry[Identifier(MODID, "sodium_sulphite")]!!
+    SOLUTION_BLUE_VITRIOL = materialRegistry[Identifier(MODID, "solution_blue_vitriol")]!!
+    SOLUTION_NICKEL_SULFATE = materialRegistry[Identifier(MODID, "solution_nickel_sulfate")]!!
+    SOLUTION_NICKEL_SULPHATE = materialRegistry[Identifier(MODID, "solution_nickel_sulphate")]!!
+    SOULARIUM = materialRegistry[Identifier(MODID, "soularium")]!!
+    SOULIUM = materialRegistry[Identifier(MODID, "soulium")]!!
+    SOULSAND = materialRegistry[Identifier(MODID, "soulsand")]!!
+    SOYLENT_GREEN = materialRegistry[Identifier(MODID, "soylent_green")]!!
+    SPACE_STONE = materialRegistry[Identifier(MODID, "space_stone")]!!
+    SPECTRE_IRON = materialRegistry[Identifier(MODID, "spectre_iron")]!!
+    SPERRYLITE = materialRegistry[Identifier(MODID, "sperrylite")]!!
+    SPESSARTINE = materialRegistry[Identifier(MODID, "spessartine")]!!
+    SPHALERITE = materialRegistry[Identifier(MODID, "sphalerite")]!!
+    SPINEL = materialRegistry[Identifier(MODID, "spinel")]!!
+    SPODUMENE = materialRegistry[Identifier(MODID, "spodumene")]!!
+    STAINLESS_STEEL = materialRegistry[Identifier(MODID, "stainless_steel")]!!
+    STANNIC_CHLORIDE = materialRegistry[Identifier(MODID, "stannic_chloride")]!!
+    STANNITE = materialRegistry[Identifier(MODID, "stannite")]!!
+    STEEL = materialRegistry[Identifier(MODID, "steel")]!!
+    STARCONIUM = materialRegistry[Identifier(MODID, "starconium")]!!
+    STEEL_MAGNETIC = materialRegistry[Identifier(MODID, "steel_magnetic")]!!
+    STEEL_GALVANIZED = materialRegistry[Identifier(MODID, "steel_galvanized")]!!
+    STERLING_SILVER = materialRegistry[Identifier(MODID, "sterling_silver")]!!
+    STIBNITE = materialRegistry[Identifier(MODID, "stibnite")]!!
+    STOLZITE = materialRegistry[Identifier(MODID, "stolzite")]!!
+    STEELEAF = materialRegistry[Identifier(MODID, "steeleaf")]!!
+    STONE = materialRegistry[Identifier(MODID, "stone")]!!
+    STRENGTHENED_TERRASTEEL_ALLOY = materialRegistry[Identifier(MODID, "strengthened_terrasteel_alloy")]!!
+    SUGAR = materialRegistry[Identifier(MODID, "sugar")]!!
+    STRONTIUM = materialRegistry[Identifier(MODID, "strontium")]!!
+    SUGILITE = materialRegistry[Identifier(MODID, "sugilite")]!!
+    SULFUR = materialRegistry[Identifier(MODID, "sulfur")]!!
+    SULFUR_DIOXIDE = materialRegistry[Identifier(MODID, "sulfur_dioxide")]!!
+    SULFURIC_ACID = materialRegistry[Identifier(MODID, "sulfuric_acid")]!!
+    SULFUR_TRIOXIDE = materialRegistry[Identifier(MODID, "sulfur_trioxide")]!!
+    SULPHURIC_ACID = materialRegistry[Identifier(MODID, "sulphuric_acid")]!!
+    SULPHUR = materialRegistry[Identifier(MODID, "sulphur")]!!
+    SULPHUR_DIOXIDE = materialRegistry[Identifier(MODID, "sulphur_dioxide")]!!
+    SULPHUR_TRIOXIDE = materialRegistry[Identifier(MODID, "sulphur_trioxide")]!!
+    SUNFLOWER_OIL = materialRegistry[Identifier(MODID, "sunflower_oil")]!!
+    SUNNARIUM = materialRegistry[Identifier(MODID, "sunnarium")]!!
+    SUNNY_QUARTZ = materialRegistry[Identifier(MODID, "sunny_quartz")]!!
+    SUNSTONE = materialRegistry[Identifier(MODID, "sunstone")]!!
+    SUPERCONDUCTOR = materialRegistry[Identifier(MODID, "superconductor")]!!
+    SWEET = materialRegistry[Identifier(MODID, "sweet")]!!
+    SYLVITE = materialRegistry[Identifier(MODID, "sylvite")]!!
+    TALC = materialRegistry[Identifier(MODID, "talc")]!!
+    SYRMORITE = materialRegistry[Identifier(MODID, "syrmorite")]!!
+    TALLOW = materialRegistry[Identifier(MODID, "tallow")]!!
+    TANTALUM = materialRegistry[Identifier(MODID, "tantalum")]!!
+    TANTALITE = materialRegistry[Identifier(MODID, "tantalite")]!!
+    TAPAZITE = materialRegistry[Identifier(MODID, "tapazite")]!!
+    TANZANITE = materialRegistry[Identifier(MODID, "tanzanite")]!!
+    TAR = materialRegistry[Identifier(MODID, "tar")]!!
+    TAR_PITCH = materialRegistry[Identifier(MODID, "tar_pitch")]!!
+    TARTARITE = materialRegistry[Identifier(MODID, "tartarite")]!!
+    TEA = materialRegistry[Identifier(MODID, "tea")]!!
+    TECHNETIUM = materialRegistry[Identifier(MODID, "technetium")]!!
+    TELLURIUM = materialRegistry[Identifier(MODID, "tellurium")]!!
+    TENNANTITE = materialRegistry[Identifier(MODID, "tennantite")]!!
+    TENNESSINE = materialRegistry[Identifier(MODID, "tennessine")]!!
+    TERBIUM = materialRegistry[Identifier(MODID, "terbium")]!!
+    TERRASTEEL = materialRegistry[Identifier(MODID, "terrasteel")]!!
+    TERRASTEEL_ALLOY_RAW = materialRegistry[Identifier(MODID, "terrasteel_alloy_raw")]!!
+    TERRASTEEL_ALLOY_STRENGTHENED = materialRegistry[Identifier(MODID, "terrasteel_alloy_strengthened")]!!
+    TESLATINE_ALLOY = materialRegistry[Identifier(MODID, "teslatine_alloy")]!!
+    THALLIUM = materialRegistry[Identifier(MODID, "thallium")]!!
+    TESLATITE = materialRegistry[Identifier(MODID, "teslatite")]!!
+    THAUMIUM = materialRegistry[Identifier(MODID, "thaumium")]!!
+    THORIUM = materialRegistry[Identifier(MODID, "thorium")]!!
+    THYRIUM = materialRegistry[Identifier(MODID, "thyrium")]!!
+    THULIUM = materialRegistry[Identifier(MODID, "thulium")]!!
+    TIN_ALLOY = materialRegistry[Identifier(MODID, "tin_alloy")]!!
+    TIN = materialRegistry[Identifier(MODID, "tin")]!!
+    TITAN = materialRegistry[Identifier(MODID, "titan")]!!
+    TITANIUM_ALUMINIDE = materialRegistry[Identifier(MODID, "titanium_aluminide")]!!
+    TITANIUM = materialRegistry[Identifier(MODID, "titanium")]!!
+    TITANIUM_GOLD = materialRegistry[Identifier(MODID, "titanium_gold")]!!
+    TETRAHEDRITE = materialRegistry[Identifier(MODID, "tetrahedrite")]!!
+    TITANIUM_TETRACHLORIDE = materialRegistry[Identifier(MODID, "titanium_tetrachloride")]!!
+    TITANIUM_IRIDIUM = materialRegistry[Identifier(MODID, "titanium_iridium")]!!
+    TITANIUM_IRON = materialRegistry[Identifier(MODID, "titanium_iron")]!!
+    TOFU = materialRegistry[Identifier(MODID, "tofu")]!!
+    TOPAZ = materialRegistry[Identifier(MODID, "topaz")]!!
+    TOURMALINE = materialRegistry[Identifier(MODID, "tourmaline")]!!
+    TRIBIBIUM = materialRegistry[Identifier(MODID, "tribibium")]!!
+    TRIBIENNIUM = materialRegistry[Identifier(MODID, "tribiennium")]!!
+    TRIBIHEXIUM = materialRegistry[Identifier(MODID, "tribihexium")]!!
+    TRIBINILIUM = materialRegistry[Identifier(MODID, "tribinilium")]!!
+    TRIBIOCTIUM = materialRegistry[Identifier(MODID, "tribioctium")]!!
+    TRIBIPENTIUM = materialRegistry[Identifier(MODID, "tribipentium")]!!
+    TRIBIQUADIUM = materialRegistry[Identifier(MODID, "tribiquadium")]!!
+    TRIBISEPTIUM = materialRegistry[Identifier(MODID, "tribiseptium")]!!
+    TRIENNBIUM = materialRegistry[Identifier(MODID, "triennbium")]!!
+    TRIBITRIUM = materialRegistry[Identifier(MODID, "tribitrium")]!!
+    TRIENNENNIUM = materialRegistry[Identifier(MODID, "triennennium")]!!
+    TRIBIUNIUM = materialRegistry[Identifier(MODID, "tribiunium")]!!
+    TRIENNHEXIUM = materialRegistry[Identifier(MODID, "triennhexium")]!!
+    TRIENNOCTIUM = materialRegistry[Identifier(MODID, "triennoctium")]!!
+    TRIENNNILIUM = materialRegistry[Identifier(MODID, "triennnilium")]!!
+    TRIENNQUADIUM = materialRegistry[Identifier(MODID, "triennquadium")]!!
+    TRIENNPENTIUM = materialRegistry[Identifier(MODID, "triennpentium")]!!
+    TRIENNSEPTIUM = materialRegistry[Identifier(MODID, "triennseptium")]!!
+    TRIENNTRIUM = materialRegistry[Identifier(MODID, "trienntrium")]!!
+    TRIENNUNIUM = materialRegistry[Identifier(MODID, "triennunium")]!!
+    TRIHEXBIUM = materialRegistry[Identifier(MODID, "trihexbium")]!!
+    TRIHEXENNIUM = materialRegistry[Identifier(MODID, "trihexennium")]!!
+    TRIHEXHEXIUM = materialRegistry[Identifier(MODID, "trihexhexium")]!!
+    TRIHEXNILIUM = materialRegistry[Identifier(MODID, "trihexnilium")]!!
+    TRIHEXPENTIUM = materialRegistry[Identifier(MODID, "trihexpentium")]!!
+    TRIHEXOCTIUM = materialRegistry[Identifier(MODID, "trihexoctium")]!!
+    TRIHEXQUADIUM = materialRegistry[Identifier(MODID, "trihexquadium")]!!
+    TRIHEXSEPTIUM = materialRegistry[Identifier(MODID, "trihexseptium")]!!
+    TRIHEXUNIUM = materialRegistry[Identifier(MODID, "trihexunium")]!!
+    TRIHEXTRIUM = materialRegistry[Identifier(MODID, "trihextrium")]!!
+    TRINAQUADALLOY = materialRegistry[Identifier(MODID, "trinaquadalloy")]!!
+    TRINILENNIUM = materialRegistry[Identifier(MODID, "trinilennium")]!!
+    TRINILBIUM = materialRegistry[Identifier(MODID, "trinilbium")]!!
+    TRINILNILIUM = materialRegistry[Identifier(MODID, "trinilnilium")]!!
+    TRINILHEXIUM = materialRegistry[Identifier(MODID, "trinilhexium")]!!
+    TRINILOCTIUM = materialRegistry[Identifier(MODID, "triniloctium")]!!
+    TRINILPENTIUM = materialRegistry[Identifier(MODID, "trinilpentium")]!!
+    TRINILQUADIUM = materialRegistry[Identifier(MODID, "trinilquadium")]!!
+    TRINILSEPTIUM = materialRegistry[Identifier(MODID, "trinilseptium")]!!
+    TRINILTRIUM = materialRegistry[Identifier(MODID, "triniltrium")]!!
+    TRINILUNIUM = materialRegistry[Identifier(MODID, "trinilunium")]!!
+    TRINITANIUM = materialRegistry[Identifier(MODID, "trinitanium")]!!
+    TRINIUM = materialRegistry[Identifier(MODID, "trinium")]!!
+    TRIOCTBIUM = materialRegistry[Identifier(MODID, "trioctbium")]!!
+    TRIOCTENNIUM = materialRegistry[Identifier(MODID, "trioctennium")]!!
+    TRIOCTHEXIUM = materialRegistry[Identifier(MODID, "triocthexium")]!!
+    TRIOCTNILIUM = materialRegistry[Identifier(MODID, "trioctnilium")]!!
+    TRIOCTPENTIUM = materialRegistry[Identifier(MODID, "trioctpentium")]!!
+    TRIOCTOCTIUM = materialRegistry[Identifier(MODID, "trioctoctium")]!!
+    TRIOCTQUADIUM = materialRegistry[Identifier(MODID, "trioctquadium")]!!
+    TRIOCTTRIUM = materialRegistry[Identifier(MODID, "triocttrium")]!!
+    TRIOCTSEPTIUM = materialRegistry[Identifier(MODID, "trioctseptium")]!!
+    TRIOCTUNIUM = materialRegistry[Identifier(MODID, "trioctunium")]!!
+    TRIPENTBIUM = materialRegistry[Identifier(MODID, "tripentbium")]!!
+    TRIPENTENNIUM = materialRegistry[Identifier(MODID, "tripentennium")]!!
+    TRIPENTHEXIUM = materialRegistry[Identifier(MODID, "tripenthexium")]!!
+    TRIPENTOCTIUM = materialRegistry[Identifier(MODID, "tripentoctium")]!!
+    TRIPENTNILIUM = materialRegistry[Identifier(MODID, "tripentnilium")]!!
+    TRIPENTPENTIUM = materialRegistry[Identifier(MODID, "tripentpentium")]!!
+    TRIPENTQUADIUM = materialRegistry[Identifier(MODID, "tripentquadium")]!!
+    TRIPENTSEPTIUM = materialRegistry[Identifier(MODID, "tripentseptium")]!!
+    TRIPENTTRIUM = materialRegistry[Identifier(MODID, "tripenttrium")]!!
+    TRIPENTUNIUM = materialRegistry[Identifier(MODID, "tripentunium")]!!
+    TRIQUADENNIUM = materialRegistry[Identifier(MODID, "triquadennium")]!!
+    TRIQUADBIUM = materialRegistry[Identifier(MODID, "triquadbium")]!!
+    TRIQUADHEXIUM = materialRegistry[Identifier(MODID, "triquadhexium")]!!
+    TRIQUADNILIUM = materialRegistry[Identifier(MODID, "triquadnilium")]!!
+    TRIQUADOCTIUM = materialRegistry[Identifier(MODID, "triquadoctium")]!!
+    TRIQUADPENTIUM = materialRegistry[Identifier(MODID, "triquadpentium")]!!
+    TRIQUADQUADIUM = materialRegistry[Identifier(MODID, "triquadquadium")]!!
+    TRIQUADTRIUM = materialRegistry[Identifier(MODID, "triquadtrium")]!!
+    TRIQUADSEPTIUM = materialRegistry[Identifier(MODID, "triquadseptium")]!!
+    TRIQUADUNIUM = materialRegistry[Identifier(MODID, "triquadunium")]!!
+    TRISEPTBIUM = materialRegistry[Identifier(MODID, "triseptbium")]!!
+    TRISEPTHEXIUM = materialRegistry[Identifier(MODID, "trisepthexium")]!!
+    TRISEPTENNIUM = materialRegistry[Identifier(MODID, "triseptennium")]!!
+    TRISEPTNILIUM = materialRegistry[Identifier(MODID, "triseptnilium")]!!
+    TRISEPTPENTIUM = materialRegistry[Identifier(MODID, "triseptpentium")]!!
+    TRISEPTOCTIUM = materialRegistry[Identifier(MODID, "triseptoctium")]!!
+    TRISEPTSEPTIUM = materialRegistry[Identifier(MODID, "triseptseptium")]!!
+    TRISEPTQUADIUM = materialRegistry[Identifier(MODID, "triseptquadium")]!!
+    TRISEPTUNIUM = materialRegistry[Identifier(MODID, "triseptunium")]!!
+    TRISEPTTRIUM = materialRegistry[Identifier(MODID, "trisepttrium")]!!
+    TRITANIUM_DIOXIDE = materialRegistry[Identifier(MODID, "tritanium_dioxide")]!!
+    TRITANIUM = materialRegistry[Identifier(MODID, "tritanium")]!!
+    TRITANIUM_ELEMENTAL = materialRegistry[Identifier(MODID, "tritanium_elemental")]!!
+    TRITANIUM_HEXAASTATIDE = materialRegistry[Identifier(MODID, "tritanium_hexaastatide")]!!
+    TRITANIUM_HEXABROMIDE = materialRegistry[Identifier(MODID, "tritanium_hexabromide")]!!
+    TRITANIUM_HEXAFLUORIDE = materialRegistry[Identifier(MODID, "tritanium_hexafluoride")]!!
+    TRITANIUM_HEXACHLORIDE = materialRegistry[Identifier(MODID, "tritanium_hexachloride")]!!
+    TRITANIUM_HEXAIODIDE = materialRegistry[Identifier(MODID, "tritanium_hexaiodide")]!!
+    TRITRIBIUM = materialRegistry[Identifier(MODID, "tritribium")]!!
+    TRITIUM = materialRegistry[Identifier(MODID, "tritium")]!!
+    TRITRIENNIUM = materialRegistry[Identifier(MODID, "tritriennium")]!!
+    TRITRIHEXIUM = materialRegistry[Identifier(MODID, "tritrihexium")]!!
+    TRITRIOCTIUM = materialRegistry[Identifier(MODID, "tritrioctium")]!!
+    TRITRINILIUM = materialRegistry[Identifier(MODID, "tritrinilium")]!!
+    TRITRIPENTIUM = materialRegistry[Identifier(MODID, "tritripentium")]!!
+    TRITRIQUADIUM = materialRegistry[Identifier(MODID, "tritriquadium")]!!
+    TRITRISEPTIUM = materialRegistry[Identifier(MODID, "tritriseptium")]!!
+    TRITRITRIUM = materialRegistry[Identifier(MODID, "tritritrium")]!!
+    TRITRIUNIUM = materialRegistry[Identifier(MODID, "tritriunium")]!!
+    TRIUNBIUM = materialRegistry[Identifier(MODID, "triunbium")]!!
+    TRIUNENNIUM = materialRegistry[Identifier(MODID, "triunennium")]!!
+    TRIUNHEXIUM = materialRegistry[Identifier(MODID, "triunhexium")]!!
+    TRIUNOCTIUM = materialRegistry[Identifier(MODID, "triunoctium")]!!
+    TRIUNNILIUM = materialRegistry[Identifier(MODID, "triunnilium")]!!
+    TRIUNPENTIUM = materialRegistry[Identifier(MODID, "triunpentium")]!!
+    TRIUNQUADIUM = materialRegistry[Identifier(MODID, "triunquadium")]!!
+    TRIUNTRIUM = materialRegistry[Identifier(MODID, "triuntrium")]!!
+    TRIUNSEPTIUM = materialRegistry[Identifier(MODID, "triunseptium")]!!
+    TUMBAGA = materialRegistry[Identifier(MODID, "tumbaga")]!!
+    TRIUNUNIUM = materialRegistry[Identifier(MODID, "triununium")]!!
+    TRONA = materialRegistry[Identifier(MODID, "trona")]!!
+    TUNGSTEN = materialRegistry[Identifier(MODID, "tungsten")]!!
+    TUNGSTATE = materialRegistry[Identifier(MODID, "tungstate")]!!
+    TUNGSTEN_CARBIDE = materialRegistry[Identifier(MODID, "tungsten_carbide")]!!
+    TUNGSTEN_OXIDE = materialRegistry[Identifier(MODID, "tungsten_oxide")]!!
+    TUNGSTEN_TRIOXIDE = materialRegistry[Identifier(MODID, "tungsten_trioxide")]!!
+    TUNGSTEN_SINTERED = materialRegistry[Identifier(MODID, "tungsten_sintered")]!!
+    TUNGSTENSTEEL = materialRegistry[Identifier(MODID, "tungstensteel")]!!
+    TUNGSTIC_ACID = materialRegistry[Identifier(MODID, "tungstic_acid")]!!
+    TURQUOISE = materialRegistry[Identifier(MODID, "turquoise")]!!
+    T_N_T = materialRegistry[Identifier(MODID, "t_n_t")]!!
+    ULTIMATE = materialRegistry[Identifier(MODID, "ultimate")]!!
+    ULTIMET = materialRegistry[Identifier(MODID, "ultimet")]!!
+    UNBIBIUM = materialRegistry[Identifier(MODID, "unbibium")]!!
+    UNBIENNIUM = materialRegistry[Identifier(MODID, "unbiennium")]!!
+    UNBIHEXIUM = materialRegistry[Identifier(MODID, "unbihexium")]!!
+    UMBER = materialRegistry[Identifier(MODID, "umber")]!!
+    UNBIOCTIUM = materialRegistry[Identifier(MODID, "unbioctium")]!!
+    UNBINILIUM = materialRegistry[Identifier(MODID, "unbinilium")]!!
+    UNBIQUADIUM = materialRegistry[Identifier(MODID, "unbiquadium")]!!
+    UNBISEPTIUM = materialRegistry[Identifier(MODID, "unbiseptium")]!!
+    UNBITRIUM = materialRegistry[Identifier(MODID, "unbitrium")]!!
+    UNENNHEXIUM = materialRegistry[Identifier(MODID, "unennhexium")]!!
+    UNENNENNIUM = materialRegistry[Identifier(MODID, "unennennium")]!!
+    UNENNBIUM = materialRegistry[Identifier(MODID, "unennbium")]!!
+    UNENNNILIUM = materialRegistry[Identifier(MODID, "unennnilium")]!!
+    UNBIUNIUM = materialRegistry[Identifier(MODID, "unbiunium")]!!
+    UNENNPENTIUM = materialRegistry[Identifier(MODID, "unennpentium")]!!
+    UNENNOCTIUM = materialRegistry[Identifier(MODID, "unennoctium")]!!
+    UNENNQUADIUM = materialRegistry[Identifier(MODID, "unennquadium")]!!
+    UNENNTRIUM = materialRegistry[Identifier(MODID, "unenntrium")]!!
+    UNENNSEPTIUM = materialRegistry[Identifier(MODID, "unennseptium")]!!
+    UNENNUNIUM = materialRegistry[Identifier(MODID, "unennunium")]!!
+    UNHEXBIUM = materialRegistry[Identifier(MODID, "unhexbium")]!!
+    UNHEXENNIUM = materialRegistry[Identifier(MODID, "unhexennium")]!!
+    UNHEXHEXIUM = materialRegistry[Identifier(MODID, "unhexhexium")]!!
+    UNHEXNILIUM = materialRegistry[Identifier(MODID, "unhexnilium")]!!
+    UNHEXOCTIUM = materialRegistry[Identifier(MODID, "unhexoctium")]!!
+    UNHEXQUADIUM = materialRegistry[Identifier(MODID, "unhexquadium")]!!
+    UNHEXPENTIUM = materialRegistry[Identifier(MODID, "unhexpentium")]!!
+    UNHEXTRIUM = materialRegistry[Identifier(MODID, "unhextrium")]!!
+    UNKNOWN = materialRegistry[Identifier(MODID, "unknown")]!!
+    UNHEXUNIUM = materialRegistry[Identifier(MODID, "unhexunium")]!!
+    UNOCTBIUM = materialRegistry[Identifier(MODID, "unoctbium")]!!
+    UNOCTENNIUM = materialRegistry[Identifier(MODID, "unoctennium")]!!
+    UNOCTHEXIUM = materialRegistry[Identifier(MODID, "unocthexium")]!!
+    UNOCTNILIUM = materialRegistry[Identifier(MODID, "unoctnilium")]!!
+    UNOCTOCTIUM = materialRegistry[Identifier(MODID, "unoctoctium")]!!
+    UNOCTPENTIUM = materialRegistry[Identifier(MODID, "unoctpentium")]!!
+    UNOCTQUADIUM = materialRegistry[Identifier(MODID, "unoctquadium")]!!
+    UNOCTSEPTIUM = materialRegistry[Identifier(MODID, "unoctseptium")]!!
+    UNOCTTRIUM = materialRegistry[Identifier(MODID, "unocttrium")]!!
+    UNPENTBIUM = materialRegistry[Identifier(MODID, "unpentbium")]!!
+    UNOCTUNIUM = materialRegistry[Identifier(MODID, "unoctunium")]!!
+    UNPENTENNIUM = materialRegistry[Identifier(MODID, "unpentennium")]!!
+    UNPENTHEXIUM = materialRegistry[Identifier(MODID, "unpenthexium")]!!
+    UNPENTNILIUM = materialRegistry[Identifier(MODID, "unpentnilium")]!!
+    UNPENTPENTIUM = materialRegistry[Identifier(MODID, "unpentpentium")]!!
+    UNPENTQUADIUM = materialRegistry[Identifier(MODID, "unpentquadium")]!!
+    UNBIPENTIUM = materialRegistry[Identifier(MODID, "unbipentium")]!!
+    UNPENTOCTIUM = materialRegistry[Identifier(MODID, "unpentoctium")]!!
+    UNPENTSEPTIUM = materialRegistry[Identifier(MODID, "unpentseptium")]!!
+    UNPENTTRIUM = materialRegistry[Identifier(MODID, "unpenttrium")]!!
+    UNQUADBIUM = materialRegistry[Identifier(MODID, "unquadbium")]!!
+    UNPENTUNIUM = materialRegistry[Identifier(MODID, "unpentunium")]!!
+    UNQUADENNIUM = materialRegistry[Identifier(MODID, "unquadennium")]!!
+    UNQUADHEXIUM = materialRegistry[Identifier(MODID, "unquadhexium")]!!
+    UNQUADPENTIUM = materialRegistry[Identifier(MODID, "unquadpentium")]!!
+    UNQUADOCTIUM = materialRegistry[Identifier(MODID, "unquadoctium")]!!
+    UNQUADSEPTIUM = materialRegistry[Identifier(MODID, "unquadseptium")]!!
+    UNQUADQUADIUM = materialRegistry[Identifier(MODID, "unquadquadium")]!!
+    UNQUADTRIUM = materialRegistry[Identifier(MODID, "unquadtrium")]!!
+    UNSEPTBIUM = materialRegistry[Identifier(MODID, "unseptbium")]!!
+    UNQUADUNIUM = materialRegistry[Identifier(MODID, "unquadunium")]!!
+    UNSEPTENNIUM = materialRegistry[Identifier(MODID, "unseptennium")]!!
+    UNSEPTHEXIUM = materialRegistry[Identifier(MODID, "unsepthexium")]!!
+    UNQUADNILIUM = materialRegistry[Identifier(MODID, "unquadnilium")]!!
+    UNSEPTNILIUM = materialRegistry[Identifier(MODID, "unseptnilium")]!!
+    UNSEPTPENTIUM = materialRegistry[Identifier(MODID, "unseptpentium")]!!
+    UNSEPTOCTIUM = materialRegistry[Identifier(MODID, "unseptoctium")]!!
+    UNSEPTQUADIUM = materialRegistry[Identifier(MODID, "unseptquadium")]!!
+    UNSEPTSEPTIUM = materialRegistry[Identifier(MODID, "unseptseptium")]!!
+    UNSEPTTRIUM = materialRegistry[Identifier(MODID, "unsepttrium")]!!
+    UNSEPTUNIUM = materialRegistry[Identifier(MODID, "unseptunium")]!!
+    UNSTABLE = materialRegistry[Identifier(MODID, "unstable")]!!
+    UNSTABLEINGOT = materialRegistry[Identifier(MODID, "unstableingot")]!!
+    UNTRIBIUM = materialRegistry[Identifier(MODID, "untribium")]!!
+    UNTRIENNIUM = materialRegistry[Identifier(MODID, "untriennium")]!!
+    UNTRIHEXIUM = materialRegistry[Identifier(MODID, "untrihexium")]!!
+    UNTRIOCTIUM = materialRegistry[Identifier(MODID, "untrioctium")]!!
+    UNTRINILIUM = materialRegistry[Identifier(MODID, "untrinilium")]!!
+    UNTRIPENTIUM = materialRegistry[Identifier(MODID, "untripentium")]!!
+    UNTRIQUADIUM = materialRegistry[Identifier(MODID, "untriquadium")]!!
+    UNTRISEPTIUM = materialRegistry[Identifier(MODID, "untriseptium")]!!
+    UNTRIUNIUM = materialRegistry[Identifier(MODID, "untriunium")]!!
+    UNTRITRIUM = materialRegistry[Identifier(MODID, "untritrium")]!!
+    UNUNENNIUM = materialRegistry[Identifier(MODID, "ununennium")]!!
+    UNHEXSEPTIUM = materialRegistry[Identifier(MODID, "unhexseptium")]!!
+    URANINITE = materialRegistry[Identifier(MODID, "uraninite")]!!
+    URAN = materialRegistry[Identifier(MODID, "uran")]!!
+    URANIUM = materialRegistry[Identifier(MODID, "uranium")]!!
+    URANIUM235 = materialRegistry[Identifier(MODID, "uranium235")]!!
+    URANIUM_ENRICHED = materialRegistry[Identifier(MODID, "uranium_enriched")]!!
+    UVAROVITE = materialRegistry[Identifier(MODID, "uvarovite")]!!
+    URANIUM238 = materialRegistry[Identifier(MODID, "uranium238")]!!
+    U_U_MATTER = materialRegistry[Identifier(MODID, "u_u_matter")]!!
+    U_U_AMPLIFIER = materialRegistry[Identifier(MODID, "u_u_amplifier")]!!
+    VALERITE = materialRegistry[Identifier(MODID, "valerite")]!!
+    VALONITE = materialRegistry[Identifier(MODID, "valonite")]!!
+    VANADIUM = materialRegistry[Identifier(MODID, "vanadium")]!!
+    VANADIUM_GALLIUM = materialRegistry[Identifier(MODID, "vanadium_gallium")]!!
+    VANADIUM_MAGNETITE = materialRegistry[Identifier(MODID, "vanadium_magnetite")]!!
+    VANADIUM_PENTOXIDE = materialRegistry[Identifier(MODID, "vanadium_pentoxide")]!!
+    VANILLA = materialRegistry[Identifier(MODID, "vanilla")]!!
+    VANADIUM_STEEL = materialRegistry[Identifier(MODID, "vanadium_steel")]!!
+    VERMICULITE = materialRegistry[Identifier(MODID, "vermiculite")]!!
+    VIBRAMANTIUM = materialRegistry[Identifier(MODID, "vibramantium")]!!
+    VIBRANIUM = materialRegistry[Identifier(MODID, "vibranium")]!!
+    VIBRANIUM_SILVER = materialRegistry[Identifier(MODID, "vibranium_silver")]!!
+    VIBRANT_ALLOY = materialRegistry[Identifier(MODID, "vibrant_alloy")]!!
+    VIBRANIUM_STEEL = materialRegistry[Identifier(MODID, "vibranium_steel")]!!
+    VILE = materialRegistry[Identifier(MODID, "vile")]!!
+    VINTEUM_PURIFIED = materialRegistry[Identifier(MODID, "vinteum_purified")]!!
+    VINTEUM = materialRegistry[Identifier(MODID, "vinteum")]!!
+    VIS = materialRegistry[Identifier(MODID, "vis")]!!
+    VITRIOL_OF_CLAY = materialRegistry[Identifier(MODID, "vitriol_of_clay")]!!
+    VOIDSTONE = materialRegistry[Identifier(MODID, "voidstone")]!!
+    VOID_CRYSTAL = materialRegistry[Identifier(MODID, "void_crystal")]!!
+    VOID = materialRegistry[Identifier(MODID, "void")]!!
+    VOID_METAL = materialRegistry[Identifier(MODID, "void_metal")]!!
+    VOLCANIC_ASH = materialRegistry[Identifier(MODID, "volcanic_ash")]!!
+    VOLCANIC_ASHES = materialRegistry[Identifier(MODID, "volcanic_ashes")]!!
+    VULCANITE = materialRegistry[Identifier(MODID, "vulcanite")]!!
+    VYROXERES = materialRegistry[Identifier(MODID, "vyroxeres")]!!
+    WATER_DISTILLED = materialRegistry[Identifier(MODID, "water_distilled")]!!
+    WATER = materialRegistry[Identifier(MODID, "water")]!!
+    WAX_AMNESIC = materialRegistry[Identifier(MODID, "wax_amnesic")]!!
+    WATER_DIRTY = materialRegistry[Identifier(MODID, "water_dirty")]!!
+    WAX_BEE = materialRegistry[Identifier(MODID, "wax_bee")]!!
+    WAX = materialRegistry[Identifier(MODID, "wax")]!!
+    WAX_PLANT = materialRegistry[Identifier(MODID, "wax_plant")]!!
+    WAX_PARAFFIN = materialRegistry[Identifier(MODID, "wax_paraffin")]!!
+    WAX_REFRACTORY = materialRegistry[Identifier(MODID, "wax_refractory")]!!
+    WAX_SOULFUL = materialRegistry[Identifier(MODID, "wax_soulful")]!!
+    WHEAT = materialRegistry[Identifier(MODID, "wheat")]!!
+    WEEDWOOD = materialRegistry[Identifier(MODID, "weedwood")]!!
+    WHITE = materialRegistry[Identifier(MODID, "white")]!!
+    WIMALITE = materialRegistry[Identifier(MODID, "wimalite")]!!
+    WITHERIA = materialRegistry[Identifier(MODID, "witheria")]!!
+    WOLFRAM = materialRegistry[Identifier(MODID, "wolfram")]!!
+    WOLFRAMITE = materialRegistry[Identifier(MODID, "wolframite")]!!
+    WOLFRAMIUM = materialRegistry[Identifier(MODID, "wolframium")]!!
+    WOLFRAM_STEEL = materialRegistry[Identifier(MODID, "wolfram_steel")]!!
+    WHITE_VITRIOL = materialRegistry[Identifier(MODID, "white_vitriol")]!!
+    WOLFRAM_CARBIDE = materialRegistry[Identifier(MODID, "wolfram_carbide")]!!
+    WAX_MAGIC = materialRegistry[Identifier(MODID, "wax_magic")]!!
+    WOLLASTONITE = materialRegistry[Identifier(MODID, "wollastonite")]!!
+    WOOD_POLISHED = materialRegistry[Identifier(MODID, "wood_polished")]!!
+    WOOD = materialRegistry[Identifier(MODID, "wood")]!!
+    WOOD_RUBBER = materialRegistry[Identifier(MODID, "wood_rubber")]!!
+    WOOD_SEALED = materialRegistry[Identifier(MODID, "wood_sealed")]!!
+    WROUGHT_IRON = materialRegistry[Identifier(MODID, "wrought_iron")]!!
+    WULFENITE = materialRegistry[Identifier(MODID, "wulfenite")]!!
+    WROUGT_IRON = materialRegistry[Identifier(MODID, "wrougt_iron")]!!
+    XENON = materialRegistry[Identifier(MODID, "xenon")]!!
+    YELLORIUM = materialRegistry[Identifier(MODID, "yellorium")]!!
+    YELLORITE = materialRegistry[Identifier(MODID, "yellorite")]!!
+    YELLOW = materialRegistry[Identifier(MODID, "yellow")]!!
+    YTTERBIUM = materialRegistry[Identifier(MODID, "ytterbium")]!!
+    YELLOW_LIMONITE = materialRegistry[Identifier(MODID, "yellow_limonite")]!!
+    YTTRIUM = materialRegistry[Identifier(MODID, "yttrium")]!!
+    YTTRIUM_BARIUM_CUPRATE = materialRegistry[Identifier(MODID, "yttrium_barium_cuprate")]!!
+    YELLOW_SAPPHIRE = materialRegistry[Identifier(MODID, "yellow_sapphire")]!!
+    ZANITE = materialRegistry[Identifier(MODID, "zanite")]!!
+    ZEOLITE = materialRegistry[Identifier(MODID, "zeolite")]!!
+    ZINC = materialRegistry[Identifier(MODID, "zinc")]!!
+    ZECTIUM = materialRegistry[Identifier(MODID, "zectium")]!!
+    ZIRCON = materialRegistry[Identifier(MODID, "zircon")]!!
+    ZIRCONIUM = materialRegistry[Identifier(MODID, "zirconium")]!!
+}

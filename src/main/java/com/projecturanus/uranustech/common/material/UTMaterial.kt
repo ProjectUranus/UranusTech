@@ -48,8 +48,9 @@ data class MaterialComponent(val stacks: Array<JsonMaterialStack>, val dividedSt
 open class JsonMaterial(var name: String, val tags: List<String>,
                         @SerializedName("textureSet")
                    var textureSetInternal: String,
+                        val burnTime: Int,
                         @SerializedName("description")
-                        val descriptionInternal: Array<String>?,
+                        val descriptionInternal: Array<String>?, val byProducts: Array<String>?,
                         val handleMaterial: String, val hidden: Boolean,
                         val colorSolid: Int, val colorLiquid: Int, val colorGas: Int, val colorPlasma: Int,
                         val fullName: String, val tooltipChemical: String, val gramPerCubicCentimeter: Double, val oreMultiplier: Int,
@@ -94,10 +95,7 @@ val TOOL_FORMS = listOf(TOOL_HEAD_ARROW, TOOL_HEAD_AXE, TOOL_HEAD_AXE_DOUBLE, TO
         TOOL_HEAD_SENSE, TOOL_HEAD_SHOVEL, TOOL_HEAD_SPADE, TOOL_HEAD_SWORD, TOOL_HEAD_UNIVERSAL_SPADE, TOOL_HEAD_WRENCH)
 val GEM_FORMS = listOf(GEM, PLATE_GEM, NUGGET, STICK, DUST, LENS, PLATE_GEM_TINY)
 val PART_FORMS = listOf(ROUND, RING, BOLT, ROTOR, CART_WHEELS, SCREW)
-val STONE_FORMS = listOf(STONE,
-        SMALL_BRICKS, SMALL_TILES, SMOOTH,
-        BRICKS, BRICKS_CHISELED, BRICKS_CRACKED, BRICKS_MOSSY, BRICKS_REDSTONE, BRICKS_REINFORCED,
-        COBBLE, COBBLE_MOSSY, SQUARE_BRICKS, TILES, WINDMILL_TILES_A, WINDMILL_TILES_B)
+val STONE_FORMS = listOf(STONE, SMALL_BRICKS, SMALL_TILES, SMOOTH, BRICKS, BRICKS_CHISELED, BRICKS_CRACKED, BRICKS_MOSSY, BRICKS_REDSTONE, BRICKS_REINFORCED, COBBLE, COBBLE_MOSSY, SQUARE_BRICKS, TILES, WINDMILL_TILES_A, WINDMILL_TILES_B)
 
 class UTWildcardMaterial(identifier: Identifier, vararg submaterials: Material): SimpleMaterial(), WildcardMaterial {
     val knownSubmaterials = mutableListOf<Material>()

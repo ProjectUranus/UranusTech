@@ -11,6 +11,7 @@ import com.projecturanus.uranustech.common.material.MaterialContainer
 import com.projecturanus.uranustech.common.materialRegistry
 import com.projecturanus.uranustech.common.util.localizedName
 import net.minecraft.client.item.TooltipContext
+import net.minecraft.item.ItemGroup
 import net.minecraft.item.ItemStack
 import net.minecraft.item.ToolItem
 import net.minecraft.text.LiteralText
@@ -22,7 +23,7 @@ import net.minecraft.util.Identifier
 import net.minecraft.world.World
 
 open class UTToolItem(override val stack: MaterialStack, val handleStack: MaterialStack? = null, settings: Settings) : ToolItem(stack.material.getInfo<ToolInfo?>(TOOL_INFO), settings), MaterialContainer, Colorable by stack.material {
-    val toolInfo = stack.material.getInfo<ToolInfo>(TOOL_INFO)
+    val toolInfo: ToolInfo = stack.material.getInfo(TOOL_INFO)
     val tool = stack.form as? Tool
 
     override fun getName(itemStack: ItemStack?): TranslatableText {
@@ -36,15 +37,21 @@ open class UTToolItem(override val stack: MaterialStack, val handleStack: Materi
             list.add(LiteralText(stack.material.chemicalCompound).setStyle(Style().setColor(Formatting.GOLD)))
         if (tooltipContext.isAdvanced) {
             list.add(TranslatableText("item.$MODID.material.lore.2", stack.material.localizedName))
+            list.add(TranslatableText("item.$MODID.material.lore.durability", itemStack.maxDamage - itemStack.damage, itemStack.maxDamage))
             list.add(stack.displayName)
             if (stack.material is JsonMaterial && (stack.material as JsonMaterial).components != null) {
                 val jsonMaterial = stack.material as JsonMaterial
                 jsonMaterial.components!!.dividedStacks.map {
-                    MaterialStack(materialRegistry[Identifier(MODID, it.material)], stack.form, it.amount.toDouble()).displayName
+                    MaterialStack(materialRegistry[Identifier(MODID, it.material)], stack.form, it.amount).displayName
                 }.forEach { list.add(it) }
             }
         } else {
             list.add(TranslatableText("item.uranustech.lore.advanced").setStyle(Style().setColor(Formatting.DARK_GRAY)))
         }
+    }
+
+    override fun isIn(itemGroup: ItemGroup): Boolean {
+        val itemGroup2 = getGroup()
+        return itemGroup2 != null && (itemGroup === ItemGroup.SEARCH || itemGroup === itemGroup2) && !stack.material.isHidden
     }
 }

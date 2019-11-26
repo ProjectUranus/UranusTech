@@ -6,6 +6,7 @@
   "item.uranustech.lore.advanced": "按F3 + H显示详细信息",
   "item.uranustech.material.lore.1": "Form: %s",
   "item.uranustech.material.lore.2": "§3含有材料：",
+  "item.uranustech.material.lore.durability": "耐久: %d / %d",
   "item.uranustech.form": "%1$s%2$s",
 
   "form.uranustech.hammer": "锤",

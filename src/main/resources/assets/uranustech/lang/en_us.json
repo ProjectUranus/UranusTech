@@ -9,6 +9,8 @@
   "item.uranustech.lore.advanced": "Press F3+H to show detailed infos.",
   "item.uranustech.material.lore.1": "Form: %s",
   "item.uranustech.material.lore.2": "§3Contained Materials:",
+  "item.uranustech.material.lore.flammable": "§cFlammable!",
+  "item.uranustech.material.lore.durability": "Durability: %d / %d",
   "item.uranustech.form": "%1$s %2$s",
 
   "form.uranustech.hammer": "Hammer",

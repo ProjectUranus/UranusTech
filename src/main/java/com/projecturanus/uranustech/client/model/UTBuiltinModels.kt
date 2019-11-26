@@ -64,8 +64,8 @@ fun initModels() = runBlocking {
                     }
                 }
 
-                // Rock item
-                Rocks.values().forEach {
+                // Block item
+                materialRegistry.forEach {
                     STONE_FORMS.forEach { form ->
                         model(Identifier(MODID, "${it.identifier.path}_${form.getName()}_item")) {
                             parent = "$MODID:block/${it.identifier.path}_${form.getName()}"
@@ -139,7 +139,7 @@ fun initModels() = runBlocking {
                 }
 
                 // Rock block model
-                Rocks.values().forEach {
+                materialRegistry.forEach {
                     STONE_FORMS.forEach { form ->
                         model(Identifier(MODID, "${it.identifier.path}_${form.getName()}")) {
                             parent = "block/cube_all"
@@ -219,7 +219,7 @@ private fun loadCustomModel(resourceId: Identifier, context: ModelProviderContex
     if (resourceId.namespace != MODID)
         return null
     // TODO Unifying iconset finding
-    val form = formRegistry.asSequence().find { resourceId.path.endsWith(it.name) }
+    val form = formRegistry.asSequence().findLast { resourceId.path.endsWith(it.name) }
     if (form != null) {
         if (form in STONE_FORMS) {
             if (resourceId is ModelIdentifier && resourceId.variant == "inventory") {
@@ -228,12 +228,12 @@ private fun loadCustomModel(resourceId: Identifier, context: ModelProviderContex
             return modelCache[Identifier(resourceId.namespace, resourceId.path.removePrefix("block/"))]
         } else if (form.generateType == GenerateTypes.TOOL) {
             val tool = form as Tool
-            val material = materialRegistry[Identifier(MODID, resourceId.path.removePrefix("item/").removeSuffix("_${tool.getName()}"))]
+            val material = materialRegistry[Identifier(MODID, resourceId.path.removePrefix("item/").removeSuffix("_${tool.name}"))]
             if (material is JsonMaterial) {
                 val toolInfo = material[Constants.TOOL_INFO, ToolInfo::class.java]
                 return if (tool.hasHandleMaterial())
-                    modelCache[Identifier(MODID, "${material.textureSet.toLowerCase()}/${toolInfo?.handleMaterial?.textureSet?.toLowerCase() ?: "none"}/${tool.getName()}")]
-                else modelCache[Identifier(MODID, "${material.textureSet.toLowerCase()}/${tool.getName()}")]
+                    modelCache[Identifier(MODID, "${material.textureSet.toLowerCase()}/${toolInfo?.handleMaterial?.textureSet?.toLowerCase() ?: "none"}/${tool.name}")]
+                else modelCache[Identifier(MODID, "${material.textureSet.toLowerCase()}/${tool.name}")]
             }
         } else {
             val material = materialRegistry[Identifier(MODID, resourceId.path.removePrefix("item/").removeSuffix("_${form.name}"))]

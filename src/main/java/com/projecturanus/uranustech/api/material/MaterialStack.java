@@ -17,11 +17,11 @@ import static com.projecturanus.uranustech.api.material.Constants.U;
 public class MaterialStack implements Cloneable, Nameable {
     private Material material;
     private Form form;
-    private double amount;
+    private long amount;
     private double temperature;
     private Text customName;
 
-    public MaterialStack(Material material, double amount) {
+    public MaterialStack(Material material, long amount) {
         this(material, null, amount);
     }
 
@@ -29,11 +29,11 @@ public class MaterialStack implements Cloneable, Nameable {
         this(material, form, U, -1);
     }
 
-    public MaterialStack(Material material, Form form, double amount) {
+    public MaterialStack(Material material, Form form, long amount) {
         this(material, form, amount, -1);
     }
 
-    public MaterialStack(Material material, Form form, double amount, double temperature) {
+    public MaterialStack(Material material, Form form, long amount, double temperature) {
         this.material = material;
         this.amount = amount;
         this.form = form;
@@ -102,11 +102,11 @@ public class MaterialStack implements Cloneable, Nameable {
         this.form = form;
     }
 
-    public double getAmount() {
+    public long getAmount() {
         return amount;
     }
 
-    public void setAmount(double amount) {
+    public void setAmount(long amount) {
         this.amount = amount;
     }
 
@@ -138,5 +138,29 @@ public class MaterialStack implements Cloneable, Nameable {
     @Override
     public int hashCode() {
         return Objects.hash(getMaterial(), getForm(), getAmount(), getTemperature());
+    }
+
+    /**
+     * Modify int numbers based on amount
+     */
+    public int modify(int x) {
+        if (getAmount() == U) return x;
+        if (getAmount() > U) {
+            return (int) (x * (getAmount() / U));
+        } else {
+            return (int) (x / (U / getAmount()));
+        }
+    }
+
+    /**
+     * Modify long numbers based on amount
+     */
+    public long modify(long x) {
+        if (getAmount() == U) return x;
+        if (getAmount() > U) {
+            return x * (getAmount() / U);
+        } else {
+            return x / (U / getAmount());
+        }
     }
 }

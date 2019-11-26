@@ -3,13 +3,13 @@ const fs = require('fs');
 const modid = 'uranustech';
 const tools = ['hammer', 'file', 'sword', 'saw', 'screwdriver', 'chisel'];
 let rocks = `ANDESITE, BASALT, BLUESCHIST, DIORITE, GRANITE, BLACK_GRANITE, RED_GRANITE, GREENSCHIST, KIMBERLITE, KOMATIITE, LIMESTONE, MARBLE, DARK_PRISMARINE, LIGHT_PRISMARINE, QUARTZITE, STONE`;
-let rockForms = `STONE, COBBLESTONE, BRICK, SMALL_BRICK, SMALL_TILE, SMOOTH`;
+let rockForms = `STONE, SMALL_BRICKS, SMALL_TILES, SMOOTH, BRICKS, BRICKS_CHISELED, BRICKS_CRACKED, BRICKS_MOSSY, BRICKS_REDSTONE, BRICKS_REINFORCED, COBBLE, COBBLE_MOSSY, SQUARE_BRICKS, TILES, WINDMILL_TILES_A, WINDMILL_TILES_B`;
 
 rocks = rocks.toLowerCase().split(', ');
 rockForms = rockForms.toLowerCase().split(', ');
 
-for (const matfile of fs.readdirSync('materials')) {
-    fs.readFile('materials/' + matfile, (err, data) => {
+for (const matfile of fs.readdirSync('run/materials')) {
+    fs.readFile('run/materials/' + matfile, (err, data) => {
         if (err) console.error(err);
         const mat = JSON.parse(data.toString('utf-8'));
         /*
@@ -39,18 +39,12 @@ for (const matfile of fs.readdirSync('materials')) {
             }
         }
         */
-        if (mat.tags.includes('PROPERTIES.STONE'))
-            for (const rockForm of rockForms) {
-                fs.writeFileSync(
-                    `blockstates/${mat.name}_${rockForm}.json`,
-                    JSON.stringify({
-                        variants: {
-                            '': {
-                                model: `${modid}:block/${mat.name}_${rockForm}`
-                            }
-                        }
-                    })
-                );
-            }
+        console.log(
+            '    ' +
+                mat.name.toUpperCase() +
+                ' = materialRegistry[Identifier(MODID, "' +
+                mat.name +
+                '")]!!'
+        );
     });
 }

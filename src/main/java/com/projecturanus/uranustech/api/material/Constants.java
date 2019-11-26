@@ -31,4 +31,5 @@ public interface Constants {
     Identifier STATE_INFO = new Identifier(MODID, "state");
     Identifier ATOM_INFO = new Identifier(MODID, "atom");
     Identifier MATTER_INFO = new Identifier(MODID, "matter");
+    Identifier FUEL_INFO = new Identifier(MODID, "fuel");
 }

@@ -7,6 +7,7 @@ public interface Form {
 
     /**
      * Mass multiplier based on ingots.
+     * @return
      */
     double getAmountMultiplier();
 

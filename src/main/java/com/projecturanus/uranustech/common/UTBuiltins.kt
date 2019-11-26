@@ -6,11 +6,8 @@ import com.google.common.jimfs.PathType
 import com.google.gson.Gson
 import com.google.gson.JsonSyntaxException
 import com.projecturanus.uranustech.MODID
-import com.projecturanus.uranustech.api.material.Constants
+import com.projecturanus.uranustech.api.material.*
 import com.projecturanus.uranustech.api.material.Constants.TOOL_INFO
-import com.projecturanus.uranustech.api.material.Material
-import com.projecturanus.uranustech.api.material.MaterialStack
-import com.projecturanus.uranustech.api.material.WILDCARD_MATERIALS
 import com.projecturanus.uranustech.api.material.form.Form
 import com.projecturanus.uranustech.api.material.form.Forms
 import com.projecturanus.uranustech.api.material.generate.GenerateTypes
@@ -25,6 +22,7 @@ import com.projecturanus.uranustech.common.block.OreBlock
 import com.projecturanus.uranustech.common.command.MaterialCommand
 import com.projecturanus.uranustech.common.container.MATERIAL_SHOWCASE
 import com.projecturanus.uranustech.common.container.MaterialShowcaseContainer
+import com.projecturanus.uranustech.common.index.toDocument
 import com.projecturanus.uranustech.common.item.FormItem
 import com.projecturanus.uranustech.common.item.MaterialBlockItem
 import com.projecturanus.uranustech.common.item.OreBlockItem
@@ -85,8 +83,8 @@ val blockItemMap = ConcurrentHashMap<MaterialBlock, MaterialBlockItem>()
 
 fun registerBuiltin() = runBlocking {
     groupMap.add(Identifier(MODID, "base"), FabricItemGroupBuilder.create(Identifier(MODID, "base")).icon { materialRegistry.get(Identifier(MODID, "steel"))?.getItem(Forms.INGOT) }.build())
-    groupMap.add(Identifier(MODID, "tool"), FabricItemGroupBuilder.create(Identifier(MODID, "tool")).icon { ItemStack(toolMaterialMap.values.toList().random().values.toList().random()) }.build())
-    groupMap.add(Identifier(MODID, "ore"), FabricItemGroupBuilder.create(Identifier(MODID, "ore")).icon { oreItemStackMap.values.toList().random()[Rocks.STONE]?.invoke() }.build())
+    groupMap.add(Identifier(MODID, "tool"), FabricItemGroupBuilder.create(Identifier(MODID, "tool")).icon {toolMaterialMap.values.toList().random()?.values?.toList()?.random()?.let(::ItemStack) ?: ItemStack.EMPTY }.build())
+    groupMap.add(Identifier(MODID, "ore"), FabricItemGroupBuilder.create(Identifier(MODID, "ore")).icon { oreItemStackMap.values.toList().random()?.get(Rocks.STONE)?.invoke() }.build())
     groupMap.add(Identifier(MODID, "construction_block"), FabricItemGroupBuilder.create(Identifier(MODID, "construction_block")).icon { ItemStack(blockItemMap.values.toList().random()) }.build())
 
     Forms.values().union(Tools.values().map { it as Form }).union(ToolHeads.values().map { it as Form }).forEach {
@@ -107,11 +105,14 @@ fun registerBuiltin() = runBlocking {
                                     Constants.MATTER_INFO to MatterInfo().also { it.gramPerCubicCentimeter = gramPerCubicCentimeter },
                                     Constants.ORE_INFO to OreInfo().also { it.oreMultiplier = oreMultiplier; it.oreProgressingMultiplier = oreProgressingMultiplier },
                                     Constants.STATE_INFO to StateInfo().also { it.boilingPoint = boilingPoint; it.meltingPoint = meltingPoint; it.plasmaPoint = plasmaPoint },
-                                    Constants.TOOL_INFO to ToolInfo().also { it.toolDurability = toolDurability; it.toolQuality = toolQuality; it.toolSpeed = toolSpeed; it.toolTypes = toolTypes; it.handleMaterial = materialRegistry[Identifier(MODID, handleMaterial)] }
+                                    Constants.FUEL_INFO to FuelInfo().also { it.burnTime = burnTime },
+                                    Constants.TOOL_INFO to ToolInfo().also { it.toolDurability = toolDurability; it.toolQuality = toolQuality; it.toolSpeed = toolSpeed; it.toolTypes = toolTypes; it.handleMaterialId = Identifier(MODID, handleMaterial) }
+
                             )
                             validFormsCache = TagProcessor(tags).getForms().toList()
                         }
                         materialRegistry.add(material.identifier, material)
+                        materialIndexWriter.addDocument(material.toDocument())
                     } catch (e: JsonSyntaxException) {
                         logger.error("Malformed json in " + entry.name, e)
                         logger.error(String(content))
@@ -119,6 +120,11 @@ fun registerBuiltin() = runBlocking {
                 }
             }
         }.join()
+        withContext(Dispatchers.IO) {
+            materialIndexWriter.flush()
+            materialIndexWriter.close()
+        }
+        refreshMaterials()
         // Wildcard materials
         WILDCARD_MATERIALS.forEach { material ->
             materialRegistry.add(material.identifier, material)
@@ -253,8 +259,8 @@ fun registerBuiltin() = runBlocking {
     logger.info("[UranusTech] Builtin registration done")
 }
 
-fun <E> List<E>.random(random: Random = ThreadLocalRandom.current()): E =
-    this[random.nextInt(this.size)]
+fun <E> List<E>.random(random: Random = ThreadLocalRandom.current()): E? =
+    if (size > 0) this[random.nextInt(this.size)] else null
 
 fun registerContainers() {
     ContainerProviderRegistry.INSTANCE.registerFactory(MATERIAL_SHOWCASE) { syncId, id, player, packet -> MaterialShowcaseContainer(packet.readIdentifier(), player.inventory, syncId) }

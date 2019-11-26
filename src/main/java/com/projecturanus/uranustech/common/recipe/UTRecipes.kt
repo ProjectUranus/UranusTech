@@ -50,7 +50,7 @@ class ToolRecipe(identifier: Identifier): SpecialCraftingRecipe(identifier) {
             }
         }
         if (toolInfo?.handleMaterial == handleMaterial || (toolInfo?.handleMaterial is WildcardMaterial && (toolInfo?.handleMaterial as WildcardMaterial).isSubtype(handleMaterial)) && toolMaterial != null && tool != null) {
-            return toolMaterialMap[toolMaterial]?.get(tool)?.let(::ItemStack) ?: ItemStack.EMPTY
+            return toolMaterial?.let { tool?.let { tool -> toolMaterialMap[it]?.get(tool) } }?.let(::ItemStack) ?: ItemStack.EMPTY
         }
         return ItemStack.EMPTY
     }

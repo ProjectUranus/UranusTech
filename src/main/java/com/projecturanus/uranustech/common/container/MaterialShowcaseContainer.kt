@@ -9,6 +9,7 @@ import net.minecraft.container.Slot
 import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.entity.player.PlayerInventory
 import net.minecraft.inventory.BasicInventory
+import net.minecraft.item.ItemStack
 import net.minecraft.util.Identifier
 import net.minecraft.util.Tickable
 import java.util.concurrent.atomic.AtomicInteger
@@ -42,13 +43,13 @@ class MaterialShowcaseContainer(material: Identifier, val playerInventory: Playe
     var tickCounter = AtomicInteger()
 
     override fun tick() {
-        if (tickCounter.get() == 12) {
-            inventory[1] = this.material.getItem(material.validForms.random())
-            inventory[2] = this.material.getItem(material.validForms.random())
-            inventory[3] = this.material.getItem(material.validForms.random())
+        if (tickCounter.get() == 0) {
+            inventory[1] = material.validForms.random()?.let(material::getItem) ?: ItemStack.EMPTY
+            inventory[2] = material.validForms.random()?.let(material::getItem) ?: ItemStack.EMPTY
+            inventory[3] = material.validForms.random()?.let(material::getItem) ?: ItemStack.EMPTY
             sendContentUpdates()
             tickCounter.set(0)
-        }
+        } else if (tickCounter.get() == 12) { tickCounter.set(0) }
         tickCounter.getAndIncrement()
     }
 }

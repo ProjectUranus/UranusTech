@@ -12,6 +12,7 @@ import com.projecturanus.uranustech.common.materialRegistry
 import net.minecraft.util.Identifier
 import java.util.concurrent.CompletableFuture
 
+
 object MaterialArgumentType : ArgumentType<Material> {
     val examples = listOf("uranustech:iron", "xxx:mat")
 

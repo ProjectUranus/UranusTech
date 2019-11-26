@@ -2,6 +2,7 @@ package com.projecturanus.uranustech.api.material.info;
 
 import com.projecturanus.uranustech.api.material.Constants;
 import com.projecturanus.uranustech.api.material.Material;
+import com.projecturanus.uranustech.api.material.MaterialAPI;
 import com.projecturanus.uranustech.api.material.form.Forms;
 import com.projecturanus.uranustech.common.UTBuiltinsKt;
 import net.minecraft.item.ToolMaterial;
@@ -32,7 +33,7 @@ public class ToolInfo implements MaterialInfo, ToolMaterial {
     /**
      * Handle material, can be null.
      */
-    public Material handleMaterial;
+    public Identifier handleMaterialId;
 
     @Override
     public Identifier getIdentifier() {
@@ -64,8 +65,12 @@ public class ToolInfo implements MaterialInfo, ToolMaterial {
         return 0;
     }
 
+    public Material getHandleMaterial() {
+        return MaterialAPI.INSTANCE.getMaterialRegistry().get(handleMaterialId);
+    }
+
     @Override
     public Ingredient getRepairIngredient() {
-        return Optional.ofNullable(UTBuiltinsKt.getFormMaterialMap().get(handleMaterial)).map(formMap -> formMap.get(Forms.INGOT)).map(Ingredient::ofItems).orElse(Ingredient.EMPTY);
+        return Optional.ofNullable(UTBuiltinsKt.getFormMaterialMap().get(getHandleMaterial())).map(formMap -> formMap.get(Forms.INGOT)).map(Ingredient::ofItems).orElse(Ingredient.EMPTY);
     }
 }

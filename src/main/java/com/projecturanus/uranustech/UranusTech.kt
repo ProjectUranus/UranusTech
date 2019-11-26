@@ -1,5 +1,6 @@
 package com.projecturanus.uranustech
 
+import com.projecturanus.uranustech.common.index.registerIndex
 import com.projecturanus.uranustech.common.materialRegistry
 import com.projecturanus.uranustech.common.recipe.registerToolRecipes
 import com.projecturanus.uranustech.common.registerBuiltin
@@ -20,6 +21,7 @@ object UranusTech: ModInitializer {
         logger.info("[UranusTech] Initializing...")
         Registry.REGISTRIES.add(Identifier(MODID, "material"), materialRegistry)
         ResourceManagerHelper.get(ResourceType.SERVER_DATA).registerReloadListener(UTResourceListener)
+        registerIndex()
         registerBuiltin()
         registerToolRecipes()
         registerCommands()

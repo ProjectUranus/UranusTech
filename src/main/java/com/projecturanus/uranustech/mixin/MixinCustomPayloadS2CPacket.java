@@ -1,7 +1,7 @@
 package com.projecturanus.uranustech.mixin;
 
 import com.projecturanus.uranustech.client.network.packet.UTCustomPayloadS2CPacket;
-import net.fabricmc.fabric.impl.network.ServerSidePacketRegistryImpl;
+import net.fabricmc.fabric.impl.networking.ServerSidePacketRegistryImpl;
 import net.minecraft.network.Packet;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.PacketByteBuf;

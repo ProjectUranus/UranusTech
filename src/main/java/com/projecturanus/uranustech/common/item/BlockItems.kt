@@ -3,13 +3,14 @@ package com.projecturanus.uranustech.common.item
 import com.projecturanus.uranustech.MODID
 import com.projecturanus.uranustech.api.material.Constants
 import com.projecturanus.uranustech.api.material.info.FuelInfo
+import com.projecturanus.uranustech.api.render.Colorable
 import com.projecturanus.uranustech.api.worldgen.Rock
 import com.projecturanus.uranustech.api.worldgen.Rocks
 import com.projecturanus.uranustech.common.block.MaterialBlock
 import com.projecturanus.uranustech.common.block.OreBlock
 import com.projecturanus.uranustech.common.groupConstructionBlock
 import com.projecturanus.uranustech.common.groupOre
-import com.projecturanus.uranustech.common.oreItemStackMap
+import com.projecturanus.uranustech.common.oreItemMap
 import com.projecturanus.uranustech.common.util.localizedName
 import net.fabricmc.fabric.api.registry.FuelRegistry
 import net.minecraft.block.BlockState
@@ -19,7 +20,6 @@ import net.minecraft.item.ItemPlacementContext
 import net.minecraft.item.ItemStack
 import net.minecraft.text.TranslatableText
 import net.minecraft.util.DefaultedList
-import net.minecraft.util.Identifier
 
 open class MaterialBlockItem(open val block: MaterialBlock, settings: Settings = Settings().group(if (block.stack.material.isHidden) null else groupConstructionBlock)): BlockItem(block, settings) {
     init {
@@ -32,16 +32,21 @@ open class MaterialBlockItem(open val block: MaterialBlock, settings: Settings =
     }
 }
 
-class OreBlockItem(override val block: OreBlock): MaterialBlockItem(block, Settings().group(if (block.stack.material.isHidden) null else groupOre)) {
-    fun getStack(rock: Rock) =
-            ItemStack(this).apply { orCreateTag.putString("rock", rock.identifier.toString()) }
-
+class OreBlockItem(override val block: OreBlock, val rock: Rocks): MaterialBlockItem(block, Settings().group(if (block.stack.material.isHidden) null else groupOre)), Colorable {
     override fun getPlacementState(context: ItemPlacementContext): BlockState? =
-        context.stack.tag?.getString("rock")?.let { block.defaultState.with(Rock.ROCKS_PROPERTY, Rocks.valueOf(Identifier(it).path.toUpperCase())) }
+        block.defaultState.with(Rock.ROCKS_PROPERTY, rock)
 
-    // Nothing to do
-    override fun appendStacks(itemGroup_1: ItemGroup, defaultedList_1: DefaultedList<ItemStack>) {}
+    override fun appendStacks(itemGroup: ItemGroup, defaultedList: DefaultedList<ItemStack>) {
+        if (this.isIn(itemGroup)) {
+            defaultedList.add(ItemStack(this))
+        }
+    }
+
+    override fun getName(itemStack: ItemStack?): TranslatableText {
+        return TranslatableText("item.$MODID.ores", rock.localizedName, block.stack.material.localizedName)
+    }
+
+    override fun getColor() = block.stack.material.color
 }
 
-fun getOreItem(state: BlockState) =
-        if (state.block is OreBlock) oreItemStackMap[state.block as OreBlock]?.get(state[Rock.ROCKS_PROPERTY]) else null
+fun getOreItem(state: BlockState): ItemStack = oreItemMap[state.block as OreBlock]?.get(state[Rock.ROCKS_PROPERTY])?.let { ItemStack(it) } ?: ItemStack.EMPTY

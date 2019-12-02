@@ -4,7 +4,10 @@ import com.projecturanus.uranustech.api.material.MaterialStack
 import com.projecturanus.uranustech.common.material.MaterialContainer
 import net.fabricmc.api.EnvType
 import net.fabricmc.api.Environment
-import net.minecraft.block.*
+import net.minecraft.block.Block
+import net.minecraft.block.BlockState
+import net.minecraft.block.Blocks
+import net.minecraft.block.FluidBlock
 import net.minecraft.fluid.BaseFluid
 import net.minecraft.fluid.Fluid
 import net.minecraft.fluid.FluidState
@@ -15,14 +18,14 @@ import net.minecraft.particle.ParticleEffect
 import net.minecraft.particle.ParticleTypes
 import net.minecraft.sound.SoundCategory
 import net.minecraft.sound.SoundEvents
-import net.minecraft.state.StateFactory
+import net.minecraft.state.StateManager
 import net.minecraft.tag.FluidTags
 import net.minecraft.util.math.BlockPos
 import net.minecraft.util.math.Direction
 import net.minecraft.world.BlockView
 import net.minecraft.world.IWorld
-import net.minecraft.world.ViewableWorld
 import net.minecraft.world.World
+import net.minecraft.world.WorldView
 import java.util.*
 
 abstract class MaterialFluid(override val stack: MaterialStack) : BaseFluid(), MaterialContainer {
@@ -34,23 +37,18 @@ abstract class MaterialFluid(override val stack: MaterialStack) : BaseFluid(), M
         return Fluids.WATER
     }
 
-    @Environment(EnvType.CLIENT)
-    public override fun getRenderLayer(): BlockRenderLayer {
-        return BlockRenderLayer.TRANSLUCENT
-    }
-
     override fun getBucketItem(): Item {
         return Items.WATER_BUCKET
     }
 
     @Environment(EnvType.CLIENT)
     public override fun randomDisplayTick(world_1: World, blockPos_1: BlockPos, fluidState_1: FluidState, random_1: Random?) {
-        if (!fluidState_1.isStill && !(fluidState_1.get(BaseFluid.FALLING) as Boolean)) {
+        if (!fluidState_1.isStill && !(fluidState_1.get(FALLING) as Boolean)) {
             if (random_1!!.nextInt(64) == 0) {
-                world_1!!.playSound(blockPos_1!!.x.toDouble() + 0.5, blockPos_1.y.toDouble() + 0.5, blockPos_1.z.toDouble() + 0.5, SoundEvents.BLOCK_WATER_AMBIENT, SoundCategory.BLOCKS, random_1.nextFloat() * 0.25f + 0.75f, random_1.nextFloat() + 0.5f, false)
+                world_1.playSound(blockPos_1.x.toDouble() + 0.5, blockPos_1.y.toDouble() + 0.5, blockPos_1.z.toDouble() + 0.5, SoundEvents.BLOCK_WATER_AMBIENT, SoundCategory.BLOCKS, random_1.nextFloat() * 0.25f + 0.75f, random_1.nextFloat() + 0.5f, false)
             }
         } else if (random_1!!.nextInt(10) == 0) {
-            world_1!!.addParticle(ParticleTypes.UNDERWATER, (blockPos_1!!.x.toFloat() + random_1.nextFloat()).toDouble(), (blockPos_1.y.toFloat() + random_1.nextFloat()).toDouble(), (blockPos_1.z.toFloat() + random_1.nextFloat()).toDouble(), 0.0, 0.0, 0.0)
+            world_1.addParticle(ParticleTypes.UNDERWATER, (blockPos_1.x.toFloat() + random_1.nextFloat()).toDouble(), (blockPos_1.y.toFloat() + random_1.nextFloat()).toDouble(), (blockPos_1.z.toFloat() + random_1.nextFloat()).toDouble(), 0.0, 0.0, 0.0)
         }
 
     }
@@ -69,7 +67,7 @@ abstract class MaterialFluid(override val stack: MaterialStack) : BaseFluid(), M
         Block.dropStacks(blockState_1, iWorld_1.world, blockPos_1, blockEntity)
     }
 
-    public override fun method_15733(viewableWorld_1: ViewableWorld): Int {
+    public override fun method_15733(world: WorldView): Int {
         return 4
     }
 
@@ -81,11 +79,11 @@ abstract class MaterialFluid(override val stack: MaterialStack) : BaseFluid(), M
         return fluid_1 === Fluids.WATER || fluid_1 === Fluids.FLOWING_WATER
     }
 
-    override fun getLevelDecreasePerBlock(viewableWorld_1: ViewableWorld): Int {
+    override fun getLevelDecreasePerBlock(viewableWorld_1: WorldView): Int {
         return 1
     }
 
-    override fun getTickRate(viewableWorld_1: ViewableWorld): Int {
+    override fun getTickRate(viewableWorld_1: WorldView): Int {
         return 5
     }
 
@@ -99,7 +97,7 @@ abstract class MaterialFluid(override val stack: MaterialStack) : BaseFluid(), M
 
     class Flowing(stack: MaterialStack) : MaterialFluid(stack) {
 
-        override fun appendProperties(`stateFactory$Builder_1`: StateFactory.Builder<Fluid, FluidState>) {
+        override fun appendProperties(`stateFactory$Builder_1`: StateManager.Builder<Fluid, FluidState>) {
             super.appendProperties(`stateFactory$Builder_1`)
             `stateFactory$Builder_1`.add(LEVEL)
         }

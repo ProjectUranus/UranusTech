@@ -17,11 +17,11 @@ import java.io.IOException;
 @Mixin(PacketByteBuf.class)
 public abstract class MixinPacketByteBuf extends ByteBuf {
 
-    @Shadow public abstract int readerIndex();
+    @Shadow(remap = false) public abstract int readerIndex();
 
-    @Shadow public abstract ByteBuf readerIndex(int int_1);
+    @Shadow(remap = false) public abstract ByteBuf readerIndex(int int_1);
 
-    @Shadow public abstract byte readByte();
+    @Shadow(remap = false) public abstract byte readByte();
 
     /**
      *

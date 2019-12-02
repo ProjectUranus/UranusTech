@@ -31,8 +31,6 @@ import com.projecturanus.uranustech.common.material.JsonMaterial
 import com.projecturanus.uranustech.common.material.MaterialAPIImpl
 import com.projecturanus.uranustech.common.material.TagProcessor
 import com.projecturanus.uranustech.common.material.setupDelegate
-import com.projecturanus.uranustech.common.resource.CUSTOM_RESOURCE_PACKS
-import com.projecturanus.uranustech.common.resource.FileSystemResourcePack
 import com.projecturanus.uranustech.common.resource.forEach
 import com.projecturanus.uranustech.common.util.asBlockTag
 import com.projecturanus.uranustech.common.util.asItemTag
@@ -46,19 +44,15 @@ import kotlinx.coroutines.*
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder
 import net.fabricmc.fabric.api.container.ContainerProviderRegistry
 import net.fabricmc.fabric.api.registry.CommandRegistry
-import net.fabricmc.loader.api.FabricLoader
 import net.minecraft.block.Block
-import net.minecraft.block.Blocks
 import net.minecraft.item.BlockItem
 import net.minecraft.item.Item
 import net.minecraft.item.ItemStack
 import net.minecraft.tag.Tag
 import net.minecraft.util.Identifier
 import net.minecraft.util.registry.Registry
-import net.minecraft.world.biome.Biome
 import net.minecraft.world.gen.GenerationStep
 import net.minecraft.world.gen.decorator.Decorator
-import net.minecraft.world.gen.decorator.NopeDecoratorConfig
 import net.minecraft.world.gen.decorator.RangeDecoratorConfig
 import net.minecraft.world.gen.feature.Feature
 import net.minecraft.world.gen.feature.OreFeatureConfig
@@ -76,19 +70,18 @@ val itemAllFormTagMap = ConcurrentHashMap<Material, Tag<Item>>()
 val itemTagMap = ConcurrentHashMap<Material, MutableMap<Form, Tag<Item>>>()
 val blockAllFormTagMap = ConcurrentHashMap<Material, Tag<Block>>()
 val blockTagMap = ConcurrentHashMap<Material, MutableMap<Form, Tag<Block>>>()
-val oreItemMap = ConcurrentHashMap<OreBlock, OreBlockItem>()
+val oreItemMap = ConcurrentHashMap<OreBlock, MutableMap<Rock, OreBlockItem>>()
 val rockMap = EnumMap<Rocks, MaterialBlock>(Rocks::class.java)
-val oreItemStackMap = ConcurrentHashMap<OreBlock, MutableMap<out Rock, () -> ItemStack>>()
 val blockItemMap = ConcurrentHashMap<MaterialBlock, MaterialBlockItem>()
 
 fun registerBuiltin() = runBlocking {
     groupMap.add(Identifier(MODID, "base"), FabricItemGroupBuilder.create(Identifier(MODID, "base")).icon { materialRegistry.get(Identifier(MODID, "steel"))?.getItem(Forms.INGOT) }.build())
     groupMap.add(Identifier(MODID, "tool"), FabricItemGroupBuilder.create(Identifier(MODID, "tool")).icon {toolMaterialMap.values.toList().random()?.values?.toList()?.random()?.let(::ItemStack) ?: ItemStack.EMPTY }.build())
-    groupMap.add(Identifier(MODID, "ore"), FabricItemGroupBuilder.create(Identifier(MODID, "ore")).icon { oreItemStackMap.values.toList().random()?.get(Rocks.STONE)?.invoke() }.build())
+    groupMap.add(Identifier(MODID, "ore"), FabricItemGroupBuilder.create(Identifier(MODID, "ore")).icon { oreItemMap.values.toList().random()?.values?.toList()?.random()?.let(::ItemStack) ?: ItemStack.EMPTY }.build())
     groupMap.add(Identifier(MODID, "construction_block"), FabricItemGroupBuilder.create(Identifier(MODID, "construction_block")).icon { ItemStack(blockItemMap.values.toList().random()) }.build())
 
     Forms.values().union(Tools.values().map { it as Form }).union(ToolHeads.values().map { it as Form }).forEach {
-        formRegistry.add(Identifier(MODID, it.name), it)
+        formRegistry.add(Identifier(MODID, it.asString()), it)
     }
 
     val gson = Gson()
@@ -146,9 +139,10 @@ fun registerBuiltin() = runBlocking {
                     // Specific settings for ores
                     if (Forms.ORE in material.validForms) {
                         val ore = OreBlock(MaterialStack(material, Forms.ORE))
-                        val oreItem = registerItem(Identifier(MODID, "${material.identifier.path}_ore"), OreBlockItem(ore))
-                        oreItemMap[ore] = oreItem
-                        oreItemStackMap[ore] = oreItemStackMap.getOrDefault(ore, mutableMapOf(*Rocks.values().map { rock -> rock to { oreItem.getStack(rock) } }.toTypedArray()))
+                        for (rock in Rocks.values()) {
+                            val oreItem = registerItem(Identifier(MODID, "${material.identifier.path}_${rock.asString()}_ore"), OreBlockItem(ore, rock))
+                            oreItemMap[ore] = (oreItemMap[ore] ?: mutableMapOf()).apply { put(rock, oreItem) }
+                        }
                         registerBlock(Identifier(MODID, "${material.identifier.path}_ore"), ore, false)
                         formBlocks.remove(Forms.ORE)
                         blockMaterialMap[material] = blockMaterialMap.getOrDefault(material, mutableMapOf()).apply { put(Forms.ORE, ore) }
@@ -175,7 +169,7 @@ fun registerBuiltin() = runBlocking {
                                         UTToolItem(MaterialStack(it, tool), MaterialStack(toolInfo.handleMaterial, tool.handleForm), settings = Item.Settings().maxCount(1).group(if (it.isHidden) null else groupTool))
                                     else
                                         UTToolItem(MaterialStack(it, tool), settings = Item.Settings().maxCount(1).group(if (it.isHidden) null else groupTool))
-                                registerItem(Identifier(it.identifier.namespace, "${it.identifier.path}_${tool.getName()}"),
+                                registerItem(Identifier(it.identifier.namespace, "${it.identifier.path}_${tool.asString()}"),
                                         toolItem)
                                 toolMaterialMap[it] = toolMaterialMap.getOrDefault(it, mutableMapOf()).apply { put(tool, toolItem) }
                             }
@@ -184,7 +178,7 @@ fun registerBuiltin() = runBlocking {
                     .flatMap {
                         val formItems = it.validForms.filter { form -> form.generateType == GenerateTypes.ITEM }.map { form -> form to FormItem(MaterialStack(it, form)) }
                         formMaterialMap[it] = formMaterialMap.getOrDefault(it, mutableMapOf(*formItems.toTypedArray()))
-                        formItems.map { pair -> pair.first.name to pair.second }
+                        formItems.map { pair -> pair.first.asString() to pair.second }
                     }
         }.forEach {
             registerItem(Identifier(MODID, "${it.second.stack.material.identifier.path}_${it.first}"), it.second)
@@ -196,7 +190,7 @@ fun registerBuiltin() = runBlocking {
             materialRegistry.forEach { material ->
                 launch {
                     itemTagMap[material] = mutableMapOf(*material.validForms.map {
-                        it to Tag.Builder.create<Item>().add(material.getItem(it).item).build(Identifier(material.identifier.namespace, "${material.identifier.path}_${it.name}"))
+                        it to Tag.Builder.create<Item>().add(material.getItem(it).item).build(Identifier(material.identifier.namespace, "${material.identifier.path}_${it.asString()}"))
                     }.toTypedArray())
                 }
             }
@@ -209,7 +203,7 @@ fun registerBuiltin() = runBlocking {
                             subMaterial.getItem(form)?.let { if (it.item is FormItem) itemFormMap[form]?.add(it.item as FormItem) }
                         }
                     }
-                    itemTagMap[material] = itemFormMap.mapValues { it.value.asItemTag(Identifier(material.identifier.namespace, "${material.identifier.path}_${it.key.name}")) }.toMutableMap()
+                    itemTagMap[material] = itemFormMap.mapValues { it.value.asItemTag(Identifier(material.identifier.namespace, "${material.identifier.path}_${it.key.asString()}")) }.toMutableMap()
                     itemAllFormTagMap[material] = itemFormMap.flatMap { it.value }.asItemTag(material.identifier)
                 }
                 launch {
@@ -220,7 +214,7 @@ fun registerBuiltin() = runBlocking {
                             subMaterial.getBlock(form)?.block?.let { if (it is MaterialBlock) blockFormMap[form]?.add(it) }
                         }
                     }
-                    blockTagMap[material] = blockFormMap.mapValues { it.value.asBlockTag(Identifier(material.identifier.namespace, "${material.identifier.path}_${it.key.name}")) }.toMutableMap()
+                    blockTagMap[material] = blockFormMap.mapValues { it.value.asBlockTag(Identifier(material.identifier.namespace, "${material.identifier.path}_${it.key.asString()}")) }.toMutableMap()
                     blockAllFormTagMap[material] = blockFormMap.flatMap { it.value }.asBlockTag(material.identifier)
                 }
             }
@@ -230,16 +224,9 @@ fun registerBuiltin() = runBlocking {
     logger.info("Generated ore features in " + measureTimeMillis {
         async {
             Registry.register(Registry.FEATURE, Identifier(MODID, "rock_layer"), ORE_GEN_FEATURE)
-            Biome.BIOMES.forEach {
-                launch {
-                    it.addFeature(GenerationStep.Feature.UNDERGROUND_ORES, Biome.configureFeature(
-                            Feature.ORE, OreFeatureConfig(
-                                OreFeatureConfig.Target.NATURAL_STONE,
-                                oreItemMap.keys.stream().findFirst().map { block -> block.defaultState.with(Rock.ROCKS_PROPERTY, Rocks.STONE) }.get(),
-                                45),
-                            Decorator.COUNT_RANGE, RangeDecoratorConfig(60, 0, 0, 10)))
-                    it.addFeature(GenerationStep.Feature.UNDERGROUND_ORES, Biome.configureFeature(ORE_GEN_FEATURE, OreFeatureConfig(OreFeatureConfig.Target.NATURAL_STONE, Blocks.ACACIA_LOG.defaultState, 100), Decorator.NOPE, NopeDecoratorConfig()))
-                }
+            for (block in rockMap.values) {
+                for (biome in Registry.BIOME)
+                    biome.addFeature(GenerationStep.Feature.UNDERGROUND_ORES, Feature.ORE.configure(OreFeatureConfig(OreFeatureConfig.Target.NATURAL_STONE, block.defaultState, 33)).createDecoratedFeature(Decorator.COUNT_RANGE.configure(RangeDecoratorConfig(10, 0, 0, 80))))
             }
         }
     } + "ms")
@@ -277,7 +264,6 @@ fun registerResources() {
     }
 }""".toByteArray())
 */
-    CUSTOM_RESOURCE_PACKS += FileSystemResourcePack(FabricLoader.getInstance().getModContainer(MODID).get().metadata, MODID, fileSystem)
 }
 
 fun registerCommands() {

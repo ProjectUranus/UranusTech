@@ -1,21 +1,8 @@
 package com.projecturanus.uranustech.common.resource
 
-import com.projecturanus.uranustech.logger
-import net.fabricmc.fabric.api.resource.ModResourcePack
-import net.fabricmc.loader.api.metadata.ModMetadata
-import net.minecraft.resource.AbstractFileResourcePack
 import net.minecraft.resource.ResourcePack
 import net.minecraft.resource.ResourceType
-import net.minecraft.resource.metadata.ResourceMetadataReader
 import net.minecraft.util.Identifier
-import net.minecraft.util.InvalidIdentifierException
-import java.io.IOException
-import java.io.InputStream
-import java.nio.file.FileSystem
-import java.nio.file.Files
-import java.nio.file.Path
-import java.util.*
-import java.util.function.Predicate
 import java.util.regex.Pattern
 
 val CUSTOM_RESOURCE_PACKS = mutableListOf<ResourcePack>()
@@ -23,9 +10,10 @@ val CUSTOM_RESOURCE_PACKS = mutableListOf<ResourcePack>()
 private val RESOURCE_PACK_PATH = Pattern.compile("[a-z0-9-_]+")
 
 private fun getFilename(type: ResourceType, identifier: Identifier): String {
-    return String.format("%s/%s/%s", type.getName(), identifier.namespace, identifier.path)
+    return String.format("%s/%s/%s", type.directory, identifier.namespace, identifier.path)
 }
 
+/*
 class FileSystemResourcePack(val mod: ModMetadata, val packName: String, val fileSystem: FileSystem): ModResourcePack {
     private val cacheable: Boolean = false
     private var namespaceCache: Set<String>? = null
@@ -42,6 +30,9 @@ class FileSystemResourcePack(val mod: ModMetadata, val packName: String, val fil
         Files.newInputStream(fileSystem.getPath(getFilename(type, identifier)))
 
     override fun getName() = packName
+    override fun findResources(resourceType: ResourceType?, string: String?, string2: String?, i: Int, predicate: Predicate<String>?): MutableCollection<Identifier> {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
 
     override fun findResources(type: ResourceType, path: String, depth: Int, predicate: Predicate<String>): MutableCollection<Identifier> {
         val ids = ArrayList<Identifier>()
@@ -155,3 +146,4 @@ class FileSystemResourcePack(val mod: ModMetadata, val packName: String, val fil
     }
 
 }
+*/

@@ -117,7 +117,7 @@ class TagProcessor(val tags: List<String>) {
         val set = hashSetOf<Form>()
         tags.forEach {
             if (it.startsWith("ITEMGENERATOR."))
-                if (formRegistry.asSequence().any { form -> form.name == it.removePrefix("ITEMGENERATOR.").removeSuffix("S").toLowerCase() })
+                if (formRegistry.asSequence().any { form -> form.asString() == it.removePrefix("ITEMGENERATOR.").removeSuffix("S").toLowerCase() })
                     set += formRegistry[Identifier(MODID, it.removePrefix("ITEMGENERATOR.").removeSuffix("S").toLowerCase())]
                 else
                     when (it.removePrefix("ITEMGENERATOR.")) {

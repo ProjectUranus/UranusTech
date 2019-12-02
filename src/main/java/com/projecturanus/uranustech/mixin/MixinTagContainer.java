@@ -15,10 +15,10 @@ import java.util.Map;
 @Mixin(TagContainer.class)
 public class MixinTagContainer {
     @Shadow
-    private Map<Identifier, Tag> idMap;
+    private Map<Identifier, Tag> entries;
 
     @Inject(method = "<init>*", at = @At("RETURN"))
     public void onInit(CallbackInfo ci) {
-        idMap = new HashMap<>();
+        entries = new HashMap<>();
     }
 }

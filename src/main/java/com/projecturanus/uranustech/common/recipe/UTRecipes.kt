@@ -41,7 +41,7 @@ class ToolRecipe(identifier: Identifier): SpecialCraftingRecipe(identifier) {
                 if (matStack.form in TOOL_FORMS) {
                     toolInfo = (stack.item as FormItem).stack.material.getInfo(Constants.TOOL_INFO)
                     toolMaterial = matStack.material
-                    tool = Tools.valueOf(matStack.form.name.removePrefix("tool_head_").toUpperCase())
+                    tool = Tools.valueOf(matStack.form.asString().removePrefix("tool_head_").toUpperCase())
                 }
                 else if (matStack.form == Forms.STICK)
                     handleMaterial = matStack.material

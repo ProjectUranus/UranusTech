@@ -3,6 +3,7 @@ package com.projecturanus.uranustech.common.item
 import com.projecturanus.uranustech.MODID
 import com.projecturanus.uranustech.api.material.Constants.TOOL_INFO
 import com.projecturanus.uranustech.api.material.MaterialStack
+import com.projecturanus.uranustech.api.material.form.Forms
 import com.projecturanus.uranustech.api.material.info.ToolInfo
 import com.projecturanus.uranustech.api.render.Colorable
 import com.projecturanus.uranustech.api.tool.Tool
@@ -29,6 +30,24 @@ open class UTToolItem(override val stack: MaterialStack, val handleStack: Materi
     override fun getName(itemStack: ItemStack?): TranslatableText {
         return TranslatableText("item.$MODID.form", stack.material.localizedName, stack.form.localizedName)
     }
+
+    override fun getItemColor(itemStack: ItemStack?, tintIndex: Int): Int =
+        when (tintIndex) {
+            0 -> when {
+                tool?.hasHandleMaterial() == false -> stack.material.color
+                tool?.handleForm?.equals(Forms.STICK) == true -> stack.material.getInfo<ToolInfo>(TOOL_INFO)?.handleMaterial?.color
+                        ?: -1
+                else -> stack.material.color
+            }
+            2 -> {
+                when {
+                    tool?.hasHandleMaterial() == false -> -1
+                    tool?.handleForm?.equals(Forms.STICK) == true -> stack.material.color
+                    else -> handleStack?.material?.color ?: -1
+                }
+            }
+            else -> -1
+        }
 
     override fun isDamageable() = true
 

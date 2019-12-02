@@ -39,12 +39,30 @@ for (const matfile of fs.readdirSync('run/materials')) {
             }
         }
         */
-        console.log(
-            '    ' +
-                mat.name.toUpperCase() +
-                ' = materialRegistry[Identifier(MODID, "' +
-                mat.name +
-                '")]!!'
-        );
+        const obj = {
+            'form.uranustech.tool_head_hammer': 'Hammer Tool Head',
+            'form.uranustech.tool_head_arrow': 'Arrow Tool Head',
+            'form.uranustech.tool_head_axe': 'Axe Tool Head',
+            'form.uranustech.tool_head_axe_double': 'Double Axe Tool Head',
+            'form.uranustech.tool_head_buzz_saw': 'Buzz Saw Tool Head',
+            'form.uranustech.tool_head_chainsaw': 'Chainsaw Tool Head',
+            'form.uranustech.tool_head_chisel': 'Chisel Tool Head',
+            'form.uranustech.tool_head_construction_pickaxe':
+                'Construction Pickaxe Tool Head',
+            'form.uranustech.tool_head_drill': 'Drill Tool Head',
+            'form.uranustech.tool_head_file': 'File Tool Head',
+            'form.uranustech.tool_head_hoe': 'Hoe Tool Head',
+            'form.uranustech.tool_head_pickaxe': 'Pickaxe Tool Head',
+            'form.uranustech.tool_head_plow': 'Plow Tool Head',
+            'form.uranustech.tool_head_saw': 'Saw Tool Head',
+            'form.uranustech.tool_head_screwdriver': 'Screwdriver Tool Head',
+            'form.uranustech.tool_head_sense': 'Sense Tool Head',
+            'form.uranustech.tool_head_shovel': 'Shovel Tool Head',
+            'form.uranustech.tool_head_spade': 'Spade Tool Head',
+            'form.uranustech.tool_head_sword': 'Sword Tool Head',
+            'form.uranustech.tool_head_universal_spade':
+                'Universal Spade Tool Head',
+            'form.uranustech.tool_head_wrench': 'Wrench Tool Head'
+        };
     });
 }

@@ -35,11 +35,11 @@ class RangedMultiblockIngredient(val min: Int, val max: Int, validator: (BlockSt
 class PatternBuilder {
     companion object {
         private fun anyToIngredient(obj: Any) =  when(obj) {
-            is Block -> MultiblockIngredient({ state -> state.block == obj }, obj.stateFactory.states)
+            is Block -> MultiblockIngredient({ state -> state.block == obj }, obj.stateManager.states)
             is BlockState -> MultiblockIngredient({ state -> state == obj }, listOf(obj))
             is Collection<*> -> MultiblockIngredient({ state -> state in obj },
                     obj.flatMap { when(it) {
-                        is Block -> it.stateFactory.states
+                        is Block -> it.stateManager.states
                         is BlockState -> listOf(it)
                         else -> emptyList()
                     } })

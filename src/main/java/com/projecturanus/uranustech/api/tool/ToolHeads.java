@@ -36,7 +36,7 @@ public enum ToolHeads implements ToolHead {
     }
 
     @Override
-    public String getName() {
+    public String asString() {
         return name;
     }
 

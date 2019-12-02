@@ -51,7 +51,7 @@ public class MaterialStack implements Cloneable, Nameable {
         StateInfo stateInfo = material.getInfo(STATE_INFO) == null ? new StateInfo() : material.getInfo(STATE_INFO);
         TranslatableText defaultText = new TranslatableText("material.uranustech.stack",
                 UTExtensionsKt.getLocalizedName(material),
-                String.format("%.3f", amount / U),
+                String.format("%.3f", (double) amount / U),
                 stateInfo.meltingPoint,
                 stateInfo.boilingPoint,
                 getWeight() < 0 ? "?.???" : String.format("%.3f", getWeight()));

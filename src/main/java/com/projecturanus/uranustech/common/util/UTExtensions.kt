@@ -6,6 +6,7 @@ import com.projecturanus.uranustech.api.material.Material
 import com.projecturanus.uranustech.api.material.MaterialAPI
 import com.projecturanus.uranustech.api.material.MaterialStack
 import com.projecturanus.uranustech.api.material.form.Form
+import com.projecturanus.uranustech.api.worldgen.Rock
 import com.projecturanus.uranustech.common.material.MaterialContainer
 import com.projecturanus.uranustech.common.material.vanillaItemMaterialMapper
 import net.minecraft.block.Block
@@ -115,8 +116,12 @@ fun Material.getBlock(form: Form): BlockState? = MaterialAPI.INSTANCE.getMateria
 val Material.localizedName
     get() = TranslatableText("material.${this.identifier.namespace}.${this.identifier.path}")
 
+val Rock.localizedName
+    get() = TranslatableText("material.${this.identifier.namespace}.${this.identifier.path}")
+
 val Form.localizedName
-    get() = TranslatableText("form.$MODID.${this.name}")
+    get() = TranslatableText("form.$MODID.${this.asString()}")
+
 
 fun Array<Int>.toColor(): Color = Color(get(0), get(1), get(2), get(3))
 

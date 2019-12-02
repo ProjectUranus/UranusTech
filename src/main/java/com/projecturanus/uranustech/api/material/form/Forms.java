@@ -55,7 +55,7 @@ public enum Forms implements Form {
     }
 
     @Override
-    public String getName() {
+    public String asString() {
         return name;
     }
 

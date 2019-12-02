@@ -42,7 +42,7 @@ public enum Tools implements Tool {
     }
 
     @Override
-    public String getName() {
+    public String asString() {
         return name().toLowerCase();
     }
 

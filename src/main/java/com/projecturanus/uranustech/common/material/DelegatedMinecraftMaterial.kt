@@ -53,8 +53,7 @@ fun setupDelegate() {
             Items.STICK -> stack(WOOD, Forms.STICK)
             Items.ACACIA_LOG, Items.BIRCH_LOG, Items.DARK_OAK_LOG, Items.JUNGLE_LOG, Items.OAK_LOG, Items.SPRUCE_LOG -> stack(WOOD, Forms.STONE)
             Items.ANVIL -> stack(IRON, Forms.OTHER, U * 6.toDouble())
-            Items.BRICK -> stack(BRICK, Forms.INGOT)
-            Items.BRICKS -> stack(BRICK, Forms.STONE)
+            Items.BRICK -> stack(BRICK, Forms.STONE)
             Items.ANDESITE -> stack(ANDESITE, Forms.STONE)
             Items.STONE -> stack(STONE, Forms.STONE)
             else -> null

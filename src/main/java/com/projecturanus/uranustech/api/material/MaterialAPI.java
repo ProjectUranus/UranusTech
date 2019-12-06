@@ -3,6 +3,7 @@ package com.projecturanus.uranustech.api.material;
 import com.projecturanus.uranustech.api.material.form.Form;
 import com.projecturanus.uranustech.common.material.MaterialAPIImpl;
 import net.minecraft.block.BlockState;
+import net.minecraft.fluid.Fluid;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.registry.MutableRegistry;
 
@@ -29,4 +30,7 @@ public interface MaterialAPI {
     default ItemStack getMaterialItem(MaterialStack materialStack) {
         return ItemStack.EMPTY;
     }
+
+    Fluid getFlowingFluid(MaterialStack materialStack);
+    Fluid getStillFluid(MaterialStack materialStack);
 }

@@ -7,6 +7,7 @@ import com.projecturanus.uranustech.common.blockMaterialMap
 import com.projecturanus.uranustech.common.formMaterialMap
 import com.projecturanus.uranustech.logger
 import net.minecraft.block.BlockState
+import net.minecraft.fluid.Fluid
 import net.minecraft.item.ItemStack
 import net.minecraft.util.registry.MutableRegistry
 import java.util.function.Function
@@ -36,5 +37,12 @@ object MaterialAPIImpl : MaterialAPI {
     override fun getMaterialRegistry(): MutableRegistry<Material> = com.projecturanus.uranustech.common.materialRegistry
 
     override fun getMaterialItem(materialStack: MaterialStack): ItemStack = itemMapper(materialStack)
+
+    override fun getFlowingFluid(materialStack: MaterialStack): Fluid? {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+    override fun getStillFluid(materialStack: MaterialStack): Fluid? {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
 
 }

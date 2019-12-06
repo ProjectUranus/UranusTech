@@ -22,6 +22,7 @@ import com.projecturanus.uranustech.common.block.OreBlock
 import com.projecturanus.uranustech.common.command.MaterialCommand
 import com.projecturanus.uranustech.common.container.MATERIAL_SHOWCASE
 import com.projecturanus.uranustech.common.container.MaterialShowcaseContainer
+import com.projecturanus.uranustech.common.fluid.MoltenMaterialFluid
 import com.projecturanus.uranustech.common.index.toDocument
 import com.projecturanus.uranustech.common.item.FormItem
 import com.projecturanus.uranustech.common.item.MaterialBlockItem
@@ -100,7 +101,6 @@ fun registerBuiltin() = runBlocking {
                                     Constants.STATE_INFO to StateInfo().also { it.boilingPoint = boilingPoint; it.meltingPoint = meltingPoint; it.plasmaPoint = plasmaPoint },
                                     Constants.FUEL_INFO to FuelInfo().also { it.burnTime = burnTime },
                                     Constants.TOOL_INFO to ToolInfo().also { it.toolDurability = toolDurability; it.toolQuality = toolQuality; it.toolSpeed = toolSpeed; it.toolTypes = toolTypes; it.handleMaterialId = Identifier(MODID, handleMaterial) }
-
                             )
                             validFormsCache = TagProcessor(tags).getForms().toList()
                         }
@@ -131,6 +131,7 @@ fun registerBuiltin() = runBlocking {
             async {
                 launch {
                     val formBlocks = material.validForms
+                            .asSequence()
                             .filter { form -> form.generateType == GenerateTypes.BLOCK && form != Forms.ORE }
                             .map { form ->
                                 form to MaterialBlock(MaterialStack(material, form))
@@ -151,6 +152,16 @@ fun registerBuiltin() = runBlocking {
                     blockMaterialMap[material] = blockMaterialMap.getOrDefault(material, formBlocks.toMutableMap())
                     formBlocks.forEach { (form, block) ->
                         registerBlock(Identifier(MODID, "${block.stack.material.identifier.path}_${form.toString().toLowerCase()}"), block) { MaterialBlockItem(block).also { blockItemMap[block] = it } }
+                    }
+                }
+                // Fluid
+                launch {
+                    material.validForms.asSequence().filter { it.generateType == GenerateTypes.FLUID }.forEach { form ->
+                        if (form == Forms.MOLTEN) {
+                            Registry.FLUID.add(Identifier(MODID, "${material.identifier.path}_molten_still"), MoltenMaterialFluid.Still(MaterialStack(material, Forms.MOLTEN)))
+                        } else if (form == Forms.GAS) {
+
+                        }
                     }
                 }
             }.join()

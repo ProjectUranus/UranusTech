@@ -1,6 +1,6 @@
 package com.projecturanus.uranustech.api.energy
-
-import com.google.common.primitives.Longs.min
+import com.projecturanus.uranustech.energy.EnergyCapacitor
+import com.projecturanus.uranustech.energy.FlowEnergyNet
 import kotlin.math.abs
 
 open class EnergyContainer(override var capacity: Long, override var maxAmperage: Long, override var stored: Long = 0) : EnergyCapacitor {
@@ -10,7 +10,7 @@ open class EnergyContainer(override var capacity: Long, override var maxAmperage
     override fun tick() {
         charges.removeAll { (isFull || it.first.stored <= 0).apply { if (this) it.third() } }
         charges.forEach { (handler, listener) ->
-            val amperage = min(handler.getAmperage(), getAmperage(), handler.stored, free)
+            val amperage = arrayOf(handler.getAmperage(), getAmperage(), handler.stored, free).min() ?: 0
             listener(amperage)
             stored += amperage
             handler.stored -= amperage
@@ -18,12 +18,12 @@ open class EnergyContainer(override var capacity: Long, override var maxAmperage
         flows.removeAll { (abs(it.first.stored - stored) <= 1 || isFull || it.first.isFull).apply { if (this) it.third() } }
         flows.forEach { (handler, listener) ->
             if (stored > handler.stored) {
-                val amperage = min(handler.getAmperage(), getAmperage(), stored - handler.stored, handler.free)
+                val amperage = arrayOf(handler.getAmperage(), getAmperage(), stored - handler.stored, handler.free).min() ?: 0
                 stored -= amperage
                 handler.stored += amperage
                 listener(-amperage)
             } else {
-                val amperage = min(handler.getAmperage(), getAmperage(), handler.stored - stored, free)
+                val amperage = arrayOf(handler.getAmperage(), getAmperage(), handler.stored - stored, free).min() ?: 0
                 stored += amperage
                 handler.stored -= amperage
                 listener(amperage)

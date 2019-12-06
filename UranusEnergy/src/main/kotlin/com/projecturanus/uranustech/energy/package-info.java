@@ -4,4 +4,4 @@
  * Voltage unit: Volt(V)
  * Electric current unit: Ampere(A)
  */
-package com.projecturanus.uranustech.api.energy;
+package com.projecturanus.uranustech.energy;

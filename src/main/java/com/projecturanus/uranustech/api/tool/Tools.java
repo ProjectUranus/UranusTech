@@ -4,6 +4,9 @@ import com.projecturanus.uranustech.api.material.form.Form;
 import com.projecturanus.uranustech.api.material.form.Forms;
 import com.projecturanus.uranustech.api.material.generate.GenerateType;
 import com.projecturanus.uranustech.api.material.generate.GenerateTypes;
+import net.minecraft.block.BlockState;
+
+import java.util.function.Predicate;
 
 public enum Tools implements Tool {
     HAMMER(6, true, Forms.STICK), FILE(2, true), SWORD(2, true),
@@ -16,6 +19,7 @@ public enum Tools implements Tool {
     private double amountMultiplier;
     private boolean hasHandleMaterial = false;
     private Form handleForm;
+    private Predicate<BlockState> effectivePredicate;
 
     Tools() {
         this.amountMultiplier = 1;
@@ -59,5 +63,10 @@ public enum Tools implements Tool {
     @Override
     public boolean hasHandleMaterial() {
         return hasHandleMaterial;
+    }
+
+    @Override
+    public boolean isEffectiveOn(BlockState state) {
+        return effectivePredicate.test(state);
     }
 }

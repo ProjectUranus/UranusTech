@@ -1,4 +1,4 @@
-package com.projecturanus.uranustech.api.energy
+package com.projecturanus.uranustech.energy
 
 /**
  * Energy stability system

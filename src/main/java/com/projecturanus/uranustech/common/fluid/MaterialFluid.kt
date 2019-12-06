@@ -1,5 +1,6 @@
 package com.projecturanus.uranustech.common.fluid
 
+import com.projecturanus.uranustech.api.material.MaterialAPI
 import com.projecturanus.uranustech.api.material.MaterialStack
 import com.projecturanus.uranustech.common.material.MaterialContainer
 import net.fabricmc.api.EnvType
@@ -29,14 +30,6 @@ import net.minecraft.world.WorldView
 import java.util.*
 
 abstract class MaterialFluid(override val stack: MaterialStack) : BaseFluid(), MaterialContainer {
-    override fun getFlowing(): Fluid {
-        return Fluids.FLOWING_WATER
-    }
-
-    override fun getStill(): Fluid {
-        return Fluids.WATER
-    }
-
     override fun getBucketItem(): Item {
         return Items.WATER_BUCKET
     }
@@ -72,7 +65,7 @@ abstract class MaterialFluid(override val stack: MaterialStack) : BaseFluid(), M
     }
 
     public override fun toBlockState(fluidState_1: FluidState): BlockState {
-        return Blocks.WATER.defaultState.with(FluidBlock.LEVEL, BaseFluid.method_15741(fluidState_1)) as BlockState
+        return Blocks.WATER.defaultState.with(FluidBlock.LEVEL, method_15741(fluidState_1)) as BlockState
     }
 
     override fun matchesType(fluid_1: Fluid?): Boolean {
@@ -95,11 +88,11 @@ abstract class MaterialFluid(override val stack: MaterialStack) : BaseFluid(), M
         return 100.0f
     }
 
-    class Flowing(stack: MaterialStack) : MaterialFluid(stack) {
+    abstract class Flowing(stack: MaterialStack) : MaterialFluid(stack) {
 
-        override fun appendProperties(`stateFactory$Builder_1`: StateManager.Builder<Fluid, FluidState>) {
-            super.appendProperties(`stateFactory$Builder_1`)
-            `stateFactory$Builder_1`.add(LEVEL)
+        override fun appendProperties(builder: StateManager.Builder<Fluid, FluidState>) {
+            super.appendProperties(builder)
+            builder.add(LEVEL)
         }
 
         override fun getLevel(fluidState_1: FluidState): Int {
@@ -111,7 +104,7 @@ abstract class MaterialFluid(override val stack: MaterialStack) : BaseFluid(), M
         }
     }
 
-    class Still(stack: MaterialStack) : MaterialFluid(stack) {
+    abstract class Still(stack: MaterialStack) : MaterialFluid(stack) {
 
         override fun getLevel(fluidState_1: FluidState): Int {
             return 8
@@ -120,5 +113,43 @@ abstract class MaterialFluid(override val stack: MaterialStack) : BaseFluid(), M
         override fun isStill(fluidState_1: FluidState): Boolean {
             return true
         }
+    }
+}
+
+abstract class MoltenMaterialFluid(override val stack: MaterialStack) : MaterialFluid(stack) {
+
+    override fun isStill(fluidState: FluidState): Boolean = fluidState.fluid is Still
+
+    class Flowing(stack: MaterialStack) : MoltenMaterialFluid(stack) {
+        override fun getFlowing(): Fluid = this
+
+        override fun appendProperties(builder: StateManager.Builder<Fluid, FluidState>) {
+            super.appendProperties(builder)
+            builder.add(LEVEL)
+        }
+
+        override fun getStill(): Fluid? = MaterialAPI.INSTANCE.getStillFluid(stack)
+
+        override fun getLevel(fluidState_1: FluidState): Int {
+            return fluidState_1.get(LEVEL) as Int
+        }
+
+        override fun isStill(fluidState_1: FluidState): Boolean {
+            return false
+        }
+    }
+
+    class Still(stack: MaterialStack) : MoltenMaterialFluid(stack) {
+        override fun getStill(): Fluid = this
+
+        override fun getLevel(fluidState_1: FluidState): Int {
+            return 8
+        }
+
+        override fun isStill(fluidState_1: FluidState): Boolean {
+            return true
+        }
+
+        override fun getFlowing(): Fluid? = MaterialAPI.INSTANCE.getFlowingFluid(stack)
     }
 }

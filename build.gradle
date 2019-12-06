@@ -39,6 +39,9 @@ dependencies {
 //	modImplementation "cloth:ClothEvents:0.3.1.23"
 //	modImplementation "roughly-enough-items:RoughlyEnoughItems:2.9.4+build.129"
 
+	implementation project(":UranusEnergy")
+	include project(":UranusEnergy")
+
 	include "javax.vecmath:vecmath:1.5.2"
 	
 	// ClothConfig2

@@ -11,6 +11,7 @@ import com.projecturanus.uranustech.common.material.JsonMaterial
 import com.projecturanus.uranustech.common.material.MaterialContainer
 import com.projecturanus.uranustech.common.materialRegistry
 import com.projecturanus.uranustech.common.util.localizedName
+import net.minecraft.block.BlockState
 import net.minecraft.client.item.TooltipContext
 import net.minecraft.item.ItemGroup
 import net.minecraft.item.ItemStack
@@ -29,6 +30,14 @@ open class UTToolItem(override val stack: MaterialStack, val handleStack: Materi
 
     override fun getName(itemStack: ItemStack?): TranslatableText {
         return TranslatableText("item.$MODID.form", stack.material.localizedName, stack.form.localizedName)
+    }
+
+    override fun isEffectiveOn(blockState: BlockState?): Boolean {
+        return super.isEffectiveOn(blockState)
+    }
+
+    override fun getMiningSpeed(itemStack: ItemStack?, blockState: BlockState?): Float {
+        return super.getMiningSpeed(itemStack, blockState)
     }
 
     override fun getItemColor(itemStack: ItemStack?, tintIndex: Int): Int =

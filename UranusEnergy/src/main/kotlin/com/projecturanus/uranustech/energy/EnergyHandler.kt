@@ -1,11 +1,9 @@
-package com.projecturanus.uranustech.api.energy
-
-import net.minecraft.util.Tickable
+package com.projecturanus.uranustech.energy
 
 /**
  * An energy handler, stores or control energy flowing
  */
-interface EnergyHandler: Tickable {
+interface EnergyHandler {
     /**
      * Energy stored
      */

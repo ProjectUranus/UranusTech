@@ -1,6 +1,4 @@
-package com.projecturanus.uranustech.api.energy
-
-import net.minecraft.util.Tickable
+package com.projecturanus.uranustech.energy
 
 interface EnergyInterface {
     /**
@@ -20,7 +18,7 @@ interface EnergyInterface {
 /**
  * An energy handler, stores or control energy flowing
  */
-interface EnergyCapacitor: Tickable, EnergyInterface {
+interface EnergyCapacitor: EnergyInterface, Tickable {
     /**
      * Energy stored
      */

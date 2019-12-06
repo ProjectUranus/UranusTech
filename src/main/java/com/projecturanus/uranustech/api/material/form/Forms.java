@@ -23,6 +23,7 @@ public enum Forms implements Form {
 
     ROUND(-9), RING(-4), BOLT(-8), ROTOR(4.25), CART_WHEELS, SCREW(-9),
     NUGGET(-9), STICK(-2), SCRAP_GT(-9),
+    MOLTEN(GenerateTypes.FLUID), GAS(GenerateTypes.FLUID),
     OTHER(GenerateTypes.OTHER);
 
     private double massMultiplier = 1;

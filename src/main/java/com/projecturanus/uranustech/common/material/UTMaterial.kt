@@ -127,6 +127,8 @@ class TagProcessor(val tags: List<String>) {
                         "DIRTY_DUST" -> set += DUST_IMPURE
                         "GEMS" -> set.addAll(GEM_FORMS)
                         "ORES" -> set += ORE
+                        "MOLTEN" -> set += MOLTEN
+                        "GAS" -> set += GAS
                     }
             else if (it == "PROPERTIES.HAS_TOOL_STATS")
                 set.addAll(TOOL_FORMS)

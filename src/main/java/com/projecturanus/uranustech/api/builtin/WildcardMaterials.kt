@@ -1,4 +1,4 @@
-package com.projecturanus.uranustech.api.material
+package com.projecturanus.uranustech.api.builtin
 
 import com.projecturanus.uranustech.MODID
 import com.projecturanus.uranustech.common.material.UTWildcardMaterial

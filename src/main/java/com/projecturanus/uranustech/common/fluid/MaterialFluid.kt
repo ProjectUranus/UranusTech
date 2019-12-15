@@ -134,7 +134,7 @@ abstract class MoltenMaterialFluid(override val stack: MaterialStack) : Material
             return fluidState_1.get(LEVEL) as Int
         }
 
-        override fun isStill(fluidState_1: FluidState): Boolean {
+        override fun isStill(fluidState: FluidState): Boolean {
             return false
         }
     }
@@ -146,7 +146,7 @@ abstract class MoltenMaterialFluid(override val stack: MaterialStack) : Material
             return 8
         }
 
-        override fun isStill(fluidState_1: FluidState): Boolean {
+        override fun isStill(fluidState: FluidState): Boolean {
             return true
         }
 

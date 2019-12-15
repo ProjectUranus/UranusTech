@@ -7,16 +7,8 @@ import net.minecraft.item.ItemGroup
 import net.minecraft.util.Identifier
 import net.minecraft.util.registry.DefaultedRegistry
 import net.minecraft.util.registry.MutableRegistry
-import org.apache.lucene.analysis.core.SimpleAnalyzer
-import org.apache.lucene.index.IndexWriter
-import org.apache.lucene.index.IndexWriterConfig
-import org.apache.lucene.index.StandardDirectoryReader
-import org.apache.lucene.search.IndexSearcher
-import org.apache.lucene.store.MMapDirectory
 
-lateinit var materialDirectory: MMapDirectory
-val materialIndexWriter by lazy { IndexWriter(materialDirectory, IndexWriterConfig(SimpleAnalyzer())) }
-val materialIndexSearcher by lazy { IndexSearcher(StandardDirectoryReader.open(materialDirectory)) }
+
 
 val formRegistry = DefaultedRegistry<Form>("uranustech:other")
 val materialRegistry = DefaultedRegistry<Material>("uranustech:unknown")

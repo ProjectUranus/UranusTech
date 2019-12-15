@@ -2,14 +2,14 @@ package com.projecturanus.uranustech.api.material.generate;
 
 import com.projecturanus.uranustech.api.material.MaterialStack;
 import com.projecturanus.uranustech.common.block.MaterialBlock;
-import com.projecturanus.uranustech.common.fluid.MaterialFluid;
+import com.projecturanus.uranustech.common.fluid.MoltenMaterialFluid;
 import com.projecturanus.uranustech.common.item.FormItem;
 import com.projecturanus.uranustech.common.material.MaterialContainer;
 
 import java.util.function.Function;
 
 public enum GenerateTypes implements GenerateType {
-    BLOCK(MaterialBlock::new), ITEM(FormItem::new), TOOL(null), FLUID(MaterialFluid.Still::new), OTHER(stack -> null);
+    BLOCK(MaterialBlock::new), ITEM(FormItem::new), TOOL(null), FLUID(MoltenMaterialFluid.Still::new), OTHER(stack -> null);
 
     private Function<MaterialStack, MaterialContainer> function;
 

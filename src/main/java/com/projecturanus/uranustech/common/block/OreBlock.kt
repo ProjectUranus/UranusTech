@@ -18,7 +18,7 @@ class OreBlock(stack: MaterialStack) : MaterialBlock(stack) {
     }
 
     override fun getPickStack(blockView: BlockView, blockPos: BlockPos, blockState: BlockState): ItemStack {
-        return getOreItem(blockState) ?: ItemStack.EMPTY
+        return getOreItem(blockState)
     }
 
     override fun appendProperties(stateFactory: StateManager.Builder<Block, BlockState>) {

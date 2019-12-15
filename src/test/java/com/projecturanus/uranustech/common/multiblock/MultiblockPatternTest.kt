@@ -1,7 +1,17 @@
 package com.projecturanus.uranustech.common.multiblock
 
-import net.minecraft.block.Blocks
+import com.projecturanus.uranustech.common.util.minus
+import net.minecraft.util.math.BlockPos
+import org.junit.Test
 
-fun main() {
+class MultiblockPatternTest {
+    @Test
+    fun testRanged() {
+        val rangedIngredient = RangedMultiblockIngredient(1, 8, {_ -> true}, { _, _ -> true})
+    }
 
+    @Test
+    fun testRelative() {
+        println(BlockPos(100, 31, 1) - BlockPos(200, 32, 1))
+    }
 }

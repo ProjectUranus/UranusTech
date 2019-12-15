@@ -6,8 +6,12 @@ import com.google.common.jimfs.PathType
 import com.google.gson.Gson
 import com.google.gson.JsonSyntaxException
 import com.projecturanus.uranustech.MODID
-import com.projecturanus.uranustech.api.material.*
+import com.projecturanus.uranustech.api.builtin.WILDCARD_MATERIALS
+import com.projecturanus.uranustech.api.builtin.refreshMaterials
+import com.projecturanus.uranustech.api.material.Constants
 import com.projecturanus.uranustech.api.material.Constants.TOOL_INFO
+import com.projecturanus.uranustech.api.material.Material
+import com.projecturanus.uranustech.api.material.MaterialStack
 import com.projecturanus.uranustech.api.material.form.Form
 import com.projecturanus.uranustech.api.material.form.Forms
 import com.projecturanus.uranustech.api.material.generate.GenerateTypes
@@ -23,7 +27,6 @@ import com.projecturanus.uranustech.common.command.MaterialCommand
 import com.projecturanus.uranustech.common.container.MATERIAL_SHOWCASE
 import com.projecturanus.uranustech.common.container.MaterialShowcaseContainer
 import com.projecturanus.uranustech.common.fluid.MoltenMaterialFluid
-import com.projecturanus.uranustech.common.index.toDocument
 import com.projecturanus.uranustech.common.item.FormItem
 import com.projecturanus.uranustech.common.item.MaterialBlockItem
 import com.projecturanus.uranustech.common.item.OreBlockItem
@@ -105,7 +108,6 @@ fun registerBuiltin() = runBlocking {
                             validFormsCache = TagProcessor(tags).getForms().toList()
                         }
                         materialRegistry.add(material.identifier, material)
-                        materialIndexWriter.addDocument(material.toDocument())
                     } catch (e: JsonSyntaxException) {
                         logger.error("Malformed json in " + entry.name, e)
                         logger.error(String(content))
@@ -113,10 +115,6 @@ fun registerBuiltin() = runBlocking {
                 }
             }
         }.join()
-        withContext(Dispatchers.IO) {
-            materialIndexWriter.flush()
-            materialIndexWriter.close()
-        }
         refreshMaterials()
         // Wildcard materials
         WILDCARD_MATERIALS.forEach { material ->
@@ -211,7 +209,7 @@ fun registerBuiltin() = runBlocking {
                     material.subMaterials().forEach { subMaterial ->
                         subMaterial.validForms.forEach { form ->
                             itemFormMap[form] = itemFormMap.getOrDefault(form, mutableListOf())
-                            subMaterial.getItem(form)?.let { if (it.item is FormItem) itemFormMap[form]?.add(it.item as FormItem) }
+                            subMaterial.getItem(form).let { if (it.item is FormItem) itemFormMap[form]?.add(it.item as FormItem) }
                         }
                     }
                     itemTagMap[material] = itemFormMap.mapValues { it.value.asItemTag(Identifier(material.identifier.namespace, "${material.identifier.path}_${it.key.asString()}")) }.toMutableMap()

@@ -31,9 +31,6 @@ repositories {
     }
 }
 
-minecraft {
-}
-
 dependencies {
 //	modImplementation "cloth-config:ClothConfig2:0.2.0"
 //	modImplementation "cloth:ClothEvents:0.3.1.23"
@@ -42,27 +39,19 @@ dependencies {
 	implementation project(":UranusEnergy")
 	include project(":UranusEnergy")
 
+	implementation "javax.vecmath:vecmath:1.5.2"
 	include "javax.vecmath:vecmath:1.5.2"
-	
-	// ClothConfig2
-	modImplementation "me.shedaniel.cloth:config-2:1.5.1"
-	include "me.shedaniel.cloth:config-2:1.5.1"
 
-	implementation 'org.apache.lucene:lucene-core:8.3.0'
-	implementation 'org.apache.lucene:lucene-queryparser:8.3.0'
-	implementation 'org.apache.lucene:lucene-highlighter:8.3.0'
-	implementation 'org.apache.lucene:lucene-analyzers-common:8.3.0'
-	implementation 'org.apache.lucene:lucene-analyzers-smartcn:8.3.0'
-	include 'org.apache.lucene:lucene-core:8.3.0'
-	include 'org.apache.lucene:lucene-queryparser:8.3.0'
-	include 'org.apache.lucene:lucene-highlighter:8.3.0'
-	include 'org.apache.lucene:lucene-analyzers-common:8.3.0'
-	include 'org.apache.lucene:lucene-analyzers-smartcn:8.3.0'
+	implementation 'org.dizitart:nitrite:3.3.0'
+	include 'org.dizitart:nitrite:3.3.0'
 
-	modImplementation "io.github.prospector:modmenu:1.7.9+build.118"
+	implementation 'io.reactivex.rxjava2:rxjava:2.2.15'
+	include 'io.reactivex.rxjava2:rxjava:2.2.15'
+	implementation 'io.reactivex.rxjava2:rxkotlin:2.4.0'
+	include 'io.reactivex.rxjava2:rxkotlin:2.4.0'
 
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
-	mappings "net.fabricmc:yarn:${project.yarn_mappings}"
+	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
 
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 

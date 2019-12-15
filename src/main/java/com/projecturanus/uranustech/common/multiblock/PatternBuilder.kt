@@ -1,5 +1,7 @@
 package com.projecturanus.uranustech.common.multiblock
 
+import com.google.common.collect.BiMap
+import com.google.common.collect.HashBiMap
 import net.minecraft.block.Block
 import net.minecraft.block.BlockState
 import net.minecraft.util.math.BlockPos
@@ -30,7 +32,7 @@ open class MultiblockIngredient(
     }
 }
 
-class RangedMultiblockIngredient(val min: Int, val max: Int, validator: (BlockState) -> Boolean, val indexedValidator: (BlockState, Int) -> Boolean, knownStates: List<BlockState> = listOf()) : MultiblockIngredient(validator, knownStates)
+open class RangedMultiblockIngredient(val min: Int, val max: Int, validator: (BlockState) -> Boolean, val indexedValidator: (BlockState, Int) -> Boolean, knownStates: List<BlockState> = listOf()) : MultiblockIngredient(validator, knownStates)
 
 class PatternBuilder {
     companion object {
@@ -69,30 +71,50 @@ class PatternBuilder {
 
     fun build(reversed: Boolean): MultiblockPattern {
         require(patterns.count { it.count { it.count(MultiblockIngredient::base) == 1 } == 1 } == 1) { "Multiblock base missing or more than 1: $patterns" }
-        return if (reversed) MultiblockPattern(patterns.asReversed(), allowRotate) else MultiblockPattern(patterns, allowRotate)
+        return MultiblockPattern(if (reversed) patterns.asReversed() else patterns, allowRotate)
     }
 }
 
 class MultiblockPattern(val patterns: List<List<List<MultiblockIngredient>>>, var allowRotate: Boolean): Cloneable {
+    val patternMap: BiMap<BlockPos, MultiblockIngredient> = HashBiMap.create()
     var relativeBasePos: BlockPos = BlockPos.ORIGIN
+    lateinit var base: MultiblockIngredient
     val axisIndex = mutableMapOf<Int, Pair<Int, Int>>()
 
     init {
         patterns.forEachIndexed { y, layer ->
             layer.forEachIndexed { z, row ->
                 row.forEachIndexed { x, ingredient ->
-                    if (ingredient.base)
+                    if (ingredient.base) {
                         relativeBasePos = BlockPos(x, y, z)
+                        base = ingredient
+                    }
                     if (ingredient.axis)
                         axisIndex[y] = x to z
+                    patternMap[BlockPos(x, y, z)] = ingredient
                 }
             }
         }
+        if (!::base.isInitialized) {
+            throw IllegalArgumentException("No multiblock base provided")
+        }
     }
+
+    operator fun get(x: Int, y: Int, z: Int) = patterns[y][z][x]
+
+    operator fun get(pos: BlockPos) = patterns[pos.y][pos.z][pos.x]
 
     override fun clone() = MultiblockPattern(patterns, allowRotate)
 
     operator fun get(y: Int) = patterns[y]
+
+    fun rotated(flipUpDown: Boolean = false): List<MultiblockPattern> {
+        return listOf(
+                MultiblockPattern(patterns.map { it.asReversed() }, allowRotate),
+                MultiblockPattern(patterns.map { list -> list.map { it.asReversed() } }, allowRotate),
+                MultiblockPattern(patterns.map { list -> list.map { it.asReversed() }.asReversed() }, allowRotate)
+        ).also { if (flipUpDown) it + it.map { list -> MultiblockPattern(list.patterns.asReversed(), allowRotate) } }
+    }
 
     override fun toString(): String {
         return "MultiblockPattern(patterns=$patterns, relativeBasePos=$relativeBasePos, axisIndex=$axisIndex)"

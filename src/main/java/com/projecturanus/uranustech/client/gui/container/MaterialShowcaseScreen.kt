@@ -18,13 +18,13 @@ class MaterialShowcaseScreen(container: MaterialShowcaseContainer) : AbstractInv
     override fun drawBackground(f: Float, i: Int, j: Int) {
         GlStateManager.color4f(1.0f, 1.0f, 1.0f, 1.0f)
         minecraft!!.textureManager.bindTexture(TEXTURE)
-        val x = this.left
+        val x = this.x
         val y = (this.height - this.containerHeight) / 2
         this.blit(x, y, 0, 0, this.containerWidth, this.containerHeight)
     }
     override fun drawForeground(i: Int, j: Int) {
 
-        val x = this.left
+        val x = this.x
         val y = (this.height - this.containerHeight) / 2
         font.draw(container.material.localizedName.asFormattedString(), 12.0f, 5.0f, 4210752)
         font.draw(this.playerInventory.displayName.asFormattedString(), 8.0f, (this.containerHeight - 96 + 2).toFloat(), 4210752)

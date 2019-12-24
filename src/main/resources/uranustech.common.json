@@ -3,10 +3,11 @@
   "package": "com.projecturanus.uranustech.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
+    "MixinIdentifier",
     "MixinPacketByteBuf",
     "MixinCustomPayloadS2CPacket",
     "MixinTagContainer",
-    "MixinFurnaceBlockEntity"
+    "MixinInventory"
   ],
   "injectors": {
     "defaultRequire": 1

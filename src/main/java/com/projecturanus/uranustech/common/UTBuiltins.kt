@@ -3,7 +3,8 @@ package com.projecturanus.uranustech.common
 import com.google.common.jimfs.Configuration
 import com.google.common.jimfs.Jimfs
 import com.google.common.jimfs.PathType
-import com.google.gson.Gson
+import com.google.gson.GsonBuilder
+import com.google.gson.JsonObject
 import com.google.gson.JsonSyntaxException
 import com.projecturanus.uranustech.MODID
 import com.projecturanus.uranustech.api.builtin.WILDCARD_MATERIALS
@@ -35,11 +36,8 @@ import com.projecturanus.uranustech.common.material.JsonMaterial
 import com.projecturanus.uranustech.common.material.MaterialAPIImpl
 import com.projecturanus.uranustech.common.material.TagProcessor
 import com.projecturanus.uranustech.common.material.setupDelegate
-import com.projecturanus.uranustech.common.resource.forEach
-import com.projecturanus.uranustech.common.util.asBlockTag
-import com.projecturanus.uranustech.common.util.asItemTag
-import com.projecturanus.uranustech.common.util.getBlock
-import com.projecturanus.uranustech.common.util.getItem
+import com.projecturanus.uranustech.common.resource.asSequence
+import com.projecturanus.uranustech.common.util.*
 import com.projecturanus.uranustech.common.worldgen.ORE_GEN_FEATURE
 import com.projecturanus.uranustech.common.worldgen.RockLayerBuilder
 import com.projecturanus.uranustech.common.worldgen.SimpleOreGenFeature
@@ -61,6 +59,9 @@ import net.minecraft.world.gen.decorator.RangeDecoratorConfig
 import net.minecraft.world.gen.feature.Feature
 import net.minecraft.world.gen.feature.OreFeatureConfig
 import org.apache.commons.compress.archivers.zip.ZipArchiveInputStream
+import org.dizitart.no2.Document
+import org.dizitart.no2.IndexOptions
+import org.dizitart.no2.IndexType
 import java.util.*
 import java.util.concurrent.ConcurrentHashMap
 import java.util.concurrent.ThreadLocalRandom
@@ -88,33 +89,33 @@ fun registerBuiltin() = runBlocking {
         formRegistry.add(Identifier(MODID, it.asString()), it)
     }
 
-    val gson = Gson()
+    val collection = matdb.getCollection("materials")
+    val gson = GsonBuilder().create()
     logger.info("Load materials took " + measureTimeMillis {
-        async {
-            val zipInputStream = ZipArchiveInputStream(javaClass.getResourceAsStream("/data/uranustech/materials/materials.zip"))
-            zipInputStream.forEach { content, entry ->
-                launch {
-                    try {
-                        val material = gson.fromJson(String(content), JsonMaterial::class.java).apply {
-                            name = name.toLowerCase()
-                            infos = mapOf(
-                                    Constants.ATOM_INFO to AtomInfo().also { it.electrons = electrons; it.neutrons = neutrons; it.protons = protons },
-                                    Constants.MATTER_INFO to MatterInfo().also { it.gramPerCubicCentimeter = gramPerCubicCentimeter },
-                                    Constants.ORE_INFO to OreInfo().also { it.oreMultiplier = oreMultiplier; it.oreProgressingMultiplier = oreProgressingMultiplier },
-                                    Constants.STATE_INFO to StateInfo().also { it.boilingPoint = boilingPoint; it.meltingPoint = meltingPoint; it.plasmaPoint = plasmaPoint },
-                                    Constants.FUEL_INFO to FuelInfo().also { it.burnTime = burnTime },
-                                    Constants.TOOL_INFO to ToolInfo().also { it.toolDurability = toolDurability; it.toolQuality = toolQuality; it.toolSpeed = toolSpeed; it.toolTypes = toolTypes; it.handleMaterialId = Identifier(MODID, handleMaterial) }
-                            )
-                            validFormsCache = TagProcessor(tags).getForms().toList()
-                        }
-                        materialRegistry.add(material.identifier, material)
-                    } catch (e: JsonSyntaxException) {
-                        logger.error("Malformed json in " + entry.name, e)
-                        logger.error(String(content))
+        val zipInputStream = ZipArchiveInputStream(javaClass.getResourceAsStream("/data/uranustech/materials/materials.zip"))
+        zipInputStream.asSequence().forEach { (entry, content) ->
+            launch {
+                try {
+                    val material = gson.fromJson(String(content), JsonMaterial::class.java).apply {
+                        name = name.toLowerCase()
+                        infos = mapOf(
+                                Constants.ATOM_INFO to AtomInfo().also { it.electrons = electrons; it.neutrons = neutrons; it.protons = protons },
+                                Constants.MATTER_INFO to MatterInfo().also { it.gramPerCubicCentimeter = gramPerCubicCentimeter },
+                                Constants.ORE_INFO to OreInfo().also { it.oreMultiplier = oreMultiplier; it.oreProgressingMultiplier = oreProgressingMultiplier },
+                                Constants.STATE_INFO to StateInfo().also { it.boilingPoint = boilingPoint; it.meltingPoint = meltingPoint; it.plasmaPoint = plasmaPoint },
+                                Constants.FUEL_INFO to FuelInfo().also { it.burnTime = burnTime },
+                                Constants.TOOL_INFO to ToolInfo().also { it.toolDurability = toolDurability; it.toolQuality = toolQuality; it.toolSpeed = toolSpeed; it.toolTypes = toolTypes; it.handleMaterialId = Identifier(MODID, handleMaterial) }
+                        )
+                        val tagProcessor = TagProcessor(tags)
+                        validFormsCache = tagProcessor.getForms().toList()
                     }
+                    materialRegistry.add(material.identifier, material)
+                } catch (e: JsonSyntaxException) {
+                    logger.error("Malformed json in " + entry.name, e)
+                    logger.error(String(content))
                 }
-            }
-        }.join()
+            }.join()
+        }
         refreshMaterials()
         // Wildcard materials
         WILDCARD_MATERIALS.forEach { material ->
@@ -252,6 +253,25 @@ fun registerBuiltin() = runBlocking {
         if (mapped != null)
             materialRegistry.set(index, mapped.identifier, mapped)
     }
+    collection.createIndex("id", IndexOptions.indexOptions(IndexType.Unique))
+    collection.createIndex("internalId", IndexOptions.indexOptions(IndexType.Fulltext))
+    collection.createIndex("chemicalCompound", IndexOptions.indexOptions(IndexType.Fulltext))
+    materialRegistry.forEach { material ->
+        collection.insert(
+            with(material) {
+                Document().also { document ->
+                    document["id"] = identifier.toString()
+                    document["internalId"] = identifier.path.replace('_', ' ')
+                    document["chemicalCompound"] = chemicalCompound
+                    document["hidden"] = isHidden
+                    document["textureSet"] = textureSet
+                    document["elements"] = elements
+                    document["infos"] = Document().also { info -> infos.forEach { info[it.identifier.toString()] = (gson.toJsonTree(it) as JsonObject).toDocument() }}
+                }
+            }
+        )
+    }
+    collection.close()
     logger.info("[UranusTech] Builtin registration done")
 }
 

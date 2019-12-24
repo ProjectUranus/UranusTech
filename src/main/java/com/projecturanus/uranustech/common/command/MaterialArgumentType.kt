@@ -8,12 +8,16 @@ import com.mojang.brigadier.exceptions.SimpleCommandExceptionType
 import com.mojang.brigadier.suggestion.Suggestions
 import com.mojang.brigadier.suggestion.SuggestionsBuilder
 import com.projecturanus.uranustech.api.material.Material
+import com.projecturanus.uranustech.common.matdb
 import com.projecturanus.uranustech.common.materialRegistry
 import net.minecraft.util.Identifier
+import org.dizitart.no2.NitriteCollection
 import java.util.concurrent.CompletableFuture
 
 
 object MaterialArgumentType : ArgumentType<Material> {
+    private val materialCollection: NitriteCollection by lazy { matdb.getCollection("materials") }
+
     val examples = listOf("uranustech:iron", "xxx:mat")
 
     override fun parse(reader: StringReader): Material? {

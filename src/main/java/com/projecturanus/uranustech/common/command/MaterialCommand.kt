@@ -3,8 +3,6 @@ package com.projecturanus.uranustech.common.command
 import com.mojang.brigadier.CommandDispatcher
 import com.projecturanus.uranustech.api.material.Material
 import com.projecturanus.uranustech.common.container.MATERIAL_SHOWCASE
-import com.projecturanus.uranustech.common.multiblock.multiblock
-import com.projecturanus.uranustech.common.multiblock.validateMultiblock
 import com.projecturanus.uranustech.common.util.localizedName
 import net.fabricmc.fabric.api.container.ContainerProviderRegistry
 import net.minecraft.block.Blocks
@@ -18,6 +16,7 @@ import net.minecraft.text.LiteralText
 import net.minecraft.text.Style
 import net.minecraft.util.Formatting
 import net.minecraft.util.math.BlockPos
+import vazkii.botania.api.lexicon.multiblock.Multiblock
 
 object MaterialCommand {
     fun register(dispatcher: CommandDispatcher<ServerCommandSource>) {
@@ -45,16 +44,13 @@ object MaterialCommand {
             }))
         )
         dispatcher.register(CommandManager.literal("testmultiblock").then(CommandManager.argument("pos", BlockPosArgumentType.blockPos()).executes {
-            validateMultiblock(multiblock {
-                layer(
-                        row(Blocks.OAK_LOG, Blocks.OAK_LOG, Blocks.OAK_LOG),
-                        row(listOf(Blocks.OAK_LOG), axis(Blocks.OAK_LOG), listOf(Blocks.OAK_LOG))
-                )
-                layer(
-                        row(Blocks.OAK_LOG, Blocks.OAK_LOG, Blocks.OAK_LOG),
-                        row(listOf(Blocks.OAK_LOG), base(Blocks.OAK_LOG), listOf(Blocks.OAK_LOG))
-                )
-            }, it.getArgument("pos", BlockPos::class.java), it.source.world).hashCode()
+            val multiblock = Multiblock().apply {
+                addComponent(BlockPos(-1, 0, 0), Blocks.OAK_LOG.defaultState)
+                addComponent(BlockPos(1, 0, 0), Blocks.DARK_OAK_LOG.defaultState)
+            }
+            val pos = it.getArgument("pos", BlockPos::class.java)
+            multiblock.makeSet().getForEntity(it.source.entity)
+            0
         }))
     }
 }

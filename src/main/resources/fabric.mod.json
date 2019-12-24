@@ -29,6 +29,12 @@
         "adapter": "kotlin",
         "value": "com.projecturanus.uranustech.client.UranusTechClient"
       }
+    ],
+    "rei_plugins_v0": [
+      {
+        "adapter": "kotlin",
+        "value": "com.projecturanus.uranustech.common.compat.rei.UTREIPlugin"
+      }
     ]
   },
   "mixins": [

@@ -1,5 +1,6 @@
 package com.projecturanus.uranustech.api.material.info;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.projecturanus.uranustech.api.material.Constants;
 import com.projecturanus.uranustech.api.material.Material;
 import com.projecturanus.uranustech.api.material.MaterialAPI;
@@ -65,10 +66,12 @@ public class ToolInfo implements MaterialInfo, ToolMaterial {
         return 0;
     }
 
+    @JsonIgnore
     public Material getHandleMaterial() {
         return MaterialAPI.INSTANCE.getMaterialRegistry().get(handleMaterialId);
     }
 
+    @JsonIgnore
     @Override
     public Ingredient getRepairIngredient() {
         return Optional.ofNullable(UTBuiltinsKt.getFormMaterialMap().get(getHandleMaterial())).map(formMap -> formMap.get(Forms.INGOT)).map(Ingredient::ofItems).orElse(Ingredient.EMPTY);

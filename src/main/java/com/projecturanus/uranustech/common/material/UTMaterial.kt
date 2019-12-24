@@ -57,7 +57,8 @@ open class JsonMaterial(var name: String, val tags: List<String>,
                         val oreProgressingMultiplier: Int, val toolDurability: Long, val toolSpeed: Float, val toolTypes: Int, val toolQuality: Int,
                         val meltingPoint: Int, val boilingPoint: Int, val plasmaPoint: Int, val neutrons: Int = 0, val protons: Int = 0, val electrons: Int = 0,
                         val components: MaterialComponent?): Material {
-    lateinit var validFormsCache: List<Form>
+    var validFormsCache: List<Form> = emptyList()
+    var elementsCache: Set<Element> = emptySet()
 
     override fun getDescription() = descriptionInternal?.toList() ?: emptyList()
 
@@ -67,7 +68,7 @@ open class JsonMaterial(var name: String, val tags: List<String>,
 
     override fun getComposition() = emptyMap<Compound, Int>()
 
-    override fun getElements() = emptySet<Element>()
+    override fun getElements() = elementsCache
 
     override fun getColor() = colorSolid
 

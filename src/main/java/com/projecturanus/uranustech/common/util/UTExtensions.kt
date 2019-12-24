@@ -1,5 +1,8 @@
 package com.projecturanus.uranustech.common.util
 
+import com.google.gson.JsonArray
+import com.google.gson.JsonObject
+import com.google.gson.JsonPrimitive
 import com.projecturanus.uranustech.MODID
 import com.projecturanus.uranustech.api.material.Constants
 import com.projecturanus.uranustech.api.material.Material
@@ -23,6 +26,7 @@ import net.minecraft.util.Identifier
 import net.minecraft.util.math.BlockPos
 import net.minecraft.util.math.Position
 import net.minecraft.util.math.Vec3i
+import org.dizitart.no2.Document
 import java.awt.Color
 
 typealias Temperature = Double
@@ -108,6 +112,7 @@ class InventoryIterator(val inv: Inventory) : MutableListIterator<ItemStack> {
     }
 }
 
+
 fun Inventory.iterator() = InventoryIterator(this)
 
 fun Material.getItem(form: Form): ItemStack = MaterialAPI.INSTANCE.getMaterialItem(MaterialStack(this, form))
@@ -146,4 +151,21 @@ fun Collection<Block>.asBlockTag(identifier: Identifier, register: Boolean = tru
     if (register)
         BlockTags.getContainer().entries[identifier] = tag
     return tag
+}
+
+fun JsonObject.toDocument(): Document {
+    val document = Document()
+    entrySet().forEach { (id, element) ->
+        document[id] =
+            if (element is JsonPrimitive) {
+                if (element.isBoolean) element.asBoolean
+                if (element.isNumber) element.asNumber
+                else element.asString
+            } else if (element is JsonArray) {
+                element.filterIsInstance<JsonObject>().map { it.asJsonObject.toDocument() }
+            } else if (element is JsonObject) {
+                element.toDocument()
+            } else null
+    }
+    return document
 }

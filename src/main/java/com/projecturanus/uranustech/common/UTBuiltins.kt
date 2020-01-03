@@ -24,6 +24,7 @@ import com.projecturanus.uranustech.api.worldgen.Rock
 import com.projecturanus.uranustech.api.worldgen.Rocks
 import com.projecturanus.uranustech.common.block.MaterialBlock
 import com.projecturanus.uranustech.common.block.OreBlock
+import com.projecturanus.uranustech.common.block.structure.CokeOvenControllerBlock
 import com.projecturanus.uranustech.common.command.MaterialCommand
 import com.projecturanus.uranustech.common.container.MATERIAL_SHOWCASE
 import com.projecturanus.uranustech.common.container.MaterialShowcaseContainer
@@ -240,8 +241,11 @@ fun registerBuiltin() = runBlocking {
             }
         }
     } + "ms")
+
     Registry.register(Registry.FEATURE, Identifier(MODID, "ore_gen"), SimpleOreGenFeature())
     Registry.register(Registry.SURFACE_BUILDER, Identifier(MODID, "rock_surface"), RockLayerBuilder())
+
+    registerMachines()
 
     logger.info("Registered ${registeredItems.get()} items")
     logger.info("Registered ${registeredBlocks.get()} blocks")
@@ -277,6 +281,10 @@ fun registerBuiltin() = runBlocking {
 
 fun <E> List<E>.random(random: Random = ThreadLocalRandom.current()): E? =
     if (size > 0) this[random.nextInt(this.size)] else null
+
+fun registerMachines() {
+    registerBlock(Identifier(MODID, "coke_oven_controller"), CokeOvenControllerBlock)
+}
 
 fun registerContainers() {
     ContainerProviderRegistry.INSTANCE.registerFactory(MATERIAL_SHOWCASE) { syncId, id, player, packet -> MaterialShowcaseContainer(packet.readIdentifier(), player.inventory, syncId) }

@@ -2,10 +2,10 @@ package gregtech.api.multiblock;
 
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
-import net.minecraft.predicate.NumberRange;
+import kotlin.ranges.IntRange;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
-import net.minecraft.world.World;
+import net.minecraft.world.BlockView;
 import org.apache.commons.lang3.tuple.Pair;
 
 import java.util.List;
@@ -22,7 +22,7 @@ public class BlockPattern {
     private final int palmLength; //x size
     private final RelativeDirection[] structureDir;
     private final int[][] aisleRepetitions;
-    private final Pair<Predicate<BlockWorldState>, NumberRange.IntRange>[] countMatches;
+    private final Pair<Predicate<BlockWorldState>, IntRange>[] countMatches;
 
     // x, y, z, minZ, maxZ
     private int[] centerOffset = null;
@@ -33,7 +33,7 @@ public class BlockPattern {
     private final PatternMatchContext layerContext = new PatternMatchContext();
 
     public BlockPattern(Predicate<BlockWorldState>[][][] predicatesIn,
-                        List<Pair<Predicate<BlockWorldState>, NumberRange.IntRange>> countMatches,
+                        List<Pair<Predicate<BlockWorldState>, IntRange>> countMatches,
                         Int2ObjectMap<Predicate<PatternMatchContext>> layerMatchers,
                         List<Predicate<PatternMatchContext>> validators,
                         RelativeDirection[] structureDir,
@@ -92,7 +92,7 @@ public class BlockPattern {
         return this.palmLength;
     }
 
-    public PatternMatchContext checkPatternAt(World world, BlockPos centerPos, Direction facing) {
+    public PatternMatchContext checkPatternAt(BlockView world, BlockPos centerPos, Direction facing) {
         int[] countMatchesCache = new int[countMatches.length];
         boolean findFirstAisle = false;
         int minZ = -centerOffset[4];
@@ -152,8 +152,8 @@ public class BlockPattern {
 
         //Check count matches amount
         for (int i = 0; i < countMatchesCache.length; i++) {
-            NumberRange.IntRange intRange = countMatches[i].getRight();
-            if (!intRange.isInsideOf(countMatchesCache[i])) {
+            IntRange intRange = countMatches[i].getRight();
+            if (!intRange.contains(countMatchesCache[i])) {
                 return null; //count matches didn't match
             }
         }
@@ -203,8 +203,8 @@ public class BlockPattern {
     public enum RelativeDirection {
         UP(f -> Direction.UP),
         DOWN(f -> Direction.DOWN),
-        LEFT(Direction::rotateYCCW),
-        RIGHT(Direction::rotateY),
+        LEFT(Direction::rotateYCounterclockwise),
+        RIGHT(Direction::rotateYClockwise),
         FRONT(Function.identity()),
         BACK(Direction::getOpposite);
 

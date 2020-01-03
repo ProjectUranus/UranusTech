@@ -5,8 +5,6 @@ import com.projecturanus.uranustech.api.material.Material
 import com.projecturanus.uranustech.common.container.MATERIAL_SHOWCASE
 import com.projecturanus.uranustech.common.util.localizedName
 import net.fabricmc.fabric.api.container.ContainerProviderRegistry
-import net.minecraft.block.Blocks
-import net.minecraft.command.arguments.BlockPosArgumentType
 import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.item.ItemStack
 import net.minecraft.item.Items
@@ -15,8 +13,6 @@ import net.minecraft.server.command.ServerCommandSource
 import net.minecraft.text.LiteralText
 import net.minecraft.text.Style
 import net.minecraft.util.Formatting
-import net.minecraft.util.math.BlockPos
-import vazkii.botania.api.lexicon.multiblock.Multiblock
 
 object MaterialCommand {
     fun register(dispatcher: CommandDispatcher<ServerCommandSource>) {
@@ -43,14 +39,5 @@ object MaterialCommand {
                 0
             }))
         )
-        dispatcher.register(CommandManager.literal("testmultiblock").then(CommandManager.argument("pos", BlockPosArgumentType.blockPos()).executes {
-            val multiblock = Multiblock().apply {
-                addComponent(BlockPos(-1, 0, 0), Blocks.OAK_LOG.defaultState)
-                addComponent(BlockPos(1, 0, 0), Blocks.DARK_OAK_LOG.defaultState)
-            }
-            val pos = it.getArgument("pos", BlockPos::class.java)
-            multiblock.makeSet().getForEntity(it.source.entity)
-            0
-        }))
     }
 }

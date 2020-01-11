@@ -13,7 +13,7 @@ class CokeOvenBlockEntity(var facing: Direction = Direction.NORTH) : BlockEntity
 
     fun match() {
         facing = cachedState[FacingBlock.FACING]
-        println(pattern.checkPatternAt(world, pos, facing))
+        println(pattern.checkPatternAt(world!!, pos, facing))
     }
 
     override fun tick() {

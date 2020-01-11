@@ -9,7 +9,6 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectMap
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap
 import org.apache.commons.lang3.ArrayUtils
 import org.apache.commons.lang3.StringUtils
-import org.apache.commons.lang3.tuple.Pair
 import java.util.*
 import java.util.function.Predicate
 
@@ -22,7 +21,7 @@ class FactoryBlockPattern private constructor(charDir: RelativeDirection, string
     private val contextValidators: MutableList<Predicate<PatternMatchContext>> = ArrayList()
     private var aisleHeight = 0
     private var rowWidth = 0
-    private val structureDir = arrayOfNulls<RelativeDirection>(3)
+    private val structureDir = arrayOf(charDir, stringDir, aisleDir)
     /**
      * Adds a repeatable aisle to this pattern.
      */
@@ -136,7 +135,7 @@ class FactoryBlockPattern private constructor(charDir: RelativeDirection, string
         val array: MutableList<Pair<Predicate<BlockWorldState>?, IntRange>> = ArrayList(countLimits.size)
         Char2ObjectMaps.fastForEach(countLimits) { (key, value) ->
             val predicate = symbolMap[key]
-            array.add(Pair.of(predicate, value))
+            array.add(predicate to value)
         }
         return array
     }
@@ -161,9 +160,7 @@ class FactoryBlockPattern private constructor(charDir: RelativeDirection, string
     }
 
     init {
-        structureDir[0] = charDir
-        structureDir[1] = stringDir
-        structureDir[2] = aisleDir
+
         var flags = 0
         for (i in 0..2) {
             when (structureDir[i]) {

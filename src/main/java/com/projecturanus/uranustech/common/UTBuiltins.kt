@@ -24,6 +24,7 @@ import com.projecturanus.uranustech.api.worldgen.Rock
 import com.projecturanus.uranustech.api.worldgen.Rocks
 import com.projecturanus.uranustech.common.block.MaterialBlock
 import com.projecturanus.uranustech.common.block.OreBlock
+import com.projecturanus.uranustech.common.block.entity.COKE_OVEN
 import com.projecturanus.uranustech.common.block.structure.CokeOvenControllerBlock
 import com.projecturanus.uranustech.common.command.MaterialCommand
 import com.projecturanus.uranustech.common.container.MATERIAL_SHOWCASE
@@ -81,7 +82,7 @@ val rockMap = EnumMap<Rocks, MaterialBlock>(Rocks::class.java)
 val blockItemMap = ConcurrentHashMap<MaterialBlock, MaterialBlockItem>()
 
 fun registerBuiltin() = runBlocking {
-    groupMap.add(Identifier(MODID, "base"), FabricItemGroupBuilder.create(Identifier(MODID, "base")).icon { materialRegistry.get(Identifier(MODID, "steel"))?.getItem(Forms.INGOT) }.build())
+    groupMap.add(Identifier(MODID, "base"), FabricItemGroupBuilder.create(Identifier(MODID, "base")).icon { materialRegistry.get(Identifier(MODID, "steel")).getItem(Forms.INGOT) }.build())
     groupMap.add(Identifier(MODID, "tool"), FabricItemGroupBuilder.create(Identifier(MODID, "tool")).icon {toolMaterialMap.values.toList().random()?.values?.toList()?.random()?.let(::ItemStack) ?: ItemStack.EMPTY }.build())
     groupMap.add(Identifier(MODID, "ore"), FabricItemGroupBuilder.create(Identifier(MODID, "ore")).icon { oreItemMap.values.toList().random()?.values?.toList()?.random()?.let(::ItemStack) ?: ItemStack.EMPTY }.build())
     groupMap.add(Identifier(MODID, "construction_block"), FabricItemGroupBuilder.create(Identifier(MODID, "construction_block")).icon { ItemStack(blockItemMap.values.toList().random()) }.build())
@@ -284,6 +285,7 @@ fun <E> List<E>.random(random: Random = ThreadLocalRandom.current()): E? =
 
 fun registerMachines() {
     registerBlock(Identifier(MODID, "coke_oven_controller"), CokeOvenControllerBlock)
+    Registry.register(Registry.BLOCK_ENTITY, Identifier(MODID, "coke_oven_controller"), COKE_OVEN)
 }
 
 fun registerContainers() {

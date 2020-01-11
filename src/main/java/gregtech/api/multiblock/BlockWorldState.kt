@@ -11,7 +11,6 @@ class BlockWorldState {
     var world: BlockView? = null
         private set
     var pos: BlockPos? = null
-        get() = pos?.toImmutable()
     var state: BlockState? = null
     var tileEntity: BlockEntity? = null
     var tileEntityInitialized = false
@@ -20,7 +19,7 @@ class BlockWorldState {
     var layerContext: PatternMatchContext? = null
         private set
 
-    fun update(worldIn: BlockView?, posIn: BlockPos?, matchContext: PatternMatchContext?, layerContext: PatternMatchContext?) {
+    fun update(worldIn: BlockView, posIn: BlockPos?, matchContext: PatternMatchContext?, layerContext: PatternMatchContext?) {
         world = worldIn
         pos = posIn
         state = null

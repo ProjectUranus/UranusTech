@@ -14,8 +14,10 @@ import com.projecturanus.uranustech.common.formRegistry
 import com.projecturanus.uranustech.common.material.JsonMaterial
 import com.projecturanus.uranustech.common.material.STONE_FORMS
 import com.projecturanus.uranustech.common.materialRegistry
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.withContext
 import net.fabricmc.fabric.api.client.model.ModelLoadingRegistry
 import net.fabricmc.fabric.api.client.model.ModelProviderContext
 import net.fabricmc.fabric.api.client.model.ModelResourceProvider
@@ -48,7 +50,7 @@ fun initModels() = runBlocking {
     clientLogger.info("Caching model iconsets...")
     launch {
         // Cache form models
-        launch {
+        withContext(Dispatchers.Default) {
             clientLogger.info("Generate form models took " + measureTimeMillis {
                 Iconsets.values().forEach {
                     formRegistry.asSequence().filter { form -> form.generateType == GenerateTypes.ITEM }.forEach { form ->
@@ -74,7 +76,7 @@ fun initModels() = runBlocking {
         }
 
         // Cache block models
-        launch {
+        withContext(Dispatchers.Default) {
             clientLogger.info("Generate block models took " + measureTimeMillis {
                 Iconsets.values().forEach {
                     formRegistry.asSequence().filter { form -> form.generateType == GenerateTypes.BLOCK && form != Forms.ORE && form !in STONE_FORMS }.forEach { form ->
@@ -151,7 +153,7 @@ fun initModels() = runBlocking {
         }
 
         // Cache tool models
-        launch {
+        withContext(Dispatchers.Default) {
             // Cache tool models
             clientLogger.info("Generate tool models took " +
                     measureTimeMillis {
@@ -193,7 +195,7 @@ fun initModels() = runBlocking {
     }.join()
     launch {
         builderMap.forEach { (id, modelBuilder) ->
-            launch {
+            withContext(Dispatchers.Default) {
                 modelCache[id] = modelBuilder.build()
             }
         }

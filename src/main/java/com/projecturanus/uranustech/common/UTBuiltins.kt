@@ -38,6 +38,7 @@ import com.projecturanus.uranustech.common.material.JsonMaterial
 import com.projecturanus.uranustech.common.material.MaterialAPIImpl
 import com.projecturanus.uranustech.common.material.TagProcessor
 import com.projecturanus.uranustech.common.material.setupDelegate
+import com.projecturanus.uranustech.common.resource.asFlow
 import com.projecturanus.uranustech.common.resource.asSequence
 import com.projecturanus.uranustech.common.util.*
 import com.projecturanus.uranustech.common.worldgen.ORE_GEN_FEATURE
@@ -45,10 +46,14 @@ import com.projecturanus.uranustech.common.worldgen.RockLayerBuilder
 import com.projecturanus.uranustech.common.worldgen.SimpleOreGenFeature
 import com.projecturanus.uranustech.logger
 import kotlinx.coroutines.*
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.forEach
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder
 import net.fabricmc.fabric.api.container.ContainerProviderRegistry
 import net.fabricmc.fabric.api.registry.CommandRegistry
 import net.minecraft.block.Block
+import net.minecraft.command.arguments.IdentifierArgumentType.identifier
 import net.minecraft.item.BlockItem
 import net.minecraft.item.Item
 import net.minecraft.item.ItemStack
@@ -82,6 +87,7 @@ val rockMap = EnumMap<Rocks, MaterialBlock>(Rocks::class.java)
 val blockItemMap = ConcurrentHashMap<MaterialBlock, MaterialBlockItem>()
 
 fun registerBuiltin() = runBlocking {
+    val mainScope = this@runBlocking
     groupMap.add(Identifier(MODID, "base"), FabricItemGroupBuilder.create(Identifier(MODID, "base")).icon { materialRegistry.get(Identifier(MODID, "steel")).getItem(Forms.INGOT) }.build())
     groupMap.add(Identifier(MODID, "tool"), FabricItemGroupBuilder.create(Identifier(MODID, "tool")).icon {toolMaterialMap.values.toList().random()?.values?.toList()?.random()?.let(::ItemStack) ?: ItemStack.EMPTY }.build())
     groupMap.add(Identifier(MODID, "ore"), FabricItemGroupBuilder.create(Identifier(MODID, "ore")).icon { oreItemMap.values.toList().random()?.values?.toList()?.random()?.let(::ItemStack) ?: ItemStack.EMPTY }.build())
@@ -95,28 +101,26 @@ fun registerBuiltin() = runBlocking {
     val gson = GsonBuilder().create()
     logger.info("Load materials took " + measureTimeMillis {
         val zipInputStream = ZipArchiveInputStream(javaClass.getResourceAsStream("/data/uranustech/materials/materials.zip"))
-        zipInputStream.asSequence().forEach { (entry, content) ->
-            launch {
-                try {
-                    val material = gson.fromJson(String(content), JsonMaterial::class.java).apply {
-                        name = name.toLowerCase()
-                        infos = mapOf(
-                                Constants.ATOM_INFO to AtomInfo().also { it.electrons = electrons; it.neutrons = neutrons; it.protons = protons },
-                                Constants.MATTER_INFO to MatterInfo().also { it.gramPerCubicCentimeter = gramPerCubicCentimeter },
-                                Constants.ORE_INFO to OreInfo().also { it.oreMultiplier = oreMultiplier; it.oreProgressingMultiplier = oreProgressingMultiplier },
-                                Constants.STATE_INFO to StateInfo().also { it.boilingPoint = boilingPoint; it.meltingPoint = meltingPoint; it.plasmaPoint = plasmaPoint },
-                                Constants.FUEL_INFO to FuelInfo().also { it.burnTime = burnTime },
-                                Constants.TOOL_INFO to ToolInfo().also { it.toolDurability = toolDurability; it.toolQuality = toolQuality; it.toolSpeed = toolSpeed; it.toolTypes = toolTypes; it.handleMaterialId = Identifier(MODID, handleMaterial) }
-                        )
-                        val tagProcessor = TagProcessor(tags)
-                        validFormsCache = tagProcessor.getForms().toList()
-                    }
-                    materialRegistry.add(material.identifier, material)
-                } catch (e: JsonSyntaxException) {
-                    logger.error("Malformed json in " + entry.name, e)
-                    logger.error(String(content))
+        zipInputStream.asFlow().collect { (entry, content) ->
+            try {
+                val material = gson.fromJson(String(content), JsonMaterial::class.java).apply {
+                    name = name.toLowerCase()
+                    infos = mapOf(
+                            Constants.ATOM_INFO to AtomInfo().also { it.electrons = electrons; it.neutrons = neutrons; it.protons = protons },
+                            Constants.MATTER_INFO to MatterInfo().also { it.gramPerCubicCentimeter = gramPerCubicCentimeter },
+                            Constants.ORE_INFO to OreInfo().also { it.oreMultiplier = oreMultiplier; it.oreProgressingMultiplier = oreProgressingMultiplier },
+                            Constants.STATE_INFO to StateInfo().also { it.boilingPoint = boilingPoint; it.meltingPoint = meltingPoint; it.plasmaPoint = plasmaPoint },
+                            Constants.FUEL_INFO to FuelInfo().also { it.burnTime = burnTime },
+                            Constants.TOOL_INFO to ToolInfo().also { it.toolDurability = toolDurability; it.toolQuality = toolQuality; it.toolSpeed = toolSpeed; it.toolTypes = toolTypes; it.handleMaterialId = Identifier(MODID, handleMaterial) }
+                    )
+                    val tagProcessor = TagProcessor(tags)
+                    validFormsCache = tagProcessor.getForms().toList()
                 }
-            }.join()
+                mainScope.launch { materialRegistry.add(material.identifier, material) }
+            } catch (e: JsonSyntaxException) {
+                logger.error("Malformed json in " + entry.name, e)
+                logger.error(String(content))
+            }
         }
         refreshMaterials()
         // Wildcard materials
@@ -129,7 +133,7 @@ fun registerBuiltin() = runBlocking {
     logger.info("Generating blocks...")
     logger.info("Generate blocks in " + measureTimeMillis {
         materialRegistry.forEach { material ->
-            async {
+            withContext(Dispatchers.Default) {
                 launch {
                     val formBlocks = material.validForms
                             .asSequence()
@@ -171,8 +175,7 @@ fun registerBuiltin() = runBlocking {
     logger.info("Generating items...")
     logger.info("Generate items in " + measureTimeMillis {
         withContext(Dispatchers.Default) {
-            materialRegistry
-                    .onEach {
+            materialRegistry.onEach {
                         val toolInfo = it.getInfo<ToolInfo?>(TOOL_INFO)
                         if (toolInfo != null) {
                             Tools.values().forEach { tool ->
@@ -198,7 +201,7 @@ fun registerBuiltin() = runBlocking {
     } + "ms")
     logger.info("Generating tags...")
     logger.info("Generated tags in " + measureTimeMillis {
-        async {
+        withContext(Dispatchers.Default) {
             materialRegistry.forEach { material ->
                 launch {
                     itemTagMap[material] = mutableMapOf(*material.validForms.map {
@@ -230,7 +233,7 @@ fun registerBuiltin() = runBlocking {
                     blockAllFormTagMap[material] = blockFormMap.flatMap { it.value }.asBlockTag(material.identifier)
                 }
             }
-        }.join()
+        }
     } + "ms")
     logger.info("Generating ore features...")
     logger.info("Generated ore features in " + measureTimeMillis {
@@ -280,12 +283,27 @@ fun registerBuiltin() = runBlocking {
     logger.info("[UranusTech] Builtin registration done")
 }
 
+suspend fun generateToolsFromMaterial(material: Material) = flow {
+    for (tool in Tools.values()) {
+        val toolInfo = material[Constants.TOOL_INFO, ToolInfo::class.java]!!
+        val toolItem =
+                if (tool.hasHandleMaterial())
+                    UTToolItem(MaterialStack(material, tool), MaterialStack(toolInfo.handleMaterial, tool.handleForm), settings = Item.Settings().maxCount(1).group(if (material.isHidden) null else groupTool))
+                else
+                    UTToolItem(MaterialStack(material, tool), settings = Item.Settings().maxCount(1).group(if (material.isHidden) null else groupTool))
+        registerItem(Identifier(material.identifier.namespace, "${material.identifier.path}_${tool.asString()}"),
+                toolItem)
+        emit(toolItem)
+        toolMaterialMap[material] = toolMaterialMap.getOrDefault(material, mutableMapOf<Tool, UTToolItem>()).apply { put(tool, toolItem) }
+    }
+}
+
 fun <E> List<E>.random(random: Random = ThreadLocalRandom.current()): E? =
     if (size > 0) this[random.nextInt(this.size)] else null
 
-fun registerMachines() {
+suspend fun registerMachines() {
     registerBlock(Identifier(MODID, "coke_oven_controller"), CokeOvenControllerBlock)
-    Registry.register(Registry.BLOCK_ENTITY, Identifier(MODID, "coke_oven_controller"), COKE_OVEN)
+    Registry.register(Registry.BLOCK_ENTITY_TYPE, Identifier(MODID, "coke_oven_controller"), COKE_OVEN)
 }
 
 fun registerContainers() {

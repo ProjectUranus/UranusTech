@@ -80,8 +80,8 @@ abstract class MaterialFluid(override val stack: MaterialStack) : BaseFluid(), M
         return 5
     }
 
-    public override fun method_15777(fluidState_1: FluidState, blockView_1: BlockView, blockPos_1: BlockPos, fluid_1: Fluid, direction_1: Direction): Boolean {
-        return direction_1 == Direction.DOWN && !fluid_1.matches(FluidTags.WATER)
+    public override fun canBeReplacedWith(state: FluidState?, world: BlockView?, pos: BlockPos?, fluid: Fluid, direction: Direction?): Boolean {
+        return direction == Direction.DOWN && !fluid.matches(FluidTags.WATER)
     }
 
     override fun getBlastResistance(): Float {

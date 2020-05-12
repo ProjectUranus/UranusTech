@@ -133,7 +133,7 @@ class FactoryBlockPattern private constructor(charDir: RelativeDirection, string
 
     private fun makeCountLimitsList(): List<Pair<Predicate<BlockWorldState>?, IntRange>> {
         val array: MutableList<Pair<Predicate<BlockWorldState>?, IntRange>> = ArrayList(countLimits.size)
-        Char2ObjectMaps.fastForEach(countLimits) { (key, value) ->
+        countLimits.forEach { (key, value) ->
             val predicate = symbolMap[key]
             array.add(predicate to value)
         }
@@ -142,7 +142,7 @@ class FactoryBlockPattern private constructor(charDir: RelativeDirection, string
 
     private fun checkMissingPredicates() {
         val list: MutableList<Char?> = ArrayList()
-        Char2ObjectMaps.fastForEach(symbolMap) { (key, value) ->
+        symbolMap.forEach { (key, value) ->
             if (value == null) list.add(key)
         }
         check(list.isEmpty()) { "Predicates for character(s) " + COMMA_JOIN.join(list) + " are missing" }
@@ -163,10 +163,10 @@ class FactoryBlockPattern private constructor(charDir: RelativeDirection, string
 
         var flags = 0
         for (i in 0..2) {
-            when (structureDir[i]) {
-                RelativeDirection.UP, RelativeDirection.DOWN -> flags = flags or 0x1
-                RelativeDirection.LEFT, RelativeDirection.RIGHT -> flags = flags or 0x2
-                RelativeDirection.FRONT, RelativeDirection.BACK -> flags = flags or 0x4
+            flags = when (structureDir[i]) {
+                RelativeDirection.UP, RelativeDirection.DOWN -> flags or 0x1
+                RelativeDirection.LEFT, RelativeDirection.RIGHT -> flags or 0x2
+                RelativeDirection.FRONT, RelativeDirection.BACK -> flags or 0x4
             }
         }
         require(flags == 0x7) { "Must have 3 different axes!" }

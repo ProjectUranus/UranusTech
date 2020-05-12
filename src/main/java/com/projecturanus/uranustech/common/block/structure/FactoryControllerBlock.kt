@@ -6,7 +6,7 @@ import gregtech.api.multiblock.IPatternCenterPredicate
 import net.fabricmc.fabric.api.block.FabricBlockSettings
 import net.minecraft.block.BlockEntityProvider
 import net.minecraft.block.BlockState
-import net.minecraft.container.NameableContainerProvider
+import net.minecraft.container.NameableContainerFactory
 import net.minecraft.util.math.BlockPos
 import net.minecraft.world.World
 
@@ -20,8 +20,8 @@ abstract class FactoryControllerBlock(settings: Settings = FabricBlockSettings.o
         return blockEntity?.onBlockAction(type, data) ?: false
     }
 
-    override fun createContainerProvider(state: BlockState?, world: World, pos: BlockPos?): NameableContainerProvider? {
+    override fun createContainerFactory(state: BlockState?, world: World, pos: BlockPos?): NameableContainerFactory? {
         val blockEntity = world.getBlockEntity(pos)
-        return if (blockEntity is NameableContainerProvider) blockEntity else null
+        return if (blockEntity is NameableContainerFactory) blockEntity else null
     }
 }

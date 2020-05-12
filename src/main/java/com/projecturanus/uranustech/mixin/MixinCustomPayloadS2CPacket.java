@@ -10,6 +10,13 @@ import org.spongepowered.asm.mixin.Overwrite;
 
 @Mixin(value = ServerSidePacketRegistryImpl.class, remap = false)
 public class MixinCustomPayloadS2CPacket {
+    /**
+     * @reason Extend packet size
+     * @param id
+     * @param buf
+     * @author Lasm_Gratel
+     * @return Custom payload packet
+     */
     @Overwrite
     public Packet<?> toPacket(Identifier id, PacketByteBuf buf) {
         return new UTCustomPayloadS2CPacket(id, buf);

@@ -7,6 +7,7 @@ import com.projecturanus.uranustech.api.material.form.Form
 import com.projecturanus.uranustech.api.material.form.Forms
 import com.projecturanus.uranustech.api.tool.Tools
 import com.projecturanus.uranustech.common.materialRegistry
+import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
@@ -25,26 +26,22 @@ lateinit var vanillaBlockMaterialMapper: (BlockState) -> MaterialStack
 fun setupDelegate() {
     fun stack(material: Material, form: Form? = null, amount: Double = U.toDouble(), temperature: Double = -1.0) = MaterialStack(material, form)
 
-    runBlocking {
-        async {
-            materialRegistry.forEach { material ->
-                launch {
-                    when (material) {
-                        IRON -> {
-                            vanillaItemMapper[stack(material, Forms.INGOT)] = ItemStack(Items.IRON_INGOT)
-                            vanillaItemMapper[stack(material, Forms.NUGGET)] = ItemStack(Items.IRON_NUGGET)
-                            vanillaItemMapper[stack(material, Tools.SWORD)] = ItemStack(Items.IRON_SWORD)
-                        }
-                        GOLD -> {
-                            vanillaItemMapper[stack(material, Forms.INGOT)] = ItemStack(Items.GOLD_INGOT)
-                            vanillaItemMapper[stack(material, Forms.NUGGET)] = ItemStack(Items.GOLD_NUGGET)
-                            vanillaItemMapper[stack(material, Tools.SWORD)] = ItemStack(Items.GOLDEN_SWORD)
-                        }
-                        STONE -> {
-                            vanillaBlockMapper[stack(material, Forms.COBBLE)] = Blocks.COBBLESTONE.defaultState
-                            vanillaBlockMapper[stack(material, Forms.STONE)] = Blocks.STONE.defaultState
-                        }
-                    }
+    GlobalScope.launch {
+        materialRegistry.forEach { material ->
+            when (material) {
+                IRON -> {
+                    vanillaItemMapper[stack(material, Forms.INGOT)] = ItemStack(Items.IRON_INGOT)
+                    vanillaItemMapper[stack(material, Forms.NUGGET)] = ItemStack(Items.IRON_NUGGET)
+                    vanillaItemMapper[stack(material, Tools.SWORD)] = ItemStack(Items.IRON_SWORD)
+                }
+                GOLD -> {
+                    vanillaItemMapper[stack(material, Forms.INGOT)] = ItemStack(Items.GOLD_INGOT)
+                    vanillaItemMapper[stack(material, Forms.NUGGET)] = ItemStack(Items.GOLD_NUGGET)
+                    vanillaItemMapper[stack(material, Tools.SWORD)] = ItemStack(Items.GOLDEN_SWORD)
+                }
+                STONE -> {
+                    vanillaBlockMapper[stack(material, Forms.COBBLE)] = Blocks.COBBLESTONE.defaultState
+                    vanillaBlockMapper[stack(material, Forms.STONE)] = Blocks.STONE.defaultState
                 }
             }
         }

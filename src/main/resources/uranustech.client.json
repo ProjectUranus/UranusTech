@@ -3,7 +3,8 @@
   "package": "com.projecturanus.uranustech.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "MixinItemGroup"
+    "MixinItemGroup",
+    "MixinTagContainerClient"
   ],
   "injectors": {
     "defaultRequire": 1

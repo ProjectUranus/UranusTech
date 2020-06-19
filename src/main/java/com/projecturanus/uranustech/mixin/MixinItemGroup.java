@@ -14,10 +14,13 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class MixinItemGroup {
     @Shadow @Final private String id;
 
+    private String localizedTextCache;
+
     @Inject(method = "getTranslationKey", at = @At("INVOKE"), cancellable = true)
     public void onGetTranslationKey(CallbackInfoReturnable<String> info) {
         if (id.startsWith(UranusTechKt.MODID + ".form.")) {
-            info.setReturnValue(new TranslatableText("form." + UranusTechKt.MODID + "." + id.split("\\.", 3)[2]).asString());
+            if (localizedTextCache == null) localizedTextCache = new TranslatableText("form." + UranusTechKt.MODID + "." + id.split("\\.", 3)[2]).asString();
+            info.setReturnValue(localizedTextCache);
         }
     }
 }

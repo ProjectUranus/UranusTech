@@ -14,6 +14,9 @@
   "item.uranustech.material.lore.durability": "Durability: %d / %d",
   "item.uranustech.form": "%1$s %2$s",
 
+  "commands.material.info.type": "Material type: %s",
+  "commands.material.info.type.wildcard": "Wildcard",
+
   "form.uranustech.hammer": "Hammer",
   "form.uranustech.file": "File",
   "form.uranustech.wrench": "Wrench",

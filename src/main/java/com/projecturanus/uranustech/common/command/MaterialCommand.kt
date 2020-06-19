@@ -12,6 +12,7 @@ import net.minecraft.server.command.CommandManager
 import net.minecraft.server.command.ServerCommandSource
 import net.minecraft.text.LiteralText
 import net.minecraft.text.Style
+import net.minecraft.text.Texts
 import net.minecraft.util.Formatting
 
 object MaterialCommand {
@@ -31,7 +32,7 @@ object MaterialCommand {
                         LiteralText(material.chemicalCompound).setStyle(Style().setColor(Formatting.GOLD)),
                         *material.description.map(::LiteralText).toTypedArray(),
                         LiteralText("Texture set: ${material.textureSet}").setStyle(Style().setColor(Formatting.BLUE)),
-                        LiteralText("Valid forms: ${material.validForms}").setStyle(Style().setColor(Formatting.RED)),
+                        LiteralText("Valid forms: ").append(Texts.join(material.validForms) { form -> form.localizedName }.setStyle(Style().setColor(Formatting.RED))),
                         LiteralText("Color: ${material.color}").setStyle(Style().setColor(Formatting.AQUA))
                 ).forEach { text -> it.source.sendFeedback(text, false) }
                 if (it.source.entity is PlayerEntity)

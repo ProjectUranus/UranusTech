@@ -21,6 +21,7 @@ import net.minecraft.item.ItemStack
 import net.minecraft.tag.BlockTags
 import net.minecraft.tag.ItemTags
 import net.minecraft.tag.Tag
+import net.minecraft.text.Text
 import net.minecraft.text.TranslatableText
 import net.minecraft.util.Identifier
 import net.minecraft.util.math.BlockPos
@@ -126,6 +127,8 @@ val Rock.localizedName
 
 val Form.localizedName
     get() = TranslatableText("form.$MODID.${this.asString()}")
+
+operator fun Text.plus(text: Text): Text = this.append(text)
 
 
 fun Array<Int>.toColor(): Color = Color(get(0), get(1), get(2), get(3))

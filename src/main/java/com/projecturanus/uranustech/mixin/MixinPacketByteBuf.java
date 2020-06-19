@@ -10,19 +10,11 @@ import net.minecraft.util.PacketByteBuf;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
-import org.spongepowered.asm.mixin.Shadow;
 
 import java.io.IOException;
 
 @Mixin(PacketByteBuf.class)
 public abstract class MixinPacketByteBuf extends ByteBuf {
-
-    @Shadow(remap = false) public abstract int readerIndex();
-
-    @Shadow(remap = false) public abstract ByteBuf readerIndex(int int_1);
-
-    @Shadow(remap = false) public abstract byte readByte();
-
     /**
      *
      * @author Takakura-Anri

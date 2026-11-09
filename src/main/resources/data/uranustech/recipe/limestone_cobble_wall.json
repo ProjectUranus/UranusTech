@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "uranustech:limestone_cobble"
+    }
+  },
+  "result": {
+    "count": 6,
+    "id": "uranustech:limestone_cobble_wall"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "uranustech:greenschist_tiles"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "uranustech:greenschist_square_bricks"
+  }
+}

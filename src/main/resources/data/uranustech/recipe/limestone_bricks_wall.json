@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "uranustech:limestone_bricks"
+    }
+  },
+  "result": {
+    "count": 6,
+    "id": "uranustech:limestone_bricks_wall"
+  }
+}

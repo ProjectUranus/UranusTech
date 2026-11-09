@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "uranustech:komatiite_cobble"
+    }
+  },
+  "result": {
+    "count": 4,
+    "id": "uranustech:komatiite_cobble_stairs"
+  }
+}

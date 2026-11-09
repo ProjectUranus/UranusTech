@@ -1,0 +1,14 @@
+{
+  "weight": 30,
+  "density": 3,
+  "size": 16,
+  "min_y": 10,
+  "max_y": 40,
+  "bottom": "uranustech:green_sapphire",
+  "top": "uranustech:ruby",
+  "between": "uranustech:blue_sapphire",
+  "spread": "uranustech:purple_sapphire",
+  "host_rocks": [
+    "diorite"
+  ]
+}

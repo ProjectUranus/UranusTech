@@ -1,0 +1,10 @@
+{
+  "first": "granite_black",
+  "second": "granite_red",
+  "weight": 1,
+  "density": 8,
+  "min_y": 0,
+  "max_y": 32,
+  "both_directions": true,
+  "ore": "uranustech:zircon"
+}

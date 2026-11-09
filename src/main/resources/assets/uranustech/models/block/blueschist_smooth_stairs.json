@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "uranustech:block/stones/blueschist/smooth",
+    "top": "uranustech:block/stones/blueschist/smooth",
+    "side": "uranustech:block/stones/blueschist/smooth"
+  }
+}

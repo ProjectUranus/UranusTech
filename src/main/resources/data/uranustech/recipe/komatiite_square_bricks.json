@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "uranustech:komatiite_tiles"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "uranustech:komatiite_square_bricks"
+  }
+}

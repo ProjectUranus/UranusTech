@@ -1,0 +1,9 @@
+{
+  "material": "uranustech:salt",
+  "min_y": 40,
+  "max_y": 80,
+  "amount": 6,
+  "host_rocks": [
+    "limestone"
+  ]
+}

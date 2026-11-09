@@ -1,0 +1,9 @@
+{
+  "material": "uranustech:redstone",
+  "min_y": 5,
+  "max_y": 20,
+  "amount": 16,
+  "host_rocks": [
+    "komatiite"
+  ]
+}

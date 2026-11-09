@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "#R"
+  ],
+  "key": {
+    "#": {
+      "item": "uranustech:greenschist_bricks"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "result": {
+    "count": 1,
+    "id": "uranustech:greenschist_bricks_redstone"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "uranustech:marble_cobble"
+    }
+  },
+  "result": {
+    "count": 6,
+    "id": "uranustech:marble_cobble_slab"
+  }
+}

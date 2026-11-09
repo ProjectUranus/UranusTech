@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "#",
+    "#"
+  ],
+  "key": {
+    "#": {
+      "item": "uranustech:greenschist_bricks_slab"
+    }
+  },
+  "result": {
+    "count": 1,
+    "id": "uranustech:greenschist_bricks_chiseled"
+  }
+}

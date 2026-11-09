@@ -1,0 +1,15 @@
+{
+  "weight": 5,
+  "density": 3,
+  "size": 16,
+  "min_y": 20,
+  "max_y": 30,
+  "bottom": "uranustech:pyrite",
+  "top": "uranustech:chalcopyrite",
+  "between": "uranustech:arsenopyrite",
+  "spread": "uranustech:gold",
+  "host_rocks": [
+    "komatiite",
+    "marble"
+  ]
+}

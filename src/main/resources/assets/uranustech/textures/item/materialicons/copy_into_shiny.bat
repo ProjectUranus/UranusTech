@@ -1,0 +1,13 @@
+pause
+copy \\?\%1 "cube_shiny\"
+copy \\?\%1 "diamond\"
+copy \\?\%1 "emerald\"
+copy \\?\%1 "gem_horizontal\"
+copy \\?\%1 "gem_vertical\"
+copy \\?\%1 "glass\"
+copy \\?\%1 "netherstar\"
+copy \\?\%1 "opal\"
+copy \\?\%1 "ruby\"
+copy \\?\%1 "shards\"
+copy \\?\%1 "shiny\"
+copy \\?\%1 "rubber\"

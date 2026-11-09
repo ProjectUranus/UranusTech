@@ -1,0 +1,10 @@
+{
+  "first": "granite_red",
+  "second": "quartzite",
+  "weight": 1,
+  "density": 8,
+  "min_y": 48,
+  "max_y": 80,
+  "both_directions": true,
+  "ore": "uranustech:vermiculite"
+}

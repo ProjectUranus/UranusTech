@@ -1,0 +1,10 @@
+{
+  "material": "uranustech:pyrite",
+  "min_y": 20,
+  "max_y": 40,
+  "amount": 4,
+  "host_rocks": [
+    "komatiite",
+    "marble"
+  ]
+}

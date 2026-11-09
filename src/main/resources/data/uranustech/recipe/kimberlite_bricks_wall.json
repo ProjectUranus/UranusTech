@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "uranustech:kimberlite_bricks"
+    }
+  },
+  "result": {
+    "count": 6,
+    "id": "uranustech:kimberlite_bricks_wall"
+  }
+}

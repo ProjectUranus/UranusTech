@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "uranustech:tholeiitic_basalt"
+    }
+  },
+  "result": {
+    "count": 6,
+    "id": "uranustech:tholeiitic_basalt_slab"
+  }
+}

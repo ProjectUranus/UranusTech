@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "uranustech:komatiite_smooth"
+    }
+  },
+  "result": {
+    "count": 6,
+    "id": "uranustech:komatiite_smooth_wall"
+  }
+}

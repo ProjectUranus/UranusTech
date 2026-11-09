@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "uranustech:block/tholeiitic_basalt_slab"
+    },
+    "type=double": {
+      "model": "uranustech:block/tholeiitic_basalt"
+    },
+    "type=top": {
+      "model": "uranustech:block/tholeiitic_basalt_slab_top"
+    }
+  }
+}

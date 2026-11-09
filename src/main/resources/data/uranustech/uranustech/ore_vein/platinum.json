@@ -1,0 +1,9 @@
+{
+  "weight": 5,
+  "density": 3,
+  "size": 16,
+  "min_y": 40,
+  "max_y": 50,
+  "top": "uranustech:palladium",
+  "spread": "uranustech:iridium"
+}

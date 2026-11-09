@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "uranustech:block/stones/quartzite/bricks",
+    "top": "uranustech:block/stones/quartzite/bricks",
+    "side": "uranustech:block/stones/quartzite/bricks"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:stonecutting",
+  "category": "building",
+  "ingredient": {
+    "item": "uranustech:greenschist_cobble"
+  },
+  "result": {
+    "count": 1,
+    "id": "uranustech:greenschist_cobble_wall"
+  }
+}

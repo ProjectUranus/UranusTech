@@ -1,0 +1,11 @@
+{
+  "weight": 40,
+  "density": 3,
+  "size": 16,
+  "min_y": 10,
+  "max_y": 40,
+  "bottom": "uranustech:pitchblende",
+  "top": "uranustech:pitchblende",
+  "between": "uranustech:uraninite",
+  "spread": "uranustech:uraninite"
+}

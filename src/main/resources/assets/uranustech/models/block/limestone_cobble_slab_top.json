@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "uranustech:block/stones/limestone/cobble",
+    "top": "uranustech:block/stones/limestone/cobble",
+    "side": "uranustech:block/stones/limestone/cobble"
+  }
+}

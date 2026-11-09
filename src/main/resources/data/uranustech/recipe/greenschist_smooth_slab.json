@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "uranustech:greenschist_smooth"
+    }
+  },
+  "result": {
+    "count": 6,
+    "id": "uranustech:greenschist_smooth_slab"
+  }
+}

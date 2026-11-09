@@ -1,0 +1,10 @@
+{
+  "first": "stone",
+  "second": "diorite",
+  "weight": 1,
+  "density": 8,
+  "min_y": 10,
+  "max_y": 40,
+  "both_directions": true,
+  "ore": "uranustech:niter"
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "#",
+    "#"
+  ],
+  "key": {
+    "#": {
+      "item": "uranustech:granite_black_bricks_slab"
+    }
+  },
+  "result": {
+    "count": 1,
+    "id": "uranustech:granite_black_bricks_chiseled"
+  }
+}

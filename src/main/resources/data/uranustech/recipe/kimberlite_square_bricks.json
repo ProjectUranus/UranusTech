@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "uranustech:kimberlite_tiles"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "uranustech:kimberlite_square_bricks"
+  }
+}

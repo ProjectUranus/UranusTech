@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "uranustech:block/stones/granite_red/bricks",
+    "top": "uranustech:block/stones/granite_red/bricks",
+    "side": "uranustech:block/stones/granite_red/bricks"
+  }
+}

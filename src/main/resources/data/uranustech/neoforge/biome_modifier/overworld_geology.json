@@ -1,0 +1,8 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#minecraft:is_overworld",
+  "features": [
+    "uranustech:geology"
+  ],
+  "step": "underground_ores"
+}

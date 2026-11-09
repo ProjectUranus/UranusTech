@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "uranustech:block/greenschist_slab"
+    },
+    "type=double": {
+      "model": "uranustech:block/greenschist"
+    },
+    "type=top": {
+      "model": "uranustech:block/greenschist_slab_top"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "uranustech:greenschist_cobble"
+    }
+  },
+  "result": {
+    "count": 6,
+    "id": "uranustech:greenschist_cobble_wall"
+  }
+}

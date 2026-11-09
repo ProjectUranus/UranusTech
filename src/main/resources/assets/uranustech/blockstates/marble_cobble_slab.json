@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "uranustech:block/marble_cobble_slab"
+    },
+    "type=double": {
+      "model": "uranustech:block/marble_cobble"
+    },
+    "type=top": {
+      "model": "uranustech:block/marble_cobble_slab_top"
+    }
+  }
+}

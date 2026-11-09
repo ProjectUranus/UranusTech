@@ -1,0 +1,14 @@
+{
+  "weight": 60,
+  "density": 3,
+  "size": 16,
+  "min_y": 40,
+  "max_y": 80,
+  "bottom": "uranustech:milky_quartz",
+  "top": "uranustech:barite",
+  "between": "uranustech:certus_quartz",
+  "spread": "uranustech:certus_quartz",
+  "host_rocks": [
+    "quartzite"
+  ]
+}

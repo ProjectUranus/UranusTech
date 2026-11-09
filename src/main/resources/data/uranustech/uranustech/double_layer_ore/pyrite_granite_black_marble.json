@@ -1,0 +1,10 @@
+{
+  "first": "granite_black",
+  "second": "marble",
+  "weight": 2,
+  "density": 4,
+  "min_y": 0,
+  "max_y": 48,
+  "both_directions": true,
+  "ore": "uranustech:pyrite"
+}

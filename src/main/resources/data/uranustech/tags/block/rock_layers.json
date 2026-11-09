@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "uranustech:granite_black",
+    "uranustech:granite_red",
+    "uranustech:tholeiitic_basalt",
+    "uranustech:marble",
+    "uranustech:limestone",
+    "uranustech:komatiite",
+    "uranustech:greenschist",
+    "uranustech:blueschist",
+    "uranustech:kimberlite",
+    "uranustech:quartzite"
+  ]
+}

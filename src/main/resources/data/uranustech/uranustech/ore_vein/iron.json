@@ -1,0 +1,11 @@
+{
+  "weight": 120,
+  "density": 4,
+  "size": 24,
+  "min_y": 10,
+  "max_y": 40,
+  "bottom": "uranustech:brown_limonite",
+  "top": "uranustech:yellow_limonite",
+  "between": "uranustech:hematite",
+  "spread": "uranustech:malachite"
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "uranustech:greenschist_bricks"
+    }
+  },
+  "result": {
+    "count": 4,
+    "id": "uranustech:greenschist_bricks_stairs"
+  }
+}

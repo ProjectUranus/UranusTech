@@ -1,0 +1,11 @@
+{
+  "weight": 5,
+  "density": 3,
+  "size": 16,
+  "min_y": 20,
+  "max_y": 50,
+  "bottom": "uranustech:wulfenite",
+  "top": "uranustech:molybdenite",
+  "between": "uranustech:molybdenum",
+  "spread": "uranustech:powellite"
+}

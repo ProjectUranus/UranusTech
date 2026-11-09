@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:stonecutting",
+  "category": "building",
+  "ingredient": {
+    "item": "uranustech:granite_black_bricks"
+  },
+  "result": {
+    "count": 1,
+    "id": "uranustech:granite_black_bricks_stairs"
+  }
+}

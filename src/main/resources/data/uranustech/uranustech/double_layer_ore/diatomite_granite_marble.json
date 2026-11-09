@@ -1,0 +1,10 @@
+{
+  "first": "granite",
+  "second": "marble",
+  "weight": 1,
+  "density": 12,
+  "min_y": 16,
+  "max_y": 64,
+  "both_directions": true,
+  "ore": "uranustech:diatomite"
+}

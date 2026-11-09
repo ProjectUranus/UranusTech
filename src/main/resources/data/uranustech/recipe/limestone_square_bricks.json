@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "uranustech:limestone_tiles"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "uranustech:limestone_square_bricks"
+  }
+}

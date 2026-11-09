@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "uranustech:block/stones/limestone/stone",
+    "top": "uranustech:block/stones/limestone/stone",
+    "side": "uranustech:block/stones/limestone/stone"
+  }
+}

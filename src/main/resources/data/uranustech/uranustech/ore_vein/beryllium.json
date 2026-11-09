@@ -1,0 +1,11 @@
+{
+  "weight": 15,
+  "density": 3,
+  "size": 16,
+  "min_y": 5,
+  "max_y": 30,
+  "bottom": "uranustech:aquamarine",
+  "top": "uranustech:maxixe",
+  "between": "uranustech:emerald",
+  "spread": "uranustech:thorium"
+}

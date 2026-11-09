@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "uranustech:block/stones/komatiite/stone",
+    "top": "uranustech:block/stones/komatiite/stone",
+    "side": "uranustech:block/stones/komatiite/stone"
+  }
+}

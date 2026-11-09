@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "I#"
+  ],
+  "key": {
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "#": {
+      "item": "uranustech:kimberlite_bricks"
+    }
+  },
+  "result": {
+    "count": 1,
+    "id": "uranustech:kimberlite_bricks_reinforced"
+  }
+}

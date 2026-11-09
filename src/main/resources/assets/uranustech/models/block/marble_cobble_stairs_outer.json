@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "uranustech:block/stones/marble/cobble",
+    "top": "uranustech:block/stones/marble/cobble",
+    "side": "uranustech:block/stones/marble/cobble"
+  }
+}

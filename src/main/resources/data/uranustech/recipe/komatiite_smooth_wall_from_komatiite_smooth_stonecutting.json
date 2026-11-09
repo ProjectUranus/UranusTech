@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:stonecutting",
+  "category": "building",
+  "ingredient": {
+    "item": "uranustech:komatiite_smooth"
+  },
+  "result": {
+    "count": 1,
+    "id": "uranustech:komatiite_smooth_wall"
+  }
+}

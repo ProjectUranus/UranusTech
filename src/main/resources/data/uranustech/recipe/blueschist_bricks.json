@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "uranustech:blueschist"
+    }
+  },
+  "result": {
+    "count": 4,
+    "id": "uranustech:blueschist_bricks"
+  }
+}

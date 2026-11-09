@@ -1,0 +1,11 @@
+{
+  "weight": 160,
+  "density": 8,
+  "size": 32,
+  "min_y": 50,
+  "max_y": 130,
+  "bottom": "uranustech:lignite",
+  "top": "uranustech:lignite",
+  "between": "uranustech:lignite",
+  "spread": "uranustech:coal"
+}

@@ -1,0 +1,10 @@
+{
+  "first": "quartzite",
+  "second": "stone",
+  "weight": 1,
+  "density": 8,
+  "min_y": 16,
+  "max_y": 48,
+  "both_directions": true,
+  "ore": "uranustech:certus_quartz"
+}

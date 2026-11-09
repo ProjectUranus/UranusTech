@@ -1,0 +1,9 @@
+{
+  "material": "uranustech:azurite",
+  "min_y": 20,
+  "max_y": 40,
+  "amount": 4,
+  "host_rocks": [
+    "limestone"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:stonecutting",
+  "category": "building",
+  "ingredient": {
+    "item": "uranustech:tholeiitic_basalt_smooth"
+  },
+  "result": {
+    "count": 2,
+    "id": "uranustech:tholeiitic_basalt_smooth_slab"
+  }
+}

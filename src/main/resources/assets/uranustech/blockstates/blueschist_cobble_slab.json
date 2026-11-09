@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "uranustech:block/blueschist_cobble_slab"
+    },
+    "type=double": {
+      "model": "uranustech:block/blueschist_cobble"
+    },
+    "type=top": {
+      "model": "uranustech:block/blueschist_cobble_slab_top"
+    }
+  }
+}

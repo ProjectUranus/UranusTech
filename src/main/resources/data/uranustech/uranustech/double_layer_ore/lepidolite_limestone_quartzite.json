@@ -1,0 +1,10 @@
+{
+  "first": "limestone",
+  "second": "quartzite",
+  "weight": 1,
+  "density": 6,
+  "min_y": 16,
+  "max_y": 48,
+  "both_directions": true,
+  "ore": "uranustech:lepidolite"
+}

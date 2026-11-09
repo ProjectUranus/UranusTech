@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "uranustech:marble"
+    }
+  },
+  "result": {
+    "count": 4,
+    "id": "uranustech:marble_bricks"
+  }
+}

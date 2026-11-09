@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "uranustech:block/quartzite_slab"
+    },
+    "type=double": {
+      "model": "uranustech:block/quartzite"
+    },
+    "type=top": {
+      "model": "uranustech:block/quartzite_slab_top"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    " #",
+    "# "
+  ],
+  "key": {
+    "#": {
+      "item": "uranustech:marble_smooth"
+    }
+  },
+  "result": {
+    "count": 2,
+    "id": "uranustech:marble_windmill_tiles_a"
+  }
+}

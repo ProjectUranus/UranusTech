@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "uranustech:block/stones/kimberlite/cobble",
+    "top": "uranustech:block/stones/kimberlite/cobble",
+    "side": "uranustech:block/stones/kimberlite/cobble"
+  }
+}

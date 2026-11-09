@@ -1,0 +1,11 @@
+{
+  "weight": 30,
+  "density": 3,
+  "size": 16,
+  "min_y": 20,
+  "max_y": 40,
+  "bottom": "uranustech:bastnasite",
+  "top": "uranustech:bastnasite",
+  "between": "uranustech:monazite",
+  "spread": "uranustech:neodymium"
+}

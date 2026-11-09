@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "uranustech:block/stones/limestone/smooth",
+    "top": "uranustech:block/stones/limestone/smooth",
+    "side": "uranustech:block/stones/limestone/smooth"
+  }
+}

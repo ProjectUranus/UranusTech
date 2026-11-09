@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:stonecutting",
+  "category": "building",
+  "ingredient": {
+    "item": "uranustech:tholeiitic_basalt_bricks"
+  },
+  "result": {
+    "count": 1,
+    "id": "uranustech:tholeiitic_basalt_bricks_stairs"
+  }
+}

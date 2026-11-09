@@ -1,0 +1,11 @@
+{
+  "weight": 60,
+  "density": 3,
+  "size": 16,
+  "min_y": 10,
+  "max_y": 40,
+  "bottom": "uranustech:kyanite",
+  "top": "uranustech:magnesium_carbonate",
+  "between": "uranustech:peridot",
+  "spread": "uranustech:glauconite"
+}

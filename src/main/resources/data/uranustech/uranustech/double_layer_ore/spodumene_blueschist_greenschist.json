@@ -1,0 +1,10 @@
+{
+  "first": "blueschist",
+  "second": "greenschist",
+  "weight": 1,
+  "density": 8,
+  "min_y": 32,
+  "max_y": 64,
+  "both_directions": true,
+  "ore": "uranustech:spodumene"
+}

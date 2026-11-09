@@ -1,0 +1,11 @@
+{
+  "weight": 170,
+  "density": 5,
+  "size": 24,
+  "min_y": 40,
+  "max_y": 90,
+  "bottom": "uranustech:stannite",
+  "top": "uranustech:kesterite",
+  "between": "uranustech:huebnerite",
+  "spread": "uranustech:cassiterite"
+}

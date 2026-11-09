@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "uranustech:quartzite"
+    }
+  },
+  "result": {
+    "count": 6,
+    "id": "uranustech:quartzite_wall"
+  }
+}

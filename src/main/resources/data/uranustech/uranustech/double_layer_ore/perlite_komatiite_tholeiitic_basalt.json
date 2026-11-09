@@ -1,0 +1,10 @@
+{
+  "first": "komatiite",
+  "second": "tholeiitic_basalt",
+  "weight": 1,
+  "density": 12,
+  "min_y": 0,
+  "max_y": 16,
+  "both_directions": true,
+  "ore": "uranustech:perlite"
+}

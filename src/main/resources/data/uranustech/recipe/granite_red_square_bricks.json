@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "uranustech:granite_red_tiles"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "uranustech:granite_red_square_bricks"
+  }
+}

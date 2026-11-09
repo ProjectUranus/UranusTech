@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "I#"
+  ],
+  "key": {
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "#": {
+      "item": "uranustech:quartzite_bricks"
+    }
+  },
+  "result": {
+    "count": 1,
+    "id": "uranustech:quartzite_bricks_reinforced"
+  }
+}

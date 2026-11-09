@@ -1,0 +1,9 @@
+{
+  "material": "uranustech:diamond",
+  "min_y": 5,
+  "max_y": 10,
+  "amount": 2,
+  "host_rocks": [
+    "kimberlite"
+  ]
+}

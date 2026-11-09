@@ -1,0 +1,14 @@
+{
+  "weight": 40,
+  "density": 5,
+  "size": 16,
+  "min_y": 20,
+  "max_y": 50,
+  "bottom": "uranustech:lazurite",
+  "top": "uranustech:sodalite",
+  "between": "uranustech:lapis",
+  "spread": "uranustech:azurite",
+  "host_rocks": [
+    "limestone"
+  ]
+}

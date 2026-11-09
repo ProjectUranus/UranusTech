@@ -1,0 +1,11 @@
+{
+  "weight": 60,
+  "density": 3,
+  "size": 16,
+  "min_y": 10,
+  "max_y": 40,
+  "bottom": "uranustech:almandine",
+  "top": "uranustech:pyrope",
+  "between": "uranustech:andradite",
+  "spread": "uranustech:uvarovite"
+}

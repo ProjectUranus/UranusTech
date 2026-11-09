@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:stonecutting",
+  "category": "building",
+  "ingredient": {
+    "item": "uranustech:quartzite_cobble"
+  },
+  "result": {
+    "count": 2,
+    "id": "uranustech:quartzite_cobble_slab"
+  }
+}

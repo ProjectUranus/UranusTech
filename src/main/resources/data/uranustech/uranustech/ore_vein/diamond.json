@@ -1,0 +1,14 @@
+{
+  "weight": 40,
+  "density": 2,
+  "size": 16,
+  "min_y": 5,
+  "max_y": 20,
+  "bottom": "uranustech:graphite",
+  "top": "uranustech:graphite",
+  "between": "uranustech:diamond",
+  "spread": "uranustech:graphite",
+  "host_rocks": [
+    "kimberlite"
+  ]
+}

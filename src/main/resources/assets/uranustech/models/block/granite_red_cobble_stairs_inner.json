@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "uranustech:block/stones/granite_red/cobble",
+    "top": "uranustech:block/stones/granite_red/cobble",
+    "side": "uranustech:block/stones/granite_red/cobble"
+  }
+}

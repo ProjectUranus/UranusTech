@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "uranustech:kimberlite_smooth"
+    }
+  },
+  "result": {
+    "count": 6,
+    "id": "uranustech:kimberlite_smooth_slab"
+  }
+}

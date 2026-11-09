@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "uranustech:block/stones/quartzite/smooth",
+    "top": "uranustech:block/stones/quartzite/smooth",
+    "side": "uranustech:block/stones/quartzite/smooth"
+  }
+}

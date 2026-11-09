@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "uranustech:block/stones/quartzite/windmill_tiles_a"
+  }
+}

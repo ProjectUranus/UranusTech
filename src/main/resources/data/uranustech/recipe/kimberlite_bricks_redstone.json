@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "#R"
+  ],
+  "key": {
+    "#": {
+      "item": "uranustech:kimberlite_bricks"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "result": {
+    "count": 1,
+    "id": "uranustech:kimberlite_bricks_redstone"
+  }
+}

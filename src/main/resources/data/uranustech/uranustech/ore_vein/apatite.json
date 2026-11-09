@@ -1,0 +1,12 @@
+{
+  "weight": 60,
+  "density": 3,
+  "size": 16,
+  "min_y": 40,
+  "max_y": 60,
+  "bottom": "uranustech:apatite",
+  "top": "uranustech:apatite",
+  "host_rocks": [
+    "granite"
+  ]
+}

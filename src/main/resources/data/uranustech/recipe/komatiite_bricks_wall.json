@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "uranustech:komatiite_bricks"
+    }
+  },
+  "result": {
+    "count": 6,
+    "id": "uranustech:komatiite_bricks_wall"
+  }
+}

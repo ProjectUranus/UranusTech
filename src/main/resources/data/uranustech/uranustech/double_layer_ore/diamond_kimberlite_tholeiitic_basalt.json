@@ -1,0 +1,10 @@
+{
+  "first": "kimberlite",
+  "second": "tholeiitic_basalt",
+  "weight": 1,
+  "density": 3,
+  "min_y": 0,
+  "max_y": 32,
+  "both_directions": true,
+  "ore": "uranustech:diamond"
+}

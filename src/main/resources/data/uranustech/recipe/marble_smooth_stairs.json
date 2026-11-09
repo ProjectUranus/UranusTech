@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "uranustech:marble_smooth"
+    }
+  },
+  "result": {
+    "count": 4,
+    "id": "uranustech:marble_smooth_stairs"
+  }
+}

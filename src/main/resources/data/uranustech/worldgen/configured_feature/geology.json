@@ -1,0 +1,435 @@
+{
+  "type": "uranustech:geology",
+  "config": {
+    "biomes": [
+      {
+        "biomes": "#minecraft:is_mountain",
+        "layers": {
+          "bands": [
+            {
+              "min_y": -64,
+              "max_y": 0,
+              "rocks": [
+                {
+                  "Name": "uranustech:granite_black"
+                },
+                {
+                  "Name": "uranustech:granite_red"
+                },
+                {
+                  "Name": "uranustech:tholeiitic_basalt"
+                },
+                {
+                  "Name": "uranustech:kimberlite"
+                },
+                {
+                  "Name": "uranustech:blueschist"
+                },
+                {
+                  "Name": "uranustech:quartzite"
+                }
+              ]
+            },
+            {
+              "min_y": 0,
+              "max_y": 320,
+              "rocks": [
+                {
+                  "Name": "uranustech:granite_black"
+                },
+                {
+                  "Name": "uranustech:granite_red"
+                },
+                {
+                  "Name": "uranustech:quartzite"
+                },
+                {
+                  "Name": "minecraft:granite"
+                },
+                {
+                  "Name": "minecraft:andesite"
+                },
+                {
+                  "Name": "minecraft:diorite"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "biomes": "#minecraft:is_badlands",
+        "layers": {
+          "bands": [
+            {
+              "min_y": -64,
+              "max_y": 0,
+              "rocks": [
+                {
+                  "Name": "uranustech:granite_red"
+                },
+                {
+                  "Name": "uranustech:tholeiitic_basalt"
+                },
+                {
+                  "Name": "uranustech:komatiite"
+                }
+              ]
+            },
+            {
+              "min_y": 0,
+              "max_y": 320,
+              "rocks": [
+                {
+                  "Name": "uranustech:granite_red"
+                },
+                {
+                  "Name": "uranustech:limestone"
+                },
+                {
+                  "Name": "uranustech:tholeiitic_basalt"
+                },
+                {
+                  "Name": "minecraft:andesite"
+                },
+                {
+                  "Name": "uranustech:komatiite"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "biomes": "#uranustech:desert_biomes",
+        "layers": {
+          "bands": [
+            {
+              "min_y": -64,
+              "max_y": 0,
+              "rocks": [
+                {
+                  "Name": "uranustech:limestone"
+                },
+                {
+                  "Name": "uranustech:tholeiitic_basalt"
+                },
+                {
+                  "Name": "uranustech:kimberlite"
+                }
+              ]
+            },
+            {
+              "min_y": 0,
+              "max_y": 320,
+              "rocks": [
+                {
+                  "Name": "uranustech:limestone"
+                },
+                {
+                  "Name": "uranustech:granite_red"
+                },
+                {
+                  "Name": "minecraft:granite"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "biomes": "#minecraft:is_savanna",
+        "layers": {
+          "bands": [
+            {
+              "min_y": -64,
+              "max_y": 0,
+              "rocks": [
+                {
+                  "Name": "uranustech:tholeiitic_basalt"
+                },
+                {
+                  "Name": "uranustech:komatiite"
+                },
+                {
+                  "Name": "uranustech:greenschist"
+                }
+              ]
+            },
+            {
+              "min_y": 0,
+              "max_y": 320,
+              "rocks": [
+                {
+                  "Name": "uranustech:tholeiitic_basalt"
+                },
+                {
+                  "Name": "uranustech:greenschist"
+                },
+                {
+                  "Name": "minecraft:granite"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "biomes": "#uranustech:cold_biomes",
+        "layers": {
+          "bands": [
+            {
+              "min_y": -64,
+              "max_y": 0,
+              "rocks": [
+                {
+                  "Name": "uranustech:blueschist"
+                },
+                {
+                  "Name": "uranustech:tholeiitic_basalt"
+                },
+                {
+                  "Name": "uranustech:quartzite"
+                }
+              ]
+            },
+            {
+              "min_y": 0,
+              "max_y": 320,
+              "rocks": [
+                {
+                  "Name": "uranustech:blueschist"
+                },
+                {
+                  "Name": "minecraft:diorite"
+                },
+                {
+                  "Name": "minecraft:granite"
+                },
+                {
+                  "Name": "uranustech:quartzite"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "biomes": "#uranustech:wet_biomes",
+        "layers": {
+          "bands": [
+            {
+              "min_y": -64,
+              "max_y": 0,
+              "rocks": [
+                {
+                  "Name": "uranustech:greenschist"
+                },
+                {
+                  "Name": "uranustech:blueschist"
+                },
+                {
+                  "Name": "uranustech:quartzite"
+                }
+              ]
+            },
+            {
+              "min_y": 0,
+              "max_y": 320,
+              "rocks": [
+                {
+                  "Name": "uranustech:greenschist"
+                },
+                {
+                  "Name": "uranustech:limestone"
+                },
+                {
+                  "Name": "uranustech:tholeiitic_basalt"
+                },
+                {
+                  "Name": "uranustech:quartzite"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "biomes": "#minecraft:is_forest",
+        "layers": {
+          "bands": [
+            {
+              "min_y": -64,
+              "max_y": 0,
+              "rocks": [
+                {
+                  "Name": "uranustech:marble"
+                },
+                {
+                  "Name": "uranustech:quartzite"
+                },
+                {
+                  "Name": "uranustech:greenschist"
+                }
+              ]
+            },
+            {
+              "min_y": 0,
+              "max_y": 320,
+              "rocks": [
+                {
+                  "Name": "uranustech:marble"
+                },
+                {
+                  "Name": "uranustech:quartzite"
+                },
+                {
+                  "Name": "uranustech:greenschist"
+                },
+                {
+                  "Name": "minecraft:granite"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "biomes": "#uranustech:plains_biomes",
+        "layers": {
+          "bands": [
+            {
+              "min_y": -64,
+              "max_y": 0,
+              "rocks": [
+                {
+                  "Name": "minecraft:stone"
+                },
+                {
+                  "Name": "minecraft:granite"
+                },
+                {
+                  "Name": "minecraft:diorite"
+                },
+                {
+                  "Name": "uranustech:limestone"
+                }
+              ]
+            },
+            {
+              "min_y": 0,
+              "max_y": 320,
+              "rocks": [
+                {
+                  "Name": "minecraft:granite"
+                },
+                {
+                  "Name": "minecraft:diorite"
+                },
+                {
+                  "Name": "minecraft:andesite"
+                },
+                {
+                  "Name": "uranustech:limestone"
+                },
+                {
+                  "Name": "uranustech:marble"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "veins": [
+      "uranustech:lignite",
+      "uranustech:coal",
+      "uranustech:apatite",
+      "uranustech:lapis",
+      "uranustech:bauxite",
+      "uranustech:iodine_salt",
+      "uranustech:rock_salt",
+      "uranustech:asbestos",
+      "uranustech:sapphire",
+      "uranustech:sapphire_2",
+      "uranustech:garnet",
+      "uranustech:pitchblende",
+      "uranustech:monazite",
+      "uranustech:diamond",
+      "uranustech:galena",
+      "uranustech:quartz",
+      "uranustech:peridot",
+      "uranustech:gold",
+      "uranustech:platinum",
+      "uranustech:molybdenum",
+      "uranustech:cassiterite",
+      "uranustech:tungstate",
+      "uranustech:manganese",
+      "uranustech:beryllium",
+      "uranustech:beryllium_2",
+      "uranustech:titanium",
+      "uranustech:nickel",
+      "uranustech:redstone",
+      "uranustech:tetrahedrite",
+      "uranustech:iron",
+      "uranustech:copper"
+    ],
+    "contact_ores": [
+      "uranustech:perlite_komatiite_tholeiitic_basalt",
+      "uranustech:ilmenite_limestone_tholeiitic_basalt",
+      "uranustech:kyanite_marble_quartzite",
+      "uranustech:lepidolite_limestone_quartzite",
+      "uranustech:spodumene_blueschist_greenschist",
+      "uranustech:diamond_kimberlite_tholeiitic_basalt",
+      "uranustech:diatomite_granite_marble",
+      "uranustech:alunite_diorite_marble",
+      "uranustech:glauconite_greenschist_limestone",
+      "uranustech:lapis_granite_black_marble",
+      "uranustech:pyrite_granite_black_marble",
+      "uranustech:zircon_granite_black_granite",
+      "uranustech:zircon_granite_black_granite_red",
+      "uranustech:biotite_granite_black_greenschist",
+      "uranustech:vermiculite_granite_red_quartzite",
+      "uranustech:asbestos_granite_red_greenschist",
+      "uranustech:zeolite_stone_marble",
+      "uranustech:pollucite_stone_limestone",
+      "uranustech:niter_stone_diorite",
+      "uranustech:opal_diorite_kimberlite",
+      "uranustech:perlite_andesite_tholeiitic_basalt",
+      "uranustech:certus_quartz_quartzite_stone"
+    ],
+    "small_ores": [
+      "uranustech:copper",
+      "uranustech:chalcopyrite",
+      "uranustech:malachite",
+      "uranustech:tin",
+      "uranustech:cassiterite",
+      "uranustech:zinc",
+      "uranustech:sphalerite",
+      "uranustech:smithsonite",
+      "uranustech:stibnite",
+      "uranustech:bismuth",
+      "uranustech:lead",
+      "uranustech:galena",
+      "uranustech:silver",
+      "uranustech:gold",
+      "uranustech:pyrite",
+      "uranustech:hematite",
+      "uranustech:pyrolusite",
+      "uranustech:garnierite",
+      "uranustech:pentlandite",
+      "uranustech:scheelite",
+      "uranustech:salt",
+      "uranustech:borax",
+      "uranustech:asbestos",
+      "uranustech:diamond",
+      "uranustech:amber",
+      "uranustech:redstone",
+      "uranustech:lapis",
+      "uranustech:azurite",
+      "uranustech:coal",
+      "uranustech:graphite",
+      "uranustech:sulfur"
+    ]
+  }
+}

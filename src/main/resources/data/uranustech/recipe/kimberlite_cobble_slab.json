@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "uranustech:kimberlite_cobble"
+    }
+  },
+  "result": {
+    "count": 6,
+    "id": "uranustech:kimberlite_cobble_slab"
+  }
+}

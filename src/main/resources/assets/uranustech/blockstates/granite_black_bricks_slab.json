@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "uranustech:block/granite_black_bricks_slab"
+    },
+    "type=double": {
+      "model": "uranustech:block/granite_black_bricks"
+    },
+    "type=top": {
+      "model": "uranustech:block/granite_black_bricks_slab_top"
+    }
+  }
+}

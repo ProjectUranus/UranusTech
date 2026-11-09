@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "uranustech:marble_bricks"
+    }
+  },
+  "result": {
+    "count": 6,
+    "id": "uranustech:marble_bricks_wall"
+  }
+}

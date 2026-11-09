@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:stonecutting",
+  "category": "building",
+  "ingredient": {
+    "item": "uranustech:limestone_bricks"
+  },
+  "result": {
+    "count": 2,
+    "id": "uranustech:limestone_bricks_slab"
+  }
+}

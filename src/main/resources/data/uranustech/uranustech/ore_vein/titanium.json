@@ -1,0 +1,9 @@
+{
+  "weight": 40,
+  "density": 3,
+  "size": 16,
+  "min_y": 10,
+  "max_y": 40,
+  "between": "uranustech:zircon",
+  "spread": "uranustech:ilmenite"
+}

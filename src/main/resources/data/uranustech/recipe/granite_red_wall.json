@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "uranustech:granite_red"
+    }
+  },
+  "result": {
+    "count": 6,
+    "id": "uranustech:granite_red_wall"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:stonecutting",
+  "category": "building",
+  "ingredient": {
+    "item": "uranustech:quartzite"
+  },
+  "result": {
+    "count": 1,
+    "id": "uranustech:quartzite_stairs"
+  }
+}

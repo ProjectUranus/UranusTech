@@ -1,0 +1,11 @@
+{
+  "weight": 150,
+  "density": 4,
+  "size": 24,
+  "min_y": 70,
+  "max_y": 120,
+  "bottom": "uranustech:tetrahedrite",
+  "top": "uranustech:tetrahedrite",
+  "between": "uranustech:copper",
+  "spread": "uranustech:stibnite"
+}

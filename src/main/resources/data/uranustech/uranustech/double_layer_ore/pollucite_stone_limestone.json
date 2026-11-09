@@ -1,0 +1,10 @@
+{
+  "first": "stone",
+  "second": "limestone",
+  "weight": 1,
+  "density": 12,
+  "min_y": 16,
+  "max_y": 48,
+  "both_directions": true,
+  "ore": "uranustech:pollucite"
+}

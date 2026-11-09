@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "uranustech:block/stones/granite_black/stone",
+    "top": "uranustech:block/stones/granite_black/stone",
+    "side": "uranustech:block/stones/granite_black/stone"
+  }
+}

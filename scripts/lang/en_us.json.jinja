@@ -1,0 +1,3 @@
+{
+{% for key, value in entries %}  {{ key | json }}: {{ value | json }}{% if not loop.last %},{% endif %}
+{% endfor %}}

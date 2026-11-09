@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "uranustech:block/stones/komatiite/windmill_tiles_b"
+  }
+}

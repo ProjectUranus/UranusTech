@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "uranustech:quartzite_tiles"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "uranustech:quartzite_square_bricks"
+  }
+}

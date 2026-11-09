@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "uranustech:block/stones/greenschist/stone",
+    "top": "uranustech:block/stones/greenschist/stone",
+    "side": "uranustech:block/stones/greenschist/stone"
+  }
+}

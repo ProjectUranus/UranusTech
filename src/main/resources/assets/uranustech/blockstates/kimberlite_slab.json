@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "uranustech:block/kimberlite_slab"
+    },
+    "type=double": {
+      "model": "uranustech:block/kimberlite"
+    },
+    "type=top": {
+      "model": "uranustech:block/kimberlite_slab_top"
+    }
+  }
+}

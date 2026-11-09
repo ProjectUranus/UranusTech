@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "#",
+    "#"
+  ],
+  "key": {
+    "#": {
+      "item": "uranustech:limestone_bricks_slab"
+    }
+  },
+  "result": {
+    "count": 1,
+    "id": "uranustech:limestone_bricks_chiseled"
+  }
+}

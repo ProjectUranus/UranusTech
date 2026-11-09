@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "uranustech:tholeiitic_basalt"
+    }
+  },
+  "result": {
+    "count": 6,
+    "id": "uranustech:tholeiitic_basalt_wall"
+  }
+}

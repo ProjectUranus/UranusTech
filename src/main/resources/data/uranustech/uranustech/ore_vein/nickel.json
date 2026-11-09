@@ -1,0 +1,11 @@
+{
+  "weight": 40,
+  "density": 3,
+  "size": 16,
+  "min_y": 10,
+  "max_y": 40,
+  "bottom": "uranustech:garnierite",
+  "top": "uranustech:nickel",
+  "between": "uranustech:cobaltite",
+  "spread": "uranustech:pentlandite"
+}

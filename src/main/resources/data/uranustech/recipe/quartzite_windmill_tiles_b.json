@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "uranustech:quartzite_windmill_tiles_a"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "uranustech:quartzite_windmill_tiles_b"
+  }
+}

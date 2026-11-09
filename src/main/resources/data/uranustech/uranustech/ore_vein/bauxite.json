@@ -1,0 +1,11 @@
+{
+  "weight": 80,
+  "density": 4,
+  "size": 24,
+  "min_y": 50,
+  "max_y": 90,
+  "bottom": "uranustech:bauxite",
+  "top": "uranustech:bauxite",
+  "between": "uranustech:bauxite",
+  "spread": "uranustech:ilmenite"
+}

@@ -1,0 +1,13 @@
+{
+  "weight": 30,
+  "density": 3,
+  "size": 24,
+  "min_y": 50,
+  "max_y": 60,
+  "top": "uranustech:salt",
+  "between": "uranustech:borax",
+  "spread": "uranustech:zeolite",
+  "host_rocks": [
+    "limestone"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "weight": 40,
+  "density": 5,
+  "size": 16,
+  "min_y": 30,
+  "max_y": 60,
+  "bottom": "uranustech:galena",
+  "top": "uranustech:galena",
+  "between": "uranustech:silver",
+  "spread": "uranustech:lead"
+}

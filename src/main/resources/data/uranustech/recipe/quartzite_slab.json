@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "uranustech:quartzite"
+    }
+  },
+  "result": {
+    "count": 6,
+    "id": "uranustech:quartzite_slab"
+  }
+}

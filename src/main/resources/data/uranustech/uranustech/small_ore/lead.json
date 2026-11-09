@@ -1,0 +1,9 @@
+{
+  "material": "uranustech:lead",
+  "min_y": 40,
+  "max_y": 80,
+  "amount": 16,
+  "host_rocks": [
+    "limestone"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "#",
+    "#"
+  ],
+  "key": {
+    "#": {
+      "item": "uranustech:kimberlite_bricks_slab"
+    }
+  },
+  "result": {
+    "count": 1,
+    "id": "uranustech:kimberlite_bricks_chiseled"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "uranustech:block/stones/granite_red/smooth"
+  }
+}

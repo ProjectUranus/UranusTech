@@ -1,0 +1,10 @@
+{
+  "first": "granite_red",
+  "second": "greenschist",
+  "weight": 1,
+  "density": 8,
+  "min_y": 16,
+  "max_y": 48,
+  "both_directions": true,
+  "ore": "uranustech:asbestos"
+}

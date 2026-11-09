@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:stonecutting",
+  "category": "building",
+  "ingredient": {
+    "item": "uranustech:granite_black_smooth"
+  },
+  "result": {
+    "count": 2,
+    "id": "uranustech:granite_black_smooth_slab"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "uranustech:block/komatiite_cobble_slab"
+    },
+    "type=double": {
+      "model": "uranustech:block/komatiite_cobble"
+    },
+    "type=top": {
+      "model": "uranustech:block/komatiite_cobble_slab_top"
+    }
+  }
+}
